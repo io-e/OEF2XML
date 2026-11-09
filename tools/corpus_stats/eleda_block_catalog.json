@@ -1,0 +1,3668 @@
+{
+ "xml_files": 1116,
+ "source_format": {
+  "json": 1019,
+  "xml": 97
+ },
+ "root_children": {
+  "name": 1116,
+  "author": 1106,
+  "tags": 1116,
+  "langs": 1106,
+  "settings": 1106,
+  "variables": 1113,
+  "blocks": 1116
+ },
+ "settings_keys": {
+  "maxAttempts": 1105,
+  "defaultVersionNumber": 1105,
+  "hasNestedQuestion": 1105,
+  "template": 1105,
+  "createdAt": 1105,
+  "updatedAt": 1105
+ },
+ "langs": {
+  "fr": 1037,
+  "ar": 1,
+  "de": 13,
+  "en": 48,
+  "it": 6
+ },
+ "top_level_blocks": {
+  "procedures_defnoreturn": 1276,
+  "info": 1115,
+  "procedures_defreturn": 240,
+  "text": 187,
+  "math_number": 91,
+  "variables_get": 51,
+  "math_arithmetic": 36,
+  "point": 33,
+  "set_colour": 15,
+  "display_element": 13,
+  "lists_create_with": 13,
+  "variables_set": 12,
+  "logic_compare": 11,
+  "logic_operation": 10,
+  "set_size": 8,
+  "feedback_global": 8,
+  "logic_ternary": 7,
+  "controls_if": 6,
+  "random_number": 6,
+  "math_round": 5,
+  "richtext_create_with": 5,
+  "math_single": 5,
+  "draw_in_board": 4,
+  "coordinate": 4,
+  "set_alignment": 4,
+  "lists_getIndex": 4,
+  "text_join": 3,
+  "fraction": 3,
+  "matrix_short_get": 3,
+  "list_short_get": 3,
+  "question_figure": 3,
+  "procedures_callreturn": 3,
+  "set_colour_random": 2,
+  "random_message": 2,
+  "lists_indexOf": 2,
+  "integer_decimal_part": 2,
+  "text_multiline": 1,
+  "markdown": 1,
+  "figure_area": 1,
+  "polygon": 1,
+  "controls_for": 1,
+  "expression": 1,
+  "text_length": 1,
+  "question_true_false": 1,
+  "logic_negate": 1,
+  "set_attribute": 1
+ },
+ "questions_per_program": {
+  "0": 4,
+  "1": 750,
+  "2": 147,
+  "3": 64,
+  "4": 42,
+  "5": 26,
+  "6": 21,
+  "7": 10,
+  "8": 8,
+  "9": 11,
+  "10": 9,
+  "12": 1,
+  "13": 6,
+  "15": 2,
+  "17": 2,
+  "18": 4,
+  "22": 2,
+  "24": 1,
+  "25": 1,
+  "30": 4,
+  "54": 1
+ },
+ "distinct_block_types": 169,
+ "types_in_enum": 169,
+ "types_NOT_in_enum_(accepted_only_by_catch-all_pattern)": {},
+ "enum_size": 190,
+ "enum_types_never_observed": [
+  "QUESTION",
+  "adjectives",
+  "arrow",
+  "conjugations",
+  "decimal",
+  "definis",
+  "denominator",
+  "determinants",
+  "dotted",
+  "integer",
+  "integerPositive",
+  "kids",
+  "letters",
+  "multiple",
+  "names",
+  "numerator",
+  "segment",
+  "string",
+  "table",
+  "unique",
+  "verbs"
+ ],
+ "shadow_types": {
+  "math_number": 149711,
+  "text": 22773,
+  "text_multiline": 4553,
+  "point": 293,
+  "logic_boolean": 84,
+  "lists_create_with": 24,
+  "unit": 4
+ },
+ "blocks": {
+  "variables_get": {
+   "count": 89143,
+   "programs": 1102,
+   "in_enum": true,
+   "fields": {
+    "VAR": 89143
+   },
+   "inputs": {},
+   "extraState": {},
+   "field_values": {
+    "VAR": {
+     "": 89143
+    }
+   }
+  },
+  "text": {
+   "count": 49204,
+   "programs": 1100,
+   "in_enum": true,
+   "fields": {
+    "TEXT": 49204
+   },
+   "inputs": {},
+   "extraState": {},
+   "field_values": {
+    "TEXT": {
+     "": 5874,
+     "+": 1577,
+     "}": 1095,
+     "\\times": 961,
+     ")": 895,
+     "=": 816,
+     "(": 791,
+     "}{": 775,
+     "-": 741,
+     ".": 441,
+     "x": 389,
+     "\\dfrac{": 369
+    }
+   }
+  },
+  "math_number": {
+   "count": 35167,
+   "programs": 1002,
+   "in_enum": true,
+   "fields": {
+    "NUM": 35167
+   },
+   "inputs": {},
+   "extraState": {},
+   "field_values": {
+    "NUM": {
+     "2": 6269,
+     "1": 5430,
+     "0": 4820,
+     "3": 2669,
+     "10": 1889,
+     "4": 1743,
+     "5": 1280,
+     "-1": 718,
+     "9": 635,
+     "100": 594,
+     "6": 564,
+     "7": 451
+    }
+   }
+  },
+  "math_arithmetic": {
+   "count": 33963,
+   "programs": 976,
+   "in_enum": true,
+   "fields": {
+    "OP": 33963
+   },
+   "inputs": {
+    "A": 33963,
+    "B": 33963
+   },
+   "extraState": {},
+   "field_values": {
+    "OP": {
+     "MULTIPLY": 10410,
+     "ADD": 9179,
+     "MINUS": 7325,
+     "DIVIDE": 4911,
+     "POWER": 2138
+    }
+   }
+  },
+  "variables_set": {
+   "count": 22987,
+   "programs": 1101,
+   "in_enum": true,
+   "fields": {
+    "VAR": 22987
+   },
+   "inputs": {
+    "VALUE": 22975
+   },
+   "extraState": {},
+   "field_values": {
+    "VAR": {
+     "": 22987
+    }
+   }
+  },
+  "logic_compare": {
+   "count": 15527,
+   "programs": 888,
+   "in_enum": true,
+   "fields": {
+    "OP": 15527
+   },
+   "inputs": {
+    "A": 15525,
+    "B": 15524
+   },
+   "extraState": {},
+   "field_values": {
+    "OP": {
+     "EQ": 10078,
+     "NEQ": 1552,
+     "LT": 1480,
+     "LTE": 953,
+     "GTE": 767,
+     "GT": 697
+    }
+   }
+  },
+  "random_number": {
+   "count": 9656,
+   "programs": 1031,
+   "in_enum": true,
+   "fields": {
+    "type": 9656
+   },
+   "inputs": {
+    "min": 9656,
+    "max": 9656
+   },
+   "extraState": {},
+   "field_values": {
+    "type": {
+     "integer": 8230,
+     "decimal": 1426
+    }
+   }
+  },
+  "display_element": {
+   "count": 8276,
+   "programs": 1055,
+   "in_enum": true,
+   "fields": {
+    "alignment": 1
+   },
+   "inputs": {
+    "object": 8275
+   },
+   "extraState": {},
+   "field_values": {
+    "alignment": {
+     "LEFT": 1
+    }
+   }
+  },
+  "logic_ternary": {
+   "count": 7773,
+   "programs": 411,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "IF": 7771,
+    "THEN": 7769,
+    "ELSE": 7769
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "point": {
+   "count": 7298,
+   "programs": 344,
+   "in_enum": true,
+   "fields": {
+    "moreOptions": 7298,
+    "withLabel": 5840,
+    "showInfobox": 5840,
+    "fixed": 5840
+   },
+   "inputs": {
+    "name": 7298,
+    "x": 7298,
+    "y": 7298,
+    "attractors": 5840
+   },
+   "extraState": {
+    "displaymoreOptions": 7298
+   },
+   "field_values": {
+    "moreOptions": {
+     "true": 5357,
+     "false": 1374,
+     "TRUE": 483,
+     "FALSE": 84
+    },
+    "withLabel": {
+     "false": 4751,
+     "true": 606,
+     "FALSE": 350,
+     "TRUE": 133
+    },
+    "showInfobox": {
+     "false": 5323,
+     "FALSE": 475,
+     "true": 34,
+     "TRUE": 8
+    },
+    "fixed": {
+     "true": 4948,
+     "TRUE": 423,
+     "false": 409,
+     "FALSE": 60
+    }
+   }
+  },
+  "list_short_get": {
+   "count": 7119,
+   "programs": 332,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "LIST": 7119,
+    "INDEX": 7119
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "lists_create_with": {
+   "count": 5761,
+   "programs": 867,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "ADD0": 5400,
+    "ADD1": 4876,
+    "ADD2": 3043,
+    "ADD3": 1950,
+    "ADD4": 812,
+    "ADD5": 554,
+    "ADD6": 365,
+    "ADD7": 288,
+    "ADD8": 207,
+    "ADD9": 171,
+    "ADD10": 119,
+    "ADD11": 109,
+    "ADD12": 99,
+    "ADD13": 79,
+    "ADD14": 73,
+    "ADD15": 31,
+    "ADD16": 31,
+    "ADD17": 30,
+    "ADD18": 28,
+    "ADD19": 28,
+    "ADD20": 28,
+    "ADD21": 28,
+    "ADD22": 28,
+    "ADD23": 28,
+    "ADD24": 28,
+    "ADD25": 28,
+    "ADD26": 25,
+    "ADD27": 25,
+    "ADD28": 23,
+    "ADD29": 21,
+    "ADD30": 19,
+    "ADD31": 11,
+    "ADD32": 11,
+    "ADD33": 11,
+    "ADD34": 11,
+    "ADD35": 11,
+    "ADD36": 7,
+    "ADD37": 7,
+    "ADD38": 7,
+    "ADD39": 7,
+    "ADD40": 7,
+    "ADD41": 7,
+    "ADD42": 7,
+    "ADD43": 7,
+    "ADD44": 7,
+    "ADD45": 7,
+    "ADD46": 7,
+    "ADD47": 7,
+    "ADD48": 7,
+    "ADD49": 6,
+    "ADD50": 6,
+    "ADD51": 6,
+    "ADD52": 6,
+    "ADD53": 6,
+    "ADD54": 6,
+    "ADD55": 6,
+    "ADD56": 6,
+    "ADD57": 6,
+    "ADD58": 6,
+    "ADD59": 6,
+    "ADD60": 6,
+    "ADD61": 6,
+    "ADD62": 6,
+    "ADD63": 6,
+    "ADD64": 6,
+    "ADD65": 6,
+    "ADD66": 6,
+    "ADD67": 6,
+    "ADD68": 6,
+    "ADD69": 6,
+    "ADD70": 6,
+    "ADD71": 6,
+    "ADD72": 6,
+    "ADD73": 6,
+    "ADD74": 6,
+    "ADD75": 6,
+    "ADD76": 6,
+    "ADD77": 6,
+    "ADD78": 6,
+    "ADD79": 6,
+    "ADD80": 6,
+    "ADD81": 6,
+    "ADD82": 6,
+    "ADD83": 6,
+    "ADD84": 6,
+    "ADD85": 6,
+    "ADD86": 6,
+    "ADD87": 6,
+    "ADD88": 6,
+    "ADD89": 6,
+    "ADD90": 6,
+    "ADD91": 6,
+    "ADD92": 3,
+    "ADD93": 3,
+    "ADD94": 3,
+    "ADD95": 3,
+    "ADD96": 3,
+    "ADD97": 3,
+    "ADD98": 3,
+    "ADD99": 3,
+    "ADD100": 3,
+    "ADD101": 3,
+    "ADD102": 3,
+    "ADD103": 3,
+    "ADD104": 3,
+    "ADD105": 3,
+    "ADD106": 3,
+    "ADD107": 3,
+    "ADD108": 3,
+    "ADD109": 3,
+    "ADD110": 3,
+    "ADD111": 3,
+    "ADD112": 3,
+    "ADD113": 3,
+    "ADD114": 3,
+    "ADD115": 3,
+    "ADD116": 3,
+    "ADD117": 3,
+    "ADD118": 3,
+    "ADD119": 3,
+    "ADD120": 3,
+    "ADD121": 3,
+    "ADD122": 3,
+    "ADD123": 3,
+    "ADD124": 3,
+    "ADD125": 3,
+    "ADD126": 3,
+    "ADD127": 3,
+    "ADD128": 3,
+    "ADD129": 3,
+    "ADD130": 3,
+    "ADD131": 3,
+    "ADD132": 3,
+    "ADD133": 3,
+    "ADD134": 3,
+    "ADD135": 3,
+    "ADD136": 3,
+    "ADD137": 3,
+    "ADD138": 3,
+    "ADD139": 3,
+    "ADD140": 3,
+    "ADD141": 3,
+    "ADD142": 3,
+    "ADD143": 3,
+    "ADD144": 3,
+    "ADD145": 3,
+    "ADD146": 3,
+    "ADD147": 3,
+    "ADD148": 3,
+    "ADD149": 3,
+    "ADD150": 3,
+    "ADD151": 3,
+    "ADD152": 3,
+    "ADD153": 3,
+    "ADD154": 3,
+    "ADD155": 3,
+    "ADD156": 3,
+    "ADD157": 3,
+    "ADD158": 3,
+    "ADD159": 3,
+    "ADD160": 3,
+    "ADD161": 3,
+    "ADD162": 3,
+    "ADD163": 3,
+    "ADD164": 3,
+    "ADD165": 3,
+    "ADD166": 3,
+    "ADD167": 3,
+    "ADD168": 3,
+    "ADD169": 3,
+    "ADD170": 3,
+    "ADD171": 3,
+    "ADD172": 3,
+    "ADD173": 3
+   },
+   "extraState": {
+    "itemCount": 5761
+   },
+   "field_values": {}
+  },
+  "controls_if": {
+   "count": 5055,
+   "programs": 852,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "IF0": 5053,
+    "DO0": 5046,
+    "ELSE": 2571,
+    "IF1": 863,
+    "DO1": 863,
+    "IF2": 395,
+    "DO2": 395,
+    "IF3": 246,
+    "DO3": 246,
+    "IF4": 186,
+    "DO4": 186,
+    "IF5": 161,
+    "DO5": 161,
+    "IF6": 63,
+    "DO6": 63,
+    "IF7": 38,
+    "DO7": 38,
+    "IF8": 35,
+    "DO8": 35,
+    "IF9": 24,
+    "DO9": 24,
+    "IF10": 14,
+    "DO10": 14,
+    "IF11": 12,
+    "DO11": 12,
+    "IF12": 12,
+    "DO12": 12,
+    "IF13": 11,
+    "DO13": 11,
+    "IF14": 8,
+    "DO14": 8,
+    "IF15": 2,
+    "DO15": 2,
+    "IF16": 2,
+    "DO16": 2,
+    "IF17": 2,
+    "DO17": 2,
+    "IF18": 2,
+    "DO18": 2
+   },
+   "extraState": {
+    "hasElse": 2580,
+    "elseIfCount": 865
+   },
+   "field_values": {}
+  },
+  "richtext_create_with": {
+   "count": 4720,
+   "programs": 786,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "ADD0": 4713,
+    "ADD1": 4565,
+    "ADD2": 3679,
+    "ADD3": 2567,
+    "ADD4": 2010,
+    "ADD5": 1188,
+    "ADD6": 913,
+    "ADD7": 538,
+    "ADD8": 414,
+    "ADD9": 267,
+    "ADD10": 219,
+    "ADD11": 159,
+    "ADD12": 139,
+    "ADD13": 103,
+    "ADD14": 87,
+    "ADD15": 57,
+    "ADD16": 49,
+    "ADD17": 45,
+    "ADD18": 37,
+    "ADD19": 31,
+    "ADD20": 27,
+    "ADD21": 24,
+    "ADD22": 24,
+    "ADD23": 21,
+    "ADD24": 21,
+    "ADD25": 15,
+    "ADD26": 15,
+    "ADD27": 12,
+    "ADD28": 11,
+    "ADD29": 11,
+    "ADD30": 8,
+    "ADD31": 8,
+    "ADD32": 8,
+    "ADD33": 8,
+    "ADD34": 8,
+    "ADD35": 1,
+    "ADD36": 1
+   },
+   "extraState": {
+    "itemsCount": 4720
+   },
+   "field_values": {}
+  },
+  "set_alignment": {
+   "count": 4714,
+   "programs": 790,
+   "in_enum": true,
+   "fields": {
+    "alignment": 4714
+   },
+   "inputs": {
+    "item": 4713
+   },
+   "extraState": {},
+   "field_values": {
+    "alignment": {
+     "center": 4480,
+     "left": 129,
+     "right": 105
+    }
+   }
+  },
+  "draw_in_board": {
+   "count": 4399,
+   "programs": 364,
+   "in_enum": true,
+   "fields": {
+    "board_variable": 4399
+   },
+   "inputs": {
+    "figure": 4398
+   },
+   "extraState": {},
+   "field_values": {
+    "board_variable": {
+     "": 4095,
+     "graph": 228,
+     "graph1": 33,
+     "graph2": 20,
+     "graph3": 9,
+     "initial graph": 2,
+     "good graphic": 2,
+     "wrong graphic 1": 2,
+     "wrong graphic 2": 2,
+     "grafico": 2,
+     "grafica iniziale": 1,
+     "buona grafica": 1
+    }
+   }
+  },
+  "text_join": {
+   "count": 4172,
+   "programs": 409,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "ADD0": 4171,
+    "ADD1": 3968,
+    "ADD2": 2344,
+    "ADD3": 1341,
+    "ADD4": 1058,
+    "ADD5": 701,
+    "ADD6": 515,
+    "ADD7": 349,
+    "ADD8": 279,
+    "ADD9": 226,
+    "ADD10": 171,
+    "ADD11": 144,
+    "ADD12": 110,
+    "ADD13": 85,
+    "ADD14": 81,
+    "ADD15": 56,
+    "ADD16": 56,
+    "ADD17": 54,
+    "ADD18": 25,
+    "ADD19": 16,
+    "ADD20": 16,
+    "ADD21": 4,
+    "ADD22": 4,
+    "ADD23": 4,
+    "ADD24": 4,
+    "ADD25": 4,
+    "ADD26": 4,
+    "ADD27": 4,
+    "ADD28": 4,
+    "ADD29": 4
+   },
+   "extraState": {
+    "itemCount": 4172
+   },
+   "field_values": {}
+  },
+  "latex": {
+   "count": 4108,
+   "programs": 334,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "LaTeX": 4108
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "logic_operation": {
+   "count": 3777,
+   "programs": 470,
+   "in_enum": true,
+   "fields": {
+    "OP": 3777
+   },
+   "inputs": {
+    "A": 3770,
+    "B": 3767
+   },
+   "extraState": {},
+   "field_values": {
+    "OP": {
+     "AND": 2019,
+     "OR": 1758
+    }
+   }
+  },
+  "math_number_property": {
+   "count": 3763,
+   "programs": 347,
+   "in_enum": true,
+   "fields": {
+    "PROPERTY": 3763
+   },
+   "inputs": {
+    "NUMBER_TO_CHECK": 3763,
+    "DIVISOR": 1
+   },
+   "extraState": {
+    "divisor_input": 24
+   },
+   "field_values": {
+    "PROPERTY": {
+     "POSITIVE": 1582,
+     "NEGATIVE": 1053,
+     "EVEN": 573,
+     "WHOLE": 374,
+     "ODD": 176,
+     "PRIME": 4,
+     "DIVISIBLE_BY": 1
+    }
+   }
+  },
+  "set_colour": {
+   "count": 3272,
+   "programs": 442,
+   "in_enum": true,
+   "fields": {
+    "colour": 3272
+   },
+   "inputs": {
+    "item": 3262
+   },
+   "extraState": {},
+   "field_values": {
+    "colour": {
+     "#ff3860": 715,
+     "#3aa6e9": 486,
+     "#48c774": 420,
+     "#0a0a0a": 345,
+     "#ffffff": 333,
+     "#3273dc": 243,
+     "#744de0": 200,
+     "#ff8b3d": 190,
+     "#363636": 188,
+     "#ffdd57": 134,
+     "#f5f5f5": 18
+    }
+   }
+  },
+  "coordinate": {
+   "count": 3220,
+   "programs": 135,
+   "in_enum": true,
+   "fields": {
+    "axis": 3220,
+    "point_variable": 3220
+   },
+   "inputs": {},
+   "extraState": {},
+   "field_values": {
+    "axis": {
+     "y": 1663,
+     "x": 1557
+    },
+    "point_variable": {
+     "": 2991,
+     "pointB": 37,
+     "pointA": 30,
+     "point": 30,
+     "A": 22,
+     "B": 22,
+     "C": 22,
+     "I": 12,
+     "Centre": 12,
+     "K": 9,
+     "J": 6,
+     "B'": 6
+    }
+   }
+  },
+  "latex_paragraph_create_with": {
+   "count": 2813,
+   "programs": 483,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "ADD0": 2812,
+    "ADD1": 2732,
+    "ADD2": 2243,
+    "ADD3": 1641,
+    "ADD4": 1416,
+    "ADD5": 967,
+    "ADD6": 792,
+    "ADD7": 648,
+    "ADD8": 507,
+    "ADD9": 318,
+    "ADD10": 273,
+    "ADD11": 256,
+    "ADD12": 240,
+    "ADD13": 176,
+    "ADD14": 156,
+    "ADD15": 132,
+    "ADD16": 110,
+    "ADD17": 82,
+    "ADD18": 77,
+    "ADD19": 55,
+    "ADD20": 55,
+    "ADD21": 43,
+    "ADD22": 41,
+    "ADD23": 41,
+    "ADD24": 41,
+    "ADD25": 40,
+    "ADD26": 40,
+    "ADD27": 40,
+    "ADD28": 38,
+    "ADD29": 19,
+    "ADD30": 18,
+    "ADD31": 18,
+    "ADD32": 18,
+    "ADD33": 17,
+    "ADD34": 17,
+    "ADD35": 17,
+    "ADD36": 17,
+    "ADD37": 6,
+    "ADD38": 6,
+    "ADD39": 3,
+    "ADD40": 3,
+    "ADD41": 3,
+    "ADD42": 3,
+    "ADD43": 3,
+    "ADD44": 3,
+    "ADD45": 3,
+    "ADD46": 3,
+    "ADD47": 3,
+    "ADD48": 3,
+    "ADD49": 1,
+    "ADD50": 1,
+    "ADD51": 1,
+    "ADD52": 1,
+    "ADD53": 1,
+    "ADD54": 1,
+    "ADD55": 1,
+    "ADD56": 1,
+    "ADD57": 1,
+    "ADD58": 1,
+    "ADD59": 1,
+    "ADD60": 1,
+    "ADD61": 1,
+    "ADD62": 1
+   },
+   "extraState": {
+    "itemsCount": 2813
+   },
+   "field_values": {}
+  },
+  "round_decimal": {
+   "count": 2354,
+   "programs": 310,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "number": 2354,
+    "decimal_digits": 2354
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "lists_getIndex": {
+   "count": 1934,
+   "programs": 352,
+   "in_enum": true,
+   "fields": {
+    "MODE": 1934,
+    "WHERE": 1934
+   },
+   "inputs": {
+    "VALUE": 1934,
+    "AT": 1249
+   },
+   "extraState": {
+    "statement": 228,
+    "at": 228,
+    "isStatement": 52
+   },
+   "field_values": {
+    "MODE": {
+     "GET": 1746,
+     "GET_REMOVE": 134,
+     "REMOVE": 54
+    },
+    "WHERE": {
+     "FROM_START": 1249,
+     "RANDOM": 549,
+     "FIRST": 83,
+     "LAST": 53
+    }
+   }
+  },
+  "line": {
+   "count": 1859,
+   "programs": 256,
+   "in_enum": true,
+   "fields": {
+    "type": 1859
+   },
+   "inputs": {
+    "pointA": 1859,
+    "pointB": 1859
+   },
+   "extraState": {},
+   "field_values": {
+    "type": {
+     "segment": 1230,
+     "arrow": 247,
+     "dotted": 231,
+     "line": 151
+    }
+   }
+  },
+  "question_open": {
+   "count": 1777,
+   "programs": 676,
+   "in_enum": true,
+   "fields": {
+    "type": 1777,
+    "moreOptions": 1777,
+    "mutation_shape": 1564,
+    "answer": 1564,
+    "default_feedbacks": 1564,
+    "raw_options": 1564,
+    "question": 1454
+   },
+   "inputs": {
+    "text": 1777,
+    "solution": 1777,
+    "feedbacks": 716
+   },
+   "extraState": {
+    "displaymoreOptions": 1777,
+    "statement": 1777
+   },
+   "field_values": {
+    "type": {
+     "integer": 991,
+     "decimal": 473,
+     "string": 136,
+     "expression": 98,
+     "fraction": 73,
+     "integerPositive": 6
+    },
+    "moreOptions": {
+     "true": 1468,
+     "false": 190,
+     "TRUE": 96,
+     "FALSE": 23
+    },
+    "mutation_shape": {
+     "value": 1029,
+     "statement": 535
+    },
+    "answer": {
+     "": 1468,
+     "reponse": 57,
+     "reponse2": 14,
+     "reponse3": 6,
+     "Antwort": 4,
+     "answer": 4,
+     "réponse": 2,
+     "reponse4": 2,
+     "jour d'aujourd'hui": 1,
+     "mois d'aujourd'hui": 1,
+     "année d'aujourd'hui": 1,
+     "jour-naissance-eleve": 1
+    },
+    "question": {
+     "": 1454
+    },
+    "default_feedbacks": {
+     "true": 841,
+     "false": 627,
+     "TRUE": 70,
+     "FALSE": 26
+    },
+    "raw_options": {
+     "{}": 941,
+     "{\"callbackSolution\":true}": 128,
+     "{\"length\":4}": 63,
+     "{\"length\":2}": 39,
+     "{\"length\":3}": 21,
+     "{\"callbackSolution\":true, \"length\":5}": 21,
+     "{\"length\":5}": 17,
+     "{\"length\":1,\"maxLength\":1}": 17,
+     "{\"length\":20,\"maxLength\":100}": 15,
+     "{\"length\":2,\"maxLength\":100}": 14,
+     "{\"length\":6,\"maxLength\":100}": 10,
+     "{\"callbackSolution\":true,\"length\":5}": 9
+    }
+   }
+  },
+  "set_size": {
+   "count": 1701,
+   "programs": 321,
+   "in_enum": true,
+   "fields": {
+    "size": 1701
+   },
+   "inputs": {
+    "item": 1694
+   },
+   "extraState": {},
+   "field_values": {
+    "size": {
+     "small": 795,
+     "x-large": 367,
+     "xxx-large": 274,
+     "medium": 265
+    }
+   }
+  },
+  "procedures_callnoreturn": {
+   "count": 1638,
+   "programs": 532,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "ARG0": 54,
+    "ARG1": 54,
+    "ARG2": 22,
+    "ARG3": 12
+   },
+   "extraState": {
+    "name": 1638,
+    "params": 55
+   },
+   "field_values": {}
+  },
+  "matrix_short_get": {
+   "count": 1535,
+   "programs": 109,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "MATRIX": 1535,
+    "I": 1535,
+    "J": 1535
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "math_single": {
+   "count": 1454,
+   "programs": 251,
+   "in_enum": true,
+   "fields": {
+    "OP": 1454
+   },
+   "inputs": {
+    "NUM": 1454
+   },
+   "extraState": {},
+   "field_values": {
+    "OP": {
+     "ABS": 1067,
+     "ROOT": 274,
+     "NEG": 73,
+     "LOG10": 38,
+     "LN": 1,
+     "EXP": 1
+    }
+   }
+  },
+  "math_round": {
+   "count": 1452,
+   "programs": 182,
+   "in_enum": true,
+   "fields": {
+    "OP": 1452
+   },
+   "inputs": {
+    "NUM": 1452
+   },
+   "extraState": {},
+   "field_values": {
+    "OP": {
+     "ROUND": 813,
+     "ROUNDDOWN": 358,
+     "ROUNDUP": 281
+    }
+   }
+  },
+  "controls_whileUntil": {
+   "count": 1430,
+   "programs": 464,
+   "in_enum": true,
+   "fields": {
+    "MODE": 1430
+   },
+   "inputs": {
+    "BOOL": 1430,
+    "DO": 1430
+   },
+   "extraState": {},
+   "field_values": {
+    "MODE": {
+     "WHILE": 1390,
+     "UNTIL": 40
+    }
+   }
+  },
+  "procedures_defnoreturn": {
+   "count": 1276,
+   "programs": 533,
+   "in_enum": true,
+   "fields": {
+    "NAME": 1276,
+    "g7bHy`(`=XQg~tk](D[g": 6,
+    "(8#$nc#;SjltYNylvn}R": 6,
+    "A-)=NN~PbClcpNa[x.K?": 6,
+    "bj#3(:2-W^?k$rO[S[uV": 6,
+    "J4M%IOYAdC12*a[~HpbW": 5,
+    "o@Yz;B2fsL$Y%h4aEXzH": 5,
+    "?Ja[!?{p3xtrYVP7dPzG": 5,
+    "D8~*bwp1mC8F?tG,+-Kw": 5,
+    "+E_=s/o5tRwl50m5*zp8": 5,
+    "p5%2^CyUpbujoWEvcJ*Q": 5,
+    "tq}C,x[xuSO}`{M6}F[f": 5,
+    "L6md:Z_6G:8^0RFLX+me": 3,
+    "Hh6O:LM~TUcbIJ*hpP}f": 3,
+    "cA;U%,q?NJ:[iisN{hp[": 3,
+    "vi$9a$jj|%mf0kN~My$%": 3,
+    "7.]Apvk|qssqmG}H~rP=": 3,
+    "RWz12Zb+d`1]Z_,z[2mr": 3,
+    "[*]h-m?M`_:Kktk`:).Z": 3,
+    "yW#E{,|0KE~.7L!rFwYi": 3,
+    "LxD%XQjPS9w|{E4X}8Z.": 1,
+    "]}E-|I5v!BQOzT:_8vNg": 1,
+    "49J%P5~Ngy^N-+fyA7xD": 1,
+    "OgS*k@eVN3U.xt1bl8i(": 1,
+    ",a3G]`)$qj7~uj=X;*ql": 1,
+    "3Rv0}udUCT74!mEO{kO:": 1,
+    "gN7h7-MfOrJpBt[}SqR}": 1,
+    "UJdi2QVH93ie(Sotf{G3": 1,
+    "3X2VYWhWC7*m@jR7fb]P": 1,
+    "AN+$_IgNj~_z(2+PKCXk": 1,
+    "eE.dSD;?+DtwEYi_(euC": 1,
+    "Km%ek`j#MIS9]iL5/KWW": 1,
+    "(,18KZ=+2y6zum!nQPEC": 1,
+    "$-4Y4ZAoi{~{JF[y.otd": 1,
+    "RQ_*ttkLMCHGGqKSOD[g": 1,
+    "^z0/NtY{(J5]FK^tWD86": 1,
+    "YlV?.mL2D+8()HD-,y`l": 1,
+    "qQ02TOTKkJ1@XPG$iY^e": 1,
+    "mkSk5,wQc~nA^#F(YT?o": 1,
+    "q*8OTPaCSD%cnpY%@air": 1,
+    "XGE.=0#hi_GfiH]k6wVV": 1,
+    "|S+!8]M@UP;[QJA.b4wy": 1
+   },
+   "inputs": {
+    "STACK": 1270
+   },
+   "extraState": {
+    "params": 43
+   },
+   "field_values": {
+    "NAME": {
+     "Déterminer les paramètres": 60,
+     "Correction": 59,
+     "Données": 25,
+     "Créer l'énoncé": 24,
+     "rétroaction": 22,
+     "Q1 rétroaction": 17,
+     "Créer le graphique": 15,
+     "Questions": 13,
+     "Déterminer le nombre à convertir": 13,
+     "Rétroaction": 12,
+     "Dessiner un carré": 12,
+     "Dessiner un rectangle": 12
+    }
+   }
+  },
+  "controls_for": {
+   "count": 1250,
+   "programs": 294,
+   "in_enum": true,
+   "fields": {
+    "VAR": 1250
+   },
+   "inputs": {
+    "FROM": 1250,
+    "TO": 1250,
+    "BY": 1250,
+    "DO": 1250
+   },
+   "extraState": {},
+   "field_values": {
+    "VAR": {
+     "": 1250
+    }
+   }
+  },
+  "info": {
+   "count": 1115,
+   "programs": 1115,
+   "in_enum": true,
+   "fields": {
+    "default_title": 1115,
+    "default_lang": 1115,
+    "default_description": 1115,
+    "max_attempts": 1115,
+    "default_feedback": 1115
+   },
+   "inputs": {},
+   "extraState": {},
+   "field_values": {
+    "default_title": {
+     "Automatismes": 11,
+     "Tables de multiplication": 10,
+     "Écrire un nombre en lettres": 6,
+     "Équations du premier degré": 6,
+     "Tables d'addition": 6,
+     "Basique": 6,
+     "Comparer deux nombres entiers": 6,
+     "Calcul de puissances": 6,
+     "Vrai ou faux": 5,
+     "Doubles et moitiés": 5,
+     "Multiplication": 5,
+     "Classer des nombres entiers": 5
+    },
+    "default_lang": {
+     "fr": 1047,
+     "en": 48,
+     "de": 13,
+     "it": 6,
+     "ar": 1
+    },
+    "max_attempts": {
+     "1": 617,
+     "2": 259,
+     "3": 202,
+     "4": 32,
+     "5": 3,
+     "7": 1,
+     "0": 1
+    },
+    "default_feedback": {
+     "false": 1015,
+     "FALSE": 97,
+     "true": 3
+    },
+    "default_description": {
+     "": 514,
+     "Geoplan": 5,
+     "Constellations": 5,
+     "Coefficients entiers ou décimaux": 4,
+     "Nombres inférieurs à 10 000": 4,
+     ".": 4,
+     "Nombres inférieurs à 10000": 3,
+     "Trouver les diviseurs d'un nombre": 2,
+     "Comprendre un tableau d'amortissement": 2,
+     "Coefficients fractionnaires": 2,
+     "Addition posée (sans retenue)": 2,
+     "Addition posée (avec retenues)": 2
+    }
+   }
+  },
+  "special_character": {
+   "count": 1108,
+   "programs": 301,
+   "in_enum": true,
+   "fields": {
+    "character": 1108
+   },
+   "inputs": {},
+   "extraState": {},
+   "field_values": {
+    "character": {
+     "br": 1087,
+     "hr": 21
+    }
+   }
+  },
+  "text_multiline": {
+   "count": 1064,
+   "programs": 122,
+   "in_enum": true,
+   "fields": {
+    "TEXT": 1064
+   },
+   "inputs": {},
+   "extraState": {},
+   "field_values": {
+    "TEXT": {
+     "\\quad": 117,
+     "f": 104,
+     "\\xymatrix @R=0pc {\\\\ f \\\\}": 79,
+     "x": 58,
+     "\\qquad \\qquad": 22,
+     "A": 22,
+     "y": 18,
+     "\\qquad": 15,
+     "\\vec{u}": 14,
+     "(\\Delta)": 14,
+     "\\\\\n&&&&": 12,
+     "\\\\\n&&&&&&": 12
+    }
+   }
+  },
+  "is_solution_found": {
+   "count": 946,
+   "programs": 526,
+   "in_enum": true,
+   "fields": {
+    "solution_found_type": 946
+   },
+   "inputs": {},
+   "extraState": {},
+   "field_values": {
+    "solution_found_type": {
+     "isSolutionQuestionFound": 776,
+     "areAllSolutionsActivityFound": 170
+    }
+   }
+  },
+  "logic_negate": {
+   "count": 939,
+   "programs": 387,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "BOOL": 938
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "matrix_short_set": {
+   "count": 844,
+   "programs": 60,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "MATRIX": 844,
+    "I": 844,
+    "J": 844,
+    "VALUE": 844
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "polygon": {
+   "count": 822,
+   "programs": 132,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "vertices": 822
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "current_attempt": {
+   "count": 787,
+   "programs": 327,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {},
+   "extraState": {},
+   "field_values": {}
+  },
+  "lists_setIndex": {
+   "count": 769,
+   "programs": 187,
+   "in_enum": true,
+   "fields": {
+    "MODE": 769,
+    "WHERE": 769
+   },
+   "inputs": {
+    "LIST": 769,
+    "TO": 769,
+    "AT": 194
+   },
+   "extraState": {
+    "at": 18
+   },
+   "field_values": {
+    "MODE": {
+     "INSERT": 656,
+     "SET": 113
+    },
+    "WHERE": {
+     "LAST": 481,
+     "FROM_START": 194,
+     "FIRST": 94
+    }
+   }
+  },
+  "math_trig": {
+   "count": 766,
+   "programs": 59,
+   "in_enum": true,
+   "fields": {
+    "OP": 766
+   },
+   "inputs": {
+    "NUM": 766
+   },
+   "extraState": {},
+   "field_values": {
+    "OP": {
+     "SIN": 333,
+     "COS": 332,
+     "ATAN": 43,
+     "TAN": 30,
+     "ASIN": 28
+    }
+   }
+  },
+  "board_geometric": {
+   "count": 739,
+   "programs": 364,
+   "in_enum": true,
+   "fields": {
+    "axes_type": 739,
+    "grid": 739,
+    "showNavigation": 739
+   },
+   "inputs": {
+    "xmin": 739,
+    "xmax": 739,
+    "ymin": 739,
+    "ymax": 739
+   },
+   "extraState": {},
+   "field_values": {
+    "axes_type": {
+     "none": 405,
+     "xy": 320,
+     "x": 13,
+     "y": 1
+    },
+    "grid": {
+     "true": 381,
+     "false": 304,
+     "TRUE": 27,
+     "FALSE": 27
+    },
+    "showNavigation": {
+     "false": 660,
+     "FALSE": 41,
+     "true": 25,
+     "TRUE": 13
+    }
+   }
+  },
+  "expression": {
+   "count": 720,
+   "programs": 105,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "expression": 720
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "procedures_callreturn": {
+   "count": 685,
+   "programs": 132,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "ARG0": 191,
+    "ARG1": 76,
+    "ARG2": 41,
+    "ARG3": 10,
+    "ARG4": 2
+   },
+   "extraState": {
+    "name": 685,
+    "params": 194
+   },
+   "field_values": {}
+  },
+  "board_text": {
+   "count": 678,
+   "programs": 146,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "text": 678,
+    "point": 678
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "lists_length": {
+   "count": 659,
+   "programs": 103,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "VALUE": 659
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "max_attempts": {
+   "count": 588,
+   "programs": 316,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {},
+   "extraState": {},
+   "field_values": {}
+  },
+  "split_number": {
+   "count": 571,
+   "programs": 60,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "number": 571
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "fraction": {
+   "count": 555,
+   "programs": 146,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "dividend": 555,
+    "divisor": 555
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "set_attribute": {
+   "count": 506,
+   "programs": 64,
+   "in_enum": true,
+   "fields": {
+    "json": 506
+   },
+   "inputs": {
+    "block": 505
+   },
+   "extraState": {},
+   "field_values": {
+    "json": {
+     "{\"fillColor\":\"#000000\"}": 66,
+     "{\"fillColor\":\"#FF0000\"}": 59,
+     "{\"fillColor\":\"#0000FF\"}": 40,
+     "{\"fillColor\":\"#52BE80\"}": 40,
+     "{\"fillColor\":\"#FF5733\"}": 36,
+     "{\"fillColor\":\"#FFFF00\"}": 34,
+     "{\"fillColor\":\"#800000\"}": 30,
+     "{\"fillColor\":\"#FA58F4\"}": 30,
+     "{\"fillColor\":\"#C0C0C0\"}": 25,
+     "{\"fillColor\":\"#008000\"}": 20,
+     "{\"fillColor\":\"#FF8888\"}": 16,
+     "{\"fillColor\":\"#00FF00\"}": 12
+    }
+   }
+  },
+  "random_message": {
+   "count": 462,
+   "programs": 166,
+   "in_enum": true,
+   "fields": {
+    "message": 462
+   },
+   "inputs": {},
+   "extraState": {},
+   "field_values": {
+    "message": {
+     "defaultMessageSolutionFound": 172,
+     "defaultMessageSolutionNotFound": 151
+    }
+   }
+  },
+  "markdown": {
+   "count": 448,
+   "programs": 145,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "markdown": 448
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "data_table": {
+   "count": 430,
+   "programs": 138,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "LINE_1": 430,
+    "LINE_2": 398,
+    "LINE_3": 204,
+    "LINE_4": 144,
+    "LINE_5": 96,
+    "LINE_6": 78,
+    "LINE_7": 18,
+    "LINE_8": 16,
+    "LINE_9": 10,
+    "LINE_10": 10,
+    "LINE_11": 9,
+    "LINE_12": 9,
+    "LINE_13": 8,
+    "LINE_14": 8,
+    "LINE_15": 8,
+    "LINE_16": 8,
+    "LINE_17": 8,
+    "LINE_18": 8,
+    "LINE_19": 8,
+    "LINE_20": 8,
+    "LINE_21": 7,
+    "LINE_22": 7,
+    "LINE_23": 7,
+    "LINE_24": 7,
+    "LINE_25": 7,
+    "LINE_26": 7,
+    "LINE_27": 5,
+    "LINE_28": 4,
+    "LINE_29": 4,
+    "LINE_30": 1,
+    "LINE_31": 1,
+    "LINE_32": 1,
+    "LINE_33": 1,
+    "LINE_34": 1,
+    "LINE_35": 1,
+    "LINE_36": 1,
+    "LINE_37": 1
+   },
+   "extraState": {
+    "itemCount": 420,
+    "items": 10
+   },
+   "field_values": {}
+  },
+  "logic_boolean": {
+   "count": 420,
+   "programs": 92,
+   "in_enum": true,
+   "fields": {
+    "BOOL": 420
+   },
+   "inputs": {},
+   "extraState": {},
+   "field_values": {
+    "BOOL": {
+     "TRUE": 278,
+     "FALSE": 142
+    }
+   }
+  },
+  "evaluate": {
+   "count": 407,
+   "programs": 55,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "expression": 407,
+    "variable": 407,
+    "value": 407
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "question_multiple_choices": {
+   "count": 403,
+   "programs": 274,
+   "in_enum": true,
+   "fields": {
+    "type": 403,
+    "moreOptions": 403,
+    "mutation_shape": 267,
+    "answer": 267,
+    "default_feedbacks": 267,
+    "raw_options": 265,
+    "question": 249
+   },
+   "inputs": {
+    "text": 403,
+    "solution": 403,
+    "proposals": 387,
+    "nb_proposals_to_display": 267,
+    "feedbacks": 116
+   },
+   "extraState": {
+    "displaymoreOptions": 403,
+    "statement": 403
+   },
+   "field_values": {
+    "type": {
+     "unique": 374,
+     "multiple": 29
+    },
+    "moreOptions": {
+     "true": 251,
+     "false": 134,
+     "TRUE": 16,
+     "FALSE": 2
+    },
+    "mutation_shape": {
+     "statement": 157,
+     "value": 110
+    },
+    "answer": {
+     "": 251,
+     "reponse": 11,
+     "réponse": 4,
+     "answer": 1
+    },
+    "question": {
+     "": 249
+    },
+    "default_feedbacks": {
+     "true": 166,
+     "false": 85,
+     "TRUE": 12,
+     "FALSE": 4
+    },
+    "raw_options": {
+     "{}": 244,
+     "{\"feedbackColor\" :  false}": 21
+    }
+   }
+  },
+  "euclidean_distance": {
+   "count": 375,
+   "programs": 16,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "x1": 375,
+    "y1": 375,
+    "x2": 375,
+    "y2": 375
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "lists_sort": {
+   "count": 369,
+   "programs": 81,
+   "in_enum": true,
+   "fields": {
+    "TYPE": 369,
+    "DIRECTION": 369
+   },
+   "inputs": {
+    "LIST": 369
+   },
+   "extraState": {},
+   "field_values": {
+    "TYPE": {
+     "NUMERIC": 369
+    },
+    "DIRECTION": {
+     "1": 347,
+     "-1": 22
+    }
+   }
+  },
+  "lists_indexOf": {
+   "count": 363,
+   "programs": 45,
+   "in_enum": true,
+   "fields": {
+    "END": 363
+   },
+   "inputs": {
+    "VALUE": 363,
+    "FIND": 363
+   },
+   "extraState": {},
+   "field_values": {
+    "END": {
+     "FIRST": 363
+    }
+   }
+  },
+  "statement": {
+   "count": 353,
+   "programs": 290,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "statements": 353
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "versions": {
+   "count": 344,
+   "programs": 344,
+   "in_enum": true,
+   "fields": {
+    "DEFAULT": 344,
+    "LABEL_1": 344,
+    "LABEL_2": 343,
+    "LABEL_3": 218,
+    "LABEL_4": 7,
+    "LABEL_5": 1
+   },
+   "inputs": {
+    "DO_1": 344,
+    "DO_2": 343,
+    "DO_3": 218,
+    "DO_4": 7,
+    "DO_5": 1
+   },
+   "extraState": {
+    "itemCount": 344
+   },
+   "field_values": {
+    "DEFAULT": {
+     "0": 304,
+     "-1": 18,
+     "2": 10,
+     "3": 7,
+     "1": 4,
+     "4": 1
+    },
+    "LABEL_1": {
+     "☆ axe vertical ou horizontal": 13,
+     "☆ nombres entiers": 9,
+     "☆ sans retenue": 7,
+     "☆ QCM": 7,
+     "☆ facteur 2, 5, 10": 6,
+     "☆ 1 décimales": 6,
+     "☆ données graphiques (nombres entiers)": 5,
+     "☆ coefficients entiers naturels": 4,
+     "☆ n<10 000": 4,
+     "☆ longueurs à 1 chiffre": 4,
+     "☆ à partir du rayon (énoncé graphique)": 4,
+     "☆ (x*y)^n ou (x/y)^n": 4
+    },
+    "LABEL_3": {
+     "☆☆☆ axe quelconque": 10,
+     "☆☆☆ nombres décimaux": 8,
+     "☆☆☆ facteur 7, 8, 9, 11": 6,
+     "☆☆☆ tables de 6, 7 et 8": 6,
+     "☆☆☆ données graphiques ou textuelles": 4,
+     "☆☆☆ énoncé textuel": 4,
+     "☆☆☆ composition de ces formules": 4,
+     "☆☆☆ taux décimal": 3,
+     "☆☆☆ tableau d'effectifs": 3,
+     "☆☆☆ tableau 4 x 2, 4 x 3": 3,
+     "☆☆☆ coefficients décimaux": 3,
+     "☆☆☆ 1 000 000 000<n<1 000 000 000 000": 3
+    },
+    "LABEL_2": {
+     "☆☆ axe à 45°": 10,
+     "☆☆ 2 décimales": 9,
+     "☆☆ nombres décimaux": 7,
+     "☆☆ Question \"Ordonner\"": 7,
+     "☆☆ facteur 3, 4, 6": 6,
+     "☆☆ tables de 4, 5 et 9": 6,
+     "☆☆ avec retenue": 5,
+     "☆☆ Question ouverte": 5,
+     "☆☆ nombres entiers": 4,
+     "☆☆ coefficients entiers relatifs": 4,
+     "☆☆ 10 000<n<1 000 000": 4,
+     "☆☆ longueurs à 2 chiffres": 4
+    },
+    "LABEL_4": {
+     "☆☆☆☆ somme de fractions décimales": 2,
+     "☆☆☆☆ division": 1,
+     "☆☆☆☆ fractions": 1,
+     "cercle déc": 1,
+     "Somme3MêmePoint": 1,
+     "planetes": 1
+    },
+    "LABEL_5": {
+     "courbe": 1
+    }
+   }
+  },
+  "math_modulo": {
+   "count": 322,
+   "programs": 109,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "DIVIDEND": 322,
+    "DIVISOR": 322
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "integer_decimal_part": {
+   "count": 303,
+   "programs": 51,
+   "in_enum": true,
+   "fields": {
+    "type": 303
+   },
+   "inputs": {
+    "number": 303
+   },
+   "extraState": {},
+   "field_values": {
+    "type": {
+     "integer_part": 204,
+     "decimal_part": 99
+    }
+   }
+  },
+  "simplify_fraction": {
+   "count": 298,
+   "programs": 51,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "fraction": 298
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "context_question": {
+   "count": 241,
+   "programs": 157,
+   "in_enum": true,
+   "fields": {
+    "question_variable": 241
+   },
+   "inputs": {
+    "statements": 241
+   },
+   "extraState": {},
+   "field_values": {
+    "question_variable": {
+     "": 241
+    }
+   }
+  },
+  "procedures_defreturn": {
+   "count": 240,
+   "programs": 135,
+   "in_enum": true,
+   "fields": {
+    "NAME": 240,
+    "fLC5$Y011`w3,R$Y|.Y2": 7,
+    "c+{8Um?p.)P~w3MU2u2H": 7,
+    "y.c#s[pcy}Djg|yKdfiW": 7,
+    "yh;aOzR_P/`TJ:a]rb86": 6,
+    "QwL?Bn=4r{4vdrz`0X[,": 6,
+    "ieZ)jppy,TVtlK^pLN!3": 6,
+    "!1ZeEr-f0HABWROp{:+9": 6,
+    "l+1YtiI3_FS,#s=Mh+md": 6,
+    "ZrGfC-q.Pxwg;,I;4BYn": 6,
+    "l96+2Y6K`-j`ee39[/lK": 6,
+    "k):~t?flFhu9nonj1V=}": 6,
+    "-C33`_0;X[PFA?Sm-/kj": 6,
+    "pXfeNvqe%3$r0+l@{RW.": 5,
+    "j^yib1JHjiQE=ZDLJN#m": 3,
+    "te4(zG+rO-pz3gZ;Q:Iq": 3,
+    "i|5_Adj#Vm(I9^exWPrf": 3,
+    "[Xob)Cdid_6jYQ/Gvul^": 3,
+    "gidgfV?y%qk;oBkBaG$2": 3,
+    "Fjiue~Mj[/a8pm6)G,=8": 3,
+    "Oo4^3g|a0xy0o~S!?^Ll": 3,
+    "WrEv7dqkx~#UjX{,+K$#": 3,
+    "DlE2b(B-PMQvV,a0/`%x": 3,
+    "[dCz}{y=XZIenZ`3F4GS": 3,
+    "s7Gtlsn,PiDkVRtwS~fs": 3,
+    "DPs(YsDw2!A9EB,39*5%": 3,
+    "MN^7(6TTQt3(L8bAL,04": 3,
+    "E]:?3/nDD%Hh):MsC%I,": 3,
+    "xC|RFFOBm{7$]@x}yn7s": 2,
+    ":K[A;IKH#Wq3@*D?VHSf": 2,
+    "~7Z]J`QaI@(.$)u3SF;Z": 2,
+    ",gpS(i_(bRFbm1[isHGy": 1,
+    "H)d,[(Vw;9|gNjq9l:%;": 1,
+    "Gm_LS7ej~Wkcx2Utd46q": 1,
+    "1P_QWLt9(k{7H6OaIv{7": 1,
+    "Az/P!!f{G9P!dc[/U@ha": 1,
+    "$=|kgDG=OOrXV^`a~p{;": 1,
+    "QA;#^Rih5=2?g}6QDTv:": 1,
+    "EmK9fSw6L/V_r102yb_?": 1,
+    "M}]28f/wRPTA.ye@|RQA": 1,
+    "@*jQo%P=?~V-At/mzk8K": 1,
+    "aP={n3GLLPC7}?EpK$s$": 1,
+    "dX_j}(IM+q[!|Bl*4t6J": 1,
+    "`60Zi#h_x/a.T)G~kZwy": 1,
+    "nKo:ZVU|{tHDg6!Xo!=j": 1,
+    "*bCq+xHN/E6G859X%Y~P": 1,
+    "+NjKd0qu;__6F=t*m{cA": 1,
+    "/_hqIN(v.A9k@w:6;9iH": 1,
+    "lwYkyU64XFvt|$B[H[/#": 1,
+    "1lrCSN-wz*Q%vGD1#($J": 1,
+    "ODjl=X#NtBL7R0NF),eE": 1,
+    "|SSU7rkDizh85jK[5nAP": 1,
+    "5!(.6Edr:ymH.I!u?CuA": 1,
+    "~%(kDO2ta~2?lQI83rm!": 1
+   },
+   "inputs": {
+    "STACK": 240,
+    "RETURN": 239
+   },
+   "extraState": {
+    "params": 74
+   },
+   "field_values": {
+    "NAME": {
+     "Dessiner la figure": 16,
+     "Convertir en lettres": 14,
+     "dessine horloge": 11,
+     "pavé": 9,
+     "cylindre": 9,
+     "Choix polynome degré 2": 9,
+     "Vérification": 9,
+     "cube": 8,
+     "CheckAnswerHoursAndMinutes": 7,
+     "Tableau des dérivées": 6,
+     "Méthode de calcul de la dérivée": 6,
+     "Polynome avec couleurs": 6
+    }
+   }
+  },
+  "table_column": {
+   "count": 212,
+   "programs": 42,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "col_1": 212,
+    "col_2": 212,
+    "col_3": 191,
+    "col_4": 164,
+    "col_5": 117,
+    "col_6": 117,
+    "col_7": 91,
+    "col_8": 23,
+    "col_9": 13,
+    "col_10": 10
+   },
+   "extraState": {
+    "itemsCount": 212
+   },
+   "field_values": {}
+  },
+  "circle": {
+   "count": 195,
+   "programs": 68,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "point": 195,
+    "radius": 195
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "binomial_1": {
+   "count": 192,
+   "programs": 8,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "k": 192,
+    "n": 192,
+    "p": 192
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "math_random_int": {
+   "count": 191,
+   "programs": 46,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "FROM": 191,
+    "TO": 191
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "poisson_1": {
+   "count": 190,
+   "programs": 8,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "k": 190,
+    "lambda": 190
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "polynom_with_coefficients": {
+   "count": 188,
+   "programs": 58,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "list": 188
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "delete_element_from_list": {
+   "count": 184,
+   "programs": 86,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "Var": 184,
+    "LIST": 184
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "fraction_numerator_denominator": {
+   "count": 183,
+   "programs": 28,
+   "in_enum": true,
+   "fields": {
+    "type": 183
+   },
+   "inputs": {
+    "fraction": 183
+   },
+   "extraState": {},
+   "field_values": {
+    "type": {
+     "denominator": 118,
+     "numerator": 65
+    }
+   }
+  },
+  "lists_split": {
+   "count": 174,
+   "programs": 61,
+   "in_enum": true,
+   "fields": {
+    "MODE": 174
+   },
+   "inputs": {
+    "INPUT": 174,
+    "DELIM": 174
+   },
+   "extraState": {
+    "mode": 9
+   },
+   "field_values": {
+    "MODE": {
+     "JOIN": 117,
+     "SPLIT": 57
+    }
+   }
+  },
+  "feedback_global": {
+   "count": 171,
+   "programs": 156,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "feedbacks": 171
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "figure_area": {
+   "count": 158,
+   "programs": 20,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "figure": 158
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "shuffle_list": {
+   "count": 157,
+   "programs": 98,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "LIST": 157
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "math_on_list": {
+   "count": 152,
+   "programs": 59,
+   "in_enum": true,
+   "fields": {
+    "OP": 152
+   },
+   "inputs": {
+    "LIST": 152
+   },
+   "extraState": {},
+   "field_values": {
+    "OP": {
+     "SUM": 89,
+     "MAX": 29,
+     "MIN": 18,
+     "AVERAGE": 11,
+     "MEDIAN": 3,
+     "STD_DEV": 2
+    }
+   }
+  },
+  "controls_repeat_ext": {
+   "count": 150,
+   "programs": 83,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "TIMES": 150,
+    "DO": 150
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "graph_of_function": {
+   "count": 143,
+   "programs": 64,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "expression": 143
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "coefficients": {
+   "count": 141,
+   "programs": 24,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "expression": 141,
+    "variable": 141
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "question_figure": {
+   "count": 137,
+   "programs": 124,
+   "in_enum": true,
+   "fields": {
+    "board_variable": 137,
+    "moreOptions": 137,
+    "default_feedbacks": 129,
+    "raw_options": 128,
+    "question": 105
+   },
+   "inputs": {
+    "solution_condition": 136,
+    "feedbacks": 120
+   },
+   "extraState": {
+    "displaymoreOptions": 137
+   },
+   "field_values": {
+    "board_variable": {
+     "": 119,
+     "graph": 17,
+     "graph1": 1
+    },
+    "moreOptions": {
+     "true": 111,
+     "TRUE": 18,
+     "false": 8
+    },
+    "default_feedbacks": {
+     "true": 78,
+     "false": 33,
+     "TRUE": 12,
+     "FALSE": 6
+    },
+    "question": {
+     "": 105
+    },
+    "raw_options": {
+     "{}": 126,
+     "{ \"callbackSolution\" : true}": 2
+    }
+   }
+  },
+  "gcd_lcm": {
+   "count": 133,
+   "programs": 48,
+   "in_enum": true,
+   "fields": {
+    "OP": 133
+   },
+   "inputs": {
+    "LIST": 133
+   },
+   "extraState": {},
+   "field_values": {
+    "OP": {
+     "GCD": 94,
+     "LCM": 39
+    }
+   }
+  },
+  "feedback_message_type": {
+   "count": 127,
+   "programs": 127,
+   "in_enum": true,
+   "fields": {
+    "type": 127
+   },
+   "inputs": {},
+   "extraState": {},
+   "field_values": {
+    "type": {
+     "kids": 127
+    }
+   }
+  },
+  "list_short_set": {
+   "count": 111,
+   "programs": 44,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "LIST": 111,
+    "INDEX": 111,
+    "VALUE": 111
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "random_list": {
+   "count": 110,
+   "programs": 69,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "length": 110,
+    "callback": 110
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "selected_verb": {
+   "count": 100,
+   "programs": 10,
+   "in_enum": true,
+   "fields": {
+    "dictionary": 100
+   },
+   "inputs": {
+    "verb": 100
+   },
+   "extraState": {},
+   "field_values": {
+    "dictionary": {
+     "": 100
+    }
+   }
+  },
+  "integer_part": {
+   "count": 93,
+   "programs": 18,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "number": 93
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "question_true_false": {
+   "count": 84,
+   "programs": 46,
+   "in_enum": true,
+   "fields": {
+    "moreOptions": 84,
+    "mutation_shape": 43,
+    "answer": 43,
+    "default_feedbacks": 43,
+    "raw_options": 43,
+    "question": 42
+   },
+   "inputs": {
+    "text": 84,
+    "solution": 84,
+    "feedbacks": 38
+   },
+   "extraState": {
+    "displaymoreOptions": 84,
+    "statement": 84
+   },
+   "field_values": {
+    "moreOptions": {
+     "true": 42,
+     "false": 36,
+     "FALSE": 5,
+     "TRUE": 1
+    },
+    "mutation_shape": {
+     "statement": 42,
+     "value": 1
+    },
+    "answer": {
+     "": 42,
+     "reponse": 1
+    },
+    "default_feedbacks": {
+     "true": 41,
+     "TRUE": 1,
+     "false": 1
+    },
+    "raw_options": {
+     "{}": 43
+    },
+    "question": {
+     "": 42
+    }
+   }
+  },
+  "sector": {
+   "count": 84,
+   "programs": 15,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "point1": 84,
+    "point2": 84,
+    "point3": 84
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "matrix_3_parameters": {
+   "count": 84,
+   "programs": 58,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "lines": 84,
+    "columns": 84,
+    "callback": 84
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "conjugate_verb": {
+   "count": 79,
+   "programs": 9,
+   "in_enum": true,
+   "fields": {
+    "modTense": 79,
+    "dictionary": 79
+   },
+   "inputs": {
+    "verb": 79
+   },
+   "extraState": {},
+   "field_values": {
+    "modTense": {
+     "indicatif_present": 13,
+     "indicatif_futurSimple": 12,
+     "indicatif_imparfait": 12,
+     "indicatif_passeCompose": 12,
+     "indicatif_passeSimple": 10,
+     "indicatif_plusQueParfait": 10,
+     "conditionnel_present": 10
+    },
+    "dictionary": {
+     "": 79
+    }
+   }
+  },
+  "text_indexOf": {
+   "count": 72,
+   "programs": 31,
+   "in_enum": true,
+   "fields": {
+    "END": 72
+   },
+   "inputs": {
+    "FIND": 72,
+    "VALUE": 72
+   },
+   "extraState": {},
+   "field_values": {
+    "END": {
+     "FIRST": 56,
+     "LAST": 16
+    }
+   }
+  },
+  "image": {
+   "count": 67,
+   "programs": 15,
+   "in_enum": true,
+   "fields": {
+    "moreOptions": 67
+   },
+   "inputs": {
+    "url": 67,
+    "image_width": 64,
+    "image_height": 64,
+    "figure_caption": 54
+   },
+   "extraState": {
+    "displaymoreOptions": 67
+   },
+   "field_values": {
+    "moreOptions": {
+     "true": 54,
+     "TRUE": 10,
+     "FALSE": 2,
+     "false": 1
+    }
+   }
+  },
+  "table_matrix": {
+   "count": 61,
+   "programs": 21,
+   "in_enum": true,
+   "fields": {
+    "type": 61
+   },
+   "inputs": {
+    "LINE_1": 61,
+    "LINE_2": 61,
+    "LINE_3": 4,
+    "LINE_4": 4,
+    "LINE_5": 2,
+    "LINE_6": 2
+   },
+   "extraState": {
+    "itemsCount": 61
+   },
+   "field_values": {
+    "type": {
+     "table": 61
+    }
+   }
+  },
+  "text_changeCase": {
+   "count": 60,
+   "programs": 28,
+   "in_enum": true,
+   "fields": {
+    "CASE": 60
+   },
+   "inputs": {
+    "TEXT": 60
+   },
+   "extraState": {},
+   "field_values": {
+    "CASE": {
+     "LOWERCASE": 34,
+     "UPPERCASE": 15,
+     "FIRSTLETTERCASE": 11
+    }
+   }
+  },
+  "matrix": {
+   "count": 58,
+   "programs": 14,
+   "in_enum": true,
+   "fields": {
+    "typeOf": 58
+   },
+   "inputs": {
+    "input": 58
+   },
+   "extraState": {},
+   "field_values": {
+    "typeOf": {
+     "text": 53,
+     "list": 5
+    }
+   }
+  },
+  "derivative": {
+   "count": 58,
+   "programs": 20,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "expression": 58,
+    "variable": 58
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "question_associate": {
+   "count": 52,
+   "programs": 52,
+   "in_enum": true,
+   "fields": {
+    "moreOptions": 52,
+    "answer": 17,
+    "question": 17,
+    "default_feedbacks": 17,
+    "raw_options": 17
+   },
+   "inputs": {
+    "solution1": 52,
+    "solution2": 52,
+    "text": 44,
+    "nb_proposals_to_display": 17,
+    "feedbacks": 1
+   },
+   "extraState": {
+    "displaymoreOptions": 52
+   },
+   "field_values": {
+    "moreOptions": {
+     "false": 33,
+     "true": 17,
+     "FALSE": 2
+    },
+    "answer": {
+     "": 17
+    },
+    "question": {
+     "": 17
+    },
+    "default_feedbacks": {
+     "true": 17
+    },
+    "raw_options": {
+     "{}": 17
+    }
+   }
+  },
+  "geometric_1": {
+   "count": 52,
+   "programs": 9,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "k": 52,
+    "p": 52
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "video": {
+   "count": 49,
+   "programs": 23,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "embed_code": 49
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "math_change": {
+   "count": 47,
+   "programs": 24,
+   "in_enum": true,
+   "fields": {
+    "VAR": 47
+   },
+   "inputs": {
+    "DELTA": 47
+   },
+   "extraState": {},
+   "field_values": {
+    "VAR": {
+     "": 47
+    }
+   }
+  },
+  "set_colour_random": {
+   "count": 46,
+   "programs": 12,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "item": 44
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "expand_algebrite": {
+   "count": 45,
+   "programs": 12,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "expression": 45
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "erase_in_board": {
+   "count": 44,
+   "programs": 18,
+   "in_enum": true,
+   "fields": {
+    "figure_variable": 44,
+    "board_variable": 44
+   },
+   "inputs": {},
+   "extraState": {},
+   "field_values": {
+    "figure_variable": {
+     "": 42,
+     "pointA": 1,
+     "pointB": 1
+    },
+    "board_variable": {
+     "": 42,
+     "graph": 2
+    }
+   }
+  },
+  "delete_duplicates": {
+   "count": 43,
+   "programs": 41,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "LIST": 43
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "math_constant": {
+   "count": 41,
+   "programs": 10,
+   "in_enum": true,
+   "fields": {
+    "CONSTANT": 41
+   },
+   "inputs": {},
+   "extraState": {},
+   "field_values": {
+    "CONSTANT": {
+     "PI": 41
+    }
+   }
+  },
+  "degree": {
+   "count": 38,
+   "programs": 15,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "expression": 38,
+    "variable": 38
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "text_replace": {
+   "count": 38,
+   "programs": 11,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "FROM": 38,
+    "TO": 38,
+    "TEXT": 38
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "text_length": {
+   "count": 37,
+   "programs": 21,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "VALUE": 37
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "uniform_4": {
+   "count": 37,
+   "programs": 7,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "a": 37,
+    "b": 37
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "expo_4": {
+   "count": 37,
+   "programs": 7,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "lambda": 37
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "normal_4": {
+   "count": 37,
+   "programs": 7,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "mean": 37,
+    "std": 37
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "count_same_element_list": {
+   "count": 36,
+   "programs": 17,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "ELEMENT": 36,
+    "LIST": 36
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "lists_reverse": {
+   "count": 36,
+   "programs": 10,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "LIST": 36
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "lists_repeat": {
+   "count": 34,
+   "programs": 14,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "ITEM": 34,
+    "NUM": 34
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "set_analytic": {
+   "count": 33,
+   "programs": 10,
+   "in_enum": true,
+   "fields": {
+    "key": 33
+   },
+   "inputs": {
+    "object": 33
+   },
+   "extraState": {},
+   "field_values": {
+    "key": {
+     "Q1:": 8,
+     "énoncé": 8,
+     "réponse": 8,
+     "Q2:": 4,
+     "Q3:": 4,
+     "activité": 1
+    }
+   }
+  },
+  "rectangle": {
+   "count": 30,
+   "programs": 15,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "length": 30,
+    "width": 30
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "text_charAt": {
+   "count": 28,
+   "programs": 20,
+   "in_enum": true,
+   "fields": {
+    "WHERE": 28
+   },
+   "inputs": {
+    "VALUE": 28,
+    "AT": 22
+   },
+   "extraState": {
+    "at": 1
+   },
+   "field_values": {
+    "WHERE": {
+     "FROM_START": 22,
+     "FIRST": 6
+    }
+   }
+  },
+  "dictionary": {
+   "count": 27,
+   "programs": 11,
+   "in_enum": true,
+   "fields": {
+    "type": 27
+   },
+   "inputs": {},
+   "extraState": {},
+   "field_values": {
+    "type": {
+     "conjugations": 13,
+     "verbs": 11,
+     "adjectives": 1,
+     "determinants": 1,
+     "names": 1
+    }
+   }
+  },
+  "random_polynom": {
+   "count": 25,
+   "programs": 24,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "degree": 25,
+    "callback": 25
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "euclidean_distance_twopoints": {
+   "count": 25,
+   "programs": 6,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "pointA": 25,
+    "pointB": 25
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "question_reorder": {
+   "count": 23,
+   "programs": 23,
+   "in_enum": true,
+   "fields": {
+    "moreOptions": 23,
+    "answer": 23,
+    "default_feedbacks": 23,
+    "raw_options": 23,
+    "question": 22
+   },
+   "inputs": {
+    "solution": 23,
+    "nb_proposals_to_display": 23,
+    "text": 19
+   },
+   "extraState": {
+    "displaymoreOptions": 23
+   },
+   "field_values": {
+    "moreOptions": {
+     "true": 22,
+     "TRUE": 1
+    },
+    "answer": {
+     "": 22,
+     "réponse": 1
+    },
+    "question": {
+     "": 22
+    },
+    "default_feedbacks": {
+     "true": 22,
+     "TRUE": 1
+    },
+    "raw_options": {
+     "{}": 22,
+     "{\"direction\":\"horizontal\"}": 1
+    }
+   }
+  },
+  "random_verb": {
+   "count": 21,
+   "programs": 11,
+   "in_enum": true,
+   "fields": {
+    "dictionary": 21,
+    "group": 21
+   },
+   "inputs": {},
+   "extraState": {},
+   "field_values": {
+    "dictionary": {
+     "": 21
+    },
+    "group": {
+     "1": 10,
+     "2": 10,
+     "random": 1
+    }
+   }
+  },
+  "clean_activity": {
+   "count": 18,
+   "programs": 4,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {},
+   "extraState": {},
+   "field_values": {}
+  },
+  "text_getSubstring": {
+   "count": 18,
+   "programs": 9,
+   "in_enum": true,
+   "fields": {
+    "WHERE1": 18,
+    "WHERE2": 18
+   },
+   "inputs": {
+    "STRING": 18,
+    "AT1": 11,
+    "AT2": 11
+   },
+   "extraState": {},
+   "field_values": {
+    "WHERE1": {
+     "FIRST": 7,
+     "FROM_END": 6,
+     "FROM_START": 5
+    },
+    "WHERE2": {
+     "LAST": 7,
+     "FROM_END": 6,
+     "FROM_START": 5
+    }
+   }
+  },
+  "controls_forEach": {
+   "count": 18,
+   "programs": 3,
+   "in_enum": true,
+   "fields": {
+    "VAR": 18
+   },
+   "inputs": {
+    "LIST": 18,
+    "DO": 18
+   },
+   "extraState": {},
+   "field_values": {
+    "VAR": {
+     "": 18
+    }
+   }
+  },
+  "erase_all_board": {
+   "count": 17,
+   "programs": 9,
+   "in_enum": true,
+   "fields": {
+    "board_variable": 17
+   },
+   "inputs": {},
+   "extraState": {},
+   "field_values": {
+    "board_variable": {
+     "": 16,
+     "graph1": 1
+    }
+   }
+  },
+  "verb_getAttribute": {
+   "count": 17,
+   "programs": 10,
+   "in_enum": true,
+   "fields": {
+    "attribute": 17
+   },
+   "inputs": {
+    "verb": 17
+   },
+   "extraState": {},
+   "field_values": {
+    "attribute": {
+     "infinitive": 16,
+     "auxiliaire": 1
+    }
+   }
+  },
+  "lists_getSublist": {
+   "count": 15,
+   "programs": 4,
+   "in_enum": true,
+   "fields": {
+    "WHERE1": 15,
+    "WHERE2": 15
+   },
+   "inputs": {
+    "LIST": 15,
+    "AT2": 13,
+    "AT1": 12
+   },
+   "extraState": {},
+   "field_values": {
+    "WHERE1": {
+     "FROM_START": 12,
+     "FIRST": 3
+    },
+    "WHERE2": {
+     "FROM_START": 13,
+     "LAST": 2
+    }
+   }
+  },
+  "matrix_determinant": {
+   "count": 12,
+   "programs": 9,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "matrix": 12
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "binomial_3": {
+   "count": 12,
+   "programs": 2,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "k1": 12,
+    "k2": 12,
+    "n": 12,
+    "p": 12
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "text_append": {
+   "count": 9,
+   "programs": 6,
+   "in_enum": true,
+   "fields": {
+    "VAR": 9
+   },
+   "inputs": {
+    "TEXT": 9
+   },
+   "extraState": {},
+   "field_values": {
+    "VAR": {
+     "": 9
+    }
+   }
+  },
+  "random_polygon": {
+   "count": 9,
+   "programs": 8,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "sides": 9
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "geometric_2": {
+   "count": 8,
+   "programs": 2,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "k": 8,
+    "p": 8
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "poisson_2": {
+   "count": 8,
+   "programs": 2,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "k": 8,
+    "lambda": 8
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "uniform_1": {
+   "count": 8,
+   "programs": 2,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "k": 8,
+    "a": 8,
+    "b": 8
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "expo_1": {
+   "count": 8,
+   "programs": 2,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "k": 8,
+    "lambda": 8
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "normal_1": {
+   "count": 8,
+   "programs": 2,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "k": 8,
+    "mean": 8,
+    "std": 8
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "lists_isEmpty": {
+   "count": 8,
+   "programs": 2,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "VALUE": 8
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "figure_perimeter": {
+   "count": 7,
+   "programs": 2,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "figure": 7
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "controls_flow_statements": {
+   "count": 6,
+   "programs": 5,
+   "in_enum": true,
+   "fields": {
+    "FLOW": 6
+   },
+   "inputs": {},
+   "extraState": {},
+   "field_values": {
+    "FLOW": {
+     "BREAK": 6
+    }
+   }
+  },
+  "convert_into_unit": {
+   "count": 6,
+   "programs": 4,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "value": 6,
+    "unit": 6
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "unit": {
+   "count": 6,
+   "programs": 4,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "value": 6,
+    "unit": 6
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "set_grade": {
+   "count": 6,
+   "programs": 4,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "object": 6
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "geometric_3": {
+   "count": 6,
+   "programs": 2,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "k1": 6,
+    "k2": 6,
+    "p": 6
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "poisson_3": {
+   "count": 6,
+   "programs": 2,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "k1": 6,
+    "k2": 6,
+    "lambda": 6
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "split_into_words_letters": {
+   "count": 6,
+   "programs": 5,
+   "in_enum": true,
+   "fields": {
+    "type": 6
+   },
+   "inputs": {
+    "text": 6
+   },
+   "extraState": {},
+   "field_values": {
+    "type": {
+     "letters": 6
+    }
+   }
+  },
+  "simplify_algebrite": {
+   "count": 5,
+   "programs": 3,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "expression": 5
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "matrix_multiplication": {
+   "count": 5,
+   "programs": 5,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "array": 5,
+    "matrix": 5
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "uniform_2": {
+   "count": 5,
+   "programs": 3,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "k1": 5,
+    "k2": 5,
+    "a": 5,
+    "b": 5
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "expo_2": {
+   "count": 5,
+   "programs": 3,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "k1": 5,
+    "k2": 5,
+    "lambda": 5
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "normal_2": {
+   "count": 5,
+   "programs": 3,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "k1": 5,
+    "k2": 5,
+    "mean": 5,
+    "std": 5
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "figure_rotate": {
+   "count": 3,
+   "programs": 3,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "figure": 3,
+    "angle": 3
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "decimal_part": {
+   "count": 2,
+   "programs": 2,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "number": 2
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "binomial_2": {
+   "count": 2,
+   "programs": 2,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "k": 2,
+    "n": 2,
+    "p": 2
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "area_under_function_interval": {
+   "count": 2,
+   "programs": 1,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "expression": 2,
+    "left": 2,
+    "right": 2
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "sound": {
+   "count": 2,
+   "programs": 2,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "count": 2,
+    "url": 2
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "figure_translate": {
+   "count": 2,
+   "programs": 2,
+   "in_enum": true,
+   "fields": {},
+   "inputs": {
+    "figure": 2,
+    "x": 2,
+    "y": 2
+   },
+   "extraState": {},
+   "field_values": {}
+  },
+  "adjective_getAttribute": {
+   "count": 1,
+   "programs": 1,
+   "in_enum": true,
+   "fields": {
+    "attribute": 1
+   },
+   "inputs": {
+    "adjective": 1
+   },
+   "extraState": {},
+   "field_values": {
+    "attribute": {
+     "fem": 1
+    }
+   }
+  },
+  "random_adjective": {
+   "count": 1,
+   "programs": 1,
+   "in_enum": true,
+   "fields": {
+    "dictionary": 1
+   },
+   "inputs": {},
+   "extraState": {},
+   "field_values": {
+    "dictionary": {
+     "": 1
+    }
+   }
+  },
+  "selected_name": {
+   "count": 1,
+   "programs": 1,
+   "in_enum": true,
+   "fields": {
+    "dictionary": 1
+   },
+   "inputs": {
+    "name": 1
+   },
+   "extraState": {},
+   "field_values": {
+    "dictionary": {
+     "": 1
+    }
+   }
+  },
+  "determinantDefInfDemons_getAttribute": {
+   "count": 1,
+   "programs": 1,
+   "in_enum": true,
+   "fields": {
+    "attribute": 1
+   },
+   "inputs": {
+    "determinant": 1
+   },
+   "extraState": {},
+   "field_values": {
+    "attribute": {
+     "singular": 1
+    }
+   }
+  },
+  "selected_determinantDefInfDemons": {
+   "count": 1,
+   "programs": 1,
+   "in_enum": true,
+   "fields": {
+    "dictionary": 1,
+    "type": 1
+   },
+   "inputs": {
+    "name": 1
+   },
+   "extraState": {},
+   "field_values": {
+    "dictionary": {
+     "": 1
+    },
+    "type": {
+     "definis": 1
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eleda-program xmlns="urn:eleda:program:v1" id="lang_ca" source_format="ir">
+  <name>Fixture lang_ca</name>
+  <author>OEF2XML</author>
+  <tags>
+    <tag>TODO</tag>
+  </tags>
+  <langs>
+    <lang code="ca">
+      <title>Minimal programme</title>
+      <description/>
+    </lang>
+  </langs>
+  <settings>
+    <maxAttempts>1</maxAttempts>
+    <hasNestedQuestion>false</hasNestedQuestion>
+  </settings>
+  <variables>
+    <variable id="OEF2XMLvar0000000001">x</variable>
+  </variables>
+  <blocks languageVersion="0">
+    <block type="info" id="OEF2XMLblk0000000001" x="61" y="-266">
+      <field name="default_title">Minimal programme</field>
+      <field name="default_lang">ca</field>
+      <field name="default_description"></field>
+      <field name="max_attempts">1</field>
+      <field name="default_feedback">false</field>
+      <next>
+        <block type="variables_set" id="OEF2XMLblk0000000002">
+          <field name="VAR" id="OEF2XMLvar0000000001" />
+          <input name="VALUE">
+            <block type="math_number" id="OEF2XMLblk0000000003">
+              <field name="NUM">3</field>
+            </block>
+          </input>
+          <next>
+            <block type="display_element" id="OEF2XMLblk0000000004">
+              <input name="object">
+                <block type="text" id="OEF2XMLblk0000000005">
+                  <field name="TEXT">Statement text</field>
+                </block>
+              </input>
+            </block>
+          </next>
+        </block>
+      </next>
+    </block>
+    <block type="text" id="OEF2XMLblk0000000006" x="700" y="-266">
+      <icons>
+        <comment text="TODO[OEF2XML G-03] \hint not convertible (src.oef:12:1) | original: \hint{Think of the sum.} | sha256=0" pinned="True" height="107" width="364" />
+      </icons>
+      <field name="TEXT"></field>
+    </block>
+  </blocks>
+</eleda-program>
