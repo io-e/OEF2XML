@@ -1,4 +1,4 @@
-# Eleda schema test fixtures (v1)
+# XML schema test fixtures (v1)
 
 Fixtures for the OEF2XML specification (section 13.1, REQ-SCH-7, REQ-LANG-1, REQ-TODO-1).
 
@@ -15,4 +15,4 @@ Run (needs Python 3 and `lxml`):
 
     python3 run_schema_tests.py        # add -v to print the schema error of each expected failure
 
-Validates each file against `../schemas_v1/eleda_program_v1.rng` and `.xsd`. Exit code 0 only if `valid/` passes and `invalid/` fails in **both** schemas; 1 otherwise; 2 on setup error.
+Validates each file against `../schemas_v1/XML_program_v1.rng` and `.xsd`. Exit code 0 only if `valid/` passes and `invalid/` fails in **both** schemas; 1 otherwise; 2 on setup error.

@@ -50,7 +50,7 @@ for f,o in origin.items():
         if n in DIR_COND and gen: continue
         bad.add('dir:'+n)
     if re.search(r'\\special\s*\{',t): bad.add('special')
-    if gen and 'x2o NON TRADUIT' in t: bad.add('x2o-NON-TRADUIT')   # REQ-IDIOM-1: Eleda block lost by the forward converter
+    if gen and 'x2o NON TRADUIT' in t: bad.add('x2o-NON-TRADUIT')   # REQ-IDIOM-1: XML block lost by the forward converter
     c=res.setdefault(g,Counter()); c['files']+=1
     if ok_q>0 and not dyn: c['partiel_eligible']+=1
     if ok_q>0 and q==ok_q and not bad: c['complet_eligible']+=1

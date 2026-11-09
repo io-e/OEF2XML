@@ -1,9 +1,9 @@
 #requires -Version 7.0
 <#
 .SYNOPSIS
-    Validates Eleda programme XML files with the Blockly DTD/XSD and Eleda RNG/Schematron.
+    Validates XML programme files with the Blockly DTD/XSD and XML RNG/Schematron.
 .DESCRIPTION
-    Uses the Eleda programme DTD/XSD plus the existing Eleda programme RNG/Schematron.
+    Uses the XML programme DTD/XSD plus the existing XML programme RNG/Schematron.
     Writes one adjacent <XML-basename>_.check log per XML, a CSV report, and a
     console summary. Requires Python with lxml.
 .PARAMETER Path
@@ -11,12 +11,12 @@
 .PARAMETER Report
     Optional CSV report path. Defaults to Validation_AllSchemas.csv in Path's directory.
 .EXAMPLE
-    .\Test-ProgramsXml-AllSchemas.ps1 'D:\ALF_ZGit\41-eleda_education\programs_xml_v1'
+    .\Test-ProgramsXml-AllSchemas.ps1 '.'
 #>
 [CmdletBinding()]
 param(
     [Parameter(Position=0)]
-    [string]$Path = 'D:\ALF_ZGit\41-eleda_education\programs_xml_v1',
+    [string]$Path = '.',
     [string]$Report = ''
 )
 
@@ -24,10 +24,10 @@ Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
 $SchemaDir = $PSScriptRoot
-$DtdPath = Join-Path $SchemaDir 'ELEDA_program_v2.dtd'
-$XsdPath = Join-Path $SchemaDir 'ELEDA_program_v2.xsd'
-$RngPath = Join-Path $SchemaDir 'ELEDA_program_v2.rng'
-$SchPath = Join-Path $SchemaDir 'ELEDA_program_v2.sch'
+$DtdPath = Join-Path $SchemaDir 'XML_program_v2.dtd'
+$XsdPath = Join-Path $SchemaDir 'XML_program_v2.xsd'
+$RngPath = Join-Path $SchemaDir 'XML_program_v2.rng'
+$SchPath = Join-Path $SchemaDir 'XML_program_v2.sch'
 
 if (-not (Test-Path -LiteralPath $Path)) { throw "Input path not found: $Path" }
 foreach ($schema in @($DtdPath,$XsdPath,$RngPath,$SchPath)) {

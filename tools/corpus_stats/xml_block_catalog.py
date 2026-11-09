@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Catalogue of Eleda block types/fields/inputs observed in a folder of Eleda program XML files
+"""Catalogue of XML block types/fields/inputs observed in a folder of XML program files
 (urn:eleda:program:v1), cross-checked against the block-type-enum of the Relax NG schema.
-Usage: python3 eleda_block_catalog.py [--xml DIR] [--rng schema.rng] [--out DIR]"""
+Usage: python3 xml_block_catalog.py [--xml DIR] [--rng schema.rng] [--out DIR]"""
 import argparse, os, re, json, collections
 import xml.etree.ElementTree as ET
 NS='{urn:eleda:program:v1}'
@@ -58,5 +58,5 @@ out={'xml_files':nfiles,'source_format':dict(srcfmt),'root_children':dict(rootki
               'inputs':dict(inputs[t].most_common()),'extraState':dict(extra[t].most_common()),
               'field_values':{k:dict(v.most_common(12)) for k,v in fieldvals[t].items()} if t in fieldvals else {}}
           for t,n in blocks.most_common()}}
-json.dump(out,open(os.path.join(a.out,'eleda_block_catalog.json'),'w',encoding='utf-8'),ensure_ascii=False,indent=1)
+json.dump(out,open(os.path.join(a.out,'xml_block_catalog.json'),'w',encoding='utf-8'),ensure_ascii=False,indent=1)
 print(nfiles,'files;',len(blocks),'types;',out['types_in_enum'],'in enum; not in enum:',out['types_NOT_in_enum_(accepted_only_by_catch-all_pattern)'])

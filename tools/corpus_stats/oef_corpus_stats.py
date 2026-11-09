@@ -108,7 +108,7 @@ def parse(text):
         i=pe+1
     return out,err
 
-# Planned mapping class of each OEF answer type (see spec section 8): D=direct, A=approximate, G=gap (no Eleda block)
+# Planned mapping class of each OEF answer type (see spec section 8): D=direct, A=approximate, G=gap (no XML block)
 ANSMAP={}
 for t in ('numeric','number','radio','checkbox','correspond','corresp','reorder'): ANSMAP[t]='D'
 for t in ('(none:','default','case','nocase','atext','text','raw','chset','formal','algexp','expalg','numexp','function','equation',

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Schema fixture runner for the Eleda program schemas v1 (OEF2XML spec, section 13.1).
+"""Schema fixture runner for the XML program schemas v1 (OEF2XML spec, section 13.1).
 
-Validates every fixture against ../schemas_v1/eleda_program_v1.rng AND ../schemas_v1/eleda_program_v1.xsd with lxml.
+Validates every fixture against ../schemas_v1/XML_program_v1.rng AND ../schemas_v1/XML_program_v1.xsd with lxml.
   valid/*.xml    must PASS  both schemas
   invalid/*.xml  must FAIL  both schemas
 Exit code 0 only if every expectation holds in both schemas; 1 otherwise; 2 on setup error.
@@ -18,8 +18,8 @@ ap.add_argument('-v', '--verbose', action='store_true', help='print the first sc
 a = ap.parse_args()
 sd = Path(a.schemas)
 try:
-    rng = etree.RelaxNG(etree.parse(str(sd / 'eleda_program_v1.rng')))
-    xsd = etree.XMLSchema(etree.parse(str(sd / 'eleda_program_v1.xsd')))
+    rng = etree.RelaxNG(etree.parse(str(sd / 'XML_program_v1.rng')))
+    xsd = etree.XMLSchema(etree.parse(str(sd / 'XML_program_v1.xsd')))
 except (OSError, etree.LxmlError) as e:
     print('setup error:', e); sys.exit(2)
 

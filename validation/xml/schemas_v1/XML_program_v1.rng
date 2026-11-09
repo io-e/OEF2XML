@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- CLAUDE_V1_1 — Relax NG schema for Eleda program XML (urn:eleda:program:v1) -->
+<!-- CLAUDE_V1_1 — Relax NG schema for XML program (urn:eleda:program:v1) -->
 <grammar xmlns="http://relaxng.org/ns/structure/1.0"
          ns="urn:eleda:program:v1"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
@@ -246,7 +246,7 @@
       <value>math_modulo</value>
       <value>math_random_int</value>
 
-      <!-- Eleda numeric types -->
+      <!-- XML numeric types -->
       <value>integer</value>
       <value>decimal</value>
       <value>fraction</value>
