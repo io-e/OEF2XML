@@ -133,6 +133,21 @@ def split_answer_params(params):
         else: pos.append(p)
     return pos,opts
 
+# --- phase-1 (MVP) scope M1 (spec section 14.2): module level so that other tools can import it ---
+DIR1={'title','language','author','email','keywords','description','credits','css','observation','computeanswer','precision','range','format',
+      'integer','int','real','rational','text','statement','answer','reply','choice','if','ifval','for','while','else','endif','next','endwhile',
+      'title_en','title_fr','title_es','title_it','title_ca','title_cn','title_nl','title_si'}
+ANS1={'(none:','default','numeric','number','case','nocase','atext','text','raw','chset','formal','algexp','expalg','numexp','function','equation','litexp','symtext','radio','checkbox'}
+FN1={'randint','random','shuffle','randitem','randomitem','pickone','item','items'}
+def tier_ok(feats,t=0):
+    for x in feats:
+        k,_,v=x.partition(':')
+        if k=='dir' and v not in DIR1: return False
+        if k in('ans','choice') and v.split()[0] not in ANS1 and not v.startswith('(none'): return False
+        if k=='fn' and v not in FN1: return False
+        if x in('special',): return False
+    return True
+
 def main():
     ap=argparse.ArgumentParser()
     ap.add_argument('--corpus',default='/workspace/oefc/corpus')
@@ -264,19 +279,6 @@ def main():
             if g==grp(o): rows.append([f,o,enc,len(raw),len(d),nans,nch,';'.join(sorted(feats))])
     # --- coverage tier M1 = exactly the phase-1 (MVP) scope of the specification (section 15): share of files whose
     # EVERY feature is inside it.  The final-scope upper bounds (complet/partiel eligible) are computed by scope_bounds.py.
-    DIR1={'title','language','author','email','keywords','description','credits','css','observation','computeanswer','precision','range','format',
-          'integer','int','real','rational','text','statement','answer','reply','choice','if','ifval','for','while','else','endif','next','endwhile',
-          'title_en','title_fr','title_es','title_it','title_ca','title_cn','title_nl','title_si'}
-    ANS1={'(none:','default','numeric','number','case','nocase','atext','text','raw','chset','formal','algexp','expalg','numexp','function','equation','litexp','symtext','radio','checkbox'}
-    FN1={'randint','random','shuffle','randitem','randomitem','pickone','item','items'}
-    def tier_ok(feats,t):
-        for x in feats:
-            k,_,v=x.partition(':')
-            if k=='dir' and v not in DIR1: return False
-            if k in('ans','choice') and v.split()[0] not in ANS1 and not v.startswith('(none'): return False
-            if k=='fn' and v not in FN1: return False
-            if x in('special',): return False
-        return True
     tiers={}
     for g in ('all_upstream','upstream_handwritten','upstream_models','generated'):
         fs=[v for v in prof.values() if v[0]==g]
