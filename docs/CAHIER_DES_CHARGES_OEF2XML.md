@@ -3,14 +3,17 @@
 | | |
 |---|---|
 | **Project** | OEF2XML — migrate WIMS OEF exercises to Eleda program XML (`urn:eleda:program:v1`) |
-| **Repository** | https://github.com/io-e/OEF2XML — **public**, no `LICENSE` yet (§1.3, Q7) |
+| **Repository** | https://github.com/io-e/OEF2XML — **public**, licence **AGPL-3.0** (`LICENSE`, §1.3, Q7) |
 | **Owner** | Arnaud Lefrancois |
-| **Version / date** | **v0.2.2 — 2026-11-10** (supersedes v0.2 draft and v0.1, which was truncated after §12) |
+| **Version / date** | **v0.2.3 — 2026-11-10** (supersedes v0.2 draft and v0.1, which was truncated after §12) |
 | **Language** | English (French section titles kept only where they name existing artefacts) |
 | **Status** | For review. Nothing in this document has been implemented. Published in the repository under `docs/`. |
 | **Verified against** | WIMS **4.31b** `oef2wims` sources (the only WIMS version available on the box), Eleda schema **v1** (RNG `CLAUDE_V1_1`, XSD), 1116 real Eleda programs, 1438 OEF files (Appendix C). Eleda schema v2 and Schematron were **not** supplied (Q1). |
 
 Keywords MUST / SHOULD / MAY follow RFC 2119. Requirement identifiers (`REQ-…`) are stable so tests and the conversion report can cite them.
+
+### Changelog v0.2.2 → v0.2.3
+- Q7 closed: AGPL-3.0 (`LICENSE` added; compatible with WIMS GPL v2+ and LaRuche GPL-3.0). The owner's v2 schema checker `ELEDA_program_v2_Test-ProgramsXml-AllSchemas.ps1` is committed in `validation/xml/` (the v2 schemas it needs are still to be supplied, Q1).
 
 ### Changelog v0.2.1 → v0.2.2
 - §11.1 closed: Python 3.12 (Go has no native RNG/XSD validation; shared logic lives in data files; round-trip calls `xml2oef.exe` as a process). Q11 closed: PyInstaller exe optional in P4.
@@ -73,7 +76,7 @@ Build a tool that reads WIMS OEF exercise files and writes **Eleda program XML**
 - `validation/oef/oef2wims/` — the E2 compiler wrappers: C sources (`sources/v2/oef2wims_v2.c`, `sources/wrapper/oef2wims_log.c`, `sources/common/*.inc`), tests (`tests/*.ps1`, mock scripts), `LISEZMOI.txt`, `AMELIORATIONS.txt`, `SHA256SUMS_E2.txt` (no binaries are committed);
 - `validation/xml/schemas_v1/eleda_program_v1.{rng,xsd}` — the v1 schemas (the v2 schemas and the Schematron are **not** in the repository, Q1).
 
-There is **no `LICENSE` file** and no converter code yet. Licensing is an open point (Q7): WIMS and its `oef2wims` are **GPL**, LaRuche is GPL-3.0 and the JavaScript `xml2oef` vendors it. Any OEF2XML code that is a port of, or copies tables from, the WIMS C sources is a derivative work; this specification therefore records *facts and identifiers* with source file/line references (Appendix A.3) and does not copy code. The existing `validation/` tree MUST be kept as is (REQ-ARCH-5); new code goes next to it.
+Licence: **AGPL-3.0** (`LICENSE`, decided 2026-11-10, Q7); there is no converter code yet. Compatibility: WIMS and its `oef2wims` are **GPL**, LaRuche is GPL-3.0 and the JavaScript `xml2oef` vendors it. Any OEF2XML code that is a port of, or copies tables from, the WIMS C sources is a derivative work; this specification therefore records *facts and identifiers* with source file/line references (Appendix A.3) and does not copy code. The existing `validation/` tree MUST be kept as is (REQ-ARCH-5); new code goes next to it.
 
 ---
 
@@ -776,7 +779,7 @@ Dependencies on answers: Q1 → REQ-OUT-5, REQ-TODO-4, AC-4; Q5 → fidelity upg
 | R2 | Unknown Eleda grading and field semantics (`decimal` tolerance, `unique`/`multiple`, `mutation_shape`, `raw_options`) | wrong grading although the structure is right | `fidelite: non_verifiee` (REQ-REP-7); templates in data files (§8.3); Q5 |
 | R3 | Ambiguous OEF expressions (list vs string, `\if` vs `\ifval`, `random(a,b)`) | silent wrong logic | exact `sp.c` rules (§7.2), taint (REQ-TODO-3), never best-effort trees (REQ-EXPR-6) |
 | R4 | Raw HTML inside Eleda `text` blocks may not render | display defects (M-48) | `--html strict` → G-17; measured per element class; Q5 |
-| R5 | GPL: WIMS is GPL, LaRuche GPL-3.0; code ported from `oef2wims` is a derivative work; the repository has no licence yet | legal | facts only in this spec (§1.3); decision before the first code commit (Q7, AC-13) |
+| R5 | GPL: WIMS is GPL, LaRuche GPL-3.0; code ported from `oef2wims` is a derivative work; the repository is AGPL-3.0 (Q7 closed) | legal | facts only in this spec (§1.3); decision before the first code commit (Q7, AC-13) |
 | R6 | Corpus bias: generated files are machine-written, model templates are not exercises, only 121 files are hand-written | overstated quality | per-corpus targets (§14.2), evaluation sets E-H/E-M/E-O (§13.3), Q2 |
 | R7 | Windows paths, encodings, long paths (`LongPathsEnabled=0`), ISO-8859-1 sources (80% upstream) | crashes, mojibake | REQ-IN-3, REQ-WIN-1…5 |
 | R8 | v2 schemas and Schematron not supplied | requirements that cannot be checked | conditional requirements (REQ-OUT-5, REQ-TODO-4, AC-4); Q1 |
@@ -799,7 +802,7 @@ Dependencies on answers: Q1 → REQ-OUT-5, REQ-TODO-4, AC-4; Q5 → fidelity upg
 | Q4 | Will the schema accept `source_format="oef"` (SC-1)? | REQ-SCH-5 | `ir` |
 | Q5 | Can Eleda provide an importer or runtime test and documentation of: question fields (`mutation_shape`, `moreOptions`, `raw_options`, `answer`, `question`, `default_feedbacks`), grading semantics, raw HTML in `text`, comment icons on a `text` block and newlines in icon text? | REQ-SCH-6, REQ-REP-7, §8.3, REQ-TODO-1, M-48 | `non_verifiee`, modal templates, `--placeholder-carrier text` |
 | Q6 | Does Eleda `math_trig` use degrees or radians? (the forward converter assumed degrees, `MAPPING.md:22`) | REQ-EXPR-4, G-21 | trig is a gap unless `--trig-units` is given |
-| Q7 | Which licence for OEF2XML, given WIMS (GPL) and LaRuche (GPL-3.0)? May code be derived from `oef2wims`? | §1.3, R5, AC-13 | no code copied; no `LICENSE` yet |
+| Q7 | Which licence for OEF2XML, given WIMS (GPL) and LaRuche (GPL-3.0)? May code be derived from `oef2wims`? | §1.3, R5, AC-13 | **Closed 2026-11-10: AGPL-3.0.** Compatible: WIMS `oef2wims` sources are GPL v2 *or later* (header of `src/OefMsg2wims/oef2wims.c`), so GPL-3.0 applies and GPLv3 §13 allows combination with AGPL-3.0; LaRuche GPL-3.0 likewise |
 | Q8 | Default `max_attempts` (M-08)? | `info.max_attempts` | 1, reported as `info` |
 | Q9 | Should `settings` timestamps/`template` be stamped (REQ-OUT-6)? | settings | omitted unless `--stamp` |
 | Q10 | Mapping of `\solution`, `\hint`, `\help` (post-answer display in `feedbacks`?) | M-51, G-03 | placeholder |
