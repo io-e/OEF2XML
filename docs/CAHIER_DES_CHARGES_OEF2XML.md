@@ -5,15 +5,19 @@
 | **Project** | OEF2XML — migrate WIMS OEF exercises to XML program (`urn:eleda:program:v1`) |
 | **Repository** | https://github.com/io-e/OEF2XML — **public**, licence **AGPL-3.0** (`LICENSE`, §1.3, Q7) |
 | **Owner** | Arnaud Lefrancois |
-| **Version / date** | **v0.2.4 — 2026-11-10** (supersedes v0.2 draft and v0.1, which was truncated after §12) |
+| **Version / date** | **v0.2.5 — 2026-11-10** (supersedes v0.2 draft and v0.1, which was truncated after §12) |
 | **Language** | English (French section titles kept only where they name existing artefacts) |
 | **Status** | For review. Nothing in this document has been implemented. Published in the repository under `docs/`. |
 | **Verified against** | WIMS **4.31b** `oef2wims` sources (the only WIMS version available on the box), XML schema **v1** (RNG `CLAUDE_V1_1`, XSD), 1116 real XML programs, 1438 OEF files (Appendix C). XML schema v2 and Schematron were **not** supplied (Q1). |
 
 Keywords MUST / SHOULD / MAY follow RFC 2119. Requirement identifiers (`REQ-…`) are stable so tests and the conversion report can cite them.
 
+### Changelog v0.2.4 → v0.2.5
+- §1 now defines two terms: **XML program** (the file format, namespace `urn:eleda:program:v1`, root `<eleda-program>`) and **target platform** (the platform that imports, runs and grades it). The v0.2.4 rename had replaced both with "XML"; every platform statement now says "target platform".
+- Appendix B.2: the `rad` case of the forward trig idiom is stated.
+
 ### Changelog v0.2.3 → v0.2.4
-- Renamed throughout: the target format is called **XML program**; schema files are `XML_program_v1.*` / `XML_program_v2.*`, the checker is `XML_program_v2_Test-ProgramsXml-AllSchemas.ps1`, the block catalogue is `xml_block_catalog.*`; owner paths replaced by `<project>`. The XML namespace and root element are unchanged.
+- Renamed throughout: the format is called **XML program**; schema files `XML_program_v1.*` / `XML_program_v2.*`, checker `XML_program_v2_Test-ProgramsXml-AllSchemas.ps1`, block catalogue `xml_block_catalog.*`; owner paths replaced by `<project>`. The namespace and root element are unchanged.
 
 ### Changelog v0.2.2 → v0.2.3
 - Q7 closed: AGPL-3.0 (`LICENSE` added; compatible with WIMS GPL v2+ and LaRuche GPL-3.0). The owner's v2 schema checker `XML_program_v2_Test-ProgramsXml-AllSchemas.ps1` is committed in `validation/xml/` (the v2 schemas it needs are still to be supplied, Q1).
@@ -22,7 +26,7 @@ Keywords MUST / SHOULD / MAY follow RFC 2119. Requirement identifiers (`REQ-…`
 - §11.1 closed: Python 3.12 (Go has no native RNG/XSD validation; shared logic lives in data files; round-trip calls `xml2oef.exe` as a process). Q11 closed: PyInstaller exe optional in P4.
 
 ### Changelog v0.2 → v0.2.1
-- REQ-EXPR-4: `--trig-units deg|rad` was inverted. It now names the unit XML expects: `rad` keeps the argument, `deg` wraps it as `x × 180/π`; the forward idiom `sin(x*pi/180)` is handled separately (Appendix B.2).
+- REQ-EXPR-4: `--trig-units deg|rad` was inverted. It now names the unit the target platform expects: `rad` keeps the argument, `deg` wraps it as `x × 180/π`; the forward idiom `sin(x*pi/180)` is handled separately (Appendix B.2).
 - REQ-VAL-4: the fixtures are committed. REQ-TODO-1: the catalogue covers 1116 programs.
 - Reproducibility of §14.2: `tools/corpus_stats/data/corpus.map` and `per_file.csv` are committed (the OEF corpus itself is not: upstream files are WIMS GPL material and the generated files come from the owner's private programs).
 - §14: note that the phase-1 gate on hand-written files rests on 5 files only and says little about real OEF until the E-O set (Q2) exists.
@@ -44,12 +48,14 @@ v0.1 stopped in the middle of §12 (517 lines) and referred to §13, §17 and Ap
 
 ## 1. Context and goal
 
+**Terminology (binding for the whole document).** **XML program** means the file format: an XML document in namespace `urn:eleda:program:v1` with root element `<eleda-program>`, described by the `XML_program_v1/v2` schemas. **Target platform** means the learning platform that imports, edits, runs and grades XML programs (its editor, Blockly loader, runtime and evaluation semantics). "XML block" or "XML schema" always refers to the format; any statement about behaviour (units, rendering, grading, import) refers to the target platform. The namespace and root element MUST NOT be renamed.
+
 ### 1.1 Existing pipeline (forward direction)
 
-The owner already runs a one-way pipeline from XML to WIMS (facts from the 2026-10-28 handoff "JSON2OEF R7 CODEX v1" and from the `xml2oef` sources found on the box):
+The owner already runs a one-way pipeline from the target platform to WIMS (facts from the 2026-10-28 handoff "JSON2OEF R7 CODEX v1" and from the `xml2oef` sources found on the box):
 
 ```
-XML JSON ──► XML program (urn:eleda:program:v1) ──► OEF ──► oef2wims (.def) ──► wims.cgi
+target-platform JSON ──► XML program (urn:eleda:program:v1) ──► OEF ──► oef2wims (.def) ──► wims.cgi
    1116 programs     1116/1116 converted            Go and JS xml2oef:           1100/1100 compile
                      DTD/XSD/RNG 1116 pass          466 complete / 634 partial   (oef2wims-log.exe,
                      Schematron 1111 pass, 5 fail   / 16 failed (MAX_DEFINE)     oef2wims-v2.exe)
@@ -93,7 +99,7 @@ Licence: **AGPL-3.0** (`LICENSE`, decided 2026-11-10, Q7); there is no converter
 | XSD generated with Trang | attachment `b138e2db….xml` | Same grammar. The block-type enum becomes an XSD union with a catch-all `xs:pattern`. |
 | Handoff JSON2OEF R7 CODEX v1 | attachment `44e04b8a….md` | Refers to **v2** schemas (`XML_program_v2.*`, RNG "extended for source_format=xml, `ar`, empty `langs`", Schematron rules incl. R05) **that were not available**. |
 | WIMS 4.31b `oef2wims` C source | `/workspace/oefc/src431/src/OefMsg2wims/` (+ `Lib/liblines.c`) | Authoritative list of commands, answer types, special functions, limits; line references in Appendix A.3. **Only 4.31b was available** (an external review mentioned 4.27b: not verified, Q3). |
-| XML programs (ground truth) | `/workspace/xml_etudes` (1116 files) | Used to catalogue real block/field/input shapes (`xml_block_catalog.json`). |
+| XML program programs (ground truth) | `/workspace/xml_etudes` (1116 files) | Used to catalogue real block/field/input shapes (`xml_block_catalog.json`). |
 | Existing converter | `/workspace/xml2oef` (Go + JS), `MAPPING.md`, `ANALYSE_XML.md`, `results/rapport.json` | Baseline for the inverse mapping (Appendix B.2) and for the report format. |
 | OEF validator | `/workspace/oef-validator`, also in the repo under `validation/oef/oef_validate/` | Python; reported to agree with `oef2wims` on the upstream files (validator README). Reuse candidate. |
 | Compiler wrappers | `/workspace/oefc/e2pkg/E2_build/sources/` (identical to the repo copy of `oef2wims_v2.c`) | Gate behaviour (REQ-ARCH-4). |
@@ -121,7 +127,7 @@ Read in full (RNG `CLAUDE_V1_1` and its Trang-generated XSD, both v1). Line numb
 
 1. **The block-type enum is not a restriction.** `block-type-enum` lists 190 values and then ends with a *catch-all* `[a-zA-Z_][a-zA-Z0-9_]*` pattern (RNG line 440); the XSD has the same pattern inside the union (xs:pattern, line 1158). Any identifier validates.
 2. **Fields, inputs, `extraState`, `settings`, icons are `any-content`.** The schema says nothing about which fields or inputs a block must have.
-3. Consequently **"valid against RNG/XSD" does not mean "importable by XML" and does not mean "renders correctly"**. Schema validity is a necessary gate, not an acceptance criterion by itself.
+3. Consequently **"valid against RNG/XSD" does not mean "importable by the target platform" and does not mean "renders correctly"**. Schema validity is a necessary gate, not an acceptance criterion by itself.
 4. `eleda-program/@source_format` is restricted to `json | yaml | ir | xml` (RNG lines 19–22). **There is no `oef` value**; emitting `source_format="oef"` fails RNG/XSD validation (SC-1).
 5. `lang/@code` is restricted to `fr en es it de ar` (RNG lines 85–90). OEF also knows `ca`, `cn`, `nl`, `si` (`\title_ca` …) (SC-2).
 6. **`lang-def` requires both `<title>` and `<description>`** (RNG lines 93–94): a `<lang>` element without `<description>` is invalid. Upstream OEF has no `\description` (0 of 333 files), so the converter must emit an **empty** `<description/>` (REQ-LANG-1).
@@ -136,7 +142,7 @@ Read in full (RNG `CLAUDE_V1_1` and its Trang-generated XSD, both v1). Line numb
 - **REQ-SCH-3** The 21 enum values **never observed** in the 1116 programs MUST NOT be emitted, because no real field/input shape is known: `QUESTION`, `adjectives`, `arrow`, `conjugations`, `decimal`, `definis`, `denominator`, `determinants`, `dotted`, `integer`, `integerPositive`, `kids`, `letters`, `multiple`, `names`, `numerator`, `segment`, `string`, `table`, `unique`, `verbs`. (Several of these — `integer`, `decimal`, `string`, `unique`, `multiple`, `integerPositive` — are *values* of the `type` field of question blocks in real files, not block types.)
 - **REQ-SCH-4** The tool MUST fail its own unit tests if any emitted block type, field name or input name is absent from the catalogue (a "shape lint", independent of RNG).
 - **REQ-SCH-5** `source_format`: default `ir`, configurable by `--source-format {json,yaml,ir,xml}` until the schema owner adds an OEF value (SC-1, open question Q4). The tool MUST NOT emit a value outside the schema's list.
-- **REQ-SCH-6** Importability MUST be tested against a real XML import/runtime if one can be provided (open question Q5); until then every acceptance statement says "schema-valid and shape-lint-clean", not "importable".
+- **REQ-SCH-6** Importability MUST be tested against a real target-platform import/runtime if one can be provided (open question Q5); until then every acceptance statement says "schema-valid and shape-lint-clean", not "importable".
 - **REQ-SCH-7** `<lang>` elements MUST always contain both `<title>` and `<description>` (possibly empty), see REQ-LANG-1.
 
 ---
@@ -157,7 +163,7 @@ Read in full (RNG `CLAUDE_V1_1` and its Trang-generated XSD, both v1). Line numb
 - **Executing WIMS exercises** or reimplementing `wims.cgi`/the WIMS expression engine as an exercise runner. (The tool *parses* expressions; it does not evaluate them except for constant folding that is provably exact.)
 - Generating exercise logic that is absent from the OEF (no invented distractors, solutions, feedback, hints).
 - Re-creating WIMS-only interactive answer types that have no XML block (drag-and-drop, click-fill, puzzles, flashcards, crosswords, chemistry/Jmol editors, canvas drawing inputs): they are reported as **gaps** (§6.4), not emulated.
-- Importing into the XML platform, authentication, uploading.
+- Importing into the target platform, authentication, uploading.
 - Converting other WIMS formats (`.def` as primary source, `.src` module files, `.phtml`, `.html` server pages) — the `.def` is only a *secondary* input (§4.2).
 - Packaging asset files (images, audio) — the tool records references and can copy them (`--assets-dir`), but does not convert media.
 - Editing or "improving" the OEF (LLM-based fixing is the separate `oef_llm_fix.py` tool).
@@ -176,7 +182,7 @@ Read in full (RNG `CLAUDE_V1_1` and its Trang-generated XSD, both v1). Line numb
 - **REQ-IN-4** CRLF/LF/CR line endings and a trailing-whitespace-tolerant parser (4 upstream files use CRLF). `oef2wims` replaces CR and the bytes 0–6 by spaces (`getinp`, `oef2wims.c:143–165`); the parser MUST behave the same.
 - **REQ-IN-5** **Size and limit handling, aligned with `oef2wims` and the validator** (Appendix A.3.4):
   - an **empty file** (0 bytes; `Empty source file.`, `oef2wims.c:430`) or a file of **≥ 199 999 bytes** (`MAX_FLEN`; `getinp` returns −1, `Source file bad or too long.`, `oef2wims.c:429`) is an **error → `echec`**, no XML written, message copied into the report;
-  - **only** the 1024-directive cutoff is a **warning** (`LIMIT-1024`): `process()` stops scanning after `MAX_DEFINE`=1024 directives and silently ignores the rest (`oef2wims.c:171`), so the compiler gate is unreliable for the tail. The tool's own parser reads the whole file and converts it (XML has no such cap); `--strict-limits` turns the warning into `echec`. (No file of the corpus exceeds 1024 directives: upstream maximum 208, generated maximum 738.);
+  - **only** the 1024-directive cutoff is a **warning** (`LIMIT-1024`): `process()` stops scanning after `MAX_DEFINE`=1024 directives and silently ignores the rest (`oef2wims.c:171`), so the compiler gate is unreliable for the tail. The tool's own parser reads the whole file and converts it (the target platform has no such cap); `--strict-limits` turns the warning into `echec`. (No file of the corpus exceeds 1024 directives: upstream maximum 208, generated maximum 738.);
   - an unmatched `() [] {}` anywhere in the file is an error (`checkparentheses`, `oef2wims.c:431`) → `echec` (REQ-REP-3);
   - silent truncations in WIMS that are **reported as `info`**: `\title` longer than 80 bytes (`MAX_TITLEN`), `\choice` prompts (§8.1).
 - **REQ-IN-6** **Includes / external definitions.** OEF has no `\include`. Two mechanisms act like one: the environment variable `oef2wims_mdef` (module-defined macro names, handled by `\mdef` and `$m_` substitution) and runtime file references (`\imagedir`, `\filedir`, `\confparm1..4`, `slib(...)` modules). The tool MUST: accept `--mdef NAME[,NAME…]`; treat any `\imagedir`/`\filedir` reference as an *asset reference* (§7.6); report every `slib(module/name …)` call as a dependency (upstream: `text/cutchoice2` 42, `draw/convpixel` 19, `oef/env` 12, `text/markgroup` 10 …). `imagedir` and `confparm1…4` are *predefined* text parameters of `oef2wims` (`oef2wims.c:437–442`) and are never defined in the file: references to them are not "undeclared variables".
@@ -216,7 +222,7 @@ Mirror `xml2oef/results/rapport.json` and `validation.tsv` so the two directions
   - **I3 (output blocks)** `blocs_question_emis == Σ copies(q)` over converted questions, where `copies(q)` = 1 except for questions duplicated by step linearisation (`copies(q)` = number of steps in which q is active, recorded in `details[]`). `blocs_question_emis` MUST also equal the number of `question_*` blocks counted by an **independent scan of the written XML** (so a mismatch detects an emitter bug).
 - **REQ-REP-5** `--csv FILE.tsv` (tab-separated, like `validation.tsv`): `fichier, statut, fidelite, encodage, questions_source, questions_converties, blocs_question_emis, nb_gaps, nb_approx, compilateur, rng, xsd, schematron, message` (`schematron` = `ok`|`ko`|`non_execute`).
 - **REQ-REP-6** Exit codes (as `xml2oef`): `0` all complete, `1` at least one partial, `2` at least one failed, `64` bad usage.
-- **REQ-REP-7** **Fidelity is reported separately from completeness.** Each file and each converted construct carries `fidelite` ∈ {`exacte`, `approchee`, `non_verifiee`}. A construct is `exacte` only if (a) the mapping row is class E in §6 **and** (b) the XML semantics it relies on are verified (§8.5; Q5). Until Q5 is answered, **every question block is at best `non_verifiee`** (structure is known from 1116 real programs, grading semantics are not), so a `complet` file can still be `non_verifiee`. The batch summary reports the three counts. No acceptance criterion may call a file "exact" unless its `fidelite` is `exacte` (§14).
+- **REQ-REP-7** **Fidelity is reported separately from completeness.** Each file and each converted construct carries `fidelite` ∈ {`exacte`, `approchee`, `non_verifiee`}. A construct is `exacte` only if (a) the mapping row is class E in §6 **and** (b) the target platform semantics it relies on are verified (§8.5; Q5). Until Q5 is answered, **every question block is at best `non_verifiee`** (structure is known from 1116 real programs, grading semantics are not), so a `complet` file can still be `non_verifiee`. The batch summary reports the three counts. No acceptance criterion may call a file "exact" unless its `fidelite` is `exacte` (§14).
 
 ---
 
@@ -239,15 +245,15 @@ The **semantics of several question fields is not documented** in the material a
 
 ---
 
-## 6. Mapping OEF → XML
+## 6. Mapping OEF → the target platform
 
-Fidelity codes: **E** exact (semantics preserved; for anything that depends on the XML format's own evaluation semantics this requires them to be *verified*, REQ-REP-7, Q5), **A** approximate (converted, reported at level `approximation`), **G** gap (no equivalent: placeholder + report), **P** planned for a later phase (until then behaves as G). Only block types that exist in the schema enum *and* in the observed catalogue are used (REQ-SCH-1..3).
+Fidelity codes: **E** exact (semantics preserved; for anything that depends on the target platform's own evaluation semantics this requires them to be *verified*, REQ-REP-7, Q5), **A** approximate (converted, reported at level `approximation`), **G** gap (no equivalent: placeholder + report), **P** planned for a later phase (until then behaves as G). Only block types that exist in the schema enum *and* in the observed catalogue are used (REQ-SCH-1..3).
 
 ### 6.1 Header and metadata
 
-| ID | OEF | XML | Fid. | Notes |
+| ID | OEF | The target platform | Fid. | Notes |
 |---|---|---|---|---|
-| M-01 | `\title{T}` | `<name>`, `<lang code=L><title>`, `info.default_title` | E | Title ≤ 80 bytes in WIMS; no limit in XML. |
+| M-01 | `\title{T}` | `<name>`, `<lang code=L><title>`, `info.default_title` | E | Title ≤ 80 bytes in WIMS; no limit in the target platform. |
 | M-02 | `\language{L}` | `info.default_lang`, `<lang code=L>` | E for `fr en es it de ar` | `ca cn nl si`, dynamic `\language{\x}`: **G-04**. No `\language` (279/333 upstream files): use `--default-lang` (default `fr`), report `info`. |
 | M-03 | `\title_xx{T}` | additional `<lang code=xx><title>` | E for the six codes | Not present in either corpus; supported for completeness. |
 | M-04 | `\author{A}` | `<author>` | E | |
@@ -260,7 +266,7 @@ Fidelity codes: **E** exact (semantics preserved; for anything that depends on t
 
 The OEF expression language is described in §7. Mapping of definitions and control:
 
-| ID | OEF | XML | Fid. | Notes |
+| ID | OEF | The target platform | Fid. | Notes |
 |---|---|---|---|---|
 | M-10 | `\integer{a=randint(m..n)}` | `variables_set{VAR=a}` ← `random_number{type=integer; min,max}` | E | Reverse of `xml2oef` rule. |
 | M-11 | `\real{x=random(m..n)}` | `random_number{type=decimal}` | A | WIMS `random(m..n)` is a real in range; resolution differs. |
@@ -274,7 +280,7 @@ The OEF expression language is described in §7. Mapping of definitions and cont
 | M-19 | `position(x,L)` / `positionof` | `lists_indexOf{END=FIRST; VALUE,FIND}` | A | Only `END=FIRST` observed (363 blocks); which of `VALUE`/`FIND` is the list is to be confirmed on exemplars. |
 | M-20 | `wims(sort numeric items L)` | `lists_sort{TYPE=NUMERIC; DIRECTION=1}` | E | |
 | M-21 | `\matrix{M=a,b\c,d}`, `row/rows/column`, `\M[i;j]` | `matrix{typeOf=text or list; input}`, `table_matrix{type=table; LINE_n}`, `data_table{LINE_n}`, `matrix_short_get{MATRIX,I,J}` | P | The meaning of `typeOf` and the line/column layout of `LINE_n` need exemplars; upstream: 156 files use `\matrix` (47%). |
-| M-22 | `\function{f=a*x^2+…}` | `variables_set` ← `text` (formula string) | A | The formula is kept as text; used by `evalue`/`diff`. XML has `expression`, `evaluate{expression,variable,value}`, `derivative{expression,variable}`. |
+| M-22 | `\function{f=a*x^2+…}` | `variables_set` ← `text` (formula string) | A | The formula is kept as text; used by `evalue`/`diff`. The target platform has `expression`, `evaluate{expression,variable,value}`, `derivative{expression,variable}`. |
 | M-23 | `evalue(f, x=v)` | `evaluate{expression,variable,value}` | E | |
 | M-24 | `diff(f,x)` | `derivative{expression,variable}` | E | |
 | M-25 | `simplify(f)` | `simplify_algebrite{expression}` | A | Different CAS (WIMS/PARI vs Algebrite): results can differ in form. |
@@ -286,9 +292,9 @@ The OEF expression language is described in §7. Mapping of definitions and cont
 
 ### 6.3 Statement, text, math markup, media
 
-| ID | OEF | XML | Fid. | Notes |
+| ID | OEF | The target platform | Fid. | Notes |
 |---|---|---|---|---|
-| M-40 | `\statement{…}` | one or more `display_element{object}` | A | The OEF statement is **HTML + `\var` substitutions + `\embed{replyN}` markers + `\(…\)` LaTeX**. XML content is assembled from blocks; there is no verified "raw HTML" block. |
+| M-40 | `\statement{…}` | one or more `display_element{object}` | A | The OEF statement is **HTML + `\var` substitutions + `\embed{replyN}` markers + `\(…\)` LaTeX**. Target-platform content is assembled from blocks; there is no verified "raw HTML" block. |
 | M-41 | plain text runs | `text{TEXT}` inside `richtext_create_with{itemsCount; ADDn}` | E | Newline in source → `special_character{character=br}` only when the source has `<br>`; raw newlines are preserved in `TEXT`. |
 | M-42 | `\x`, `\x[i]` (variable references) | `variables_get{VAR id}` / `list_short_get` | E | Unresolved name → taint (§6.5). |
 | M-43 | `\(…\)` / `\[…\]` LaTeX | `latex{LaTeX}`, `latex_paragraph_create_with` | E | Upstream: `\(` in 50 files; generated: 576 files. |
@@ -296,10 +302,10 @@ The OEF expression language is described in §7. Mapping of definitions and cont
 | M-45 | `<br>`, `<hr>` | `special_character{character=br or hr}` | E | |
 | M-46 | `<div class="wimscenter">`, `<p class="wimscenter">`, `align=center` | `set_alignment{alignment=center; item}` | A | Upstream: `wimscenter` in 133 files. |
 | M-47 | `<img src="…">`, `\imagedir/…` | `image{url,image_width,image_height,figure_caption}` | A | Asset handling §7.6. Upstream: `<img` in 27 files, `\imagedir` in 41. |
-| M-48 | any other HTML (`<table>` 38 files, `<a>` 204, `<span style>`, `<script>`, `<form>`, entities) | `text{TEXT}` containing the markup **verbatim** | A (risk) | It is **unknown whether XML renders raw HTML in a `text` block** (Q5/R4). Reported per element class; `--html strict` turns such fragments into **G-17** placeholders instead. |
+| M-48 | any other HTML (`<table>` 38 files, `<a>` 204, `<span style>`, `<script>`, `<form>`, entities) | `text{TEXT}` containing the markup **verbatim** | A (risk) | It is **unknown whether the target platform renders raw HTML in a `text` block** (Q5/R4). Reported per element class; `--html strict` turns such fragments into **G-17** placeholders instead. |
 | M-49 | `\embed{reply1}` / `\embed{reply1,10}` / `\embed{choice1}` | split point: text before it becomes the prompt of that question block (§8.3) | A | `\embed` occurs in 281/333 upstream files (445 occurrences); all 1411 generated ones are `replyN`. |
 | M-50 | `\reply1`, `\sc_reply1`, `\step`, `\choice1`, `\result` in text | no equivalent | **G-18** | Student-answer references appear in 32 upstream (`\reply`), 6 (`\sc_reply`), 47 (`\step`) files and in 323/392 generated files; usable only inside feedback conversion (§8.5). |
-| M-51 | `\hint{…}`, `\help{…}`, `\solution{…}` | none verified | **G-03 / P** | `\solution` (10 upstream files) is a *worked solution shown after the answer*; the XML format's `solution` input is the *expected answer*, a different concept. A later phase may map it to a post-answer display inside `feedbacks`, after owner confirmation (Q10). |
+| M-51 | `\hint{…}`, `\help{…}`, `\solution{…}` | none verified | **G-03 / P** | `\solution` (10 upstream files) is a *worked solution shown after the answer*; the target platform's `solution` input is the *expected answer*, a different concept. A later phase may map it to a post-answer display inside `feedbacks`, after owner confirmation (Q10). |
 | M-52 | `\latex{…}` (TeX version, 52 files), `\format{tex}` | none | **G-16** | |
 | M-53 | `\plot{…}`, `draw(…)`, `canvasdraw(…)`, `drawtikz(…)`, flydraw scripts | `board_geometric`, `point`, `line`, `circle`, `polygon`, `draw_in_board`, `graph_of_function` | **G-09 / P** | Simple flydraw primitives (point, line, circle, plot of a function) MAY be mapped in phase 4; the forward converter itself leaves all geometry untranslated. `draw(…)`: 37 upstream files. |
 
@@ -359,7 +365,7 @@ Aligned with the handoff's safety note: *unresolved content becomes a TODO; exer
     <comment text="N'oubliez pas d'afficher le graphique !" pinned="False" height="67" width="291" />
   </icons>
   ```
-  `<icons>` is the first child after `extraState` (child order, §2.3 item 7); the icon is an attribute-only element in the XML namespace; `pinned` is the string `True`/`False`; `&` `<` `"` are XML-escaped. **Verified**: element and attributes (2085 occurrences, §5). **Not verified**: (a) that the XML format's Blockly loader displays a comment on a `text` block (no real icon is on a `text` block, even on the 187 orphan ones; carriers seen are listed in §5) and (b) newlines inside `text`. Both are open question Q5; until answered the carrier is switchable with `--placeholder-carrier text|display_element` (`display_element` has 17 real comment icons, 13 top-level instances exist). The comment text contains: the gap id, a one-line reason, the **source file, line and column**, and the **original OEF fragment copied verbatim** (length-capped at 4000 characters with a SHA-256 of the full fragment). The same TODO list is repeated on a comment icon of the `info` block (count + ids; real `info` blocks carry comment icons in 1050 programs). Schema-level proof that this shape validates: fixture `valid/minimal_info_chain.xml` (§13.1).
+  `<icons>` is the first child after `extraState` (child order, §2.3 item 7); the icon is an attribute-only element in the XML namespace; `pinned` is the string `True`/`False`; `&` `<` `"` are XML-escaped. **Verified**: element and attributes (2085 occurrences, §5). **Not verified**: (a) that the target platform's Blockly loader displays a comment on a `text` block (no real icon is on a `text` block, even on the 187 orphan ones; carriers seen are listed in §5) and (b) newlines inside `text`. Both are open question Q5; until answered the carrier is switchable with `--placeholder-carrier text|display_element` (`display_element` has 17 real comment icons, 13 top-level instances exist). The comment text contains: the gap id, a one-line reason, the **source file, line and column**, and the **original OEF fragment copied verbatim** (length-capped at 4000 characters with a SHA-256 of the full fragment). The same TODO list is repeated on a comment icon of the `info` block (count + ids; real `info` blocks carry comment icons in 1050 programs). Schema-level proof that this shape validates: fixture `valid/minimal_info_chain.xml` (§13.1).
 - **REQ-TODO-2** A placeholder MUST NOT contain a guessed expected answer, a guessed distractor, a guessed formula or a plausible-looking default value. Where the target needs a value that the OEF does not provide (e.g. `max_attempts`), the value comes from a visible CLI option and is reported as such.
 - **REQ-TODO-3 Taint propagation.** A variable defined by a gap construct is *tainted*; any definition, statement fragment, question or feedback that **reads a tainted variable** is also not emitted (the construct becomes a gap with reason `depends on G-nn variable \x`) — **except** pure display of non-essential decoration, which is configurable and off by default (`--taint-display`). Consequence: the tool never emits a question whose solution depends on something it could not convert.
 - **REQ-TODO-4 Fail closed (conditional on Q1).** A file whose questions are all gaps is written (so the TODOs are visible) and is `partiel`. **If** the v2 Schematron is supplied (Q1) and contains the rule that requires a question block (R05, per handoff line 40), such a file is *expected* to fail it — that is the intended signal, identical to the "reduced16" lesson of the handoff (a zero-question file is not an exercise and must not be deployed) — and the report records `schematron: ko (R05)`. **Without the `.sch`** the tool applies the same rule itself (no `question_*` block in the output ⇒ report flag `aucune_question`, never `complet`), so that the behaviour does not depend on a file that is not available. `--strict` makes it `echec`.
@@ -387,7 +393,7 @@ The 1100 generated OEF files are the output of `xml2oef`. Its conventions (Appen
 
 ### 7.2 Randomisation (semantics from `OefMsg2wims/sp.c`)
 
-| OEF | Semantics | XML |
+| OEF | Semantics | The target platform |
 |---|---|---|
 | `randint(a..b)` | integer in [a,b] | `random_number{type=integer}` (E) |
 | `randint(a,b,c)` | pick one of the listed integers (comma form calls `randitem`) | `lists_getIndex{WHERE=RANDOM}` over `lists_create_with` (E) |
@@ -405,7 +411,7 @@ The 1100 generated OEF files are the output of `xml2oef`. Its conventions (Appen
 - **REQ-EXPR-1** A table-driven expression parser (Pratt/precedence climbing) MUST be generated from a spec file (`expr_spec.json`, produced from `Lib/calc.c`/`evalue.c` function tables in the same way `oef_spec.json` is generated from the sources) rather than hand-coded.
 - **REQ-EXPR-2** It MUST parse: numbers (including `1e-3`, decimals with `.`), `\var` references with `[…]` indexing, `+ - * / ^`, unary minus, parentheses, function calls, comparisons, `and or not`, string literals as they occur in OEF conditions, and the special calls of §7.2.
 - **REQ-EXPR-3** Function mapping (E unless noted): `abs→ABS`, `sqrt→ROOT`, `ln→LN`, `log10→LOG10`, `exp→EXP`, `floor→ROUNDDOWN`, `ceil→ROUNDUP`, `rint→ROUND`, `pi→math_constant`, `%→math_modulo`, `min/max/gcd/lcm` → `math_on_list`/`gcd_lcm` over a `lists_create_with` (A). `evalue`, `diff`, `simplify` per M-23…M-25.
-- **REQ-EXPR-4** **Trigonometry is a gap until the unit question (Q6) is answered.** WIMS `sin()` takes radians; the forward converter *assumed* degrees for XML `math_trig` (explicit hypothesis in `xml2oef/MAPPING.md:22` and `README.md`). Inventing a `×180/π` wrapper would be inventing logic (REQ-TODO-2). Therefore: with no `--trig-units` option, every `sin cos tan asin atan acos` call is **G-21** (placeholder + taint; file `partiel`). The option `--trig-units deg|rad` has **no default** and states the unit **XML** `math_trig` expects (OEF/WIMS arguments are always radians). When given: `rad` (XML uses radians) emits `math_trig` on the argument **unchanged**; `deg` (XML uses degrees) wraps the radian argument as `x × 180 / π` (`math_arithmetic`, `math_constant PI`) before `math_trig`. Special case, the forward-converter idiom `sin(x*pi/180)` (Appendix B.2): with `deg` the `*pi/180` factor is stripped and `math_trig` gets `x`; with `rad` the expression is kept as is. In all cases every trig block is reported at level `approximation`, `fidelite: non_verifiee`.
+- **REQ-EXPR-4** **Trigonometry is a gap until the unit question (Q6) is answered.** WIMS `sin()` takes radians; the forward converter *assumed* degrees for XML `math_trig` (explicit hypothesis in `xml2oef/MAPPING.md:22` and `README.md`). Inventing a `×180/π` wrapper would be inventing logic (REQ-TODO-2). Therefore: with no `--trig-units` option, every `sin cos tan asin atan acos` call is **G-21** (placeholder + taint; file `partiel`). The option `--trig-units deg|rad` has **no default** and states the unit the **target platform**'s `math_trig` expects (OEF/WIMS arguments are always radians). When given: `rad` (the target platform uses radians) emits `math_trig` on the argument **unchanged**; `deg` (the target platform uses degrees) wraps the radian argument as `x × 180 / π` (`math_arithmetic`, `math_constant PI`) before `math_trig`. Special case, the forward-converter idiom `sin(x*pi/180)` (Appendix B.2): with `deg` the `*pi/180` factor is stripped and `math_trig` gets `x`; with `rad` the expression is kept as is. In all cases every trig block is reported at level `approximation`, `fidelite: non_verifiee`.
 - **REQ-EXPR-5** Constant folding is allowed only when exact (integer arithmetic without division); never fold decimals.
 - **REQ-EXPR-6** Anything the parser cannot parse becomes a gap (G-11/G-12) — never a best-effort partial tree.
 
@@ -413,7 +419,7 @@ The 1100 generated OEF files are the output of `xml2oef`. Its conventions (Appen
 
 ### 7.4 CAS calls
 
-- `pari(…)` (hand-written: 11 files; generated: 89 files, 927 calls), `maxima(…)` (3 / 9 files), `yacas(…)`, `solve`, `int`, `det`: only the patterns in M-25…M-27 are mapped; the XML CAS blocks use **Algebrite**, not PARI/Maxima, so even mapped calls are `A`. All others are **G-11**.
+- `pari(…)` (hand-written: 11 files; generated: 89 files, 927 calls), `maxima(…)` (3 / 9 files), `yacas(…)`, `solve`, `int`, `det`: only the patterns in M-25…M-27 are mapped; the target platform CAS blocks use **Algebrite**, not PARI/Maxima, so even mapped calls are `A`. All others are **G-11**.
 - `\function{f=…}` strings are kept as text (M-22) and compared by `type=function`/`formal` answers (§8).
 
 ### 7.5 LaTeX and HTML in statements
@@ -467,21 +473,21 @@ True/false: OEF has none; a `radio` whose only two options are the language's tr
 
 ### 8.4 Options and weights
 
-`option=` tokens (upstream occurrences): `noanalyzeprint` 186, `shuffle` 117, `nonstop` 82, `noorder` 50, `text` 50, `detag` 40, `show` 25, `split` 21, `sort` 14, `multiple` 3, `eqweight` 3, `absolute` 2. Handling: `shuffle` on choice types → `info` (XML shuffling behaviour unknown); `noorder` on `checkbox`/`correspond` → `info`; **all others and `weight=` → G-05** (reported at level `approximation` on the question, since they change grading or display).
+`option=` tokens (upstream occurrences): `noanalyzeprint` 186, `shuffle` 117, `nonstop` 82, `noorder` 50, `text` 50, `detag` 40, `show` 25, `split` 21, `sort` 14, `multiple` 3, `eqweight` 3, `absolute` 2. Handling: `shuffle` on choice types → `info` (the target platform shuffling behaviour unknown); `noorder` on `checkbox`/`correspond` → `info`; **all others and `weight=` → G-05** (reported at level `approximation` on the question, since they change grading or display).
 
 ### 8.5 Evaluation, conditions, feedback
 
 - `\feedback{condition}{message}` (upstream: 38 files; generated: 505) → phase 3: `feedbacks` input of the question (`controls_if` + `display_element`), reversing the forward rule ("`\feedback{condition}{message}` ← `feedbacks`, `context_question`, `feedback_global`").
 - `\condition{prompt}{cond}`/`\conditions{…}` (24 + 14 files) → phase 3: answer predicate (`raw_options {"callbackSolution":true}` as seen in 128 real `question_open`) *only* for the patterns the forward converter emits (`\x2orepN` + `\condition`). Others stay G-15.
 - `\sc_replyN` (score of answer N), `\replyN` → inside feedback conversion only (`is_solution_found{solution_found_type}`).
-- The evaluation *semantics* of XML (how `decimal` compares, tolerance, attempts, whether `unique`/`multiple` grade like `radio`/`checkbox`) are not documented in the material; every converted question is reported `fidelite: non_verifiee` (REQ-REP-7) unless a verified rule exists (Q5). This is why §8.2 marks even the structurally direct types A†.
+- The evaluation *semantics* of the target platform (how `decimal` compares, tolerance, attempts, whether `unique`/`multiple` grade like `radio`/`checkbox`) are not documented in the material; every converted question is reported `fidelite: non_verifiee` (REQ-REP-7) unless a verified rule exists (Q5). This is why §8.2 marks even the structurally direct types A†.
 
 ---
 
 ## 9. Multi-step exercises
 
 - OEF: `\steps{1,2,3}` declares steps (at most one per file), `\nextstep{…}` computes the next step from the answers, `\step` is the current step number; each step re-runs the statement, hint and answers. Upstream: `\steps` in 101 files (30%; hand-written 8), `\nextstep` in 36 (hand-written 11), `\step` referenced in 47.
-- XML has no step construct; its multi-question mechanisms are *sequential question blocks*, `context_question`, nested questions in `feedbacks` (`settings/hasNestedQuestion`) and `versions` (difficulty variants, a different concept).
+- The target platform has no step construct; its multi-question mechanisms are *sequential question blocks*, `context_question`, nested questions in `feedbacks` (`settings/hasNestedQuestion`) and `versions` (difficulty variants, a different concept).
 - **REQ-STEP-1** *Static* steps (the `\statement` contains `\if{\step=k}{…}` or `\ifval` branching on `\step`, with a fixed `\steps` list and a trivial `\nextstep`) MAY be linearised into consecutive display/question blocks in phase 3 (A). A question active in k steps is emitted k times; the report records `copies(q)=k` and the counters of REQ-REP-4 (I2, I3) stay valid because they count source questions, not output blocks.
 - **REQ-STEP-2** *Dynamic* progression (`\nextstep` depends on the answers) is **G-08** — placeholder + taint; never approximated.
 - **REQ-STEP-3** Until phase 3 every file containing `\steps` is `partiel` (or `echec` under `--strict`) with the gap listed.
@@ -778,8 +784,8 @@ Dependencies on answers: Q1 → REQ-OUT-5, REQ-TODO-4, AC-4; Q5 → fidelity upg
 
 | ID | Risk | Effect | Mitigation |
 |---|---|---|---|
-| R1 | Schema-valid output that XML cannot import (catch-all type pattern, `any-content` fields, §2.3) | false confidence | whitelist + catalogue + shape lint (REQ-SCH-1…4); no "importable" claim (REQ-SCH-6); real import test requested (Q5, SC-5) |
-| R2 | Unknown XML grading and field semantics (`decimal` tolerance, `unique`/`multiple`, `mutation_shape`, `raw_options`) | wrong grading although the structure is right | `fidelite: non_verifiee` (REQ-REP-7); templates in data files (§8.3); Q5 |
+| R1 | Schema-valid output that the target platform cannot import (catch-all type pattern, `any-content` fields, §2.3) | false confidence | whitelist + catalogue + shape lint (REQ-SCH-1…4); no "importable" claim (REQ-SCH-6); real import test requested (Q5, SC-5) |
+| R2 | Unknown target-platform grading and field semantics (`decimal` tolerance, `unique`/`multiple`, `mutation_shape`, `raw_options`) | wrong grading although the structure is right | `fidelite: non_verifiee` (REQ-REP-7); templates in data files (§8.3); Q5 |
 | R3 | Ambiguous OEF expressions (list vs string, `\if` vs `\ifval`, `random(a,b)`) | silent wrong logic | exact `sp.c` rules (§7.2), taint (REQ-TODO-3), never best-effort trees (REQ-EXPR-6) |
 | R4 | Raw HTML inside XML `text` blocks may not render | display defects (M-48) | `--html strict` → G-17; measured per element class; Q5 |
 | R5 | GPL: WIMS is GPL, LaRuche GPL-3.0; code ported from `oef2wims` is a derivative work; the repository is AGPL-3.0 (Q7 closed) | legal | facts only in this spec (§1.3); decision before the first code commit (Q7, AC-13) |
@@ -787,7 +793,7 @@ Dependencies on answers: Q1 → REQ-OUT-5, REQ-TODO-4, AC-4; Q5 → fidelity upg
 | R7 | Windows paths, encodings, long paths (`LongPathsEnabled=0`), ISO-8859-1 sources (80% upstream) | crashes, mojibake | REQ-IN-3, REQ-WIN-1…5 |
 | R8 | v2 schemas and Schematron not supplied | requirements that cannot be checked | conditional requirements (REQ-OUT-5, REQ-TODO-4, AC-4); Q1 |
 | R9 | WIMS version drift (4.31b verified; 4.27b mentioned by a reviewer) | different directives/limits | all facts carry source lines (Appendix A.3); Q3 |
-| R10 | Placeholder carrier (`text` + comment icon) not confirmed in the XML editor | invisible TODOs | switchable carrier (REQ-TODO-1); the `info` block also lists them; Q5 |
+| R10 | Placeholder carrier (`text` + comment icon) not confirmed in the target platform editor | invisible TODOs | switchable carrier (REQ-TODO-1); the `info` block also lists them; Q5 |
 | R11 | Over-claiming `complet` | unsafe publication (cf. "reduced16", handoff line 9) | upper-bound FAIL rule (§14.2), AC-8, `--strict` |
 | R12 | Gate wrapper pollutes the input folder (`.def/.log/.trace/.json` next to the input) | modified source tree | scratch-copy execution (REQ-ARCH-4, AC-11) |
 
@@ -803,7 +809,7 @@ Dependencies on answers: Q1 → REQ-OUT-5, REQ-TODO-4, AC-4; Q5 → fidelity upg
 | Q2 | Which of the owner's own hand-written OEF files can be used as evaluation set E-O (none is in the corpus)? | RT-B, AC-10 | the 121 upstream hand-written files |
 | Q3 | Which WIMS version(s) must be supported? Everything here is verified against 4.31b sources; a reviewer mentioned 4.27b. | directive/limit tables (Appendix A.3), R9 | 4.31b |
 | Q4 | Will the schema accept `source_format="oef"` (SC-1)? | REQ-SCH-5 | `ir` |
-| Q5 | Can XML provide an importer or runtime test and documentation of: question fields (`mutation_shape`, `moreOptions`, `raw_options`, `answer`, `question`, `default_feedbacks`), grading semantics, raw HTML in `text`, comment icons on a `text` block and newlines in icon text? | REQ-SCH-6, REQ-REP-7, §8.3, REQ-TODO-1, M-48 | `non_verifiee`, modal templates, `--placeholder-carrier text` |
+| Q5 | Can the target platform provide an importer or runtime test and documentation of: question fields (`mutation_shape`, `moreOptions`, `raw_options`, `answer`, `question`, `default_feedbacks`), grading semantics, raw HTML in `text`, comment icons on a `text` block and newlines in icon text? | REQ-SCH-6, REQ-REP-7, §8.3, REQ-TODO-1, M-48 | `non_verifiee`, modal templates, `--placeholder-carrier text` |
 | Q6 | Does XML `math_trig` use degrees or radians? (the forward converter assumed degrees, `MAPPING.md:22`) | REQ-EXPR-4, G-21 | trig is a gap unless `--trig-units` is given |
 | Q7 | Which licence for OEF2XML, given WIMS (GPL) and LaRuche (GPL-3.0)? May code be derived from `oef2wims`? | §1.3, R5, AC-13 | **Closed 2026-11-10: AGPL-3.0.** Compatible: WIMS `oef2wims` sources are GPL v2 *or later* (header of `src/OefMsg2wims/oef2wims.c`), so GPL-3.0 applies and GPLv3 §13 allows combination with AGPL-3.0; LaRuche GPL-3.0 likewise |
 | Q8 | Default `max_attempts` (M-08)? | `info.max_attempts` | 1, reported as `info` |
@@ -1028,7 +1034,7 @@ See A.2: every row there is one entry of the table (`type=` value, canonical `re
 | `wims` | 345 | 297 | §7.3 (6 subcommands) / G-12 |
 | `yacas` | 346 | 117 | G-11 |
 
-Notes: `random`/`randint` semantics `sp.c:192–212`; item functions `sp.c:217–233`; `rows`/`randrow` `sp.c:273–279`; context-dependent rewriting `parmprep` `sp.c:351–380`. Trigonometric functions are **not** in this table: they belong to the WIMS expression evaluator, not to `oef2wims`; their XML unit is Q6.
+Notes: `random`/`randint` semantics `sp.c:192–212`; item functions `sp.c:217–233`; `rows`/`randrow` `sp.c:273–279`; context-dependent rewriting `parmprep` `sp.c:351–380`. Trigonometric functions are **not** in this table: they belong to the WIMS expression evaluator, not to `oef2wims`; their target-platform unit is Q6.
 
 #### A.3.4 Limits, errors and silent behaviours
 
@@ -1240,7 +1246,7 @@ Never observed (not to be emitted): `QUESTION`, `adjectives`, `arrow`, `conjugat
 
 Each row is a rule of the forward converter and what the reverse tool does with the OEF shape it produces. Recognition is switchable (`--idioms`, REQ-IDIOM-3) and limited to the exact shapes listed (REQ-IDIOM-2). "MAPPING.md:n" = line in `/workspace/xml2oef/MAPPING.md`.
 
-| Forward rule (XML → OEF) | OEF shape produced | Reverse treatment | Fid. | MAPPING.md |
+| Forward rule (the target platform → OEF) | OEF shape produced | Reverse treatment | Fid. | MAPPING.md |
 |---|---|---|---|---:|
 | title cut to 78 bytes | `\title{…}` | `<name>`, `<title>`, `default_title`; the cut is not recoverable (reported `info`) | A | 8 |
 | `default_lang` → language; description; author | `\language \description \author` | M-02, M-05, M-04 | E | 9–11 |
@@ -1249,7 +1255,7 @@ Each row is a rule of the forward converter and what the reverse tool does with 
 | sub-expression → temporary `\x2oN` | `\text/\integer/\real{x2oN=…}` used once | a temporary defined once and read once is inlined back into the expression; otherwise kept as a variable `x2oN` | A | 19 |
 | `random_number`, `math_random_int` | `randint(a..b)`, `random(a..b)` | M-10, M-11 | E / A | 20 |
 | arithmetic, `math_single`, `math_round`, `round_decimal`, `math_modulo`, `math_constant` | `+ - * / ^`, `abs sqrt ln log10 exp`, `rint ceil floor`, `rint(x*10^d)/10^d`, `%`, `pi e` | REQ-EXPR-3; the `rint(x*10^d)/10^d` shape → `round_decimal` (A) | E / A | 21 |
-| `math_trig` (hypothesis: degrees) | `sin(x*pi/180)` | **G-21** unless `--trig-units deg` is given (then `math_trig` on `x`); never converted silently (REQ-EXPR-4, Q6) | G / A | 22 |
+| `math_trig` (hypothesis: degrees) | `sin(x*pi/180)` | **G-21** unless `--trig-units` is given: with `deg`, the `*pi/180` factor is stripped and `math_trig` gets `x`; with `rad`, the expression is kept as is; never converted silently (REQ-EXPR-4, Q6) | G / A | 22 |
 | `integer_part`, `decimal_part` | `floor(x)`, `x-floor(x)` | left as arithmetic (A); not folded back | A | 23 |
 | list blocks | `\L[i]`, `randitem()`, `items()`, `wims(replace item number …)`, `wims(sort [numeric] items …)`, `position()`, `shuffle()`, `\for` loops | M-14…M-20, §7.3 | E / A | 24 |
 | `data_table`, `table_matrix`, `matrix_short_get` | `\matrix{…}`, `\M[i;j]` | P (M-21, Q13) | P | 25 |
