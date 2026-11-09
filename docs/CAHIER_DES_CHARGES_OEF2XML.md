@@ -5,12 +5,15 @@
 | **Project** | OEF2XML — migrate WIMS OEF exercises to Eleda program XML (`urn:eleda:program:v1`) |
 | **Repository** | https://github.com/io-e/OEF2XML — **public**, no `LICENSE` yet (§1.3, Q7) |
 | **Owner** | Arnaud Lefrancois |
-| **Version / date** | **v0.2.1 — 2026-11-09** (supersedes v0.2 draft and v0.1, which was truncated after §12) |
+| **Version / date** | **v0.2.2 — 2026-11-10** (supersedes v0.2 draft and v0.1, which was truncated after §12) |
 | **Language** | English (French section titles kept only where they name existing artefacts) |
 | **Status** | For review. Nothing in this document has been implemented. Published in the repository under `docs/`. |
 | **Verified against** | WIMS **4.31b** `oef2wims` sources (the only WIMS version available on the box), Eleda schema **v1** (RNG `CLAUDE_V1_1`, XSD), 1116 real Eleda programs, 1438 OEF files (Appendix C). Eleda schema v2 and Schematron were **not** supplied (Q1). |
 
 Keywords MUST / SHOULD / MAY follow RFC 2119. Requirement identifiers (`REQ-…`) are stable so tests and the conversion report can cite them.
+
+### Changelog v0.2.1 → v0.2.2
+- §11.1 closed: Python 3.12 (Go has no native RNG/XSD validation; shared logic lives in data files; round-trip calls `xml2oef.exe` as a process). Q11 closed: PyInstaller exe optional in P4.
 
 ### Changelog v0.2 → v0.2.1
 - REQ-EXPR-4: `--trig-units deg|rad` was inverted. It now names the unit Eleda expects: `rad` keeps the argument, `deg` wraps it as `x × 180/π`; the forward idiom `sin(x*pi/180)` is handled separately (Appendix B.2).
@@ -501,10 +504,16 @@ True/false: OEF has none; a `radio` whose only two options are the language's tr
 | Owner maintains it | yes | harder | partly |
 | Reuse `oef_validate.py`/`oef_spec.json` | direct | port | port |
 | Single exe for Windows | PyInstaller (optional) | native | n/a |
-| XML validation (RNG/XSD/Schematron) | `lxml` | external | external |
+| XML validation (RNG/XSD/Schematron) | `lxml` | no native RNG/XSD; libxml2 via cgo breaks the static build | external |
 | Speed | sufficient (median 12 directives/file hand-written, 48 generated) | best | – |
 
-Decision: Python 3.12, standard library + `lxml` (optional extra for validation). Revisit if a single-exe distribution becomes a requirement (open question Q11).
+**Decision (closed 2026-11-10): Python 3.12**, standard library + `lxml` (optional extra for validation). Reasons beyond the table:
+- Go cannot validate RNG/XSD natively; linking libxml2 via cgo removes the "single static exe" advantage, while `lxml` does it today.
+- Little code is shared with the forward converter: the overlap (mapping tables, block catalogue, templates) is kept as data files (`mapping.yaml`, `templates/*.json`, REQ-ARCH-2) that any language can read.
+- The round-trip tests call `xml2oef.exe` as a separate program, so mixing Python and Go costs nothing.
+- Speed is not a constraint (about 1,400 files).
+
+Distribution (Q11, closed): Python 3.12 + `lxml`; an optional PyInstaller one-file `oef2xml.exe` bundling `lxml` in phase P4. Go is reconsidered only if the tool must run on machines without Python **and** the PyInstaller exe is not acceptable there.
 
 ### 11.2 Pipeline
 
@@ -592,7 +601,7 @@ Exit codes: `0` all `complet`, `1` ≥ 1 `partiel`, `2` ≥ 1 `echec`, `64` bad 
 - **REQ-WIN-3** External programs (`oef2wims-v2.exe`, `oef2wims-log.exe`) are launched with `subprocess` using a list of arguments (no shell) and a Unicode-safe environment. The E2 wrappers handle short-name/temp-copy modes; the plain `oef2wims.exe` is **not** supported for non-ANSI paths.
 - **REQ-WIN-4** Default tool locations are configurable, with documented defaults on the owner's machine: schemas `D:\ALF_Scripts\00-Schemas\03-xml_IR`, compiler `D:\ALF_Scripts\00-Schemas\01-oef_WIMS\01-oef_WIMS_CheckC\oef2wims-v2.exe` (never hard-coded in the source; read from a `oef2xml.toml` or environment variables).
 - **REQ-WIN-5** A `tests/unicode` suite reuses the E2 cases (`数学`, `Συνάρτηση`, `test_😀`, 285-character path, spaces, `été`) for input paths, output paths and `--assets-dir`.
-- **REQ-WIN-6** Optional: PyInstaller one-file `oef2xml.exe` (not required for the MVP; open question Q11).
+- **REQ-WIN-6** Optional, phase P4: PyInstaller one-file `oef2xml.exe` bundling `lxml` (not required for the MVP; Q11 closed, §11.1).
 
 ---
 
@@ -794,7 +803,7 @@ Dependencies on answers: Q1 → REQ-OUT-5, REQ-TODO-4, AC-4; Q5 → fidelity upg
 | Q8 | Default `max_attempts` (M-08)? | `info.max_attempts` | 1, reported as `info` |
 | Q9 | Should `settings` timestamps/`template` be stamped (REQ-OUT-6)? | settings | omitted unless `--stamp` |
 | Q10 | Mapping of `\solution`, `\hint`, `\help` (post-answer display in `feedbacks`?) | M-51, G-03 | placeholder |
-| Q11 | Distribution: Python 3.12 + `lxml` or a single PyInstaller `.exe`? | §11.1, REQ-WIN-6 | Python 3.12 |
+| Q11 | Distribution: Python 3.12 + `lxml` or a single PyInstaller `.exe`? | §11.1, REQ-WIN-6 | **Closed 2026-11-10:** Python 3.12 + `lxml`; PyInstaller exe optional in P4 |
 | Q12 | Languages `ca cn nl si`: extend the schema (SC-2) or drop? | G-04, G-20 | fall back to `--default-lang`, report |
 | Q13 | Exemplars for the matrix/table blocks (`matrix{typeOf}`, `table_matrix`/`data_table` `LINE_n`) and for the `VALUE`/`FIND` roles of `lists_indexOf`. | M-19, M-21, G-10, phase 2 | placeholder (G-10) |
 
