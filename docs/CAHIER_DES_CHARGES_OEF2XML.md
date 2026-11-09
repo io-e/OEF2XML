@@ -5,12 +5,18 @@
 | **Project** | OEF2XML — migrate WIMS OEF exercises to Eleda program XML (`urn:eleda:program:v1`) |
 | **Repository** | https://github.com/io-e/OEF2XML — **public**, no `LICENSE` yet (§1.3, Q7) |
 | **Owner** | Arnaud Lefrancois |
-| **Version / date** | **v0.2 DRAFT — 2026-11-09** (supersedes v0.1, which was truncated after §12) |
+| **Version / date** | **v0.2.1 — 2026-11-09** (supersedes v0.2 draft and v0.1, which was truncated after §12) |
 | **Language** | English (French section titles kept only where they name existing artefacts) |
-| **Status** | For review. Nothing in this document has been implemented. This file has not been pushed by the author; the owner pushes it. |
+| **Status** | For review. Nothing in this document has been implemented. Published in the repository under `docs/`. |
 | **Verified against** | WIMS **4.31b** `oef2wims` sources (the only WIMS version available on the box), Eleda schema **v1** (RNG `CLAUDE_V1_1`, XSD), 1116 real Eleda programs, 1438 OEF files (Appendix C). Eleda schema v2 and Schematron were **not** supplied (Q1). |
 
 Keywords MUST / SHOULD / MAY follow RFC 2119. Requirement identifiers (`REQ-…`) are stable so tests and the conversion report can cite them.
+
+### Changelog v0.2 → v0.2.1
+- REQ-EXPR-4: `--trig-units deg|rad` was inverted. It now names the unit Eleda expects: `rad` keeps the argument, `deg` wraps it as `x × 180/π`; the forward idiom `sin(x*pi/180)` is handled separately (Appendix B.2).
+- REQ-VAL-4: the fixtures are committed. REQ-TODO-1: the catalogue covers 1116 programs.
+- Reproducibility of §14.2: `tools/corpus_stats/data/corpus.map` and `per_file.csv` are committed (the OEF corpus itself is not: upstream files are WIMS GPL material and the generated files come from the owner's private programs).
+- §14: note that the phase-1 gate on hand-written files rests on 5 files only and says little about real OEF until the E-O set (Q2) exists.
 
 ### Changelog v0.1 → v0.2
 
@@ -321,7 +327,7 @@ Every gap has an id used in the report (`regle`) and in the placeholder comment.
 
 Aligned with the handoff's safety note: *unresolved content becomes a TODO; exercise logic is never invented.*
 
-- **REQ-TODO-1 Placeholder form.** A gap is represented by a **top-level orphan block** (not reachable from `info`; never executed) of type `text` (in the enum; 49 204 `text` blocks in 1100 programs, of which 187 are *top-level orphans* like a placeholder, none with an icon) with `x`,`y` outside the main chain's area, carrying a comment icon in **exactly the format of real files**:
+- **REQ-TODO-1 Placeholder form.** A gap is represented by a **top-level orphan block** (not reachable from `info`; never executed) of type `text` (in the enum; 49 204 `text` blocks in the 1116 catalogued programs, of which 187 are *top-level orphans* like a placeholder, none with an icon) with `x`,`y` outside the main chain's area, carrying a comment icon in **exactly the format of real files**:
 
   ```xml
   <block type="text" id="…" x="700" y="-266">
@@ -390,7 +396,7 @@ The 1100 generated OEF files are the output of `xml2oef`. Its conventions (Appen
 - **REQ-EXPR-1** A table-driven expression parser (Pratt/precedence climbing) MUST be generated from a spec file (`expr_spec.json`, produced from `Lib/calc.c`/`evalue.c` function tables in the same way `oef_spec.json` is generated from the sources) rather than hand-coded.
 - **REQ-EXPR-2** It MUST parse: numbers (including `1e-3`, decimals with `.`), `\var` references with `[…]` indexing, `+ - * / ^`, unary minus, parentheses, function calls, comparisons, `and or not`, string literals as they occur in OEF conditions, and the special calls of §7.2.
 - **REQ-EXPR-3** Function mapping (E unless noted): `abs→ABS`, `sqrt→ROOT`, `ln→LN`, `log10→LOG10`, `exp→EXP`, `floor→ROUNDDOWN`, `ceil→ROUNDUP`, `rint→ROUND`, `pi→math_constant`, `%→math_modulo`, `min/max/gcd/lcm` → `math_on_list`/`gcd_lcm` over a `lists_create_with` (A). `evalue`, `diff`, `simplify` per M-23…M-25.
-- **REQ-EXPR-4** **Trigonometry is a gap until the unit question (Q6) is answered.** WIMS `sin()` takes radians; the forward converter *assumed* degrees for Eleda `math_trig` (explicit hypothesis in `xml2oef/MAPPING.md:22` and `README.md`). Inventing a `×180/π` wrapper would be inventing logic (REQ-TODO-2). Therefore: with no `--trig-units` option, every `sin cos tan asin atan acos` call is **G-21** (placeholder + taint; file `partiel`). The option `--trig-units deg|rad` has **no default**; when given, `deg` emits `math_trig` on the unconverted argument and `rad` wraps the argument with `× 180 / π` (`math_arithmetic`, `math_constant PI`); in both cases every trig block is reported at level `approximation`, `fidelite: non_verifiee`.
+- **REQ-EXPR-4** **Trigonometry is a gap until the unit question (Q6) is answered.** WIMS `sin()` takes radians; the forward converter *assumed* degrees for Eleda `math_trig` (explicit hypothesis in `xml2oef/MAPPING.md:22` and `README.md`). Inventing a `×180/π` wrapper would be inventing logic (REQ-TODO-2). Therefore: with no `--trig-units` option, every `sin cos tan asin atan acos` call is **G-21** (placeholder + taint; file `partiel`). The option `--trig-units deg|rad` has **no default** and states the unit **Eleda** `math_trig` expects (OEF/WIMS arguments are always radians). When given: `rad` (Eleda uses radians) emits `math_trig` on the argument **unchanged**; `deg` (Eleda uses degrees) wraps the radian argument as `x × 180 / π` (`math_arithmetic`, `math_constant PI`) before `math_trig`. Special case, the forward-converter idiom `sin(x*pi/180)` (Appendix B.2): with `deg` the `*pi/180` factor is stripped and `math_trig` gets `x`; with `rad` the expression is kept as is. In all cases every trig block is reported at level `approximation`, `fidelite: non_verifiee`.
 - **REQ-EXPR-5** Constant folding is allowed only when exact (integer arithmetic without division); never fold decimals.
 - **REQ-EXPR-6** Anything the parser cannot parse becomes a gap (G-11/G-12) — never a best-effort partial tree.
 
@@ -599,7 +605,7 @@ Four gates apply to every file, in this order. **G0** decode and parse; **G1** c
 - **REQ-VAL-1** Every output XML is validated against `eleda_program_v1.rng` **and** `eleda_program_v1.xsd` (`lxml.etree.RelaxNG` / `XMLSchema`); the report records `rng`, `xsd` as `ok`/`ko` with the first error. Both schemas are required to agree; a disagreement is an internal error.
 - **REQ-VAL-2** Schematron: conditional on Q1. Without the `.sch` the report says `schematron: non_execute` and AC-4 is not evaluated; with it (`--schematron FILE`) every document is checked and R05 behaves as in REQ-TODO-4.
 - **REQ-VAL-3** **Shape lint** (REQ-SCH-4) on the written XML: every block type is in the whitelist, every field/input/`extraState` name is in `eleda_block_catalog.json`, children order is as in §2.3 item 7, every `variables_get/set` id is in `<variables>`.
-- **REQ-VAL-4** **Schema fixtures** (delivered with v0.2 in the repository working tree, `validation/xml/tests/`; not yet committed when this document was written). They pin the schema behaviour the converter relies on, so that a schema change (e.g. v2) is detected immediately:
+- **REQ-VAL-4** **Schema fixtures** (committed in `validation/xml/tests/`, run with `python3 run_schema_tests.py`). They pin the schema behaviour the converter relies on, so that a schema change (e.g. v2) is detected immediately:
 
 | Fixture | Expected | Requirement it protects |
 |---|---|---|
@@ -734,7 +740,7 @@ Expected shares at target (`complet` / `partiel` / `echec`): **H** 13% / 87% / 0
 
 **Rules that apply to every corpus (hard, no threshold):** 0 crash; 100% of files accounted for in the report (REQ-BATCH-1); 0 `complet` file containing a placeholder, a dynamic type or a G-22 marker (AC-8); 0 `DIFF-SILENT` (§13.3); every `echec` carries the message of the failing gate.
 
-**Phase gates.** The shares above are for the end of phase 3 (§15). The **MVP gate (end of phase 1)** uses the phase-1 scope `M1` (`oef_corpus_stats.py`, tier `M1_mvp_scope`: header, `\integer \real \text`, `randint/random/shuffle/randitem/item/items`, answer types numeric/case/formal family/radio/checkbox): files wholly inside `M1`: **H 5, M 0, Gn 324**. MVP PASS: ≥ 80% of the `M1` files of H and of Gn reach `Q ≥ 1` (H ≥ 4 of 5, Gn ≥ 260 of 324) with no `DIFF-SILENT`, no crash, the other hard rules above, and `E` ≤ 1% for Gn; for M there is no MVP threshold (no file is inside `M1`) but the report must account for all 212 files.
+**Phase gates.** The shares above are for the end of phase 3 (§15). The **MVP gate (end of phase 1)** uses the phase-1 scope `M1` (`oef_corpus_stats.py`, tier `M1_mvp_scope`: header, `\integer \real \text`, `randint/random/shuffle/randitem/item/items`, answer types numeric/case/formal family/radio/checkbox): files wholly inside `M1`: **H 5, M 0, Gn 324**. MVP PASS: ≥ 80% of the `M1` files of H and of Gn reach `Q ≥ 1` (H ≥ 4 of 5, Gn ≥ 260 of 324) with no `DIFF-SILENT`, no crash, the other hard rules above, and `E` ≤ 1% for Gn; for M there is no MVP threshold (no file is inside `M1`) but the report must account for all 212 files. **Caveat:** the H part of the MVP gate rests on only 5 files, so it says little about real hand-written OEF; it is a smoke test, and the hand-written evaluation set E-O (Q2) is what measures real-world coverage.
 
 ---
 
