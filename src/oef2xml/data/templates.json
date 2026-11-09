@@ -1,0 +1,15 @@
+{
+  "_comment": "Question block templates (REQ-MAP-Q-TEMPLATE, 8.3). Modal real shapes; semantics unconfirmed (Q5). Edit here, not in code. Field value markers: $type, @answer (answer variable), @question (QUESTION variable).",
+  "question_open": {
+    "extraState": [["displaymoreOptions", "true"], ["statement", "false"]],
+    "fields": [["type", "$type"], ["moreOptions", "true"], ["mutation_shape", "value"], ["answer", "@answer"], ["question", "@question"], ["default_feedbacks", "true"], ["raw_options", "{}"]]
+  },
+  "question_multiple_choices": {
+    "extraState": [["displaymoreOptions", "true"], ["statement", "false"]],
+    "fields": [["type", "$type"], ["moreOptions", "true"], ["mutation_shape", "value"], ["answer", "@answer"], ["question", "@question"], ["default_feedbacks", "true"], ["raw_options", "{}"]]
+  },
+  "question_true_false": {
+    "extraState": [["displaymoreOptions", "true"], ["statement", "false"]],
+    "fields": [["moreOptions", "true"], ["mutation_shape", "value"], ["answer", "@answer"], ["question", "@question"], ["default_feedbacks", "true"], ["raw_options", "{}"]]
+  }
+}
