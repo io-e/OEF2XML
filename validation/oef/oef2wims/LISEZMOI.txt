@@ -1,0 +1,206 @@
+oef2wims.exe — compilateur OEF de WIMS 4.31b pour Windows (x64, autonome)
+=========================================================================
+
+QU'EST-CE QUE C'EST
+  Le programme officiel « oef2wims » de WIMS (celui que WIMS utilise pour
+  compiler un exercice .oef en fichier .def), recompilé tel quel pour Windows.
+  Le code WIMS n'a PAS été réécrit ni modifié : mêmes fichiers C, même liste
+  que le Makefile officiel. Exécutable statique : aucune DLL à installer
+  (n'utilise que KERNEL32.dll et msvcrt.dll, présentes sur tout Windows).
+
+SOURCE
+  WIMS 4.31b — archive Debian wims_4.31b+dfsg1.orig.tar.gz
+  sha256 b8091a9a16db6fb1264f7bc3a211732fc05562bb20a1b6e7b0963c51c4c13fb9
+  (README : « Distribution version 4.31b of WIMS » ; PACKAGE_VERSION 4.31b)
+  Projet officiel : https://sourcesup.renater.fr/projects/wims/
+  Fichiers : src/Lib/{dir,evalue,levelcurve,liblines,math,text,mt19937ar,libwims}.c
+             src/OefMsg2wims/{oeflines,compare,outexec,process,sp,oef2wims}.c
+  Version interne de oef2wims : 3.22
+  sha256 oef2wims.exe : voir build.log (6c3ee8d6…58b1)
+
+COMPILATION (Linux, MinGW-w64) — script complet : shim/build.sh, journal : build.log
+  x86_64-w64-mingw32-gcc -g -O2 -Wall -I../shim -include oef2wims_win_compat.h \
+     -DGNU_SOURCE -DVERSION_DATE="2026-10-25" -c <fichier.c>
+  x86_64-w64-mingw32-gcc -static -o oef2wims.exe *.o shim_binmode.o -lm -Wl,-Bstatic -lpthread
+
+ADAPTATIONS (shims, hors code WIMS, dossier shim/)
+  - sys/resource.h : en-tête vide (absent sous Windows, inutilisé par oef2wims).
+  - oef2wims_win_compat.h (inclus d'office) : filelength -> wims_filelength
+    (conflit de nom avec io.h), lstat -> stat, mkdir(p,m) -> _mkdir(p).
+  - oef2wims_win_binmode.c : entrées/sorties en mode binaire, pour que le
+    .def et la console aient des fins de ligne LF comme sous Linux.
+  - config.h : celui produit par configure, sans les en-têtes POSIX absents.
+
+UTILISATION (PowerShell)
+  .\oef2wims.exe exo.oef                 # crée exo.def à côté
+  .\oef2wims.exe exo.oef C:\tmp\exo.def  # fichier de sortie explicite
+  .\oef2wims.exe table                   # auto-test -> "Table orders OK."
+  $env:oef2wims_mdef = '...'             # définitions externes (optionnel)
+  # Vérifier un dossier entier :
+  Get-ChildItem D:\mes_oef\*.oef | % { .\oef2wims.exe $_.FullName "$env:TEMP\t.def"; "$($_.Name) -> $LASTEXITCODE" }
+
+  Arguments : 1) fichier .oef (obligatoire ; sans argument : ne fait rien, code 0)
+              2) fichier .def de sortie (optionnel ; défaut : nom.oef -> nom.def)
+  Sortie console : "exo.oef.. -> exo.def" en cas de succès.
+  Erreur : "ERROR <message> [ '<car>' at line L col C. ]" sur la sortie standard,
+           code de retour 1, pas de fichier .def. Succès : code 0.
+  Taille max d'un .oef : 199 998 octets.
+
+TEST DE PARITÉ (Wine sous Linux, 25/10/2026)
+  1438 fichiers (333 .oef du dépôt WIMS 4.31b, 1100 .oef générés par xml2oef,
+  5 cas d'erreur synthétiques) : 1438 identiques, 0 différence entre le binaire
+  Linux et oef2wims.exe (sortie standard, sortie d'erreur, code de retour et
+  fichier .def comparés octet par octet, sans normalisation CRLF).
+  Le binaire Linux de référence (xml2oef/tools/oef2wims) donne aussi 1438/1438.
+  Détail : rapport_compilation.html.
+
+JOURNAL DÉTAILLÉ : oef2wims-log.exe (enveloppe, à placer à côté de oef2wims.exe)
+  oef2wims-log.exe ne modifie PAS le compilateur : il lance oef2wims.exe (pris dans
+  son propre dossier) avec les mêmes arguments, relaie à l'identique la sortie
+  console et le code de retour, puis écrit un journal UTF-8 « nom.log ».
+  .\oef2wims-log.exe exo.oef                      # crée exo.def + exo.log à côté
+  .\oef2wims-log.exe exo.oef C:\tmp\exo.def        # .def explicite, exo.log à côté du .oef
+  .\oef2wims-log.exe exo.oef --log C:\logs\exo.log  # journal ailleurs
+  .\oef2wims-log.exe a.oef b.oef c.oef             # lot : un .log par fichier
+  .\oef2wims-log.exe D:\mes_oef                    # dossier : tous les *.oef
+  En lot : un nom.log par fichier + résumé « oef2wims-batch.log » (dans le dossier
+  traité, ou le répertoire courant ; --log pour le placer ailleurs). Code de retour
+  du lot : 0 si tout est OK, 1 si au moins une erreur.
+  Contenu du journal : date/heure locale, chemins et sha256 de l'enveloppe et du
+  compilateur, version WIMS 4.31b, ligne de commande complète, répertoire courant,
+  fichier source (chemin, taille, nombre de lignes, sha256), variable oef2wims_mdef,
+  stdout et stderr complets, code de retour, durée, .def produit (chemin, taille,
+  sha256). En cas d'ERROR : message, position, la ligne fautive avec 3 lignes de
+  contexte numérotées et un « ^ » sous la colonne.
+  Source : wrapper/oef2wims_log.c ; compilation :
+  x86_64-w64-mingw32-gcc -municode -O2 -static -o oef2wims-log.exe oef2wims_log.c -lbcrypt
+  Testé sous Wine : sortie console, code de retour et .def identiques à
+  oef2wims.exe sur 8 fichiers (3 du corpus + 5 cas d'erreur), chemin avec espace et « é ».
+  Note : oef2wims.exe lui-même lit les chemins en page de codes ANSI ; un chemin
+  avec des caractères hors de cette page (ex. chinois) peut échouer côté compilateur.
+
+TRACE DES APPELS C : oef2wims-trace.exe (build instrumenté, à côté de oef2wims.exe)
+  oef2wims.exe (référence) n'est PAS modifié. oef2wims-trace.exe est compilé à partir
+  des MÊMES sources WIMS 4.31b avec gcc -finstrument-functions : chaque entrée/sortie
+  de fonction C est enregistrée. La table des fonctions et des lignes C est intégrée
+  à la fin de l'exe (aucun fichier annexe). Seuls 4 points d'accroche, entourés de
+  #ifdef OEF_TRACE, sont ajoutés dans une COPIE des sources (trace/oef_trace.patch) :
+    - oef2wims.c main()    : copie du source après lecture (calcul ligne/colonne OEF)
+    - oef2wims.c process() : position courante dans le source OEF
+    - oef2wims.c output()  : directive en cours (\statement, \answer, ...)
+    - oeflines.c oef_error : mémorise le message d'erreur
+  Utilisation :
+  .\oef2wims-trace.exe exo.oef            # même sortie/code/.def que oef2wims.exe + exo.oef.trace
+  .\oef2wims-log.exe --trace exo.oef      # idem, et résumé de trace ajouté dans exo.log
+  .\oef2wims-log.exe --trace D:\mes_oef   # lot ; le batch.log donne pour chaque fichier
+                                          #   la dernière ligne OEF et la dernière ligne C
+  Variables d'environnement :
+    OEF2WIMS_TRACE=chemin   fichier trace (défaut : <fichier>.oef.trace) ; =off pour désactiver
+    OEF2WIMS_TRACE_MAX=n    nombre max de lignes écrites (défaut 200000 ; au-delà seuls
+                            les compteurs et les derniers appels sont conservés)
+    OEF2WIMS_TRACE_RING=n   nombre de derniers événements gardés pour le résumé (défaut 64)
+  Contenu du .trace :
+    - en-tête (date, commande, taille de la table de symboles)
+    - un événement par ligne : temps en ms, profondeur, ->fonction (fichier.c:ligne de
+      définition) <- appelée depuis fichier.c:ligne, [OEF ligne] ; <-fonction + durée ;
+      « ## directive \xxx [OEF l:c] » quand une directive est traduite
+    - à la sortie (fin normale, oef_error, exit, ou PLANTAGE intercepté par
+      SetUnhandledExceptionFilter / signal) : section == RESUME == avec statut, message,
+      dernier appel, DERNIÈRE LIGNE C, ligne C du plantage, DERNIÈRE LIGNE OEF + contexte,
+      dernière directive, nb d'appels ; pile d'appels au moment de la sortie ; derniers
+      événements ; nombre d'appels par fonction.
+  Parité (Wine, 25/10/2026) : 1438 fichiers distincts (1443 exécutions), stdout, stderr,
+  code de retour et .def identiques octet par octet à oef2wims.exe : 0 différence.
+  Coût : ~50 ms par fichier au lieu de ~16 ms (Wine, démarrage compris), traces de
+  860 Ko en moyenne (jusqu'à 14,6 Mo, 4 fichiers atteignent la limite de 200000 lignes).
+  À réserver au diagnostic ; utiliser oef2wims.exe en production.
+  Reconstruction : trace/build_trace.sh (sources : trace/oef_trace.c, oef_trace.h,
+  mksym.py, oef_trace.patch).
+  Limite : la gestion d'un vrai plantage (exception) est en place mais n'a pas pu être
+  déclenchée, aucun fichier du corpus ne fait planter le compilateur.
+
+ASSISTANT DE CORRECTION : oef2wims-v2.exe (à côté de oef2wims.exe et oef2wims-trace.exe)
+  oef2wims-v2.exe ne modifie pas le compilateur : il lance oef2wims.exe (ou
+  oef2wims-trace.exe avec --trace), garde à l'identique le .def et le code de retour,
+  et écrit un journal nom.log qui commence par ce qu'il faut CORRIGER.
+  .\oef2wims-v2.exe exo.oef                    # exo.def + exo.log
+  .\oef2wims-v2.exe D:\mes_oef --json          # lot : .log + .json par fichier,
+                                               #   oef2wims-rapport.html, oef2wims-batch.log/.json
+  .\oef2wims-v2.exe exo.oef --diff             # garde l'ancien .def en exo.def.prev, liste les différences
+  .\oef2wims-v2.exe exo.oef --trace            # trace complète des appels C (exo.oef.trace)
+  .\oef2wims-v2.exe exo.oef --validator D:\...\oef_validate.py [--python C:\...\python.exe]
+  .\oef2wims-v2.exe --watch D:\mes_oef         # recompile à chaque enregistrement (Ctrl+C pour arrêter)
+  Options : --log chemin (1 fichier : journal ailleurs ; lot : chemin du rapport HTML), --quiet.
+  Ce que v2 ajoute :
+   - une explication en français, une correction et un exemple avant/après pour chaque
+     message d'erreur de oef2wims 4.31b ;
+   - une ligne/colonne pour chaque erreur, même quand le compilateur n'en donne pas
+     (No statement defined, Multiple definition..., Answer prompt too long) ; si rien
+     ne permet de localiser, v2 relance automatiquement oef2wims-trace.exe et prend la
+     dernière ligne OEF traitée ;
+   - des pré-contrôles (avertissements) : accolades/parenthèses/crochets par position,
+     directive inconnue (\Hint, \answr, \langage... ignorées SANS message par le
+     compilateur), variable utilisée dans \answer/\choice/\condition jamais définie,
+     \title absent, libellé de réponse trop long, BOM, fichier non UTF-8, CRLF,
+     caractères de contrôle ;
+   - les diagnostics du validateur Python (option --validator) et le signalement d'un
+     désaccord de verdict avec le compilateur.
+
+CORRIGER UN OEF À PARTIR DU LOG (nom.log)
+  1. Lisez la ligne « Verdict ». « ERREUR » : WIMS refusera le fichier, il faut corriger.
+     « OK avec avertissements » : le .def est produit, mais l'exercice risque de mal se
+     comporter (texte perdu, réponse vide, accents cassés).
+  2. Section « À CORRIGER » : les points sont numérotés et TRIÉS (erreurs du compilateur
+     d'abord). Corrigez le point [1] en premier : une accolade manquante peut provoquer
+     d'autres messages qui disparaîtront d'eux-mêmes.
+  3. Pour chaque point :
+       « — ligne L, colonne C » : ouvrez le .oef à cette position (Notepad++ : Ctrl+G).
+       L'extrait montre la ligne avant/après ; « >> » marque la ligne en cause et « ^ »
+       la colonne exacte.
+       « Voir aussi ligne ... » : seconde position utile (l'autre \statement, l'endroit
+       où ajouter l'accolade fermante, etc.).
+       « Problème » : le message d'origine (en anglais pour le compilateur) et ce que
+       v2 a trouvé.
+       « Explication » : pourquoi c'est refusé.
+       « Correction » : quoi modifier, concrètement.
+       « Exemple » : un avant/après minimal.
+  4. Enregistrez et recompilez (ou laissez tourner --watch) : le log est réécrit.
+     Recommencez jusqu'à « Verdict : OK ».
+  5. Si un point reste incompréhensible : relancez avec --trace ; la partie
+     « Trace des appels C » des DÉTAILS TECHNIQUES donne la dernière directive OEF
+     traitée, la dernière ligne C et la pile d'appels. Joignez nom.log et nom.oef.trace
+     à votre demande d'aide.
+  6. Pour un dossier entier : ouvrez oef2wims-rapport.html (tri par colonne, clic sur
+     un fichier pour voir ses points, liens vers chaque .log/.json).
+  Tests (Wine, 25/10/2026) : parité .def + code de retour avec oef2wims.exe sur les
+  1438 fichiers du corpus : 0 différence. 17 cas cassés fabriqués (exemples_v2/), avec
+  le bon diagnostic et la bonne ligne pour chacun.
+
+CHEMINS UNICODE (E2, 28/10/2026)
+  oef2wims.exe (inchangé) lit ses arguments et ouvre ses fichiers dans la page de code
+  ANSI de Windows (1252 en France) : un chemin contenant du chinois, du grec, un emoji...
+  ou de plus de 259 caractères échoue (« Empty source file »). oef2wims-v2.exe et
+  oef2wims-log.exe contournent cela sans toucher au compilateur :
+    - chemin représentable : commande strictement identique à avant (mode « direct ») ;
+    - sinon mode « court » : noms courts 8.3 du .oef et du dossier du .def
+      (GetShortPathNameW ; si le nom du .def n'est pas représentable, nom temporaire
+      ~oef2wims-<pid>.def dans le même dossier puis renommage) ;
+    - si les noms 8.3 sont indisponibles (désactivés sur le volume) : mode « copie
+      temporaire » : copie du .oef dans %TEMP%\oef2wims-<pid>-<n> (ou à côté de l'exe,
+      ou C:\ProgramData\oef2wims\tmp si %TEMP% n'est pas ASCII), compilation, puis
+      déplacement du .def / .trace vers le chemin d'origine et suppression du dossier.
+  Les journaux, JSON, rapport HTML et la console affichent les chemins d'origine (UTF-8).
+  Le mode utilisé est noté dans le .log (« Chemins non ANSI : ... ») et dans le JSON
+  (« chemin_ansi »: « court » | « temporaire » ; absent en mode direct).
+  Test : variable OEF2WIMS_FORCE_TEMP=1 pour forcer le mode copie temporaire.
+  --validator : le validateur Python est lancé avec PYTHONIOENCODING=utf-8 et PYTHONUTF8=1
+  (accents corrects dans le .log).
+  Tests sur le PC réel : E2_build\tests\test_unicode_E2.ps1 et run_parity_E2.ps1.
+
+AMÉLIORATIONS PROPOSÉES : voir AMELIORATIONS.txt (1, 2, 3, 5, 6, 8, 9 et 10 réalisées dans oef2wims-v2.exe ; 11 fait en E1)
+
+LIMITES
+  Testé sous Wine et sur Windows 11 (E1 : 1438/1438 identiques ; E2 : chemins Unicode).
+  oef2wims.exe seul ne gère toujours pas les chemins hors page ANSI : passez par
+  oef2wims-v2.exe ou oef2wims-log.exe. oef2wims-trace.exe lit son propre chemin en ANSI
+  pour les noms de fonctions : gardez les exe dans un dossier au nom ASCII/ANSI.

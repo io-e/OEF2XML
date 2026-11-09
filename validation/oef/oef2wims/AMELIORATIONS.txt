@@ -1,0 +1,31 @@
+Propositions d'amélioration pour la chaîne oef2wims (Windows)
+
+1. Journal JSON (option --json) : un nom.json par fichier et un batch.json
+   (statut, code, message, ligne/col, dernière ligne C, compteurs), facile à exploiter
+   en Python, Excel ou CI.
+2. Rapport HTML par lot : tableau triable OK/ERREUR, extrait du source avec la ligne
+   en surbrillance, lien vers chaque .log/.trace, pile d'appels repliable.
+3. Fusion avec le validateur statique oef_validate.py : lancer les deux, mettre
+   dans le même nom.log les erreurs C et les avertissements statiques, et signaler
+   tout désaccord de verdict (comme validate_all.sh, mais sous Windows sans WSL).
+4. Corriger le test Windows d'oef_validate.py (deux-points de la lettre de lecteur).
+5. Traduction des messages : message WIMS en anglais + explication en français et
+   piste de correction (« Unmatched parentheses » -> accolade/parenthèse non fermée,
+   ouverte ligne X).
+6. Position pour toutes les erreurs : pour « No statement defined », « Multiple
+   definition of ... », donner la ligne de la directive concernée (déjà connue par la trace).
+7. Trace filtrable : OEF2WIMS_TRACE_FILTER=process,p_* pour ne garder que certaines
+   fonctions, et format Chrome Trace (JSON) pour visualiser la chronologie dans
+   chrome://tracing ou Perfetto.
+8. Mode « surveillance » (--watch dossier) : recompiler et rejournaliser à chaque
+   enregistrement d'un .oef.
+9. Diff du .def : comparer le .def produit au précédent (ou à une référence) et
+   noter les changements dans le log.
+10. [FAIT - E2, 28/10/2026] Chemins Unicode : faire passer au compilateur un chemin court 8.3
+    ou une copie temporaire quand le nom contient des caractères hors page ANSI.
+    -> oef2wims-v2.exe et oef2wims-log.exe (voir LISEZMOI, « CHEMINS UNICODE (E2) »).
+       oef2wims.exe inchangé (sha256 6c3ee8d6...58b1).
+11. [FAIT - E1, 28/10/2026] Test sur vrai Windows + test de non-régression automatique (les 1438 fichiers)
+    lancé par un script PowerShell fourni.
+12. Portage Python du compilateur, validé sur ces mêmes 1438 fichiers grâce aux
+    traces (comparer les séquences d'appels fonction par fonction).

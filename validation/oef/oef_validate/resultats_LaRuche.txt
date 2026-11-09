@@ -1,0 +1,18 @@
+== Résultats : dadou001/LaRuche (dernier commit 2019-05-21), le 22/10/2026 (heure de Paris)
+Aucun .oef d'exercice dans le dépôt hors wims_module/submit.oef. Corpus testé (10 fichiers) :
+ - 7 sauvegardes LaRuche/examples/* exportées en OEF par l'éditeur lui-même (voir laruche_export.md)
+ - exemple OEF du README (README.md et LaRuche/README.md, identiques sauf encodage) -> readme0_ex2, readme1_ex2
+ - wims_module/submit.oef (le carré d'un entier)
+
+Oracle oef2wims : 10/10 compilés. Validateur : 10/10 sans erreur. Accord 10/10.
+
+Constat : 6 réponses de 5 exercices exportés ont 'type=' vide. Les sauvegardes de type 'other' n'ont pas de champ
+sub_type ; parse_save ne le restaure donc pas, et get_type() (Answer.js) renvoie un champ vide -> bug LaRuche ou sauvegardes anciennes.
+oef2wims l'accepte (replytypeN= vide), donc le validateur classait ça à tort en erreur : passé en avertissement, avec un test.
+
+laruche_gen/perim_superf.oef:22:1: avertissement: type= vide dans \answer : accepté par oef2wims (replytype vide) mais la réponse n'aura aucun type à l'exécution
+laruche_gen/perim_superf.oef:23:1: avertissement: type= vide dans \answer : accepté par oef2wims (replytype vide) mais la réponse n'aura aucun type à l'exécution
+laruche_gen/produit_matrices.oef:30:1: avertissement: type= vide dans \answer : accepté par oef2wims (replytype vide) mais la réponse n'aura aucun type à l'exécution
+laruche_gen/reorder.oef:17:1: avertissement: type= vide dans \answer : accepté par oef2wims (replytype vide) mais la réponse n'aura aucun type à l'exécution
+laruche_gen/unites_SI.oef:27:1: avertissement: type= vide dans \answer : accepté par oef2wims (replytype vide) mais la réponse n'aura aucun type à l'exécution
+laruche_gen/unites_grandeurs_physiques.oef:26:1: avertissement: type= vide dans \answer : accepté par oef2wims (replytype vide) mais la réponse n'aura aucun type à l'exécution

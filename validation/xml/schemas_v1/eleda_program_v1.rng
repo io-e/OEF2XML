@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- CLAUDE_V1_1 — Relax NG schema for Eleda program XML (urn:eleda:program:v1) -->
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+         ns="urn:eleda:program:v1"
+         datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+
+  <start>
+    <ref name="eleda-program"/>
+  </start>
+
+  <!-- ====================================================================
+       Root element
+       ==================================================================== -->
+  <define name="eleda-program">
+    <element name="eleda-program">
+      <attribute name="id"><data type="string"/></attribute>
+      <attribute name="source_format">
+        <choice>
+          <value>json</value>
+          <value>yaml</value>
+          <value>ir</value>
+          <value>xml</value>
+        </choice>
+      </attribute>
+
+      <!-- name -->
+      <element name="name"><text/></element>
+
+      <!-- author -->
+      <optional>
+        <element name="author"><text/></element>
+      </optional>
+
+      <!-- tags -->
+      <optional>
+        <element name="tags">
+          <zeroOrMore>
+            <element name="tag"><text/></element>
+          </zeroOrMore>
+        </element>
+      </optional>
+
+      <!-- langs -->
+      <optional>
+        <element name="langs">
+          <zeroOrMore>
+            <ref name="lang-def"/>
+          </zeroOrMore>
+        </element>
+      </optional>
+
+      <!-- settings -->
+      <optional>
+        <element name="settings">
+          <ref name="any-content"/>
+        </element>
+      </optional>
+
+      <!-- variables -->
+      <optional>
+        <element name="variables">
+          <zeroOrMore>
+            <ref name="variable-def"/>
+          </zeroOrMore>
+        </element>
+      </optional>
+
+      <!-- blocks (the Blockly program) -->
+      <element name="blocks">
+        <attribute name="languageVersion"><text/></attribute>
+        <zeroOrMore>
+          <ref name="blockly-block"/>
+        </zeroOrMore>
+      </element>
+    </element>
+  </define>
+
+  <!-- ====================================================================
+       Language definition
+       ==================================================================== -->
+  <define name="lang-def">
+    <element name="lang">
+      <attribute name="code">
+        <choice>
+          <value>fr</value>
+          <value>en</value>
+          <value>es</value>
+          <value>it</value>
+          <value>de</value>
+          <value>ar</value>
+        </choice>
+      </attribute>
+      <element name="title"><text/></element>
+      <element name="description"><text/></element>
+    </element>
+  </define>
+
+  <!-- ====================================================================
+       Variable declaration
+       ==================================================================== -->
+  <define name="variable-def">
+    <element name="variable">
+      <attribute name="id"><text/></attribute>
+      <optional>
+        <attribute name="type"><text/></attribute>
+      </optional>
+      <text/>
+    </element>
+  </define>
+
+  <!-- ====================================================================
+       Blockly block (recursive)
+       ==================================================================== -->
+  <define name="blockly-block">
+    <element name="block">
+      <attribute name="type"><ref name="block-type-enum"/></attribute>
+      <optional><attribute name="id"><text/></attribute></optional>
+      <optional><attribute name="x"><text/></attribute></optional>
+      <optional><attribute name="y"><text/></attribute></optional>
+
+      <!-- extraState -->
+      <optional>
+        <element name="extraState">
+          <optional><attribute name="format"><text/></attribute></optional>
+          <ref name="any-content"/>
+        </element>
+      </optional>
+
+      <!-- icons (comments etc.) -->
+      <optional>
+        <element name="icons">
+          <zeroOrMore>
+            <ref name="icon-element"/>
+          </zeroOrMore>
+        </element>
+      </optional>
+
+      <!-- fields -->
+      <zeroOrMore>
+        <ref name="field-element"/>
+      </zeroOrMore>
+
+      <!-- inputs -->
+      <zeroOrMore>
+        <ref name="input-element"/>
+      </zeroOrMore>
+
+      <!-- next chain -->
+      <optional>
+        <element name="next">
+          <ref name="blockly-block"/>
+        </element>
+      </optional>
+    </element>
+  </define>
+
+  <!-- ====================================================================
+       Field
+       ==================================================================== -->
+  <define name="field-element">
+    <element name="field">
+      <attribute name="name"><text/></attribute>
+      <optional><attribute name="id"><text/></attribute></optional>
+      <optional><attribute name="variabletype"><text/></attribute></optional>
+      <ref name="any-content"/>
+    </element>
+  </define>
+
+  <!-- ====================================================================
+       Input (contains block and/or shadow)
+       ==================================================================== -->
+  <define name="input-element">
+    <element name="input">
+      <attribute name="name"><text/></attribute>
+      <optional><ref name="blockly-block"/></optional>
+      <optional><ref name="shadow-element"/></optional>
+    </element>
+  </define>
+
+  <!-- ====================================================================
+       Shadow block
+       ==================================================================== -->
+  <define name="shadow-element">
+    <element name="shadow">
+      <attribute name="type"><text/></attribute>
+      <optional><attribute name="id"><text/></attribute></optional>
+      <zeroOrMore>
+        <ref name="field-element"/>
+      </zeroOrMore>
+    </element>
+  </define>
+
+  <!-- ====================================================================
+       Icon element (comment, etc.)
+       ==================================================================== -->
+  <define name="icon-element">
+    <element>
+      <anyName/>
+      <zeroOrMore>
+        <attribute>
+          <anyName/>
+          <text/>
+        </attribute>
+      </zeroOrMore>
+      <ref name="any-content"/>
+    </element>
+  </define>
+
+  <!-- ====================================================================
+       Block type enumeration (all observed types)
+       ==================================================================== -->
+  <define name="block-type-enum">
+    <choice>
+      <!-- Meta / structure -->
+      <value>info</value>
+      <value>versions</value>
+      <value>QUESTION</value>
+      <value>context_question</value>
+      <value>statement</value>
+      <value>feedback_global</value>
+      <value>feedback_message_type</value>
+      <value>clean_activity</value>
+
+      <!-- Question types -->
+      <value>question_open</value>
+      <value>question_multiple_choices</value>
+      <value>question_true_false</value>
+      <value>question_figure</value>
+      <value>question_reorder</value>
+      <value>question_associate</value>
+
+      <!-- Variables -->
+      <value>variables_set</value>
+      <value>variables_get</value>
+      <value>math_change</value>
+
+      <!-- Math -->
+      <value>math_number</value>
+      <value>math_arithmetic</value>
+      <value>math_single</value>
+      <value>math_trig</value>
+      <value>math_constant</value>
+      <value>math_number_property</value>
+      <value>math_round</value>
+      <value>math_on_list</value>
+      <value>math_modulo</value>
+      <value>math_random_int</value>
+
+      <!-- Eleda numeric types -->
+      <value>integer</value>
+      <value>decimal</value>
+      <value>fraction</value>
+      <value>round_decimal</value>
+      <value>split_number</value>
+      <value>integer_part</value>
+      <value>decimal_part</value>
+      <value>integer_decimal_part</value>
+      <value>integerPositive</value>
+      <value>expression</value>
+      <value>evaluate</value>
+      <value>multiple</value>
+      <value>gcd_lcm</value>
+      <value>numerator</value>
+      <value>denominator</value>
+      <value>simplify_fraction</value>
+      <value>fraction_numerator_denominator</value>
+      <value>degree</value>
+      <value>binomial_1</value>
+      <value>binomial_2</value>
+      <value>binomial_3</value>
+      <value>poisson_1</value>
+      <value>poisson_2</value>
+      <value>poisson_3</value>
+      <value>geometric_1</value>
+      <value>geometric_2</value>
+      <value>geometric_3</value>
+      <value>uniform_1</value>
+      <value>uniform_2</value>
+      <value>uniform_4</value>
+      <value>expo_1</value>
+      <value>expo_2</value>
+      <value>expo_4</value>
+      <value>normal_1</value>
+      <value>normal_2</value>
+      <value>normal_4</value>
+
+      <!-- Random -->
+      <value>random_number</value>
+      <value>random_message</value>
+      <value>random_list</value>
+      <value>random_polynom</value>
+      <value>random_polygon</value>
+
+      <!-- Text -->
+      <value>text</value>
+      <value>text_multiline</value>
+      <value>text_join</value>
+      <value>text_indexOf</value>
+      <value>text_changeCase</value>
+      <value>text_replace</value>
+      <value>text_length</value>
+      <value>text_charAt</value>
+      <value>text_getSubstring</value>
+      <value>text_append</value>
+      <value>string</value>
+      <value>special_character</value>
+      <value>markdown</value>
+      <value>latex</value>
+      <value>latex_paragraph_create_with</value>
+      <value>richtext_create_with</value>
+
+      <!-- Lists -->
+      <value>lists_create_with</value>
+      <value>lists_getIndex</value>
+      <value>lists_setIndex</value>
+      <value>lists_length</value>
+      <value>lists_sort</value>
+      <value>lists_indexOf</value>
+      <value>lists_split</value>
+      <value>lists_reverse</value>
+      <value>lists_repeat</value>
+      <value>lists_isEmpty</value>
+      <value>lists_getSublist</value>
+      <value>list_short_get</value>
+      <value>list_short_set</value>
+      <value>shuffle_list</value>
+      <value>delete_element_from_list</value>
+      <value>delete_duplicates</value>
+      <value>unique</value>
+      <value>count_same_element_list</value>
+      <value>split_into_words_letters</value>
+      <value>letters</value>
+
+      <!-- Matrix -->
+      <value>matrix</value>
+      <value>matrix_short_get</value>
+      <value>matrix_short_set</value>
+      <value>matrix_3_parameters</value>
+      <value>matrix_determinant</value>
+      <value>matrix_multiplication</value>
+
+      <!-- Table / data -->
+      <value>table</value>
+      <value>table_column</value>
+      <value>table_matrix</value>
+      <value>data_table</value>
+      <value>dictionary</value>
+
+      <!-- Logic -->
+      <value>logic_compare</value>
+      <value>logic_operation</value>
+      <value>logic_negate</value>
+      <value>logic_boolean</value>
+      <value>logic_ternary</value>
+      <value>controls_if</value>
+      <value>controls_repeat_ext</value>
+      <value>controls_for</value>
+      <value>controls_forEach</value>
+      <value>controls_whileUntil</value>
+      <value>controls_flow_statements</value>
+
+      <!-- Procedures -->
+      <value>procedures_defnoreturn</value>
+      <value>procedures_defreturn</value>
+      <value>procedures_callnoreturn</value>
+      <value>procedures_callreturn</value>
+
+      <!-- Display / Geometry -->
+      <value>display_element</value>
+      <value>set_alignment</value>
+      <value>set_colour</value>
+      <value>set_colour_random</value>
+      <value>set_size</value>
+      <value>set_attribute</value>
+      <value>set_analytic</value>
+      <value>set_grade</value>
+      <value>point</value>
+      <value>coordinate</value>
+      <value>line</value>
+      <value>segment</value>
+      <value>arrow</value>
+      <value>circle</value>
+      <value>polygon</value>
+      <value>rectangle</value>
+      <value>sector</value>
+      <value>dotted</value>
+      <value>draw_in_board</value>
+      <value>erase_in_board</value>
+      <value>erase_all_board</value>
+      <value>board_geometric</value>
+      <value>board_text</value>
+      <value>euclidean_distance</value>
+      <value>euclidean_distance_twopoints</value>
+      <value>figure_area</value>
+      <value>figure_perimeter</value>
+      <value>figure_rotate</value>
+      <value>figure_translate</value>
+      <value>graph_of_function</value>
+      <value>area_under_function_interval</value>
+
+      <!-- Algebra -->
+      <value>polynom_with_coefficients</value>
+      <value>coefficients</value>
+      <value>derivative</value>
+      <value>expand_algebrite</value>
+      <value>simplify_algebrite</value>
+
+      <!-- Media -->
+      <value>image</value>
+      <value>video</value>
+      <value>sound</value>
+
+      <!-- Engine state -->
+      <value>is_solution_found</value>
+      <value>current_attempt</value>
+      <value>max_attempts</value>
+
+      <!-- Verbs / Language -->
+      <value>verbs</value>
+      <value>conjugate_verb</value>
+      <value>selected_verb</value>
+      <value>random_verb</value>
+      <value>verb_getAttribute</value>
+      <value>conjugations</value>
+      <value>kids</value>
+      <value>unit</value>
+      <value>convert_into_unit</value>
+      <value>adjectives</value>
+      <value>adjective_getAttribute</value>
+      <value>random_adjective</value>
+      <value>names</value>
+      <value>selected_name</value>
+      <value>determinants</value>
+      <value>determinantDefInfDemons_getAttribute</value>
+      <value>selected_determinantDefInfDemons</value>
+      <value>definis</value>
+
+      <!-- catch-all for future types -->
+      <data type="string">
+        <param name="pattern">[a-zA-Z_][a-zA-Z0-9_]*</param>
+      </data>
+    </choice>
+  </define>
+
+  <!-- ====================================================================
+       Wildcard: any mixed content with any child elements
+       ==================================================================== -->
+  <define name="any-content">
+    <interleave>
+      <zeroOrMore>
+        <choice>
+          <text/>
+          <element>
+            <anyName/>
+            <zeroOrMore>
+              <attribute>
+                <anyName/>
+                <text/>
+              </attribute>
+            </zeroOrMore>
+            <ref name="any-content"/>
+          </element>
+        </choice>
+      </zeroOrMore>
+    </interleave>
+  </define>
+
+</grammar>
+
+
+
+

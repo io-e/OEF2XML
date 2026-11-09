@@ -1,0 +1,8 @@
+\title{Somme de deux entiers}
+\language{fr}
+\integer{a=randint(1..9)}
+\integer{b=randint(1..9)}
+\integer{s=\a+\b}
+\statement{Calculer \(\a + \b).
+\embed{reply 1}}
+\answer{Somme}{\s}{type=numeric}

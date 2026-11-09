@@ -1,0 +1,1225 @@
+{
+ "generated_from": "/workspace/wims-full",
+ "wims_version": "4.31b",
+ "limits": {
+  "MAX_TITLEN": 80,
+  "MAX_PARM": 10,
+  "MAX_PARAM": 1024,
+  "MAX_DEFINE": 1024,
+  "MAX_FLEN": 199999,
+  "MAX_PROMPTLEN": 40,
+  "MAX_LINELEN": 45000,
+  "MAX_NAMELEN": 63
+ },
+ "limits_source": {
+  "MAX_PROMPTLEN": "src/OefMsg2wims/oef2wims.h:13",
+  "MAX_LINELEN": "src/wimsdef.h:23",
+  "MAX_NAMELEN": "src/wimsdef.h:27"
+ },
+ "directives": {
+  "answer": {
+   "kind": "t_ans",
+   "maxargs": 5,
+   "processor": "p_answer",
+   "source": "src/OefMsg2wims/oef2wims.c:61"
+  },
+  "author": {
+   "kind": "t_head2",
+   "maxargs": 1,
+   "processor": "p_header",
+   "source": "src/OefMsg2wims/oef2wims.c:62"
+  },
+  "choice": {
+   "kind": "t_choi",
+   "maxargs": 5,
+   "processor": "p_choice",
+   "source": "src/OefMsg2wims/oef2wims.c:63"
+  },
+  "complex": {
+   "kind": "t_def",
+   "maxargs": 2,
+   "processor": "p_complex",
+   "source": "src/OefMsg2wims/oef2wims.c:64"
+  },
+  "computeanswer": {
+   "kind": "t_head",
+   "maxargs": 1,
+   "processor": "p_computeanswer",
+   "source": "src/OefMsg2wims/oef2wims.c:65"
+  },
+  "condition": {
+   "kind": "t_cond",
+   "maxargs": 4,
+   "processor": "p_condition",
+   "source": "src/OefMsg2wims/oef2wims.c:66"
+  },
+  "conditions": {
+   "kind": "t_cond2",
+   "maxargs": 1,
+   "processor": "p_conditions",
+   "source": "src/OefMsg2wims/oef2wims.c:67"
+  },
+  "credits": {
+   "kind": "t_def",
+   "maxargs": 2,
+   "processor": "p_credits",
+   "source": "src/OefMsg2wims/oef2wims.c:68"
+  },
+  "css": {
+   "kind": "t_head",
+   "maxargs": 1,
+   "processor": "p_css",
+   "source": "src/OefMsg2wims/oef2wims.c:69"
+  },
+  "description": {
+   "kind": "t_head",
+   "maxargs": 1,
+   "processor": "p_description",
+   "source": "src/OefMsg2wims/oef2wims.c:70"
+  },
+  "else": {
+   "kind": "t_def",
+   "maxargs": 0,
+   "processor": "p_else",
+   "source": "src/OefMsg2wims/oef2wims.c:71"
+  },
+  "email": {
+   "kind": "t_head2",
+   "maxargs": 1,
+   "processor": "p_header",
+   "source": "src/OefMsg2wims/oef2wims.c:72"
+  },
+  "endif": {
+   "kind": "t_def",
+   "maxargs": 0,
+   "processor": "p_endif",
+   "source": "src/OefMsg2wims/oef2wims.c:73"
+  },
+  "endwhile": {
+   "kind": "t_def",
+   "maxargs": 0,
+   "processor": "p_endwhile",
+   "source": "src/OefMsg2wims/oef2wims.c:74"
+  },
+  "feedback": {
+   "kind": "t_feedback",
+   "maxargs": 2,
+   "processor": "p_feedback",
+   "source": "src/OefMsg2wims/oef2wims.c:75"
+  },
+  "for": {
+   "kind": "t_def",
+   "maxargs": 1,
+   "processor": "p_for",
+   "source": "src/OefMsg2wims/oef2wims.c:76"
+  },
+  "format": {
+   "kind": "t_form",
+   "maxargs": 1,
+   "processor": "empty",
+   "source": "src/OefMsg2wims/oef2wims.c:77"
+  },
+  "function": {
+   "kind": "t_def",
+   "maxargs": 2,
+   "processor": "p_func",
+   "source": "src/OefMsg2wims/oef2wims.c:78"
+  },
+  "help": {
+   "kind": "t_help",
+   "maxargs": 1,
+   "processor": "p_help",
+   "source": "src/OefMsg2wims/oef2wims.c:79"
+  },
+  "hint": {
+   "kind": "t_hint",
+   "maxargs": 1,
+   "processor": "p_hint",
+   "source": "src/OefMsg2wims/oef2wims.c:80"
+  },
+  "if": {
+   "kind": "t_def",
+   "maxargs": 1,
+   "processor": "p_if",
+   "source": "src/OefMsg2wims/oef2wims.c:81"
+  },
+  "ifval": {
+   "kind": "t_def",
+   "maxargs": 1,
+   "processor": "p_ifval",
+   "source": "src/OefMsg2wims/oef2wims.c:82"
+  },
+  "int": {
+   "kind": "t_def",
+   "maxargs": 2,
+   "processor": "p_int",
+   "source": "src/OefMsg2wims/oef2wims.c:83"
+  },
+  "integer": {
+   "kind": "t_def",
+   "maxargs": 2,
+   "processor": "p_int",
+   "source": "src/OefMsg2wims/oef2wims.c:84"
+  },
+  "keywords": {
+   "kind": "t_head2",
+   "maxargs": 1,
+   "processor": "p_header",
+   "source": "src/OefMsg2wims/oef2wims.c:85"
+  },
+  "language": {
+   "kind": "t_head",
+   "maxargs": 1,
+   "processor": "p_language",
+   "source": "src/OefMsg2wims/oef2wims.c:86"
+  },
+  "latex": {
+   "kind": "t_latex",
+   "maxargs": 1,
+   "processor": "p_latex",
+   "source": "src/OefMsg2wims/oef2wims.c:87"
+  },
+  "matrix": {
+   "kind": "t_def",
+   "maxargs": 2,
+   "processor": "p_matrix",
+   "source": "src/OefMsg2wims/oef2wims.c:88"
+  },
+  "mdef": {
+   "kind": "t_def",
+   "maxargs": 2,
+   "processor": "p_mdef",
+   "source": "src/OefMsg2wims/oef2wims.c:89"
+  },
+  "next": {
+   "kind": "t_def",
+   "maxargs": 0,
+   "processor": "p_next",
+   "source": "src/OefMsg2wims/oef2wims.c:90"
+  },
+  "nextstep": {
+   "kind": "t_step",
+   "maxargs": 1,
+   "processor": "p_nextstep",
+   "source": "src/OefMsg2wims/oef2wims.c:91"
+  },
+  "observation": {
+   "kind": "t_head",
+   "maxargs": 1,
+   "processor": "p_observation",
+   "source": "src/OefMsg2wims/oef2wims.c:92"
+  },
+  "parameter": {
+   "kind": "t_def",
+   "maxargs": 2,
+   "processor": "p_parm",
+   "source": "src/OefMsg2wims/oef2wims.c:93"
+  },
+  "plot": {
+   "kind": "t_plot",
+   "maxargs": 3,
+   "processor": "p_plot",
+   "source": "src/OefMsg2wims/oef2wims.c:94"
+  },
+  "precision": {
+   "kind": "t_head",
+   "maxargs": 1,
+   "processor": "p_precision",
+   "source": "src/OefMsg2wims/oef2wims.c:95"
+  },
+  "range": {
+   "kind": "t_head",
+   "maxargs": 1,
+   "processor": "p_range",
+   "source": "src/OefMsg2wims/oef2wims.c:96"
+  },
+  "rational": {
+   "kind": "t_def",
+   "maxargs": 2,
+   "processor": "p_rational",
+   "source": "src/OefMsg2wims/oef2wims.c:97"
+  },
+  "real": {
+   "kind": "t_def",
+   "maxargs": 2,
+   "processor": "p_real",
+   "source": "src/OefMsg2wims/oef2wims.c:98"
+  },
+  "reply": {
+   "kind": "t_ans",
+   "maxargs": 5,
+   "processor": "p_answer",
+   "source": "src/OefMsg2wims/oef2wims.c:99"
+  },
+  "solution": {
+   "kind": "t_sol",
+   "maxargs": 1,
+   "processor": "p_solution",
+   "source": "src/OefMsg2wims/oef2wims.c:100"
+  },
+  "statement": {
+   "kind": "t_main",
+   "maxargs": 1,
+   "processor": "p_statement",
+   "source": "src/OefMsg2wims/oef2wims.c:101"
+  },
+  "steps": {
+   "kind": "t_step",
+   "maxargs": 1,
+   "processor": "p_steps",
+   "source": "src/OefMsg2wims/oef2wims.c:102"
+  },
+  "text": {
+   "kind": "t_def",
+   "maxargs": 2,
+   "processor": "p_text",
+   "source": "src/OefMsg2wims/oef2wims.c:103"
+  },
+  "title": {
+   "kind": "t_tit",
+   "maxargs": 1,
+   "processor": "empty",
+   "source": "src/OefMsg2wims/oef2wims.c:104"
+  },
+  "title_ca": {
+   "kind": "t_lang",
+   "maxargs": 1,
+   "processor": "p_header",
+   "source": "src/OefMsg2wims/oef2wims.c:105"
+  },
+  "title_cn": {
+   "kind": "t_lang",
+   "maxargs": 1,
+   "processor": "p_header",
+   "source": "src/OefMsg2wims/oef2wims.c:106"
+  },
+  "title_en": {
+   "kind": "t_lang",
+   "maxargs": 1,
+   "processor": "p_header",
+   "source": "src/OefMsg2wims/oef2wims.c:107"
+  },
+  "title_es": {
+   "kind": "t_lang",
+   "maxargs": 1,
+   "processor": "p_header",
+   "source": "src/OefMsg2wims/oef2wims.c:108"
+  },
+  "title_fr": {
+   "kind": "t_lang",
+   "maxargs": 1,
+   "processor": "p_header",
+   "source": "src/OefMsg2wims/oef2wims.c:109"
+  },
+  "title_it": {
+   "kind": "t_lang",
+   "maxargs": 1,
+   "processor": "p_header",
+   "source": "src/OefMsg2wims/oef2wims.c:110"
+  },
+  "title_nl": {
+   "kind": "t_lang",
+   "maxargs": 1,
+   "processor": "p_header",
+   "source": "src/OefMsg2wims/oef2wims.c:111"
+  },
+  "title_si": {
+   "kind": "t_lang",
+   "maxargs": 1,
+   "processor": "p_header",
+   "source": "src/OefMsg2wims/oef2wims.c:112"
+  },
+  "variable": {
+   "kind": "t_def",
+   "maxargs": 2,
+   "processor": "p_parm",
+   "source": "src/OefMsg2wims/oef2wims.c:113"
+  },
+  "while": {
+   "kind": "t_def",
+   "maxargs": 1,
+   "processor": "p_while",
+   "source": "src/OefMsg2wims/oef2wims.c:114"
+  },
+  "wims": {
+   "kind": "t_wims",
+   "maxargs": 1,
+   "processor": "p_wims",
+   "source": "src/OefMsg2wims/oef2wims.c:115"
+  }
+ },
+ "anstype_aliases": {
+  "algexp": {
+   "typ": "typ_algexp",
+   "script": "algexp",
+   "source": "src/OefMsg2wims/process.c:174"
+  },
+  "aset": {
+   "typ": "typ_set",
+   "script": "aset",
+   "source": "src/OefMsg2wims/process.c:175"
+  },
+  "atext": {
+   "typ": "typ_atext",
+   "script": "atext",
+   "source": "src/OefMsg2wims/process.c:176"
+  },
+  "case": {
+   "typ": "typ_case",
+   "script": "case",
+   "source": "src/OefMsg2wims/process.c:177"
+  },
+  "checkbox": {
+   "typ": "typ_menu",
+   "script": "checkbox",
+   "source": "src/OefMsg2wims/process.c:178"
+  },
+  "chemeq": {
+   "typ": "typ_chem",
+   "script": "chemeq",
+   "source": "src/OefMsg2wims/process.c:179"
+  },
+  "chset": {
+   "typ": "typ_atext",
+   "script": "chset",
+   "source": "src/OefMsg2wims/process.c:180"
+  },
+  "click": {
+   "typ": "typ_menu",
+   "script": "click",
+   "source": "src/OefMsg2wims/process.c:181"
+  },
+  "clickfill": {
+   "typ": "typ_fill",
+   "script": "clickfill",
+   "source": "src/OefMsg2wims/process.c:182"
+  },
+  "code": {
+   "typ": "typ_src",
+   "script": "code",
+   "source": "src/OefMsg2wims/process.c:183"
+  },
+  "compose": {
+   "typ": "typ_comp",
+   "script": "compose",
+   "source": "src/OefMsg2wims/process.c:184"
+  },
+  "coord": {
+   "typ": "typ_coord",
+   "script": "coord",
+   "source": "src/OefMsg2wims/process.c:185"
+  },
+  "coordinates": {
+   "typ": "typ_coord",
+   "script": "coord",
+   "source": "src/OefMsg2wims/process.c:186"
+  },
+  "corresp": {
+   "typ": "typ_comp",
+   "script": "correspond",
+   "source": "src/OefMsg2wims/process.c:187"
+  },
+  "correspond": {
+   "typ": "typ_comp",
+   "script": "correspond",
+   "source": "src/OefMsg2wims/process.c:188"
+  },
+  "default": {
+   "typ": "typ_default",
+   "script": "default",
+   "source": "src/OefMsg2wims/process.c:189"
+  },
+  "dragfill": {
+   "typ": "typ_fill",
+   "script": "dragfill",
+   "source": "src/OefMsg2wims/process.c:190"
+  },
+  "equation": {
+   "typ": "typ_equation",
+   "script": "equation",
+   "source": "src/OefMsg2wims/process.c:191"
+  },
+  "expalg": {
+   "typ": "typ_algexp",
+   "script": "algexp",
+   "source": "src/OefMsg2wims/process.c:192"
+  },
+  "formal": {
+   "typ": "typ_formal",
+   "script": "formal",
+   "source": "src/OefMsg2wims/process.c:193"
+  },
+  "fset": {
+   "typ": "typ_set",
+   "script": "fset",
+   "source": "src/OefMsg2wims/process.c:194"
+  },
+  "function": {
+   "typ": "typ_func",
+   "script": "function",
+   "source": "src/OefMsg2wims/process.c:195"
+  },
+  "imgcomp": {
+   "typ": "typ_comp",
+   "script": "imgcomp",
+   "source": "src/OefMsg2wims/process.c:196"
+  },
+  "javacurve": {
+   "typ": "typ_java",
+   "script": "javacurve",
+   "source": "src/OefMsg2wims/process.c:197"
+  },
+  "link": {
+   "typ": "typ_menu",
+   "script": "click",
+   "source": "src/OefMsg2wims/process.c:198"
+  },
+  "litexp": {
+   "typ": "typ_litexp",
+   "script": "litexp",
+   "source": "src/OefMsg2wims/process.c:199"
+  },
+  "mark": {
+   "typ": "typ_menu",
+   "script": "mark",
+   "source": "src/OefMsg2wims/process.c:200"
+  },
+  "matrix": {
+   "typ": "typ_matrix",
+   "script": "matrix",
+   "source": "src/OefMsg2wims/process.c:201"
+  },
+  "menu": {
+   "typ": "typ_menu",
+   "script": "menu",
+   "source": "src/OefMsg2wims/process.c:202"
+  },
+  "nocase": {
+   "typ": "typ_nocase",
+   "script": "nocase",
+   "source": "src/OefMsg2wims/process.c:203"
+  },
+  "number": {
+   "typ": "typ_num",
+   "script": "numeric",
+   "source": "src/OefMsg2wims/process.c:204"
+  },
+  "numeric": {
+   "typ": "typ_num",
+   "script": "numeric",
+   "source": "src/OefMsg2wims/process.c:205"
+  },
+  "numexp": {
+   "typ": "typ_algexp",
+   "script": "numexp",
+   "source": "src/OefMsg2wims/process.c:206"
+  },
+  "radio": {
+   "typ": "typ_menu",
+   "script": "radio",
+   "source": "src/OefMsg2wims/process.c:207"
+  },
+  "range": {
+   "typ": "typ_func",
+   "script": "range",
+   "source": "src/OefMsg2wims/process.c:208"
+  },
+  "ranges": {
+   "typ": "typ_func",
+   "script": "range",
+   "source": "src/OefMsg2wims/process.c:209"
+  },
+  "raw": {
+   "typ": "typ_raw",
+   "script": "raw",
+   "source": "src/OefMsg2wims/process.c:210"
+  },
+  "reorder": {
+   "typ": "typ_comp",
+   "script": "reorder",
+   "source": "src/OefMsg2wims/process.c:211"
+  },
+  "select": {
+   "typ": "typ_menu",
+   "script": "menu",
+   "source": "src/OefMsg2wims/process.c:212"
+  },
+  "set": {
+   "typ": "typ_set",
+   "script": "set",
+   "source": "src/OefMsg2wims/process.c:213"
+  },
+  "sigunits": {
+   "typ": "typ_units",
+   "script": "sigunits",
+   "source": "src/OefMsg2wims/process.c:214"
+  },
+  "symtext": {
+   "typ": "typ_symtext",
+   "script": "symtext",
+   "source": "src/OefMsg2wims/process.c:215"
+  },
+  "text": {
+   "typ": "typ_text",
+   "script": "case",
+   "source": "src/OefMsg2wims/process.c:216"
+  },
+  "textcomp": {
+   "typ": "typ_comp",
+   "script": "textcomp",
+   "source": "src/OefMsg2wims/process.c:217"
+  },
+  "unit": {
+   "typ": "typ_units",
+   "script": "units",
+   "source": "src/OefMsg2wims/process.c:218"
+  },
+  "units": {
+   "typ": "typ_units",
+   "script": "units",
+   "source": "src/OefMsg2wims/process.c:219"
+  },
+  "vector": {
+   "typ": "typ_vector",
+   "script": "vector",
+   "source": "src/OefMsg2wims/process.c:220"
+  },
+  "wlist": {
+   "typ": "typ_wlist",
+   "script": "wlist",
+   "source": "src/OefMsg2wims/process.c:221"
+  },
+  "wordcomp": {
+   "typ": "typ_comp",
+   "script": "textcomp",
+   "source": "src/OefMsg2wims/process.c:222"
+  }
+ },
+ "special_functions": {
+  "asis": "src/OefMsg2wims/sp.c:307",
+  "canvasdraw": "src/OefMsg2wims/sp.c:308",
+  "column": "src/OefMsg2wims/sp.c:309",
+  "deriv": "src/OefMsg2wims/sp.c:310",
+  "derivative": "src/OefMsg2wims/sp.c:311",
+  "det": "src/OefMsg2wims/sp.c:312",
+  "determinant": "src/OefMsg2wims/sp.c:313",
+  "diff": "src/OefMsg2wims/sp.c:314",
+  "draw": "src/OefMsg2wims/sp.c:315",
+  "drawtikz": "src/OefMsg2wims/sp.c:316",
+  "evaluate": "src/OefMsg2wims/sp.c:317",
+  "evalue": "src/OefMsg2wims/sp.c:318",
+  "htmlmath": "src/OefMsg2wims/sp.c:319",
+  "int": "src/OefMsg2wims/sp.c:320",
+  "integral": "src/OefMsg2wims/sp.c:321",
+  "integrate": "src/OefMsg2wims/sp.c:322",
+  "item": "src/OefMsg2wims/sp.c:323",
+  "items": "src/OefMsg2wims/sp.c:324",
+  "mathexp_cut": "src/OefMsg2wims/sp.c:325",
+  "maxima": "src/OefMsg2wims/sp.c:326",
+  "pari": "src/OefMsg2wims/sp.c:327",
+  "pickone": "src/OefMsg2wims/sp.c:328",
+  "position": "src/OefMsg2wims/sp.c:329",
+  "positionof": "src/OefMsg2wims/sp.c:330",
+  "randint": "src/OefMsg2wims/sp.c:331",
+  "randitem": "src/OefMsg2wims/sp.c:332",
+  "random": "src/OefMsg2wims/sp.c:333",
+  "randomitem": "src/OefMsg2wims/sp.c:334",
+  "randomrow": "src/OefMsg2wims/sp.c:335",
+  "randrow": "src/OefMsg2wims/sp.c:336",
+  "row": "src/OefMsg2wims/sp.c:337",
+  "rows": "src/OefMsg2wims/sp.c:338",
+  "shuffle": "src/OefMsg2wims/sp.c:339",
+  "simplify": "src/OefMsg2wims/sp.c:340",
+  "slib": "src/OefMsg2wims/sp.c:341",
+  "solve": "src/OefMsg2wims/sp.c:342",
+  "teximg": "src/OefMsg2wims/sp.c:343",
+  "texmath": "src/OefMsg2wims/sp.c:344",
+  "wims": "src/OefMsg2wims/sp.c:345",
+  "yacas": "src/OefMsg2wims/sp.c:346"
+ },
+ "text_commands": {
+  "img": "src/OefMsg2wims/outexec.c:197",
+  "audio": "src/OefMsg2wims/outexec.c:198",
+  "slib": "src/OefMsg2wims/outexec.c:199",
+  "embed": "src/OefMsg2wims/outexec.c:200",
+  "special": "src/OefMsg2wims/outexec.c:201",
+  "draw": "src/OefMsg2wims/outexec.c:202",
+  "drawtikz": "src/OefMsg2wims/outexec.c:203",
+  "canvasdraw": "src/OefMsg2wims/outexec.c:204"
+ },
+ "anstype_scripts": {
+  "algexp": {
+   "has_input": true,
+   "options": {
+    "polexpand": "public_html/scripts/anstype/algexp.input:18",
+    "polfactor": "public_html/scripts/anstype/algexp.input:21",
+    "symbols": "public_html/scripts/anstype/algexp.input:36"
+   }
+  },
+  "aset": {
+   "has_input": true,
+   "options": {
+    "repeat": "public_html/scripts/anstype/aset.input:14",
+    "distinct_inputs": "public_html/scripts/anstype/aset.input:32",
+    "symbols": "public_html/scripts/anstype/aset.input:53",
+    "integer": "public_html/scripts/anstype/function:50"
+   }
+  },
+  "atext": {
+   "has_input": true,
+   "options": {
+    "symbols": "public_html/scripts/anstype/atext.input:25"
+   }
+  },
+  "case": {
+   "has_input": true,
+   "options": {
+    "noreaccent": "public_html/scripts/anstype/case:10",
+    "symbols": "public_html/scripts/anstype/case.input:26"
+   }
+  },
+  "checkbox": {
+   "has_input": true,
+   "options": {
+    "split": "public_html/scripts/anstype/checkbox:178",
+    "partialscore": "public_html/scripts/anstype/checkbox:178",
+    "eqweight": "public_html/scripts/anstype/checkbox:183",
+    "shuffle": "public_html/scripts/anstype/checkbox.input:24",
+    "sort": "public_html/scripts/anstype/checkbox.input:28",
+    "nolabel": "public_html/scripts/anstype/checkbox.input:48",
+    "color": "public_html/scripts/anstype/checkbox:2",
+    "nolegend": "public_html/scripts/anstype/checkbox:2",
+    "show": "public_html/scripts/anstype/checkbox:2"
+   }
+  },
+  "chembrut": {
+   "has_input": true,
+   "options": {
+    "symbols": "public_html/scripts/anstype/chembrut.input:27"
+   }
+  },
+  "chemclick": {
+   "has_input": true,
+   "options": {
+    "image": "public_html/scripts/anstype/chemclick:18",
+    "feedback": "public_html/scripts/anstype/chemclick:26",
+    "help": "public_html/scripts/anstype/chemclick.input:77"
+   }
+  },
+  "chemdraw": {
+   "has_input": true,
+   "options": {
+    "allH": "public_html/scripts/anstype/chemdraw:4",
+    "onlyheteroH": "public_html/scripts/anstype/chemdraw:7",
+    "svg": "public_html/scripts/anstype/chemdraw:26",
+    "image": "public_html/scripts/anstype/chemdraw:56",
+    "match": "public_html/scripts/anstype/chemdraw:58",
+    "feedback": "public_html/scripts/anstype/chemdraw:74",
+    "height": "public_html/scripts/anstype/chemdraw:212",
+    "help": "public_html/scripts/anstype/chemdraw.input:50"
+   }
+  },
+  "chemeq": {
+   "has_input": true,
+   "options": {
+    "symbols": "public_html/scripts/anstype/chemeq.input:21"
+   }
+  },
+  "chemformula": {
+   "has_input": true,
+   "options": {
+    "latex": "public_html/scripts/anstype/chemformula:36",
+    "order": "public_html/scripts/anstype/chemformula:8",
+    "symbols": "public_html/scripts/anstype/chemformula.input:26",
+    "hill": "public_html/scripts/anstype/chemformula:1"
+   }
+  },
+  "chemformula_analysis": {
+   "has_input": false,
+   "options": {}
+  },
+  "chessgame": {
+   "has_input": true,
+   "options": {
+    "noorder": "public_html/scripts/anstype/chessgame:66",
+    "nogoodprint": "public_html/scripts/anstype/chessgame:132",
+    "color": "public_html/scripts/anstype/chessgame:8"
+   }
+  },
+  "chset": {
+   "has_input": true,
+   "options": {
+    "norepeat": "public_html/scripts/anstype/chset:8",
+    "symbols": "public_html/scripts/anstype/chset.input:15"
+   }
+  },
+  "click": {
+   "has_input": true,
+   "options": {
+    "multiple": "public_html/scripts/anstype/click:8",
+    "default": "public_html/scripts/anstype/click:22",
+    "shuffle": "public_html/scripts/anstype/click.input:28",
+    "sort": "public_html/scripts/anstype/menu.input:34",
+    "detag": "public_html/scripts/anstype/menu.input:10",
+    "split": "public_html/scripts/anstype/checkbox:178",
+    "partialscore": "public_html/scripts/anstype/checkbox:178",
+    "eqweight": "public_html/scripts/anstype/checkbox:183",
+    "nolegend": "public_html/scripts/anstype/click:1",
+    "nolabel": "public_html/scripts/anstype/click:1",
+    "color": "public_html/scripts/anstype/checkbox:2",
+    "show": "public_html/scripts/anstype/checkbox:2"
+   }
+  },
+  "clickfill": {
+   "has_input": true,
+   "options": {
+    "noorder": "public_html/scripts/anstype/clickfill:149",
+    "split": "public_html/scripts/anstype/clickfill:167",
+    "partialscore": "public_html/scripts/anstype/clickfill:167",
+    "eqweight": "public_html/scripts/anstype/clickfill:175",
+    "align": "public_html/scripts/anstype/clickfill:23",
+    "default": "public_html/scripts/anstype/clickfill:127",
+    "keeporder": "public_html/scripts/anstype/clickfill.after:7",
+    "shuffle": "public_html/scripts/anstype/clickfill.after:21",
+    "sort": "public_html/scripts/anstype/clickfill.after:24",
+    "transparent": "public_html/scripts/anstype/clickfill.after:40"
+   }
+  },
+  "clicktile": {
+   "has_input": true,
+   "options": {}
+  },
+  "clock": {
+   "has_input": true,
+   "options": {
+    "split": "public_html/scripts/anstype/clock:49",
+    "button": "public_html/scripts/anstype/clock:9",
+    "color": "public_html/scripts/anstype/clock.input:6",
+    "clocktype": "public_html/scripts/anstype/clock.input:9",
+    "init": "public_html/scripts/anstype/clock.input:11"
+   }
+  },
+  "code": {
+   "has_input": true,
+   "options": {
+    "nonempty": "public_html/scripts/anstype/code:101",
+    "symbols": "public_html/scripts/anstype/code.input:21"
+   }
+  },
+  "complex": {
+   "has_input": true,
+   "options": {
+    "comma": "public_html/scripts/anstype/complex:3",
+    "absolute": "public_html/scripts/anstype/complex:103",
+    "symbols": "public_html/scripts/anstype/complex.input:27",
+    "j": "public_html/scripts/anstype/complex:1",
+    "precision": "public_html/scripts/anstype/complex:1"
+   }
+  },
+  "compose": {
+   "has_input": true,
+   "options": {
+    "shuffle": "public_html/scripts/anstype/compose.input:43",
+    "linkword": "public_html/scripts/anstype/compose.input:23"
+   }
+  },
+  "coord": {
+   "has_input": true,
+   "options": {
+    "goodanswershown": "public_html/scripts/anstype/coord:76",
+    "fill": "public_html/scripts/anstype/coord:83",
+    "analysenofig": "public_html/scripts/anstype/coord:106",
+    "feedback": "public_html/scripts/anstype/coord:81"
+   }
+  },
+  "correspond": {
+   "has_input": true,
+   "options": {
+    "split": "public_html/scripts/anstype/correspond:44",
+    "partialscore": "public_html/scripts/anstype/correspond:44"
+   }
+  },
+  "crossword": {
+   "has_input": true,
+   "options": {
+    "tooltip": "public_html/scripts/anstype/crossword.input:141",
+    "allhelp": "public_html/scripts/anstype/crossword.input:144",
+    "color": "public_html/scripts/anstype/crossword.input:16"
+   }
+  },
+  "default": {
+   "has_input": true,
+   "options": {
+    "integer": "public_html/scripts/anstype/function:50",
+    "eqsign": "public_html/scripts/anstype/equation:3",
+    "comma": "public_html/scripts/anstype/numeric:5",
+    "nospace": "public_html/scripts/anstype/numeric:13",
+    "absolute": "public_html/scripts/anstype/numeric:57",
+    "symbols": "public_html/scripts/anstype/function:1",
+    "yes": "public_html/scripts/anstype/equation:1",
+    "nolegend": "public_html/scripts/anstype/numeric:2"
+   }
+  },
+  "dragfill": {
+   "has_input": true,
+   "options": {
+    "noorder": "public_html/scripts/anstype/dragfill:149",
+    "split": "public_html/scripts/anstype/dragfill:167",
+    "partialscore": "public_html/scripts/anstype/dragfill:167",
+    "eqweight": "public_html/scripts/anstype/dragfill:175",
+    "align": "public_html/scripts/anstype/dragfill:23",
+    "default": "public_html/scripts/anstype/dragfill:127",
+    "keeporder": "public_html/scripts/anstype/dragfill.after:7",
+    "shuffle": "public_html/scripts/anstype/dragfill.after:21",
+    "sort": "public_html/scripts/anstype/dragfill.after:24",
+    "transparent": "public_html/scripts/anstype/dragfill.after:40"
+   }
+  },
+  "draw": {
+   "has_input": true,
+   "options": {
+    "split": "public_html/scripts/anstype/draw:181",
+    "partialscore": "public_html/scripts/anstype/draw:181",
+    "eqweight": "public_html/scripts/anstype/draw:181",
+    "precision": "public_html/scripts/anstype/draw:3",
+    "arrow_head": "public_html/scripts/anstype/draw:72",
+    "color": "public_html/scripts/anstype/draw.input:13",
+    "default": "public_html/scripts/anstype/draw:1"
+   }
+  },
+  "equation": {
+   "has_input": true,
+   "options": {
+    "eqsign": "public_html/scripts/anstype/equation:3",
+    "symbols": "public_html/scripts/anstype/equation.input:22",
+    "yes": "public_html/scripts/anstype/equation:1"
+   }
+  },
+  "flashcard": {
+   "has_input": true,
+   "options": {
+    "split": "public_html/scripts/anstype/flashcard:178",
+    "partialscore": "public_html/scripts/anstype/flashcard:178",
+    "eqweight": "public_html/scripts/anstype/flashcard:183",
+    "shuffle": "public_html/scripts/anstype/flashcard.input:56",
+    "sort": "public_html/scripts/anstype/flashcard.input:60",
+    "show": "public_html/scripts/anstype/flashcard.input:64",
+    "color": "public_html/scripts/anstype/flashcard:2",
+    "nolegend": "public_html/scripts/anstype/flashcard:2",
+    "nolabel": "public_html/scripts/anstype/flashcard:2"
+   }
+  },
+  "formal": {
+   "has_input": true,
+   "options": {
+    "polexpand": "public_html/scripts/anstype/formal.input:18",
+    "polfactor": "public_html/scripts/anstype/formal.input:21",
+    "symbols": "public_html/scripts/anstype/formal.input:36"
+   }
+  },
+  "fset": {
+   "has_input": true,
+   "options": {
+    "repeat": "public_html/scripts/anstype/fset.input:14",
+    "distinct_inputs": "public_html/scripts/anstype/fset.input:32",
+    "symbols": "public_html/scripts/anstype/fset.input:55"
+   }
+  },
+  "function": {
+   "has_input": true,
+   "options": {
+    "integer": "public_html/scripts/anstype/function:50",
+    "polexpand": "public_html/scripts/anstype/function.input:18",
+    "polfactor": "public_html/scripts/anstype/function.input:21",
+    "symbols": "public_html/scripts/anstype/function.input:36"
+   }
+  },
+  "geogebra": {
+   "has_input": true,
+   "options": {
+    "extra": "public_html/scripts/anstype/geogebra:46",
+    "output": "public_html/scripts/anstype/geogebra:47",
+    "weight": "public_html/scripts/anstype/geogebra:53",
+    "precision": "public_html/scripts/anstype/geogebra:55",
+    "feedbackscript": "public_html/scripts/anstype/geogebra:94",
+    "namebutton": "public_html/scripts/anstype/geogebra:96",
+    "norebuild": "public_html/scripts/anstype/geogebra:102",
+    "last": "public_html/scripts/anstype/geogebra.input:37",
+    "language": "public_html/scripts/anstype/geogebra.input:11",
+    "idontknow": "public_html/scripts/anstype/geogebra.input:15",
+    "max": "public_html/scripts/anstype/geogebra.input:75",
+    "ignore": "public_html/scripts/anstype/geogebra.input:81",
+    "object_analysis": "public_html/scripts/anstype/geogebra.input:88"
+   }
+  },
+  "geogebra_translation": {
+   "has_input": false,
+   "options": {}
+  },
+  "imgcomp": {
+   "has_input": true,
+   "options": {}
+  },
+  "javacurve": {
+   "has_input": true,
+   "options": {
+    "color1": "public_html/scripts/anstype/javacurve:17",
+    "color2": "public_html/scripts/anstype/javacurve:19",
+    "precision": "public_html/scripts/anstype/javacurve.circle:1"
+   }
+  },
+  "jmolclick": {
+   "has_input": true,
+   "options": {
+    "type": "public_html/scripts/anstype/jmolclick:5",
+    "target": "public_html/scripts/anstype/jmolclick:6",
+    "applet": "public_html/scripts/anstype/jmolclick:7",
+    "nb_select": "public_html/scripts/anstype/jmolclick:25",
+    "split": "public_html/scripts/anstype/jmolclick.input:242",
+    "partialscore": "public_html/scripts/anstype/jmolclick.input:242",
+    "eqweight": "public_html/scripts/anstype/jmolclick.input:242",
+    "noselect": "public_html/scripts/anstype/jmolclick.input:30"
+   }
+  },
+  "jsxgraph": {
+   "has_input": true,
+   "options": {
+    "precision": "public_html/scripts/anstype/jsxgraph:50",
+    "freepoint": "public_html/scripts/anstype/jsxgraph.input:70",
+    "style": "public_html/scripts/anstype/jsxgraph.input:67",
+    "color1": "public_html/scripts/anstype/jsxgraph:1",
+    "color2": "public_html/scripts/anstype/jsxgraph:1"
+   }
+  },
+  "jsxgraphcurve": {
+   "has_input": true,
+   "options": {
+    "color1": "public_html/scripts/anstype/jsxgraphcurve:17",
+    "color2": "public_html/scripts/anstype/jsxgraphcurve:19",
+    "precision": "public_html/scripts/anstype/javacurve.curve:1"
+   }
+  },
+  "keyboard": {
+   "has_input": true,
+   "options": {
+    "nopunct": "public_html/scripts/anstype/keyboard:26",
+    "nocase": "public_html/scripts/anstype/keyboard:34",
+    "deaccent": "public_html/scripts/anstype/keyboard:38",
+    "noaccent": "public_html/scripts/anstype/keyboard:38",
+    "nospace": "public_html/scripts/anstype/keyboard:46",
+    "keyboard": "public_html/scripts/anstype/keyboard.input:23",
+    "style": "public_html/scripts/anstype/keyboard.input:24"
+   }
+  },
+  "litexp": {
+   "has_input": true,
+   "options": {
+    "polexpand": "public_html/scripts/anstype/litexp:44",
+    "polfactor": "public_html/scripts/anstype/litexp:47",
+    "noerrordetail": "public_html/scripts/anstype/litexp:84",
+    "symbols": "public_html/scripts/anstype/litexp.input:36"
+   }
+  },
+  "mark": {
+   "has_input": true,
+   "options": {
+    "split": "public_html/scripts/anstype/mark:178",
+    "partialscore": "public_html/scripts/anstype/mark:178",
+    "eqweight": "public_html/scripts/anstype/mark:183",
+    "color": "public_html/scripts/anstype/mark.input:8",
+    "nolegend": "public_html/scripts/anstype/mark:2",
+    "shuffle": "public_html/scripts/anstype/mark:2",
+    "show": "public_html/scripts/anstype/mark:2",
+    "sort": "public_html/scripts/anstype/mark:2",
+    "nolabel": "public_html/scripts/anstype/mark:2"
+   }
+  },
+  "matrix": {
+   "has_input": true,
+   "options": {
+    "split_row": "public_html/scripts/anstype/matrix:98",
+    "split_column": "public_html/scripts/anstype/matrix:107",
+    "split_coeff": "public_html/scripts/anstype/matrix:116"
+   }
+  },
+  "menu": {
+   "has_input": true,
+   "options": {
+    "multiple": "public_html/scripts/anstype/menu:8",
+    "default": "public_html/scripts/anstype/menu:22",
+    "shuffle": "public_html/scripts/anstype/menu.input:30",
+    "sort": "public_html/scripts/anstype/menu.input:34",
+    "detag": "public_html/scripts/anstype/menu.input:10",
+    "split": "public_html/scripts/anstype/checkbox:178",
+    "partialscore": "public_html/scripts/anstype/checkbox:178",
+    "eqweight": "public_html/scripts/anstype/checkbox:183",
+    "nolegend": "public_html/scripts/anstype/menu:1",
+    "nolabel": "public_html/scripts/anstype/menu:1",
+    "color": "public_html/scripts/anstype/checkbox:2",
+    "show": "public_html/scripts/anstype/checkbox:2"
+   }
+  },
+  "multidraw": {
+   "has_input": true,
+   "options": {
+    "split": "public_html/scripts/anstype/multidraw:257",
+    "partialscore": "public_html/scripts/anstype/multidraw:257",
+    "eqweight": "public_html/scripts/anstype/multidraw:257",
+    "precision": "public_html/scripts/anstype/multidraw:26",
+    "arrow_head": "public_html/scripts/anstype/multidraw:120",
+    "color": "public_html/scripts/anstype/multidraw.input:53",
+    "default": "public_html/scripts/anstype/multidraw:1"
+   }
+  },
+  "multipleclick": {
+   "has_input": true,
+   "options": {
+    "split": "public_html/scripts/anstype/multipleclick:178",
+    "partialscore": "public_html/scripts/anstype/multipleclick:178",
+    "eqweight": "public_html/scripts/anstype/multipleclick:183",
+    "color": "public_html/scripts/anstype/multipleclick:2",
+    "nolegend": "public_html/scripts/anstype/multipleclick:2",
+    "shuffle": "public_html/scripts/anstype/multipleclick:2",
+    "show": "public_html/scripts/anstype/multipleclick:2",
+    "sort": "public_html/scripts/anstype/multipleclick:2",
+    "nolabel": "public_html/scripts/anstype/multipleclick:2"
+   }
+  },
+  "nocase": {
+   "has_input": true,
+   "options": {
+    "symbols": "public_html/scripts/anstype/nocase.input:25",
+    "noreaccent": "public_html/scripts/anstype/nocase:2"
+   }
+  },
+  "numeric": {
+   "has_input": true,
+   "options": {
+    "comma": "public_html/scripts/anstype/numeric:5",
+    "nospace": "public_html/scripts/anstype/numeric:13",
+    "absolute": "public_html/scripts/anstype/numeric:57",
+    "symbols": "public_html/scripts/anstype/numeric.input:27",
+    "nolegend": "public_html/scripts/anstype/numeric:2"
+   }
+  },
+  "numexp": {
+   "has_input": true,
+   "options": {
+    "nospace": "public_html/scripts/anstype/numexp:3",
+    "noreduction": "public_html/scripts/anstype/numexp:37",
+    "symbols": "public_html/scripts/anstype/numexp.input:24"
+   }
+  },
+  "puzzle": {
+   "has_input": true,
+   "options": {
+    "text": "public_html/scripts/anstype/puzzle:45"
+   }
+  },
+  "radio": {
+   "has_input": true,
+   "options": {
+    "multiple": "public_html/scripts/anstype/radio:8",
+    "default": "public_html/scripts/anstype/radio:22",
+    "shuffle": "public_html/scripts/anstype/radio.input:24",
+    "sort": "public_html/scripts/anstype/radio.input:28",
+    "nolabel": "public_html/scripts/anstype/radio.input:47",
+    "detag": "public_html/scripts/anstype/menu.input:10",
+    "split": "public_html/scripts/anstype/checkbox:178",
+    "partialscore": "public_html/scripts/anstype/checkbox:178",
+    "eqweight": "public_html/scripts/anstype/checkbox:183",
+    "nolegend": "public_html/scripts/anstype/radio:1",
+    "color": "public_html/scripts/anstype/checkbox:2",
+    "show": "public_html/scripts/anstype/checkbox:2"
+   }
+  },
+  "range": {
+   "has_input": true,
+   "options": {
+    "symbols": "public_html/scripts/anstype/range.input:25"
+   }
+  },
+  "raw": {
+   "has_input": true,
+   "options": {
+    "nodigit": "public_html/scripts/anstype/raw:15",
+    "noquote": "public_html/scripts/anstype/raw:18",
+    "nomathop": "public_html/scripts/anstype/raw:21",
+    "noparenthesis": "public_html/scripts/anstype/raw:24",
+    "noparentheses": "public_html/scripts/anstype/raw:24",
+    "nopunct": "public_html/scripts/anstype/raw:27",
+    "reaccent": "public_html/scripts/anstype/raw:31",
+    "nocase": "public_html/scripts/anstype/raw:39",
+    "deaccent": "public_html/scripts/anstype/raw:43",
+    "noaccent": "public_html/scripts/anstype/raw:43",
+    "singlespace": "public_html/scripts/anstype/raw:47",
+    "nospace": "public_html/scripts/anstype/raw:51",
+    "symbols": "public_html/scripts/anstype/raw.input:27"
+   }
+  },
+  "reorder": {
+   "has_input": true,
+   "options": {}
+  },
+  "set": {
+   "has_input": true,
+   "options": {
+    "nospace": "public_html/scripts/anstype/set:12",
+    "repeat": "public_html/scripts/anstype/set:17",
+    "distinct_inputs": "public_html/scripts/anstype/set:17",
+    "symbols": "public_html/scripts/anstype/set.input:60"
+   }
+  },
+  "sigunits": {
+   "has_input": true,
+   "options": {}
+  },
+  "symtext": {
+   "has_input": true,
+   "options": {
+    "style": "public_html/scripts/anstype/symtext:21",
+    "goodlim": "public_html/scripts/anstype/symtext:29",
+    "symbols": "public_html/scripts/anstype/symtext.input:31"
+   }
+  },
+  "textcomp": {
+   "has_input": true,
+   "options": {
+    "linkword": "public_html/scripts/anstype/textcomp:4",
+    "shuffle": "public_html/scripts/anstype/textcomp:4"
+   }
+  },
+  "time": {
+   "has_input": true,
+   "options": {}
+  },
+  "units": {
+   "has_input": true,
+   "options": {}
+  },
+  "vector": {
+   "has_input": true,
+   "options": {
+    "vector_left": "public_html/scripts/anstype/vector:4",
+    "vector_right": "public_html/scripts/anstype/vector:4",
+    "absolute": "public_html/scripts/anstype/vector:35",
+    "symbols": "public_html/scripts/anstype/vector.input:33"
+   }
+  },
+  "wlist": {
+   "has_input": true,
+   "options": {}
+  }
+ },
+ "global_reply_options": {
+  "arrowhead": "public_html/scripts/oef/printanalysis.proc:163",
+  "default": "public_html/scripts/oef/var.proc:334",
+  "factorcontent": "public_html/scripts/oef/analyse/factorpolynome:6",
+  "legend": "public_html/scripts/oef/answer.phtml:44",
+  "noanalyzeprint": "public_html/scripts/oef/printanalysis.proc:186",
+  "nolegend": "public_html/scripts/oef/answer.phtml:43",
+  "nonstop": "public_html/scripts/oef/step.proc:66",
+  "repeat": "public_html/scripts/oef/special/debug.input:61",
+  "sort": "public_html/scripts/oef/special/codeinput.phtml:82"
+ }
+}

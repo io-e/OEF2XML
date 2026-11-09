@@ -1,0 +1,54 @@
+== Résultats : amato-gianluca/WIMS-modules (commit du 2022-02-07), le 22/10/2026 (heure de Paris)
+Génération : gen_oef.sh = copie fidèle de public_html/scripts/oef/mkindex (WIMS 4.31b) :
+  1re ligne 'target=...' -> liste des cibles ; ' -> &#39; ; suppression ligne 1 ; #TARGET(x) -> defined TARGET_x ;
+  cpp -P -C -nostdinc -nostdinc++ -DTARGET_$j -A"TARGET($j)" -DOEFFILE=$j ; en-tête '%% This file is generated...'
+11 modules, 118 .cpp -> 128 .oef (1 par cible ; la langue est celle du module, pas de cible par langue).
+19 cibles déclarées par deux .cpp (ex. derivee.cpp et der1.cpp -> der1) : chez WIMS le 1er traité gagne (test -nt), reproduit.
+9 .cpp de H4~analysis~oeffonctgen.fr contiennent '#TODO' : cpp signale 'invalid preprocessing directive' mais produit la sortie (ligne supprimée), comme sur un serveur.
+
+Oracle oef2wims : 128/128 compilés. Validateur : 128/128 sans erreur. Accord 128/128.
+(Non-régression : sources WIMS 4.31b 333/333 en accord ; LaRuche 10/10.)
+
+Correction du validateur (faux positif) : \text{\nom=...} — oef2wims retire le '\' initial (def.c:104),
+la variable est bien déclarée. Avant : 35 fichiers avec avertissements, après : 26. Test ajouté.
+
+Avertissements restants (vrais problèmes des modules, non bloquants) :
+/workspace/gen/H4~analysis~oeffonctgen.fr/ineqgr2courbes.oef:155:1: avertissement: commande \tezt inconnue d'oef2wims au niveau principal : ignorée silencieusement par le compilateur
+/workspace/gen/H4~analysis~oeffonctgen.fr/ineqgr2dtes.oef:226:1: avertissement: commande \tezt inconnue d'oef2wims au niveau principal : ignorée silencieusement par le compilateur
+/workspace/gen/H4~analysis~oeffonctgen.fr/lectgrimage.oef:216:1: avertissement: \instruction n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+/workspace/gen/H4~analysis~oeffonctgen.fr/lectgrimage.oef:219:1: avertissement: type de réponse 'integer' inconnu des sources WIMS : accepté seulement si le module fournit son propre anstype
+/workspace/gen/H4~analysis~oeffonctgen.fr/lectgrimage2.oef:216:1: avertissement: \instruction n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+/workspace/gen/H4~analysis~oeffonctgen.fr/lectgrimage2.oef:219:1: avertissement: type de réponse 'integer' inconnu des sources WIMS : accepté seulement si le module fournit son propre anstype
+/workspace/gen/H5~language~oefIntroLogique.fr/negationLN.oef:167:11: avertissement: \neg utilisée avant sa déclaration
+/workspace/gen/H5~language~oefIntroLogique.fr/negationMath.oef:92:11: avertissement: \neg utilisée avant sa déclaration
+/workspace/gen/H6~analysis~OEFderivee.fr/der1.oef:53:1: avertissement: \notation n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+/workspace/gen/H6~analysis~OEFderivee.fr/der1.oef:58:67: avertissement: \aide n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+/workspace/gen/H6~analysis~OEFderivee.fr/der2.oef:53:1: avertissement: \notation n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+/workspace/gen/H6~analysis~OEFderivee.fr/der2.oef:58:67: avertissement: \aide n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+/workspace/gen/H6~analysis~OEFderivee.fr/der4.oef:65:1: avertissement: \notation n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+/workspace/gen/H6~analysis~OEFderivee.fr/der5.oef:69:1: avertissement: \notation n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+/workspace/gen/H6~analysis~OEFderivee.fr/der6.oef:62:1: avertissement: \notation n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+/workspace/gen/H6~analysis~OEFderivee.fr/der6.oef:67:62: avertissement: \aide n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+/workspace/gen/H6~analysis~OEFderivee.fr/form1.oef:72:1: avertissement: \notation n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+/workspace/gen/H6~analysis~OEFderivee.fr/form1.oef:89:49: avertissement: \indication n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+/workspace/gen/H6~analysis~OEFderivee.fr/form2.oef:73:1: avertissement: \notation n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+/workspace/gen/H6~analysis~OEFderivee.fr/form2.oef:90:49: avertissement: \indication n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+/workspace/gen/H6~analysis~OEFderivee.fr/form4.oef:73:1: avertissement: \notation n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+/workspace/gen/H6~analysis~OEFderivee.fr/form6.oef:72:1: avertissement: \notation n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+/workspace/gen/H6~analysis~OEFderivee.fr/form6.oef:89:49: avertissement: \indication n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+/workspace/gen/H6~analysis~OEFderivee.fr/pdt.oef:60:5: avertissement: \RR n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+/workspace/gen/H6~analysis~OEFderivee.fr/pdt1.oef:61:5: avertissement: \RR n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+/workspace/gen/H6~analysis~OEFderivee.fr/pdt2.oef:61:5: avertissement: \RR n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+/workspace/gen/H6~analysis~oeflimite.fr/aff_exp.oef:23:15: avertissement: \inf utilisée avant sa déclaration
+/workspace/gen/U1~analysis~OEFprimitive.fr/cosinus.oef:53:28: avertissement: \compenonce n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+/workspace/gen/U1~analysis~OEFprimitive.fr/cosinus.oef:54:1: avertissement: type de réponse 'auto' inconnu des sources WIMS : accepté seulement si le module fournit son propre anstype
+/workspace/gen/U1~analysis~OEFprimitive.fr/expo.oef:53:28: avertissement: \compenonce n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+/workspace/gen/U1~analysis~OEFprimitive.fr/expo.oef:54:1: avertissement: type de réponse 'auto' inconnu des sources WIMS : accepté seulement si le module fournit son propre anstype
+/workspace/gen/U1~analysis~OEFprimitive.fr/inverse.oef:63:1: avertissement: type de réponse 'auto' inconnu des sources WIMS : accepté seulement si le module fournit son propre anstype
+/workspace/gen/U1~analysis~OEFprimitive.fr/puissn.oef:54:28: avertissement: \compenonce n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+/workspace/gen/U1~analysis~OEFprimitive.fr/puissn.oef:55:1: avertissement: type de réponse 'auto' inconnu des sources WIMS : accepté seulement si le module fournit son propre anstype
+/workspace/gen/U1~analysis~OEFprimitive.fr/sinus.oef:53:28: avertissement: \compenonce n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+/workspace/gen/U1~analysis~OEFprimitive.fr/sinus.oef:54:1: avertissement: type de réponse 'auto' inconnu des sources WIMS : accepté seulement si le module fournit son propre anstype
+/workspace/gen/U1~analysis~oefdefintgeom.en/logarea.oef:30:14: avertissement: \f n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+/workspace/gen/U1~logic~oefiff.en/chsymbol.oef:78:9: avertissement: \name_iscond1 n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+/workspace/gen/U1~logic~oefiff.en/chsymbol.oef:78:34: avertissement: \name_iscond2 n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide

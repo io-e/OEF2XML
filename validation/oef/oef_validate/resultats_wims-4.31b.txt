@@ -1,0 +1,123 @@
+./log/classes/9001/src/26.oef:23:1: avertissement: nom de variable inhabituel dans \text : 'rep \rep'
+./log/classes/9001/src/34.oef:32:14: avertissement: \nop n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./log/classes/9001/src/createQCMtype1.oef:40:1: avertissement: commande \langage inconnue d'oef2wims au niveau principal : ignorée silencieusement par le compilateur
+./log/classes/9001/src/createQCMtype12.oef:45:1: avertissement: commande \langage inconnue d'oef2wims au niveau principal : ignorée silencieusement par le compilateur
+./log/classes/9001/src/createQCMtype2.oef:36:1: avertissement: commande \langage inconnue d'oef2wims au niveau principal : ignorée silencieusement par le compilateur
+./log/classes/9001/src/ex1.oef:2:1: avertissement: commande \label inconnue d'oef2wims au niveau principal : ignorée silencieusement par le compilateur
+./log/classes/9001/src/exi1.oef:2:1: avertissement: commande \lable inconnue d'oef2wims au niveau principal : ignorée silencieusement par le compilateur
+./log/classes/9001/src/test.oef:40:1: avertissement: commande \langage inconnue d'oef2wims au niveau principal : ignorée silencieusement par le compilateur
+./public_html/modules/adm/auth/confia2qcm.fr/Dirqcm/template.oef:11:1: avertissement: commande \langage inconnue d'oef2wims au niveau principal : ignorée silencieusement par le compilateur
+./public_html/modules/adm/tool/coordclick/data/example04.oef:30:9: avertissement: \V utilisée avant sa déclaration
+./public_html/modules/adm/tool/coordclick/data/example31.oef:38:14: avertissement: \rubrique n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/ca/src/16menutext.oef:72:48: avertissement: \pre utilisée avant sa déclaration
+./public_html/scripts/model/ca/src/16menutext.oef:73:49: avertissement: \post utilisée avant sa déclaration
+./public_html/scripts/model/ca/src/21vraifaux.oef:104:1: avertissement: \integer{tot<\mintrue+\minfalse?\mintru} sans '=' ni second argument : variable sans valeur
+./public_html/scripts/model/ca/src/21vraifaux.oef:104:1: avertissement: nom de variable inhabituel dans \integer : 'tot<\mintrue+\minfalse?\mintrue+\minfals'
+./public_html/scripts/model/ca/src/qcm.oef:534:24: avertissement: \explication2 utilisée avant sa déclaration
+./public_html/scripts/model/ca/src/select.oef:176:3: avertissement: \preliminaire n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/ca/src/select.oef:177:7: avertissement: \reading n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/ca/src/select.oef:178:7: avertissement: \image n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/ca/src/select.oef:179:9: avertissement: \video n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/ca/src/select.oef:234:28: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/ca/src/select.oef:236:21: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/ca/src/select.oef:237:31: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/ca/src/select.oef:238:26: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/ca/src/select.oef:240:29: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/ca/src/select.oef:244:28: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/ca/src/select.oef:246:29: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/ca/src/select.oef:252:35: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/ca/src/steps.oef:155:43: avertissement: \name_my_answer n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/ca/src/steps.oef:157:28: avertissement: \name_my_answer n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/ca/src/steps.oef:161:7: avertissement: \name_my_answer n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/ca/src/steps.oef:177:43: avertissement: \name_my_answer n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/ca/src/steps.oef:179:28: avertissement: \name_my_answer n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/ca/src/steps.oef:186:9: avertissement: \name_my_answer n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/ca/src/steps.oef:196:45: avertissement: \name_my_answer n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/ca/src/steps.oef:198:30: avertissement: \name_my_answer n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/cn/src/21vraifaux.oef:95:1: avertissement: \integer{tot<\mintrue+\minfalse?\mintru} sans '=' ni second argument : variable sans valeur
+./public_html/scripts/model/cn/src/21vraifaux.oef:95:1: avertissement: nom de variable inhabituel dans \integer : 'tot<\mintrue+\minfalse?\mintrue+\minfals'
+./public_html/scripts/model/en/src/16menutext.oef:70:48: avertissement: \pre utilisée avant sa déclaration
+./public_html/scripts/model/en/src/16menutext.oef:71:49: avertissement: \post utilisée avant sa déclaration
+./public_html/scripts/model/en/src/21vraifaux.oef:88:1: avertissement: \integer{tot<\mintrue+\minfalse?\mintru} sans '=' ni second argument : variable sans valeur
+./public_html/scripts/model/en/src/21vraifaux.oef:88:1: avertissement: nom de variable inhabituel dans \integer : 'tot<\mintrue+\minfalse?\mintrue+\minfals'
+./public_html/scripts/model/en/src/menutext.oef:72:1: erreur: parenthèse/crochet/accolade non appariée '}' (oef2wims : "Unmatched parentheses"). Le compilateur compte (), [] et {} dans tout le fichier, texte compris, sans échappement.
+./public_html/scripts/model/en/src/numdata.oef:91:1: erreur: parenthèse/crochet/accolade non appariée '}' (oef2wims : "Unmatched parentheses"). Le compilateur compte (), [] et {} dans tout le fichier, texte compris, sans échappement.
+./public_html/scripts/model/en/src/qcm.oef:540:24: avertissement: \explication2 utilisée avant sa déclaration
+./public_html/scripts/model/en/src/select.oef:167:3: avertissement: \preliminaire n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/en/src/select.oef:168:7: avertissement: \reading n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/en/src/select.oef:169:7: avertissement: \image n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/en/src/select.oef:170:9: avertissement: \video n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/en/src/select.oef:225:28: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/en/src/select.oef:227:21: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/en/src/select.oef:228:31: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/en/src/select.oef:229:26: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/en/src/select.oef:231:29: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/en/src/select.oef:235:28: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/en/src/select.oef:237:29: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/en/src/select.oef:243:35: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/en/src/steps.oef:162:43: avertissement: \name_my_answer n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/en/src/steps.oef:164:28: avertissement: \name_my_answer n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/en/src/steps.oef:168:7: avertissement: \name_my_answer n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/en/src/steps.oef:184:43: avertissement: \name_my_answer n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/en/src/steps.oef:186:28: avertissement: \name_my_answer n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/en/src/steps.oef:193:9: avertissement: \name_my_answer n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/en/src/steps.oef:203:45: avertissement: \name_my_answer n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/en/src/steps.oef:205:30: avertissement: \name_my_answer n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/es/src/16menutext.oef:73:48: avertissement: \pre utilisée avant sa déclaration
+./public_html/scripts/model/es/src/16menutext.oef:74:49: avertissement: \post utilisée avant sa déclaration
+./public_html/scripts/model/es/src/21vraifaux.oef:104:1: avertissement: \integer{tot<\mintrue+\minfalse?\mintru} sans '=' ni second argument : variable sans valeur
+./public_html/scripts/model/es/src/21vraifaux.oef:104:1: avertissement: nom de variable inhabituel dans \integer : 'tot<\mintrue+\minfalse?\mintrue+\minfals'
+./public_html/scripts/model/es/src/qcm.oef:533:24: avertissement: \explication2 utilisée avant sa déclaration
+./public_html/scripts/model/es/src/select.oef:174:3: avertissement: \preliminaire n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/es/src/select.oef:175:7: avertissement: \reading n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/es/src/select.oef:176:7: avertissement: \image n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/es/src/select.oef:177:9: avertissement: \video n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/es/src/select.oef:232:28: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/es/src/select.oef:234:21: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/es/src/select.oef:235:31: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/es/src/select.oef:236:26: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/es/src/select.oef:238:29: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/es/src/select.oef:242:28: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/es/src/select.oef:244:29: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/es/src/select.oef:250:35: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/es/src/steps.oef:155:43: avertissement: \name_my_answer n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/es/src/steps.oef:157:28: avertissement: \name_my_answer n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/es/src/steps.oef:161:7: avertissement: \name_my_answer n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/es/src/steps.oef:177:43: avertissement: \name_my_answer n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/es/src/steps.oef:179:28: avertissement: \name_my_answer n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/es/src/steps.oef:186:9: avertissement: \name_my_answer n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/es/src/steps.oef:196:45: avertissement: \name_my_answer n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/es/src/steps.oef:198:30: avertissement: \name_my_answer n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/fr/src/21vraifaux.oef:115:1: avertissement: \integer{tot<\mintrue+\minfalse?\mintru} sans '=' ni second argument : variable sans valeur
+./public_html/scripts/model/fr/src/21vraifaux.oef:115:1: avertissement: nom de variable inhabituel dans \integer : 'tot<\mintrue+\minfalse?\mintrue+\minfals'
+./public_html/scripts/model/fr/src/qcm.oef:540:24: avertissement: \explication2 utilisée avant sa déclaration
+./public_html/scripts/model/fr/src/select.oef:178:3: avertissement: \preliminaire n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/fr/src/select.oef:179:7: avertissement: \reading n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/fr/src/select.oef:180:7: avertissement: \image n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/fr/src/select.oef:181:9: avertissement: \video n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/fr/src/select.oef:236:28: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/fr/src/select.oef:238:21: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/fr/src/select.oef:239:31: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/fr/src/select.oef:240:26: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/fr/src/select.oef:242:29: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/fr/src/select.oef:246:28: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/fr/src/select.oef:248:29: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/fr/src/select.oef:254:35: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/fr/src/steps.oef:132:16: avertissement: \giveanal utilisée avant sa déclaration
+./public_html/scripts/model/it/src/21vraifaux.oef:113:1: avertissement: \integer{tot<\mintrue+\minfalse?\mintru} sans '=' ni second argument : variable sans valeur
+./public_html/scripts/model/it/src/21vraifaux.oef:113:1: avertissement: nom de variable inhabituel dans \integer : 'tot<\mintrue+\minfalse?\mintrue+\minfals'
+./public_html/scripts/model/it/src/qcm.oef:543:24: avertissement: \explication2 utilisée avant sa déclaration
+./public_html/scripts/model/it/src/select.oef:180:3: avertissement: \preliminaire n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/it/src/select.oef:181:7: avertissement: \reading n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/it/src/select.oef:182:7: avertissement: \image n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/it/src/select.oef:183:9: avertissement: \video n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/it/src/select.oef:238:28: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/it/src/select.oef:240:21: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/it/src/select.oef:241:31: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/it/src/select.oef:242:26: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/it/src/select.oef:244:29: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/it/src/select.oef:248:28: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/it/src/select.oef:250:29: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/it/src/select.oef:256:35: avertissement: \coupure n'est ni une variable déclarée ni une commande OEF : hors de \( \) elle sera remplacée par une valeur vide
+./public_html/scripts/model/it/src/steps.oef:138:16: avertissement: \giveanal utilisée avant sa déclaration
+Résumé : 333 fichier(s), 2 avec erreur(s), 35 avec avertissement(s), 331 sans erreur

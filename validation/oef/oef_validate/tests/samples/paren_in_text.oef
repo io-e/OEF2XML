@@ -1,0 +1,2 @@
+\statement{Choisir 1) ou 2).}
+\answer{x}{1}{type=numeric}

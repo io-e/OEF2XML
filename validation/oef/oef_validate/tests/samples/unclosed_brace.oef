@@ -1,0 +1,3 @@
+\integer{a=3}
+\statement{Valeur de \(\a\) ?
+\answer{x}{\a}{type=numeric}

@@ -1,0 +1,3 @@
+\title{Sans enonce}
+\integer{a=3}
+\answer{a}{\a}{type=numeric}
