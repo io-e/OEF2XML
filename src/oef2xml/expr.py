@@ -344,9 +344,6 @@ class ExprParser:
         m = re.fullmatch(r"\\([A-Za-z_]\w*)", st)
         if m:
             return Var(m.group(1))
-        if "\\" in st and not re.fullmatch(r"[^\\]*", st):
-            # literal list with references: items are split on commas (WIMS items)
-            pass
         return ListLit(split_top(st, ","))
 
 

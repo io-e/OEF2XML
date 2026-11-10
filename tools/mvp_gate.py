@@ -176,7 +176,7 @@ def main():
     # --- AC-11 (gate part) : the input folder is untouched
     res["AC-11"] = {"input_folder_unchanged": before == sorted(os.listdir(corpus)),
                     "outputs_outside_input_folder": True,
-                    "note": "Unicode path suite: tests/test_unicode.py"}
+                    "note": "Unicode path suite: tests/test_unicode_paths.py"}
 
     # --- AC-12 (gate part)
     need = ["source", "sortie", "id", "titre", "statut", "fidelite", "questions_source", "questions_converties", "questions_gap",
