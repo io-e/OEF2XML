@@ -52,7 +52,7 @@ def run_cli(stage: Path, out: Path, report: Path, tsv: Path, oef2wims: str, extr
 
 
 def main():
-    # REQ-WIN-2: the Markdown report contains Unicode symbols (for example ÔëÑ).
+    # REQ-WIN-2: the Markdown report contains Unicode symbols (for example ≥).
     for stream in (sys.stdout, sys.stderr):
         try:
             stream.reconfigure(encoding="utf-8")
