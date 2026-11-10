@@ -3,6 +3,7 @@ Needs the Go forward converter and the corpus: set OEF2XML_XML2OEF=/path/to/xml2
 reported as skipped, when absent)."""
 import json
 import os
+import shutil
 import sys
 from pathlib import Path
 
@@ -32,7 +33,13 @@ def test_rta_sample_has_no_diff_silent(cli, tmp_path):
     inp = tmp_path / "in"
     inp.mkdir()
     for f in sample_files():
-        os.symlink(Path(corpus) / f, inp / f)
+        source, staged = Path(corpus) / f, inp / f
+        try:
+            os.symlink(source, staged)
+        except (OSError, NotImplementedError):
+            # Windows may disable symlink creation; a staged copy is equivalent
+            # for RT-A and keeps the supplied corpus untouched (D-16 / AC-8).
+            shutil.copy2(source, staged)
     rep = tmp_path / "r.json"
     cli(inp, "-o", tmp_path / "x", "--gate", "none", "--report", rep)
     entries = {Path(e["source"]).name: e for e in json.loads(rep.read_text(encoding="utf-8"))["fichiers"]}

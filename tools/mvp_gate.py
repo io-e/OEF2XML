@@ -52,6 +52,12 @@ def run_cli(stage: Path, out: Path, report: Path, tsv: Path, oef2wims: str, extr
 
 
 def main():
+    # REQ-WIN-2: the Markdown report contains Unicode symbols (for example ÔëÑ).
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            stream.reconfigure(encoding="utf-8")
+        except Exception:
+            pass
     ap = argparse.ArgumentParser()
     ap.add_argument("--corpus", default="/workspace/oefc/corpus")
     ap.add_argument("--per-file", default=str(ROOT / "tools/corpus_stats/data/per_file.csv"))
@@ -71,7 +77,13 @@ def main():
     shutil.rmtree(stage, ignore_errors=True)
     stage.mkdir()
     for r in rows:
-        os.symlink(corpus / r["file"], stage / r["file"])
+        src, dst = corpus / r["file"], stage / r["file"]
+        try:
+            os.symlink(src, dst)
+        except (OSError, NotImplementedError):
+            # Windows may disable the symlink privilege. An isolated copy is
+            # equivalent for the gate and protects the source corpus (D-19).
+            shutil.copy2(src, dst)
     before = sorted(os.listdir(corpus))
     extra = ["--trig-units", a.trig_units] if a.trig_units else []
     runs = []

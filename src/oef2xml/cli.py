@@ -30,11 +30,28 @@ class Parser(argparse.ArgumentParser):
         sys.exit(EXIT_USAGE)
 
 
-def fs(p) -> str:
-    """REQ-WIN-1: `\\\\?\\` prefix for long paths on Windows (LongPathsEnabled=0); identity elsewhere"""
-    s = str(p)
-    if os.name == "nt" and len(s) >= 240 and not s.startswith("\\\\?\\"):
-        s = "\\\\?\\" + os.path.abspath(s)
+def fs(p, *, force: bool = False) -> str:
+    """REQ-WIN-1: add a Windows extended-length prefix before filesystem access."""
+    s = os.fspath(p)
+    if os.name != "nt" or s.startswith("\\\\?\\"):
+        return s
+    absolute = os.path.abspath(s)
+    if not force and len(absolute) < 240:
+        return s
+    # Extended UNC paths require the UNC marker after the extended prefix (REQ-WIN-1).
+    if absolute.startswith("\\\\"):
+        return "\\\\?\\UNC\\" + absolute[2:]
+    return "\\\\?\\" + absolute
+
+
+def display_path(p) -> str:
+    """Remove the internal Windows prefix so reports retain ordinary paths (REQ-WIN-1)."""
+    s = os.fspath(p)
+    if os.name == "nt":
+        if s.startswith("\\\\?\\UNC\\"):
+            return "\\\\" + s[8:]
+        if s.startswith("\\\\?\\"):
+            return s[4:]
     return s
 
 
@@ -93,11 +110,15 @@ def unimplemented_options(a) -> list[tuple[str, str]]:
 def collect(inputs, recursive: bool) -> list[Path]:
     files: list[Path] = []
     for i in inputs:
-        pth = Path(i)
-        if pth.is_dir():
-            it = pth.rglob("*") if recursive else pth.glob("*")
-            files += [f for f in it if f.is_file() and f.suffix.lower() == ".oef"]
-        elif pth.is_file():
+        # Inspect inputs through an extended path on Windows. A short input
+        # directory can still contain entries whose complete paths exceed
+        # MAX_PATH, so prefix it before globbing as well (REQ-WIN-1).
+        pth = Path(display_path(i))
+        access = Path(fs(pth, force=True))
+        if access.is_dir():
+            it = access.rglob("*") if recursive else access.glob("*")
+            files += [pth / f.relative_to(access) for f in it if f.is_file() and f.suffix.lower() == ".oef"]
+        elif access.is_file():
             files.append(pth)
         else:
             raise Usage(f"input not found: {i}")
@@ -154,17 +175,18 @@ def options_from(a) -> Options:
 
 def _work(args):
     path, name, opts, cfg, stem = args
+    source = display_path(path)
     try:
         raw = Path(fs(path)).read_bytes()
     except OSError as ex:
-        entry, xml = process_bytes(str(path), b"", opts, cfg, stem)
+        entry, xml = process_bytes(source, b"", opts, cfg, stem)
         entry["message"] = f"unreadable file: {ex}"
         entry["details"] = [{"niveau": "erreur", "ligne_oef": 0, "colonne_oef": 0, "construct": "io", "regle": "REQ-IN-5", "message": entry["message"]}]
         return entry, None
     try:
-        return process_bytes(str(path), raw, opts, cfg, stem)
+        return process_bytes(source, raw, opts, cfg, stem)
     except Exception as ex:          # REQ-BATCH-1: never a lost entry
-        entry, _ = process_bytes(str(path), b"", opts, cfg, stem)
+        entry, _ = process_bytes(source, b"", opts, cfg, stem)
         entry.update(statut="echec", message=f"internal error: {type(ex).__name__}: {ex}")
         entry["flags"] = ["crash"]
         entry["details"] = [{"niveau": "erreur", "ligne_oef": 0, "colonne_oef": 0, "construct": "crash", "regle": "REQ-BATCH-1", "message": entry["message"]}]
@@ -218,8 +240,8 @@ def main(argv=None) -> int:
                 print("\n".join(render_dump(res.program.chain)))
             return 0
         out = Path(a.out)
-        in_dirs = {os.path.realpath(f.parent) for f in files}
-        if os.path.realpath(out) in in_dirs and not a.force:
+        in_dirs = {os.path.normcase(os.path.realpath(fs(f.parent))) for f in files}
+        if os.path.normcase(os.path.realpath(fs(out))) in in_dirs and not a.force:
             raise Usage(f"refusing to write into the input folder {out} (REQ-BATCH-2); use --force or another --out")
         vparts = [x.strip() for x in a.validate.split(",") if x.strip()]
         if a.validate.strip() != "none" and not set(vparts) <= {"rng", "xsd", "sch"}:
@@ -252,7 +274,7 @@ def main(argv=None) -> int:
     except FileNotFoundError as ex:
         print(f"oef2xml: {ex}", file=sys.stderr)
         return EXIT_USAGE
-    out.mkdir(parents=True, exist_ok=True)
+    Path(fs(out)).mkdir(parents=True, exist_ok=True)
     for (f, _, _, _, stem), (entry, xml) in zip(jobs, results):
         target = out / f"{stem}{a.suffix}.xml"
         if xml is not None:

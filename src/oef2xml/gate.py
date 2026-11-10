@@ -12,6 +12,11 @@ from pathlib import Path
 ERR_RE = re.compile(r"^ERROR (.*?) at line (\d+) col (\d+)\.?\s*$", re.M)
 
 
+def ascii_scratch_stem(name: str) -> str:
+    """REQ-ARCH-4 / REQ-WIN-1: keep compiler scratch filenames ASCII-only."""
+    return re.sub(r"[^A-Za-z0-9_.-]", "_", name)
+
+
 @dataclass
 class GateResult:
     ok: bool
@@ -40,7 +45,7 @@ def run_gate(exe: str, name: str, raw: bytes, keep: str | None = None, timeout: 
     wrapper = exe_name.endswith(".exe") and "v2" in exe_name
     scratch = tempfile.mkdtemp(prefix="oef2xml_gate_")
     try:
-        src = Path(scratch) / (re.sub(r"[^\w.-]", "_", name) + ".oef")       # ASCII scratch name (plain exe: ANSI paths only)
+        src = Path(scratch) / (ascii_scratch_stem(name) + ".oef")
         src.write_bytes(raw)
         cmd = [exe] + (["--json"] if wrapper else []) + [str(src)]
         env = dict(os.environ, PYTHONUTF8="1")

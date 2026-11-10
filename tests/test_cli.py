@@ -221,12 +221,14 @@ def test_file_fidelity_weakest_and_sans_question_d22(cli, tmp_path):
     fig = write(tmp_path / "in" / "fig.oef", "\\title{T}\n\\statement{Figure seule}\n")
     cli(tmp_path / "in", "-o", tmp_path / "out", "--gate", "none", "--report", tmp_path / "r.json", "--csv", tmp_path / "r.tsv")
     rep = json.loads((tmp_path / "r.json").read_text(encoding="utf-8"))
-    by = {e["source"].split("/")[-1]: e for e in rep["fichiers"]}
+    # The report uses native path separators; normalize both styles (D-22).
+    by = {e["source"].replace("\\", "/").rsplit("/", 1)[-1]: e for e in rep["fichiers"]}
     assert by["plain.oef"]["fidelite"] == "non_verifiee" and "sans_question" not in by["plain.oef"]["flags"]
     assert by["risk.oef"]["fidelite"] == "approchee"
     assert by["fig.oef"]["fidelite"] is None and "sans_question" in by["fig.oef"]["flags"]
     assert rep["resume"]["fidelite"] == {"exacte": 0, "approchee": 1, "non_verifiee": 1, "null": 1}
-    rows = {r.split("\t")[0].split("/")[-1]: r.split("\t") for r in (tmp_path / "r.tsv").read_text(encoding="utf-8").splitlines()[1:]}
+    rows = {r.split("\t")[0].replace("\\", "/").rsplit("/", 1)[-1]: r.split("\t")
+            for r in (tmp_path / "r.tsv").read_text(encoding="utf-8").splitlines()[1:]}
     assert rows["fig.oef"][2] == ""
 
 
