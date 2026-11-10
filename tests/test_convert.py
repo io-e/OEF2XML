@@ -23,7 +23,7 @@ def test_deterministic(conv):
 def test_no_question_is_partiel(conv):
     e, xml = conv("\\title{T}\n\\statement{Figure seule}\n")
     assert e["statut"] == "partiel" and "aucune_question" in e["flags"]
-    assert e["fidelite"] == "approchee"
+    assert e["fidelite"] is None and "sans_question" in e["flags"]          # D-22: not counted as approchee
 
 
 def test_unknown_directive_becomes_gap_not_guess(conv):
@@ -76,3 +76,51 @@ def test_no_crash_on_garbage(conv):
 def test_strict_turns_partiel_into_echec(conv):
     e, xml = conv("\\title{T}\n\\statement{x}\n", strict=True)
     assert e["statut"] == "echec" and xml is None
+
+
+# ---- v0.2.7 (owner review of PR #1) ----------------------------------------------------------------------------------
+
+HEAD = "\\title{T}\n\\language{fr}\n"
+
+
+def _details(e, construct):
+    return [d for d in e["details"] if d["construct"] == construct]
+
+
+def test_integer_rounding_always_reported_d20(conv):
+    e, _ = conv(HEAD + "\\integer{a=randint(2..9)}\n\\integer{b=randint(2..9)}\n\\integer{c=\\a/\\b}\n\\statement{\\c}\n"
+                "\\answer{R}{\\c}{type=numeric}\n")
+    d = _details(e, "integer-rounding")
+    assert len(d) == 1 and d[0]["niveau"] == "approximation" and d[0]["regle"] == "M-12"
+    assert e["approximations"].get("integer-rounding") == 1
+
+
+def test_integer_provably_integer_has_no_rounding_detail(conv):
+    e, _ = conv(HEAD + "\\integer{a=randint(2..9)}\n\\integer{c=\\a+3}\n\\statement{\\c}\n\\answer{R}{\\c}{type=numeric}\n")
+    assert _details(e, "integer-rounding") == []
+
+
+def test_dropped_unread_cause_gap_d18(conv):
+    # (a) the reader was replaced by a gap (G-23 \feedback reads \a); (b) nothing reads \z in the source
+    e, _ = conv(HEAD + "\\integer{a=randint(2..9)}\n\\integer{z=3}\n\\statement{x}\n\\answer{R}{1}{type=numeric}\n\\feedback{1}{\\a}\n")
+    du = {d["message"].split()[0]: d.get("cause_gap") for d in _details(e, "dropped-unread")}
+    assert du.get("\\a") == "G-23"
+    assert du.get("\\z") == "unread-in-source"
+
+
+def test_dropped_unread_without_cause_has_no_cause_gap_d18(conv):
+    # \a is read only by a definition placed after \statement: not a gap, not unread in the source -> no cause_gap
+    e, _ = conv(HEAD + "\\integer{a=randint(2..9)}\n\\statement{x}\n\\answer{R}{1}{type=numeric}\n\\text{later=\\a}\n")
+    d = [x for x in _details(e, "dropped-unread") if x["message"].startswith("\\a ")]
+    assert d and all("cause_gap" not in x for x in d)
+
+
+def test_roundtrip_comparator_accepts_only_caused_dropped_unread_d18():
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "tools"))
+    import roundtrip as RT
+    base = {"niveau": "info", "ligne_oef": 3, "colonne_oef": 1, "construct": "dropped-unread", "regle": "AC-8", "message": "m"}
+    assert RT.covered(3, 3, [base]) is False
+    assert RT.covered(3, 3, [dict(base, cause_gap="G-23")]) is True
+    assert RT.covered(3, 3, [dict(base, cause_gap="unread-in-source")]) is True

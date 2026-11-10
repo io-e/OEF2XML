@@ -82,10 +82,14 @@ class Detail:
     construct: str
     regle: str
     message: str
+    cause_gap: str | None = None       # D-18: only on `dropped-unread` (gap id, or "unread-in-source")
 
     def as_dict(self):
-        return {"niveau": self.niveau, "ligne_oef": self.ligne_oef, "colonne_oef": self.colonne_oef,
-                "construct": self.construct, "regle": self.regle, "message": self.message}
+        d = {"niveau": self.niveau, "ligne_oef": self.ligne_oef, "colonne_oef": self.colonne_oef,
+             "construct": self.construct, "regle": self.regle, "message": self.message}
+        if self.cause_gap is not None:
+            d["cause_gap"] = self.cause_gap
+        return d
 
 
 @dataclass
@@ -178,9 +182,9 @@ class Converter:
     def lc(self, pos: int):
         return line_col(self.text, pos)
 
-    def detail(self, level: str, pos: int, construct: str, rule: str, msg: str):
+    def detail(self, level: str, pos: int, construct: str, rule: str, msg: str, cause_gap: str | None = None):
         l, c = self.lc(pos)
-        self.details.append(Detail(level, l, c, construct, rule, msg))
+        self.details.append(Detail(level, l, c, construct, rule, msg, cause_gap))
         if level == "approximation":
             self.approx[construct] += 1
 
@@ -557,8 +561,12 @@ class Converter:
         if kind == "rational":
             self.detail("approximation", pos, "rational", "M-12", "\\rational value kept as an arithmetic expression (no rational type)")
         if ctx_int and not self.prov_int(node):
-            # \integer{x=E} is rint(E) in WIMS (def.c putval): reproduced exactly with math_round ROUND
+            # D-20: \integer{x=E} is rint(E) in WIMS (process.c:406, C rint, ties to even); math_round ROUND of the target
+            # platform rounds .5 in an unverified way (JavaScript Math.round rounds ties up), so ALWAYS an approximation
             blk = B("math_round", rule="M-12").f("OP", "ROUND").i("NUM", blk, blk.type == "math_number")
+            self.detail("approximation", pos, "integer-rounding", "M-12",
+                        "\\integer value not provably an integer: rint(e) (ties to even) emitted as math_round ROUND, "
+                        "rounding of .5 unverified on the target platform (D-20, Q5)")
         return blk
 
     def conv_def(self, d: Directive):
@@ -1423,10 +1431,19 @@ class Converter:
                     walk(sub)
                 b = b.next
         walk(head)
+        # D-18: which gap removed the reader? A gap placeholder whose original fragment reads `\name` (lowest position first)
+        gap_reads = sorted(((ph.pos, ph.rule, set(re.findall(r"\\([A-Za-z_]\w*)", ph.raw))) for ph in self.placeholders),
+                           key=lambda x: x[0])
         for blk, pos, name in self.def_nodes:
             if id(blk) in present and name not in reads:
+                cause = next((rule for _, rule, names in gap_reads if name in names), None)
+                if cause is None and not re.search(r"\\" + re.escape(name) + r"(?![A-Za-z0-9_])", self.text):
+                    cause = "unread-in-source"           # nothing in the source OEF reads the name either
                 self.detail("info", pos, "dropped-unread", "AC-8",
-                            f"\\{name} is emitted but no emitted block reads it (the forward converter drops such definitions)")
+                            f"\\{name} is emitted but no emitted block reads it (the forward converter drops such definitions)"
+                            + (f"; reader removed by {cause}" if cause and cause != "unread-in-source" else
+                               "; nothing in the source reads it" if cause else "; CAUSE UNKNOWN (D-18: counts as DIFF-SILENT)"),
+                            cause)
 
     def make_program(self, head, res) -> Program:
         stem = self.stem

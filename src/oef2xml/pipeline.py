@@ -42,6 +42,9 @@ def resolve_gate(cfg: Config) -> tuple[str, str | None]:
     return "validator", None
 
 
+FID_ORDER = ["approchee", "non_verifiee", "exacte"]       # weakest first (D-22)
+
+
 def report_meta(cfg: Config) -> dict:
     """REQ-REP-1: schema file name -> SHA-256 (no absolute paths) and the SHA-256 of the compiler when one ran"""
     from .gate import file_sha256
@@ -124,7 +127,6 @@ def process_bytes(path: str, raw: bytes, opts: Options, cfg: Config, stem: str |
     if res.counters and status != "echec":
         counters = {k: res.counters[k] for k in ZERO}
     risk = sum(1 for q in res.questions if q["risque_evaluation"]) if status != "echec" else 0
-    fid = "approchee" if (status != "echec" and (not counters["blocs_question_emis"] or risk)) else "non_verifiee"   # REQ-REP-7
     questions = []
     if status != "echec":
         for q in res.questions:
@@ -132,6 +134,14 @@ def process_bytes(path: str, raw: bytes, opts: Options, cfg: Config, stem: str |
             if q["disposition"] == "convertie":
                 q["fidelite"] = "approchee" if q["risque_evaluation"] else "non_verifiee"
             questions.append(q)
+    # D-22 (REQ-REP-7): file level = the weakest value over its question blocks (exacte > non_verifiee > approchee);
+    # no question block -> null + flag sans_question (not counted as approchee)
+    qf = [q["fidelite"] for q in questions if q.get("fidelite")]
+    if qf:
+        fid = min(qf, key=FID_ORDER.index)
+    else:
+        fid = None
+        flags.append("sans_question")
     entry = {
         "source": path,
         "sortie": None,

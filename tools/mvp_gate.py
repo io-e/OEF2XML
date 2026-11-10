@@ -165,7 +165,14 @@ def main():
     res["AC-5"] = {"files_linted": len(written), "violations": len(lint_bad), "examples": lint_bad[:5],
                    "types_used": len(types_used), "outside_whitelist": sorted(t for t in types_used if t not in wl)}
     res["AC-7"] = {"I1_I2_violations": len(inv_bad), "I3_violations": len(i3_bad), "examples": (inv_bad + i3_bad)[:5]}
-    res["AC-8"] = {"complet_with_placeholder_dynamic_G22_or_trig": len(complet_bad), "examples": complet_bad[:5],
+    du = Counter()
+    for e in entries.values():
+        for x in e["details"]:
+            if x["construct"] == "dropped-unread":
+                du["unread-in-source" if x.get("cause_gap") == "unread-in-source" else ("gap" if x.get("cause_gap") else "sans_cause")] += 1
+    res["AC-8"] = {"dropped_unread": {"cause_gap=<gap id>": du["gap"], "cause_gap=unread-in-source": du["unread-in-source"],
+                                      "uncaused (count as DIFF-SILENT if a round-trip hunk depends on them)": du["sans_cause"]},
+                   "complet_with_placeholder_dynamic_G22_or_trig": len(complet_bad), "examples": complet_bad[:5],
                    "placeholder_lint_failures_on_all_written": len(ph_bad), "examples_lint": ph_bad[:5]}
 
     # --- AC-6 determinism
@@ -177,9 +184,19 @@ def main():
                    "report_json_identical": sha(repA) == sha(repB), "report_tsv_identical": sha(tsvA) == sha(tsvB), "examples": diff_files[:5]}
 
     # --- AC-11 (gate part) : the input folder is untouched
-    res["AC-11"] = {"input_folder_unchanged": before == sorted(os.listdir(corpus)),
+    # D-19: the Unicode suite counts only on Windows 11; a Linux run is `linux-only`, the status is `pending-windows`
+    pu = subprocess.run([sys.executable, "-m", "pytest", "-q", str(ROOT / "tests/test_unicode_paths.py")], capture_output=True, text=True,
+                        env=dict(os.environ, PYTHONPATH=str(ROOT / "src")), cwd=str(ROOT))
+    unicode_ok = pu.returncode == 0
+    if sys.platform == "win32":
+        ac11 = "pass" if unicode_ok and before == sorted(os.listdir(corpus)) else "fail"
+    else:
+        ac11 = "pending-windows"
+    res["AC-11"] = {"statut": ac11, "input_folder_unchanged": before == sorted(os.listdir(corpus)),
                     "outputs_outside_input_folder": True,
-                    "note": "Unicode path suite: tests/test_unicode_paths.py"}
+                    "unicode_suite": "pass" if sys.platform == "win32" and unicode_ok else ("linux-only" if unicode_ok else "fail"),
+                    "unicode_suite_platform": sys.platform,
+                    "note": "D-19: must be `pass` on Windows 11 before P2 ends; tests/test_unicode_paths.py"}
 
     # --- AC-12 (gate part)
     need = ["source", "sortie", "id", "titre", "statut", "fidelite", "questions_source", "questions_converties", "questions_gap",

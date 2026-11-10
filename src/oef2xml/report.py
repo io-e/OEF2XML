@@ -22,6 +22,11 @@ def summarize(entries: list[dict], meta: dict | None = None) -> dict:
             nt_occ[k] += v
         for k, v in e["approximations"].items():
             ap_occ[k] += v
+    du: Counter = Counter()           # D-18: dropped-unread by cause
+    for e in entries:
+        for d in e["details"]:
+            if d["construct"] == "dropped-unread":
+                du[d.get("cause_gap") or "sans_cause"] += 1
     return {
         "version_rapport": 1,
         "outil": f"oef2xml {__version__}",
@@ -29,11 +34,13 @@ def summarize(entries: list[dict], meta: dict | None = None) -> dict:
         "compilateur_sha256": (meta or {}).get("compilateur_sha256"),
         "resume": {"complet": c.get("complet", 0), "partiel": c.get("partiel", 0), "echec": c.get("echec", 0),
                    "fichiers": len(entries),
-                   "fidelite": {"exacte": f.get("exacte", 0), "approchee": f.get("approchee", 0), "non_verifiee": f.get("non_verifiee", 0)}},
+                   "fidelite": {"exacte": f.get("exacte", 0), "approchee": f.get("approchee", 0), "non_verifiee": f.get("non_verifiee", 0), "null": f.get(None, 0)}},
         "fichiers": entries,
         "non_traduits_fichiers": dict(sorted(nt_files.items())),
         "non_traduits_occurrences": dict(sorted(nt_occ.items())),
         "approximations_occurrences": dict(sorted(ap_occ.items())),
+        "dropped_unread_causes": dict(sorted(du.items())),
+        "options_non_implementees": list((meta or {}).get("options_non_implementees", [])),
     }
 
 
@@ -48,7 +55,7 @@ def tsv_rows(entries: list[dict]):
     for e in entries:
         nb_gaps = sum(e["non_traduits"].values())
         nb_approx = sum(e["approximations"].values())
-        vals = [e["source"], e["statut"], e["fidelite"], e["encodage"], e["questions_source"], e["questions_converties"],
+        vals = [e["source"], e["statut"], "" if e["fidelite"] is None else e["fidelite"], e["encodage"], e["questions_source"], e["questions_converties"],
                 e["blocs_question_emis"], nb_gaps, nb_approx, e["nb_risque_evaluation"], e["gate"], e["compilateur"], e["validateur"], e["rng"], e["xsd"], e["schematron"],
                 (e["message"] or "").replace("\t", " ").replace("\n", " ")]
         yield "\t".join(str(v) for v in vals)

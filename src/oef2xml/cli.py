@@ -81,6 +81,15 @@ def build_parser() -> Parser:
     return p
 
 
+# D-21: options that are accepted but not implemented in this phase -> (option, requirement)
+UNIMPLEMENTED = (("--def", "def_path", "REQ-DEF-2"), ("--mdef", "mdef", "REQ-IN-6"),
+                 ("--assets-dir", "assets_dir", "M-47"), ("--schematron", "schematron", "REQ-OUT-5"))
+
+
+def unimplemented_options(a) -> list[tuple[str, str]]:
+    return [(opt, req) for opt, attr, req in UNIMPLEMENTED if getattr(a, attr, None)]
+
+
 def collect(inputs, recursive: bool) -> list[Path]:
     files: list[Path] = []
     for i in inputs:
@@ -224,8 +233,9 @@ def main(argv=None) -> int:
     except FileNotFoundError as ex:
         print(f"oef2xml: {ex}", file=sys.stderr)
         return EXIT_USAGE
-    if a.assets_dir or a.def_path or a.mdef:
-        print("oef2xml: --assets-dir/--def/--mdef are accepted but not used in this phase", file=sys.stderr)
+    unimpl = unimplemented_options(a)
+    for opt, req in unimpl:
+        print(f"WARNING: {opt} not implemented ({req})", file=sys.stderr)    # D-21: never changes the exit code
     jobs = [(f, f.name, opts, cfg, st) for f, st in zip(files, names)]
     entries: list[dict] = []
     try:
@@ -260,7 +270,9 @@ def main(argv=None) -> int:
         if a.verbose and not a.quiet:
             print(f"{entry['statut']:8s} {entry['source']}")
     if a.report:
-        R.write_json(fs(a.report), entries, report_meta(cfg))
+        meta = report_meta(cfg)
+        meta["options_non_implementees"] = [o for o, _ in unimpl]
+        R.write_json(fs(a.report), entries, meta)
     if a.csv:
         R.write_tsv(fs(a.csv), entries)
     if not a.quiet:

@@ -17,25 +17,24 @@ file `partiel`) and the work went on. Numbers come from `reports/mvp_gate.md` (f
   after `\statement` are `info` (§7.1).
 - Inverse trigonometry: D-17 (`asin`/`atan` convert the result, `acos` is a gap).
 
+## Resolved by the owner review of PR #1 (spec v0.2.7, `docs/DECISIONS.md`)
+
+| # | Question | Decision | Spec |
+|---|---|---|---|
+| 1 | G-22 runs even with `--idioms off` | **D-23** keep: loss reporting is not optional; `--idioms` only toggles recognition of forward-converter patterns | REQ-IDIOM-1, REQ-IDIOM-3, G-22 |
+| 2 | Question without `\embed` goes after the statement | **D-24** keep (where WIMS shows answer fields) | §8.3, M-49 |
+| 3 | Computed radio/checkbox index is a gap | **D-25** keep (D-10) | §8.2, REQ-SCH-2 |
+| 4 | Question inside a control block is a gap | **D-26** keep (D-10) | §8.3, REQ-SCH-2 |
+| 5 | `fraction` when the operands are provably integers | **D-27** keep; written into §8.2 as a stricter reading of "written a/b" | §8.2 |
+| 6 | `\integer` values not provably integer wrapped in `math_round` | **D-20** keep, but ALWAYS an `approximation` `integer-rounding` (rint ties to even vs Math.round) | M-12, REQ-REP-2 |
+| 7 | JSON instead of YAML; options accepted but unused | **D-21** JSON data (`mapping.json`); unimplemented option -> `WARNING: <option> not implemented (REQ-...)` + `options_non_implementees` | §11, REQ-ARCH-2, REQ-REP-2 |
+| 8 | Python 3.12 not tested | **D-28** closed: owner ran 58 pass / 2 skipped on 3.12 | §11.1 |
+| 9 | File-level `fidelite` implied rule | **D-22** weakest over the question blocks; no question block -> `null` + `sans_question` | REQ-REP-7 |
+| 10 | Gate ran Linux builds only | **D-29** acceptable for all criteria except AC-11 (**D-19**: `pending-windows`) | AC-11, §14.2, REQ-ARCH-4 |
+
+Also from the review: **D-18** (a `dropped-unread` explains a round-trip difference only with `cause_gap`) and **D-19**
+(AC-11 `pending-windows` outside Windows 11).
+
 ## Still open
 
-1. **G-22 in P1.** AC-8 forbids `complet` for a file with a G-22 marker, but G-22 handling is listed in P2 with idioms,
-   and `--idioms off` does not switch G-22 off (REQ-IDIOM-1 is unconditional). G-22 is handled in P1 always.
-2. **M-49 versus §8.3**: the question `text` input is the `\answer` prompt; the preceding `display_element` carries the
-   statement text split at `\embed`. A question without `\embed` follows the statement (info detail).
-3. **Dynamic correct index on radio/checkbox** (`\answer{..}{\k;list}` with a computed index): the complement logic is not
-   specified; handled as a gap.
-4. **Question inside a control block** (conditional existence of a question): not specified; gap (never guessed).
-5. **`fraction` question type**: used when the expected value is `a/b` with provably-integer operands (otherwise
-    `integer`/`decimal`); the spec lists the three types but not the selection rule.
-6. **`\integer` typing** is not carried by the target platform: values that are not provably integer are wrapped in
-    `math_round ROUND` (WIMS `rint`), reported as an approximation where relevant.
-7. **`mapping.json`/`templates.json` instead of YAML** (§11): the templates are `src/oef2xml/data/templates.json`; no
-    YAML dependency. `--def`, `--mdef`, `--assets-dir`, `--schematron` are accepted; the `.sch` run and `<settings>`
-    contents beyond REQ-OUT-6 are untested (Q1/Q9).
-8. **Python version**: the development box has Python 3.13.5; `requires-python >= 3.12` as per §11.1. Not tested on 3.12.
-9. **Report `fidelite` at file level** (REQ-REP-7 as worded in v0.2.6): `approchee` when at least one question has
-    `risque_evaluation` or the file has no question block, else `non_verifiee`. The spec gives the per-question rule
-    precisely and the file rule by implication; implemented as stated.
-10. **RT-A from the Linux `xml2oef` build**: the gate used `/workspace/xml2oef/bin/xml2oef-linux-amd64` and the Linux
-    `oef2wims` of `/workspace/oefc/wims-runtime`; the E2 Windows wrappers were not exercised here.
+None. (AC-11 stays `pending-windows` until a Windows 11 run; it must pass before P2 ends, D-19.)

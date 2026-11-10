@@ -197,3 +197,41 @@ def test_multipart_placeholder_over_4000_chars(cli, tmp_path):
     assert "part 1/3" in xml and "part 3/3" in xml
     e = json.loads((tmp_path / "r.json").read_text(encoding="utf-8"))["fichiers"][0]
     assert e["statut"] == "partiel"
+
+
+def test_unimplemented_options_warn_and_are_reported_d21(cli, tmp_path):
+    f = write(tmp_path / "in" / "a.oef")
+    d = tmp_path / "d"
+    d.mkdir()
+    r = cli(f, "-o", tmp_path / "out", "--gate", "none", "--def", d, "--assets-dir", d, "--mdef", "x", "--schematron", d / "s.sch",
+            "--report", tmp_path / "r.json")
+    assert r.returncode == 0                                              # never changes the exit code
+    for opt, req in (("--def", "REQ-DEF-2"), ("--mdef", "REQ-IN-6"), ("--assets-dir", "M-47"), ("--schematron", "REQ-OUT-5")):
+        assert f"WARNING: {opt} not implemented ({req})" in r.stderr
+    rep = json.loads((tmp_path / "r.json").read_text(encoding="utf-8"))
+    assert rep["options_non_implementees"] == ["--def", "--mdef", "--assets-dir", "--schematron"]
+    r2 = cli(f, "-o", tmp_path / "out2", "--gate", "none", "--report", tmp_path / "r2.json")
+    assert "WARNING" not in r2.stderr
+    assert json.loads((tmp_path / "r2.json").read_text(encoding="utf-8"))["options_non_implementees"] == []
+
+
+def test_file_fidelity_weakest_and_sans_question_d22(cli, tmp_path):
+    plain = write(tmp_path / "in" / "plain.oef")
+    risk = write(tmp_path / "in" / "risk.oef", SIMPLE.replace("\\answer{Somme}", "\\precision{100}\n\\answer{Somme}"))
+    fig = write(tmp_path / "in" / "fig.oef", "\\title{T}\n\\statement{Figure seule}\n")
+    cli(tmp_path / "in", "-o", tmp_path / "out", "--gate", "none", "--report", tmp_path / "r.json", "--csv", tmp_path / "r.tsv")
+    rep = json.loads((tmp_path / "r.json").read_text(encoding="utf-8"))
+    by = {e["source"].split("/")[-1]: e for e in rep["fichiers"]}
+    assert by["plain.oef"]["fidelite"] == "non_verifiee" and "sans_question" not in by["plain.oef"]["flags"]
+    assert by["risk.oef"]["fidelite"] == "approchee"
+    assert by["fig.oef"]["fidelite"] is None and "sans_question" in by["fig.oef"]["flags"]
+    assert rep["resume"]["fidelite"] == {"exacte": 0, "approchee": 1, "non_verifiee": 1, "null": 1}
+    rows = {r.split("\t")[0].split("/")[-1]: r.split("\t") for r in (tmp_path / "r.tsv").read_text(encoding="utf-8").splitlines()[1:]}
+    assert rows["fig.oef"][2] == ""
+
+
+def test_dropped_unread_counts_in_batch_report_d18(cli, tmp_path):
+    f = write(tmp_path / "in" / "a.oef", SIMPLE.replace("\\integer{b=randint(2..9)}", "\\integer{b=randint(2..9)}\n\\integer{z=3}"))
+    cli(f, "-o", tmp_path / "out", "--gate", "none", "--report", tmp_path / "r.json")
+    rep = json.loads((tmp_path / "r.json").read_text(encoding="utf-8"))
+    assert rep["dropped_unread_causes"] == {"unread-in-source": 1}

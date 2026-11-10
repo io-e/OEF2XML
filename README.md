@@ -80,3 +80,8 @@ only if the MVP passes as written. See `docs/P1_QUESTIONS.md` for the points whe
 * Per-question `risque_evaluation` (lost `\precision`, `weight=`, ...) with `fidelite: approchee`; `statut` is not demoted (D-14).
 * Fragments over 4000 characters become multi-part placeholders (`part k/N`), linted by SHA-256 of the reassembled text.
 * `dropped-unread` info: a definition that no emitted block reads is reported, because the forward converter drops it (D-16).
+* Spec v0.2.7 (owner review of PR #1): a `dropped-unread` detail carries `cause_gap` (gap id or `"unread-in-source"`); the round-trip
+  comparator accepts nothing else (D-18). `\integer` not provably an integer is always an `approximation` `integer-rounding` (D-20).
+  Accepted but unimplemented options (`--def --mdef --assets-dir --schematron`) print `WARNING: <option> not implemented (REQ-...)` and are
+  listed in `options_non_implementees` (D-21). File `fidelite` is the weakest of its question blocks, `null` + flag `sans_question`
+  without any (D-22). The gate reports AC-11 as `pending-windows` outside Windows 11 (D-19).

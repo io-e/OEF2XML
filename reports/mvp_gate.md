@@ -98,6 +98,11 @@ MVP pass as written: **True**
 
 ```
 {
+ "dropped_unread": {
+  "cause_gap=<gap id>": 6687,
+  "cause_gap=unread-in-source": 3790,
+  "uncaused (count as DIFF-SILENT if a round-trip hunk depends on them)": 228
+ },
  "complet_with_placeholder_dynamic_G22_or_trig": 0,
  "examples": [],
  "placeholder_lint_failures_on_all_written": 0,
@@ -109,9 +114,12 @@ MVP pass as written: **True**
 
 ```
 {
+ "statut": "pending-windows",
  "input_folder_unchanged": true,
  "outputs_outside_input_folder": true,
- "note": "Unicode path suite: tests/test_unicode_paths.py"
+ "unicode_suite": "linux-only",
+ "unicode_suite_platform": "linux",
+ "note": "D-19: must be `pass` on Windows 11 before P2 ends; tests/test_unicode_paths.py"
 }
 ```
 
@@ -121,8 +129,9 @@ MVP pass as written: **True**
 {
  "entries_missing_fields": 0,
  "fidelite_values": {
-  "non_verifiee": 518,
-  "approchee": 915
+  "non_verifiee": 516,
+  "null": 907,
+  "approchee": 10
  },
  "exacte": 0,
  "tsv_columns": [

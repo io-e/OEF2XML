@@ -242,7 +242,7 @@ def units(text: str):
 def covered(l0: int, l1: int, details: list[dict]) -> bool:
     for d in details:
         if d["ligne_oef"] and l0 <= d["ligne_oef"] <= l1:
-            if d["niveau"] in ("approximation", "non_traduit") or (d["niveau"] == "info" and (d["regle"].startswith("G-") or d["construct"] in ("post-definition", "dropped-unread"))):   # D-16: dropped-unread is the report of an unread definition
+            if d["niveau"] in ("approximation", "non_traduit") or (d["niveau"] == "info" and (d["regle"].startswith("G-") or d["construct"] == "post-definition")) or (d["construct"] == "dropped-unread" and d.get("cause_gap")):   # D-18: only with cause_gap
                 return True
     return False
 
