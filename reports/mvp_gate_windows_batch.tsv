@@ -1,0 +1,1434 @@
+fichier	statut	fidelite	encodage	questions_source	questions_converties	blocs_question_emis	nb_gaps	nb_approx	nb_risque_evaluation	gate	compilateur	validateur	rng	xsd	schematron	message
+D:\ALF_ZGit\_win_run\work\in\00001.oef	partiel	non_verifiee	cp1252	1	1	1	2	12	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00002.oef	partiel	non_verifiee	cp1252	2	2	2	4	15	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00003.oef	partiel	non_verifiee	cp1252	1	1	1	12	17	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00004.oef	partiel		utf-8	1	0	0	28	11	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00005.oef	partiel		utf-8	1	0	0	2	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00006.oef	partiel	approchee	utf-8	1	1	1	17	6	1	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00007.oef	partiel	non_verifiee	cp1252	2	2	2	8	10	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00008.oef	partiel		cp1252	1	0	0	5	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00009.oef	partiel	non_verifiee	cp1252	1	1	1	2	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00010.oef	partiel	non_verifiee	cp1252	1	1	1	2	13	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00011.oef	partiel	non_verifiee	cp1252	2	2	2	3	16	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00012.oef	partiel		utf-8	1	0	0	2	11	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00013.oef	partiel	approchee	utf-8	1	1	1	17	6	1	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00014.oef	partiel		cp1252	2	0	0	3	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00015.oef	partiel		cp1252	3	0	0	4	8	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00016.oef	partiel		utf-8	3	0	0	4	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00017.oef	partiel	approchee	cp1252	3	3	3	1	14	3	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00018.oef	partiel		cp1252	1	0	0	2	1	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00019.oef	partiel	non_verifiee	cp1252	1	1	1	1	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00020.oef	partiel	non_verifiee	cp1252	1	1	1	5	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00021.oef	partiel		cp1252	5	0	0	12	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00022.oef	partiel		cp1252	1	0	0	2	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00023.oef	partiel		cp1252	1	0	0	6	1	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00024.oef	partiel	non_verifiee	cp1252	1	1	1	1	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00025.oef	partiel		cp1252	2	0	0	8	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00026.oef	partiel		cp1252	1	0	0	7	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00027.oef	partiel	non_verifiee	utf-8	2	2	2	2	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00028.oef	partiel		cp1252	2	0	0	4	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00029.oef	partiel		cp1252	1	0	0	5	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00030.oef	partiel		cp1252	3	0	0	4	11	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00031.oef	partiel		cp1252	1	0	0	6	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00032.oef	partiel	non_verifiee	cp1252	4	2	2	3	25	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00033.oef	partiel		cp1252	1	0	0	23	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00034.oef	partiel		cp1252	1	0	0	2	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00035.oef	partiel		cp1252	1	0	0	1	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00036.oef	partiel		utf-8	1	0	0	3	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00037.oef	partiel		cp1252	0	0	0	2	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00038.oef	partiel		cp1252	2	0	0	2	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00039.oef	partiel		cp1252	1	0	0	7	1	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00040.oef	partiel	non_verifiee	cp1252	1	1	1	1	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00041.oef	partiel	non_verifiee	cp1252	2	1	1	7	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00042.oef	partiel		cp1252	1	0	0	3	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00043.oef	partiel	non_verifiee	utf-8	2	2	2	2	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00044.oef	partiel		utf-8	1	0	0	6	1	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00045.oef	partiel		cp1252	1	0	0	12	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00046.oef	partiel		cp1252	6	0	0	12	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00047.oef	partiel	non_verifiee	cp1252	2	2	2	4	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00048.oef	partiel	approchee	cp1252	3	3	3	1	10	1	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00049.oef	partiel		cp1252	1	0	0	37	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00050.oef	partiel		cp1252	1	0	0	4	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00051.oef	partiel		cp1252	2	0	0	3	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00052.oef	partiel		cp1252	6	0	0	14	1	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00053.oef	partiel		utf-8	1	0	0	4	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00054.oef	partiel		cp1252	2	0	0	4	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00055.oef	partiel		cp1252	1	0	0	8	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00056.oef	complet	non_verifiee	cp1252	4	4	4	0	21	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00057.oef	partiel		cp1252	1	0	0	2	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00058.oef	partiel	approchee	cp1252	1	1	1	1	7	1	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00059.oef	partiel	non_verifiee	cp1252	4	4	4	2	20	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00060.oef	partiel		cp1252	1	0	0	6	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00061.oef	partiel		cp1252	1	0	0	4	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00062.oef	partiel	non_verifiee	cp1252	1	1	1	1	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00063.oef	partiel		utf-8	1	0	0	2	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00064.oef	partiel		cp1252	1	0	0	5	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00065.oef	partiel		cp1252	1	0	0	2	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00066.oef	partiel		cp1252	1	0	0	2	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00067.oef	partiel	approchee	cp1252	3	3	3	1	8	1	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00068.oef	partiel		cp1252	2	0	0	4	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00069.oef	partiel	approchee	cp1252	3	3	3	1	11	1	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00070.oef	partiel		cp1252	3	0	0	10	0	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00071.oef	partiel		cp1252	1	0	0	6	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00072.oef	partiel		cp1252	1	0	0	20	1	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00073.oef	partiel		cp1252	1	0	0	6	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00074.oef	partiel		cp1252	1	0	0	9	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00075.oef	partiel		cp1252	1	0	0	6	8	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00076.oef	partiel		cp1252	1	0	0	37	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00077.oef	partiel		cp1252	1	0	0	4	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00078.oef	partiel		cp1252	1	0	0	2	8	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00079.oef	partiel	non_verifiee	utf-8	2	2	2	2	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00080.oef	partiel		cp1252	2	0	0	3	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00081.oef	partiel		utf-8	1	0	0	5	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00082.oef	partiel	approchee	cp1252	3	3	3	1	14	3	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00083.oef	partiel		cp1252	1	0	0	3	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00084.oef	partiel	approchee	cp1252	1	1	1	1	6	1	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00085.oef	partiel		cp1252	12	0	0	66	8	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00086.oef	partiel		utf-8	1	0	0	3	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00087.oef	partiel		cp1252	1	0	0	8	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00088.oef	partiel		cp1252	3	0	0	4	11	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00089.oef	partiel		cp1252	2	0	0	3	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00090.oef	partiel		cp1252	1	0	0	2	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00091.oef	complet	approchee	cp1252	1	1	1	0	3	1	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00092.oef	partiel	non_verifiee	utf-8	2	2	2	4	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00093.oef	partiel		cp1252	2	0	0	2	1	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00094.oef	partiel		cp1252	1	0	0	5	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00095.oef	partiel		cp1252	1	0	0	3	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00096.oef	partiel		cp1252	1	0	0	2	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00097.oef	partiel		utf-8	1	0	0	2	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00098.oef	partiel		cp1252	1	0	0	8	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00099.oef	partiel		cp1252	6	0	0	26	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00100.oef	partiel		cp1252	1	0	0	9	10	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00101.oef	partiel		cp1252	1	0	0	5	8	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00102.oef	partiel		cp1252	11	0	0	35	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00103.oef	partiel		cp1252	6	0	0	17	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00104.oef	partiel		cp1252	1	0	0	5	8	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00105.oef	partiel		cp1252	5	0	0	19	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00106.oef	partiel		cp1252	1	0	0	20	11	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00107.oef	partiel		cp1252	20	0	0	38	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00108.oef	partiel		cp1252	5	0	0	59	0	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00109.oef	partiel		cp1252	3	0	0	44	21	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00110.oef	partiel		cp1252	6	0	0	26	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00111.oef	partiel		cp1252	1	0	0	10	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00112.oef	partiel		cp1252	6	0	0	20	1	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00113.oef	partiel		cp1252	1	0	0	10	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00114.oef	partiel		cp1252	1	0	0	32	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00115.oef	partiel		cp1252	1	0	0	24	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00116.oef	partiel		cp1252	1	0	0	7	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00117.oef	partiel		cp1252	10	0	0	25	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00118.oef	partiel		cp1252	10	0	0	87	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00119.oef	partiel		cp1252	20	0	0	32	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00120.oef	partiel		cp1252	1	0	0	20	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00121.oef	partiel		cp1252	10	0	0	53	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00122.oef	partiel		cp1252	1	0	0	7	1	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00123.oef	partiel		cp1252	10	0	0	26	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00124.oef	partiel		cp1252	3	0	0	23	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00125.oef	partiel		cp1252	20	0	0	32	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00126.oef	partiel		cp1252	30	0	0	69	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00127.oef	partiel		cp1252	1	0	0	7	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00128.oef	partiel		cp1252	39	0	0	49	8	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00129.oef	partiel		cp1252	1	0	0	5	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00130.oef	partiel		cp1252	20	0	0	30	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00131.oef	partiel		cp1252	20	0	0	40	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00132.oef	partiel		cp1252	2	0	0	8	1	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00133.oef	partiel		cp1252	1	0	0	24	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00134.oef	partiel		cp1252	1	0	0	36	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00135.oef	partiel		cp1252	20	0	0	49	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00136.oef	partiel		cp1252	1	0	0	4	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00137.oef	partiel		cp1252	1	0	0	34	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00138.oef	partiel		cp1252	21	0	0	64	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00139.oef	partiel		cp1252	10	0	0	23	1	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00140.oef	partiel		cp1252	5	0	0	20	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00141.oef	partiel		cp1252	1	0	0	20	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00142.oef	partiel		cp1252	20	0	0	38	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00143.oef	partiel		cp1252	5	0	0	59	0	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00144.oef	partiel		cp1252	3	0	0	44	21	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00145.oef	partiel		cp1252	6	0	0	26	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00146.oef	partiel		cp1252	1	0	0	1	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00147.oef	partiel		cp1252	1	0	0	10	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00148.oef	partiel		cp1252	6	0	0	20	1	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00149.oef	partiel		cp1252	1	0	0	10	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00150.oef	partiel		cp1252	1	0	0	32	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00151.oef	partiel		cp1252	1	0	0	24	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00152.oef	partiel		cp1252	1	0	0	7	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00153.oef	partiel		cp1252	1	0	0	8	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00154.oef	partiel		cp1252	10	0	0	25	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00155.oef	partiel		cp1252	10	0	0	87	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00156.oef	partiel		cp1252	20	0	0	32	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00157.oef	partiel		cp1252	1	0	0	20	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00158.oef	partiel		cp1252	10	0	0	53	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00159.oef	partiel		cp1252	1	0	0	7	1	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00160.oef	partiel		cp1252	1	0	0	3	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00161.oef	partiel		cp1252	1	0	0	14	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00162.oef	partiel		cp1252	10	0	0	26	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00163.oef	partiel		cp1252	3	0	0	23	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00164.oef	partiel		cp1252	20	0	0	32	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00165.oef	partiel		cp1252	30	0	0	69	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00166.oef	partiel		cp1252	1	0	0	7	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00167.oef	partiel		cp1252	39	0	0	49	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00168.oef	partiel		cp1252	1	0	0	5	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00169.oef	partiel		cp1252	10	0	0	25	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00170.oef	partiel		cp1252	10	0	0	22	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00171.oef	partiel		cp1252	20	0	0	30	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00172.oef	partiel		cp1252	20	0	0	40	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00173.oef	partiel		cp1252	2	0	0	8	1	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00174.oef	partiel		cp1252	1	0	0	24	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00175.oef	partiel		cp1252	1	0	0	36	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00176.oef	partiel		cp1252	1	0	0	10	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00177.oef	partiel		cp1252	20	0	0	49	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00178.oef	partiel		cp1252	1	0	0	4	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00179.oef	partiel		cp1252	1	0	0	34	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00180.oef	partiel		cp1252	21	0	0	64	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00181.oef	partiel		cp1252	10	0	0	22	13	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00182.oef	partiel		cp1252	20	0	0	25	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00183.oef	partiel		cp1252	20	0	0	35	1	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00184.oef	partiel		cp1252	6	0	0	22	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00185.oef	partiel		cp1252	6	0	0	17	1	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00186.oef	partiel		cp1252	1	0	0	30	1	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00187.oef	partiel	non_verifiee	utf-8	1	1	1	2	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00188.oef	partiel		utf-8	20	0	0	29	1	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00189.oef	partiel		utf-8	1	0	0	19	1	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00190.oef	partiel		cp1252	10	0	0	53	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00191.oef	partiel	non_verifiee	cp1252	1	1	1	2	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00192.oef	partiel		utf-8	20	0	0	29	1	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00193.oef	partiel		utf-8	20	0	0	35	1	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00194.oef	partiel		utf-8	1	0	0	23	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00195.oef	partiel		cp1252	1	0	0	28	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00196.oef	partiel		cp1252	1	0	0	25	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00197.oef	partiel		cp1252	5	0	0	16	1	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00198.oef	partiel		cp1252	1	0	0	22	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00199.oef	partiel		cp1252	20	0	0	36	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00200.oef	partiel		cp1252	5	0	0	59	0	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00201.oef	partiel		cp1252	3	0	0	37	20	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00202.oef	partiel		cp1252	6	0	0	23	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00203.oef	partiel		cp1252	1	0	0	1	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00204.oef	partiel		cp1252	1	0	0	10	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00205.oef	partiel		cp1252	6	0	0	18	1	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00206.oef	partiel		cp1252	1	0	0	10	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00207.oef	partiel		cp1252	1	0	0	31	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00208.oef	partiel		cp1252	1	0	0	24	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00209.oef	partiel	non_verifiee	cp1252	1	1	1	3	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00210.oef	partiel		cp1252	1	0	0	8	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00211.oef	partiel		cp1252	10	0	0	90	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00212.oef	partiel		cp1252	20	0	0	30	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00213.oef	partiel		cp1252	1	0	0	20	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00214.oef	partiel		cp1252	10	0	0	53	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00215.oef	partiel	non_verifiee	cp1252	1	1	1	3	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00216.oef	partiel		cp1252	1	0	0	3	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00217.oef	partiel		cp1252	1	0	0	14	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00218.oef	partiel		cp1252	10	0	0	26	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00219.oef	partiel		cp1252	20	0	0	32	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00220.oef	partiel		cp1252	30	0	0	69	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00221.oef	partiel		cp1252	1	0	0	7	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00222.oef	partiel		cp1252	39	0	0	49	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00223.oef	partiel		cp1252	1	0	0	5	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00224.oef	partiel		cp1252	10	0	0	22	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00225.oef	partiel		cp1252	10	0	0	20	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00226.oef	partiel		cp1252	20	0	0	29	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00227.oef	partiel		cp1252	20	0	0	38	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00228.oef	partiel		cp1252	2	0	0	8	1	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00229.oef	partiel		cp1252	1	0	0	24	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00230.oef	partiel		cp1252	1	0	0	33	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00231.oef	partiel		cp1252	1	0	0	10	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00232.oef	partiel		cp1252	20	0	0	49	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00233.oef	partiel		cp1252	1	0	0	4	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00234.oef	partiel		cp1252	1	0	0	34	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00235.oef	partiel		cp1252	21	0	0	64	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00236.oef	partiel		cp1252	10	0	0	22	10	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00237.oef	partiel		cp1252	5	0	0	16	1	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00238.oef	partiel		cp1252	1	0	0	22	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00239.oef	partiel		cp1252	20	0	0	38	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00240.oef	partiel		cp1252	5	0	0	59	1	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00241.oef	partiel		cp1252	3	0	0	37	25	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00242.oef	partiel		cp1252	6	0	0	23	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00243.oef	partiel		cp1252	1	0	0	1	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00244.oef	partiel		cp1252	1	0	0	10	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00245.oef	partiel		cp1252	6	0	0	18	1	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00246.oef	partiel		cp1252	1	0	0	10	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00247.oef	partiel		cp1252	1	0	0	31	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00248.oef	partiel		cp1252	1	0	0	24	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00249.oef	partiel		cp1252	1	0	0	8	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00250.oef	partiel		cp1252	10	0	0	25	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00251.oef	partiel		cp1252	10	0	0	90	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00252.oef	partiel		cp1252	20	0	0	30	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00253.oef	partiel		cp1252	1	0	0	20	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00254.oef	partiel		cp1252	10	0	0	53	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00255.oef	partiel		cp1252	1	0	0	3	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00256.oef	partiel		cp1252	1	0	0	14	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00257.oef	partiel		cp1252	10	0	0	26	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00258.oef	partiel		cp1252	20	0	0	32	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00259.oef	partiel		cp1252	30	0	0	69	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00260.oef	partiel		cp1252	1	0	0	7	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00261.oef	partiel		cp1252	39	0	0	49	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00262.oef	partiel		cp1252	1	0	0	5	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00263.oef	partiel		cp1252	10	0	0	22	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00264.oef	partiel		cp1252	10	0	0	20	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00265.oef	partiel		cp1252	20	0	0	29	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00266.oef	partiel		cp1252	20	0	0	38	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00267.oef	partiel		cp1252	2	0	0	8	1	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00268.oef	partiel		cp1252	1	0	0	24	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00269.oef	partiel		cp1252	1	0	0	33	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00270.oef	partiel		cp1252	1	0	0	10	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00271.oef	partiel		cp1252	1	0	0	7	1	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00272.oef	partiel		cp1252	20	0	0	49	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00273.oef	partiel		cp1252	1	0	0	4	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00274.oef	partiel		cp1252	1	0	0	34	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00275.oef	partiel		cp1252	21	0	0	64	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00276.oef	partiel		utf-8	10	0	0	22	12	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00277.oef	partiel		cp1252	1	0	0	7	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00278.oef	partiel		utf-8	5	0	0	16	1	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00279.oef	partiel		utf-8	1	0	0	22	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00280.oef	partiel		utf-8	20	0	0	38	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00281.oef	partiel		utf-8	5	0	0	59	0	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00282.oef	partiel		utf-8	3	0	0	37	30	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00283.oef	partiel		utf-8	6	0	0	23	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00284.oef	partiel		utf-8	1	0	0	1	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00285.oef	partiel		utf-8	1	0	0	10	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00286.oef	echec		cp1252	0	0	0	0	0	0	oef2wims	ko	non_execute	non_execute	non_execute	non_execute	compilateur: Unmatched parentheses '}' at line 91 col 1.
+D:\ALF_ZGit\_win_run\work\in\00287.oef	partiel		utf-8	1	0	0	10	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00288.oef	partiel		utf-8	1	0	0	31	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00289.oef	partiel		utf-8	1	0	0	24	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00290.oef	partiel	non_verifiee	utf-8	1	1	1	3	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00291.oef	partiel		cp1252	1	0	0	10	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00292.oef	partiel		cp1252	10	0	0	25	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00293.oef	partiel		cp1252	10	0	0	90	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00294.oef	partiel		utf-8	20	0	0	30	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00295.oef	partiel		utf-8	1	0	0	20	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00296.oef	partiel		utf-8	10	0	0	53	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00297.oef	partiel	non_verifiee	utf-8	1	1	1	3	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00298.oef	partiel		utf-8	1	0	0	3	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00299.oef	partiel		utf-8	1	0	0	14	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00300.oef	partiel		utf-8	10	0	0	26	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00301.oef	partiel		utf-8	20	0	0	32	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00302.oef	partiel		cp1252	30	0	0	69	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00303.oef	partiel		utf-8	1	0	0	7	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00304.oef	partiel		utf-8	39	0	0	49	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00305.oef	partiel		utf-8	1	0	0	5	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00306.oef	partiel		utf-8	20	0	0	29	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00307.oef	echec		utf-8	0	0	0	0	0	0	oef2wims	ko	non_execute	non_execute	non_execute	non_execute	compilateur: Unmatched parentheses '}' at line 72 col 1.
+D:\ALF_ZGit\_win_run\work\in\00308.oef	partiel		utf-8	2	0	0	8	1	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00309.oef	partiel		utf-8	1	0	0	24	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00310.oef	partiel		cp1252	1	0	0	33	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00311.oef	partiel		utf-8	1	0	0	10	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00312.oef	partiel		cp1252	20	0	0	49	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00313.oef	partiel		utf-8	1	0	0	4	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00314.oef	partiel		cp1252	1	0	0	34	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00315.oef	partiel		cp1252	21	0	0	64	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00316.oef	partiel		utf-8	10	0	0	22	31	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00317.oef	partiel		cp1252	1	0	0	44	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00318.oef	partiel		cp1252	12	0	0	75	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00319.oef	partiel		cp1252	1	0	0	44	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00320.oef	partiel		cp1252	11	0	0	38	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00321.oef	partiel		utf-8	1	0	0	11	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00322.oef	partiel		utf-8	10	0	0	25	0	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00323.oef	partiel		utf-8	1	0	0	12	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00324.oef	partiel		utf-8	1	0	0	14	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00325.oef	partiel		utf-8	1	0	0	17	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00326.oef	partiel		utf-8	10	0	0	29	0	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00327.oef	partiel		cp1252	1	0	0	12	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00328.oef	partiel		utf-8	1	0	0	16	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00329.oef	partiel		utf-8	10	0	0	29	0	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00330.oef	partiel		utf-8	10	0	0	25	0	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00331.oef	partiel		utf-8	1	0	0	14	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00332.oef	partiel		utf-8	1	0	0	15	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00333.oef	partiel		utf-8	10	0	0	24	0	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00334.oef	complet	non_verifiee	utf-8	1	1	1	0	11	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00335.oef	partiel		utf-8	1	0	0	190	70	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00336.oef	partiel		utf-8	1	0	0	25	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00337.oef	partiel	non_verifiee	utf-8	1	1	1	26	32	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00338.oef	partiel	non_verifiee	utf-8	1	1	1	15	26	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00339.oef	partiel		utf-8	1	0	0	123	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00340.oef	partiel		utf-8	1	0	0	11	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00341.oef	partiel		utf-8	9	0	0	64	23	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00342.oef	partiel	non_verifiee	utf-8	1	1	1	26	32	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00343.oef	partiel	non_verifiee	utf-8	2	2	2	23	17	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00344.oef	partiel	non_verifiee	utf-8	2	2	2	2	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00345.oef	partiel	non_verifiee	utf-8	1	1	1	7	13	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00346.oef	partiel		utf-8	0	0	0	18	18	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00347.oef	partiel		utf-8	1	0	0	45	67	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00348.oef	partiel		utf-8	1	0	0	17	21	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00349.oef	partiel		utf-8	0	0	0	5	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00350.oef	partiel		utf-8	1	0	0	28	31	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00351.oef	partiel		utf-8	1	0	0	5	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00352.oef	partiel	non_verifiee	utf-8	1	1	1	14	77	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00353.oef	partiel		utf-8	3	0	0	15	120	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00354.oef	partiel		utf-8	1	0	0	8	19	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00355.oef	partiel		utf-8	1	0	0	1	28	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00356.oef	complet	non_verifiee	utf-8	1	1	1	0	16	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00357.oef	partiel	non_verifiee	utf-8	1	1	1	13	16	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00358.oef	partiel	non_verifiee	utf-8	6	6	6	163	305	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00359.oef	partiel	non_verifiee	utf-8	6	6	6	163	329	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00360.oef	partiel		utf-8	3	0	0	69	45	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00361.oef	partiel		utf-8	7	0	0	21	36	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00362.oef	partiel		utf-8	0	0	0	24	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00363.oef	partiel		utf-8	1	0	0	4	68	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00364.oef	partiel	non_verifiee	utf-8	1	1	1	23	58	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00365.oef	partiel	non_verifiee	utf-8	1	1	1	2	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00366.oef	partiel	non_verifiee	utf-8	1	1	1	6	26	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00367.oef	partiel		utf-8	1	0	0	15	26	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00368.oef	partiel		utf-8	13	0	0	183	69	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00369.oef	partiel	non_verifiee	utf-8	1	1	1	2	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00370.oef	partiel		utf-8	0	0	0	18	18	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00371.oef	partiel	non_verifiee	utf-8	1	1	1	1	26	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00372.oef	partiel		utf-8	8	0	0	79	51	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00373.oef	partiel	non_verifiee	utf-8	1	1	1	6	44	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00374.oef	partiel		utf-8	1	0	0	4	47	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00375.oef	complet	non_verifiee	utf-8	1	1	1	0	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00376.oef	partiel	non_verifiee	utf-8	1	1	1	5	8	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00377.oef	partiel		utf-8	0	0	0	7	12	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00378.oef	partiel		utf-8	1	0	0	3	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00379.oef	partiel		utf-8	1	0	0	38	16	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00380.oef	partiel	non_verifiee	utf-8	3	1	1	8	23	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00381.oef	partiel	non_verifiee	utf-8	10	6	6	41	18	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00382.oef	partiel	non_verifiee	utf-8	1	1	1	78	91	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00383.oef	partiel		utf-8	1	0	0	55	43	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00384.oef	partiel		utf-8	1	0	0	20	23	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00385.oef	partiel		utf-8	1	0	0	36	43	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00386.oef	partiel		utf-8	2	0	0	24	11	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00387.oef	partiel	non_verifiee	utf-8	1	1	1	7	44	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00388.oef	partiel		utf-8	3	0	0	14	18	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00389.oef	partiel	non_verifiee	utf-8	2	2	2	44	16	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00390.oef	complet	non_verifiee	utf-8	1	1	1	0	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00391.oef	partiel	non_verifiee	utf-8	1	1	1	6	30	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00392.oef	partiel		utf-8	0	0	0	8	22	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00393.oef	partiel		utf-8	1	0	0	1	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00394.oef	complet	non_verifiee	utf-8	1	1	1	0	20	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00395.oef	partiel		utf-8	1	0	0	13	30	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00396.oef	partiel		utf-8	0	0	0	12	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00397.oef	partiel		utf-8	1	0	0	16	85	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00398.oef	partiel	non_verifiee	utf-8	2	2	2	1	12	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00399.oef	partiel		utf-8	3	0	0	119	94	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00400.oef	partiel		utf-8	1	0	0	27	38	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00401.oef	partiel		utf-8	1	0	0	56	38	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00402.oef	partiel	non_verifiee	utf-8	1	1	1	15	19	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00403.oef	partiel		utf-8	4	0	0	64	174	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00404.oef	complet	non_verifiee	utf-8	1	1	1	0	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00405.oef	partiel	non_verifiee	utf-8	1	1	1	14	77	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00406.oef	partiel		utf-8	0	0	0	7	12	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00407.oef	complet	non_verifiee	utf-8	1	1	1	0	21	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00408.oef	partiel	non_verifiee	utf-8	1	1	1	2	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00409.oef	partiel		utf-8	1	0	0	5	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00410.oef	complet	non_verifiee	utf-8	1	1	1	0	8	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00411.oef	partiel	non_verifiee	utf-8	2	1	1	13	23	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00412.oef	partiel		utf-8	1	0	0	4	26	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00413.oef	partiel		utf-8	1	0	0	5	23	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00414.oef	complet	non_verifiee	utf-8	1	1	1	0	20	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00415.oef	partiel		utf-8	1	0	0	6	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00416.oef	partiel	non_verifiee	utf-8	2	2	2	63	71	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00417.oef	partiel	non_verifiee	utf-8	1	1	1	51	50	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00418.oef	partiel		utf-8	1	0	0	6	13	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00419.oef	partiel		utf-8	1	0	0	9	17	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00420.oef	partiel		utf-8	1	0	0	22	21	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00421.oef	partiel		utf-8	0	0	0	11	42	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00422.oef	partiel		utf-8	1	0	0	5	8	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00423.oef	partiel	non_verifiee	utf-8	1	1	1	41	70	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00424.oef	partiel		utf-8	1	0	0	4	47	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00425.oef	partiel		utf-8	1	0	0	13	23	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00426.oef	complet	non_verifiee	utf-8	1	1	1	0	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00427.oef	partiel		utf-8	1	0	0	5	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00428.oef	partiel	non_verifiee	utf-8	1	1	1	5	36	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00429.oef	partiel		utf-8	1	0	0	35	43	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00430.oef	complet	non_verifiee	utf-8	4	4	4	0	24	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00431.oef	partiel		utf-8	1	0	0	1	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00432.oef	partiel		utf-8	1	0	0	63	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00433.oef	partiel		utf-8	1	0	0	3	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00434.oef	partiel		utf-8	1	0	0	6	49	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00435.oef	partiel		utf-8	1	0	0	3	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00436.oef	complet	non_verifiee	utf-8	1	1	1	0	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00437.oef	partiel		utf-8	0	0	0	11	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00438.oef	partiel		utf-8	1	0	0	16	66	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00439.oef	complet	non_verifiee	utf-8	1	1	1	0	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00440.oef	partiel		utf-8	1	0	0	11	10	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00441.oef	partiel		utf-8	0	0	0	12	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00442.oef	partiel	non_verifiee	utf-8	5	5	5	92	56	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00443.oef	partiel		utf-8	4	0	0	82	92	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00444.oef	complet	non_verifiee	utf-8	1	1	1	0	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00445.oef	partiel	non_verifiee	utf-8	1	1	1	2	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00446.oef	partiel	non_verifiee	utf-8	2	2	2	12	25	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00447.oef	partiel	non_verifiee	utf-8	2	2	2	12	25	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00448.oef	partiel		utf-8	0	0	0	24	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00449.oef	partiel		utf-8	1	0	0	36	21	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00450.oef	partiel		utf-8	1	0	0	7	51	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00451.oef	partiel		utf-8	1	0	0	18	11	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00452.oef	partiel	non_verifiee	utf-8	2	1	1	2	19	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00453.oef	partiel		utf-8	1	0	0	15	15	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00454.oef	partiel		utf-8	2	0	0	41	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00455.oef	partiel	non_verifiee	utf-8	2	2	2	12	104	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00456.oef	partiel		utf-8	0	0	0	33	24	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00457.oef	partiel	non_verifiee	utf-8	6	6	6	38	34	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00458.oef	partiel		utf-8	12	0	0	79	40	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00459.oef	complet	non_verifiee	utf-8	1	1	1	0	16	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00460.oef	partiel	non_verifiee	utf-8	1	1	1	11	8	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00461.oef	partiel		utf-8	1	0	0	4	15	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00462.oef	partiel		utf-8	1	0	0	51	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00463.oef	partiel		utf-8	0	0	0	27	41	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00464.oef	partiel		utf-8	0	0	0	0	1	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00465.oef	partiel	non_verifiee	utf-8	2	2	2	3	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00466.oef	partiel		utf-8	1	0	0	8	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00467.oef	complet	non_verifiee	utf-8	1	1	1	0	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00468.oef	partiel		utf-8	1	0	0	7	22	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00469.oef	partiel		utf-8	1	0	0	137	116	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00470.oef	partiel		utf-8	1	0	0	23	39	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00471.oef	complet	non_verifiee	utf-8	1	1	1	0	10	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00472.oef	complet	non_verifiee	utf-8	1	1	1	0	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00473.oef	partiel		utf-8	0	0	0	8	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00474.oef	partiel	non_verifiee	utf-8	1	1	1	66	80	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00475.oef	partiel	non_verifiee	utf-8	1	1	1	2	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00476.oef	complet	non_verifiee	utf-8	1	1	1	0	23	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00477.oef	partiel	non_verifiee	utf-8	6	2	2	36	29	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00478.oef	partiel	non_verifiee	utf-8	1	1	1	13	16	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00479.oef	partiel		utf-8	1	0	0	21	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00480.oef	partiel		utf-8	3	0	0	31	15	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00481.oef	partiel		utf-8	0	0	0	14	51	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00482.oef	partiel		utf-8	1	0	0	7	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00483.oef	partiel	non_verifiee	utf-8	1	1	1	5	78	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00484.oef	partiel		utf-8	1	0	0	7	8	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00485.oef	partiel		utf-8	1	0	0	17	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00486.oef	partiel		utf-8	3	0	0	69	47	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00487.oef	partiel		utf-8	0	0	0	5	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00488.oef	partiel	non_verifiee	utf-8	1	1	1	3	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00489.oef	partiel		utf-8	9	0	0	36	112	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00490.oef	partiel	non_verifiee	utf-8	1	1	1	17	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00491.oef	partiel	non_verifiee	utf-8	2	2	2	23	23	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00492.oef	partiel	non_verifiee	utf-8	1	1	1	10	34	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00493.oef	partiel	non_verifiee	utf-8	1	1	1	33	40	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00494.oef	partiel	non_verifiee	utf-8	1	1	1	11	16	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00495.oef	partiel		utf-8	0	0	0	18	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00496.oef	partiel		utf-8	0	0	0	7	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00497.oef	partiel		utf-8	2	0	0	16	16	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00498.oef	partiel	non_verifiee	utf-8	4	4	4	16	68	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00499.oef	partiel		utf-8	0	0	0	21	29	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00500.oef	partiel		utf-8	1	0	0	8	18	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00501.oef	partiel	non_verifiee	utf-8	1	1	1	9	23	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00502.oef	partiel		utf-8	1	0	0	9	10	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00503.oef	partiel		utf-8	1	0	0	4	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00504.oef	partiel		utf-8	2	0	0	219	169	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00505.oef	partiel		utf-8	3	0	0	780	91	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00506.oef	partiel		utf-8	1	0	0	3	28	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00507.oef	partiel	non_verifiee	utf-8	1	1	1	5	78	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00508.oef	partiel		utf-8	1	0	0	3	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00509.oef	partiel		utf-8	3	0	0	39	56	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00510.oef	complet	non_verifiee	utf-8	1	1	1	0	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00511.oef	partiel	non_verifiee	utf-8	13	1	1	36	41	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00512.oef	partiel	non_verifiee	utf-8	1	1	1	10	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00513.oef	partiel	non_verifiee	utf-8	1	1	1	1	15	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00514.oef	partiel		utf-8	5	0	0	128	32	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00515.oef	partiel	non_verifiee	utf-8	1	1	1	2	13	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00516.oef	partiel	non_verifiee	utf-8	4	4	4	11	42	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00517.oef	partiel		utf-8	2	0	0	14	26	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00518.oef	partiel	non_verifiee	utf-8	1	1	1	2	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00519.oef	complet	non_verifiee	utf-8	1	1	1	0	16	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00520.oef	partiel		utf-8	1	0	0	123	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00521.oef	partiel	non_verifiee	utf-8	4	3	3	38	25	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00522.oef	partiel		utf-8	0	0	0	4	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00523.oef	partiel	non_verifiee	utf-8	1	1	1	11	22	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00524.oef	partiel		utf-8	0	0	0	5	10	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00525.oef	partiel	non_verifiee	utf-8	6	6	6	23	37	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00526.oef	partiel		utf-8	1	0	0	4	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00527.oef	partiel	non_verifiee	utf-8	2	2	2	4	11	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00528.oef	partiel	non_verifiee	utf-8	25	25	25	108	112	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00529.oef	partiel		utf-8	0	0	0	27	41	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00530.oef	partiel		utf-8	2	0	0	121	35	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00531.oef	partiel		utf-8	1	0	0	199	104	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00532.oef	partiel	non_verifiee	utf-8	6	3	3	33	176	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00533.oef	complet	non_verifiee	utf-8	1	1	1	0	8	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00534.oef	partiel		utf-8	1	0	0	46	67	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00535.oef	complet	non_verifiee	utf-8	1	1	1	0	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00536.oef	partiel		utf-8	1	0	0	2	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00537.oef	partiel	non_verifiee	utf-8	1	1	1	11	73	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00538.oef	partiel		utf-8	0	0	0	11	46	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00539.oef	partiel		utf-8	0	0	0	25	149	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00540.oef	partiel		utf-8	1	0	0	47	168	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00541.oef	partiel	non_verifiee	utf-8	1	1	1	9	54	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00542.oef	partiel		utf-8	0	0	0	14	10	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00543.oef	partiel		utf-8	5	0	0	103	24	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00544.oef	partiel		utf-8	1	0	0	5	10	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00545.oef	partiel		utf-8	1	0	0	13	10	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00546.oef	partiel		utf-8	1	0	0	1	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00547.oef	partiel		utf-8	3	0	0	19	30	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00548.oef	partiel		utf-8	5	0	0	40	15	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00549.oef	partiel	non_verifiee	utf-8	1	1	1	5	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00550.oef	partiel	non_verifiee	utf-8	1	1	1	11	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00551.oef	partiel	non_verifiee	utf-8	8	1	1	29	44	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00552.oef	partiel		utf-8	2	0	0	13	13	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00553.oef	partiel		utf-8	0	0	0	6	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00554.oef	partiel	non_verifiee	utf-8	1	1	1	6	11	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00555.oef	partiel		utf-8	1	0	0	8	11	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00556.oef	partiel		utf-8	1	0	0	62	51	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00557.oef	partiel	non_verifiee	utf-8	1	1	1	9	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00558.oef	partiel		utf-8	1	0	0	3	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00559.oef	partiel		utf-8	3	0	0	36	36	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00560.oef	partiel	non_verifiee	utf-8	1	1	1	7	18	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00561.oef	partiel	non_verifiee	utf-8	2	2	2	8	45	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00562.oef	complet	non_verifiee	utf-8	4	4	4	0	15	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00563.oef	partiel	non_verifiee	utf-8	1	1	1	1	80	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00564.oef	partiel	non_verifiee	utf-8	1	1	1	27	29	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00565.oef	partiel		utf-8	1	0	0	23	35	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00566.oef	partiel	non_verifiee	utf-8	1	1	1	6	30	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00567.oef	partiel		utf-8	1	0	0	18	15	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00568.oef	partiel		utf-8	0	0	0	58	8	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00569.oef	partiel		utf-8	3	0	0	780	91	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00570.oef	partiel		utf-8	1	0	0	25	27	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00571.oef	partiel		utf-8	1	0	0	17	13	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00572.oef	partiel		utf-8	0	0	0	9	11	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00573.oef	partiel	non_verifiee	utf-8	6	6	6	13	29	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00574.oef	complet	non_verifiee	utf-8	3	3	3	0	17	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00575.oef	partiel		utf-8	0	0	0	14	16	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00576.oef	partiel		utf-8	0	0	0	24	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00577.oef	partiel	non_verifiee	utf-8	1	1	1	2	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00578.oef	partiel		utf-8	3	0	0	129	160	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00579.oef	partiel	non_verifiee	utf-8	4	1	1	27	15	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00580.oef	partiel	non_verifiee	utf-8	1	1	1	11	104	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00581.oef	partiel	non_verifiee	utf-8	1	1	1	15	12	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00582.oef	partiel		utf-8	2	0	0	7	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00583.oef	partiel	non_verifiee	utf-8	1	1	1	26	25	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00584.oef	partiel	non_verifiee	utf-8	1	1	1	21	15	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00585.oef	partiel		utf-8	1	0	0	54	53	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00586.oef	partiel		utf-8	0	0	0	4	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00587.oef	partiel		utf-8	1	0	0	65	13	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00588.oef	partiel		utf-8	0	0	0	14	47	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00589.oef	partiel		utf-8	0	0	0	6	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00590.oef	partiel	non_verifiee	utf-8	2	2	2	12	109	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00591.oef	partiel	non_verifiee	utf-8	1	1	1	28	31	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00592.oef	partiel		utf-8	0	0	0	18	13	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00593.oef	complet	non_verifiee	utf-8	1	1	1	0	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00594.oef	complet	non_verifiee	utf-8	1	1	1	0	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00595.oef	partiel		utf-8	1	0	0	70	12	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00596.oef	partiel		utf-8	0	0	0	33	24	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00597.oef	complet	non_verifiee	utf-8	1	1	1	0	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00598.oef	partiel	non_verifiee	utf-8	4	4	4	5	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00599.oef	partiel	non_verifiee	utf-8	2	2	2	5	50	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00600.oef	partiel	non_verifiee	utf-8	1	1	1	1	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00601.oef	partiel		utf-8	7	0	0	30	20	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00602.oef	partiel		utf-8	1	0	0	17	10	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00603.oef	partiel		utf-8	1	0	0	6	37	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00604.oef	complet	non_verifiee	utf-8	1	1	1	0	20	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00605.oef	partiel	non_verifiee	utf-8	1	1	1	51	50	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00606.oef	partiel		utf-8	0	0	0	14	13	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00607.oef	partiel		utf-8	1	0	0	54	19	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00608.oef	partiel	non_verifiee	utf-8	1	1	1	26	106	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00609.oef	partiel		utf-8	1	0	0	35	58	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00610.oef	partiel		utf-8	1	0	0	35	43	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00611.oef	partiel		utf-8	1	0	0	6	12	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00612.oef	partiel	non_verifiee	utf-8	1	1	1	3	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00613.oef	partiel	non_verifiee	utf-8	2	2	2	8	29	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00614.oef	partiel		utf-8	1	0	0	3	12	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00615.oef	partiel		utf-8	1	0	0	18	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00616.oef	partiel	non_verifiee	utf-8	1	1	1	19	11	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00617.oef	partiel		utf-8	1	0	0	44	33	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00618.oef	complet	non_verifiee	utf-8	1	1	1	0	10	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00619.oef	partiel	non_verifiee	utf-8	1	1	1	12	18	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00620.oef	partiel	non_verifiee	utf-8	2	2	2	8	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00621.oef	partiel	non_verifiee	utf-8	1	1	1	3	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00622.oef	partiel		utf-8	3	0	0	780	91	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00623.oef	complet	non_verifiee	utf-8	1	1	1	0	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00624.oef	partiel		utf-8	10	0	0	43	51	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00625.oef	partiel		utf-8	8	0	0	77	90	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00626.oef	partiel	non_verifiee	utf-8	3	1	1	13	51	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00627.oef	partiel		utf-8	1	0	0	6	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00628.oef	complet	non_verifiee	utf-8	1	1	1	0	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00629.oef	partiel	non_verifiee	utf-8	2	2	2	23	23	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00630.oef	partiel	non_verifiee	utf-8	6	2	2	36	29	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00631.oef	partiel		utf-8	5	0	0	54	80	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00632.oef	complet	non_verifiee	utf-8	1	1	1	0	16	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00633.oef	partiel		utf-8	1	0	0	26	121	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00634.oef	complet	non_verifiee	utf-8	3	3	3	0	49	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00635.oef	partiel		utf-8	1	0	0	19	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00636.oef	partiel	non_verifiee	utf-8	3	3	3	11	28	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00637.oef	partiel		utf-8	0	0	0	45	16	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00638.oef	complet	non_verifiee	utf-8	1	1	1	0	15	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00639.oef	partiel	non_verifiee	utf-8	2	2	2	46	44	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00640.oef	partiel		utf-8	1	0	0	47	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00641.oef	partiel	non_verifiee	utf-8	1	1	1	2	10	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00642.oef	partiel		utf-8	0	0	0	12	21	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00643.oef	partiel		utf-8	1	0	0	11	15	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00644.oef	partiel		utf-8	1	0	0	23	42	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00645.oef	partiel		utf-8	1	0	0	27	12	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00646.oef	partiel		utf-8	0	0	0	17	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00647.oef	partiel		utf-8	0	0	0	12	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00648.oef	partiel		utf-8	1	0	0	17	40	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00649.oef	partiel		utf-8	0	0	0	8	1	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00650.oef	partiel	non_verifiee	utf-8	1	1	1	5	47	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00651.oef	partiel	non_verifiee	utf-8	2	1	1	12	20	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00652.oef	partiel		utf-8	0	0	0	14	51	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00653.oef	partiel	non_verifiee	utf-8	1	1	1	6	11	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00654.oef	partiel		utf-8	0	0	0	6	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00655.oef	partiel		utf-8	3	0	0	815	90	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00656.oef	complet	non_verifiee	utf-8	4	4	4	0	22	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00657.oef	partiel		utf-8	1	0	0	106	22	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00658.oef	partiel		utf-8	4	0	0	64	174	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00659.oef	partiel	non_verifiee	utf-8	1	1	1	4	46	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00660.oef	partiel	non_verifiee	utf-8	1	1	1	7	10	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00661.oef	partiel		utf-8	3	0	0	31	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00662.oef	partiel		utf-8	1	0	0	9	10	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00663.oef	partiel		utf-8	2	0	0	14	26	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00664.oef	partiel		utf-8	2	0	0	8	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00665.oef	partiel	non_verifiee	utf-8	2	2	2	19	8	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00666.oef	partiel	non_verifiee	utf-8	2	2	2	15	93	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00667.oef	partiel		utf-8	1	0	0	3	13	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00668.oef	complet	non_verifiee	utf-8	1	1	1	0	26	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00669.oef	partiel		utf-8	1	0	0	12	44	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00670.oef	partiel	non_verifiee	utf-8	1	1	1	2	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00671.oef	partiel		utf-8	1	0	0	17	32	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00672.oef	partiel	non_verifiee	utf-8	15	2	2	62	85	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00673.oef	partiel		utf-8	1	0	0	26	121	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00674.oef	partiel		utf-8	0	0	0	2	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00675.oef	partiel	non_verifiee	utf-8	1	1	1	40	30	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00676.oef	partiel	non_verifiee	utf-8	1	1	1	10	28	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00677.oef	complet	non_verifiee	utf-8	1	1	1	0	8	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00678.oef	partiel	non_verifiee	utf-8	24	24	24	103	87	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00679.oef	partiel		utf-8	7	0	0	179	45	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00680.oef	partiel	non_verifiee	utf-8	2	2	2	1	58	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00681.oef	partiel		utf-8	1	0	0	3	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00682.oef	partiel		utf-8	1	0	0	18	32	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00683.oef	partiel		utf-8	1	0	0	27	11	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00684.oef	partiel		utf-8	1	0	0	14	26	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00685.oef	partiel		utf-8	0	0	0	9	19	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00686.oef	partiel		utf-8	1	0	0	18	32	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00687.oef	partiel		utf-8	1	0	0	16	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00688.oef	partiel		utf-8	2	0	0	8	8	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00689.oef	partiel	non_verifiee	utf-8	1	1	1	25	35	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00690.oef	partiel	non_verifiee	utf-8	4	4	4	16	68	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00691.oef	partiel	non_verifiee	utf-8	1	1	1	2	13	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00692.oef	partiel	non_verifiee	utf-8	1	1	1	23	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00693.oef	partiel		utf-8	0	0	0	13	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00694.oef	partiel		utf-8	0	0	0	18	13	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00695.oef	partiel		utf-8	1	0	0	23	39	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00696.oef	partiel	non_verifiee	utf-8	1	1	1	6	104	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00697.oef	complet	non_verifiee	utf-8	1	1	1	0	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00698.oef	complet	non_verifiee	utf-8	2	2	2	0	25	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00699.oef	partiel		utf-8	2	0	0	28	226	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00700.oef	partiel		utf-8	0	0	0	17	15	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00701.oef	partiel		utf-8	10	0	0	43	51	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00702.oef	partiel		utf-8	2	0	0	66	13	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00703.oef	partiel		utf-8	1	0	0	37	43	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00704.oef	partiel		utf-8	2	0	0	58	13	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00705.oef	partiel		utf-8	10	0	0	43	51	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00706.oef	partiel		utf-8	1	0	0	17	36	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00707.oef	partiel		utf-8	1	0	0	29	31	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00708.oef	partiel	non_verifiee	utf-8	2	2	2	4	38	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00709.oef	partiel		utf-8	1	0	0	42	50	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00710.oef	partiel	non_verifiee	utf-8	1	1	1	2	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00711.oef	partiel		utf-8	1	0	0	7	46	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00712.oef	partiel		utf-8	1	0	0	22	52	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00713.oef	complet	non_verifiee	utf-8	1	1	1	0	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00714.oef	complet	non_verifiee	utf-8	1	1	1	0	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00715.oef	partiel	non_verifiee	utf-8	2	1	1	12	43	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00716.oef	partiel		utf-8	1	0	0	35	65	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00717.oef	complet	non_verifiee	utf-8	1	1	1	0	8	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00718.oef	partiel		utf-8	1	0	0	106	22	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00719.oef	partiel		utf-8	1	0	0	25	8	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00720.oef	partiel		utf-8	1	0	0	1	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00721.oef	partiel	non_verifiee	utf-8	1	1	1	11	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00722.oef	partiel		utf-8	3	0	0	216	150	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00723.oef	partiel	non_verifiee	utf-8	2	2	2	3	15	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00724.oef	partiel		utf-8	1	0	0	19	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00725.oef	complet	non_verifiee	utf-8	1	1	1	0	11	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00726.oef	partiel	non_verifiee	utf-8	7	7	7	13	25	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00727.oef	partiel		utf-8	1	0	0	16	8	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00728.oef	complet	non_verifiee	utf-8	1	1	1	0	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00729.oef	partiel	non_verifiee	utf-8	1	1	1	12	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00730.oef	partiel	non_verifiee	utf-8	2	2	2	4	13	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00731.oef	partiel	non_verifiee	utf-8	2	2	2	4	38	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00732.oef	partiel		utf-8	2	0	0	45	55	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00733.oef	partiel	non_verifiee	utf-8	1	1	1	11	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00734.oef	partiel	non_verifiee	utf-8	3	3	3	7	25	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00735.oef	partiel	non_verifiee	utf-8	1	1	1	22	23	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00736.oef	partiel		utf-8	2	0	0	8	12	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00737.oef	partiel	non_verifiee	utf-8	2	2	2	4	41	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00738.oef	complet	non_verifiee	utf-8	1	1	1	0	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00739.oef	partiel		utf-8	0	0	0	68	64	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00740.oef	partiel		utf-8	0	0	0	12	13	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00741.oef	partiel		utf-8	1	0	0	7	22	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00742.oef	partiel	non_verifiee	utf-8	2	2	2	3	38	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00743.oef	partiel		utf-8	1	0	0	31	42	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00744.oef	partiel	non_verifiee	utf-8	9	9	9	53	18	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00745.oef	partiel		utf-8	0	0	0	11	42	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00746.oef	partiel		utf-8	3	0	0	39	35	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00747.oef	complet	non_verifiee	utf-8	1	1	1	0	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00748.oef	complet	non_verifiee	utf-8	1	1	1	0	15	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00749.oef	partiel		utf-8	1	0	0	13	18	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00750.oef	partiel	non_verifiee	utf-8	1	1	1	4	25	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00751.oef	partiel		utf-8	1	0	0	36	219	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00752.oef	partiel	non_verifiee	utf-8	6	1	1	37	30	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00753.oef	partiel		utf-8	3	0	0	49	35	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00754.oef	partiel		utf-8	1	0	0	17	42	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00755.oef	partiel		utf-8	4	0	0	82	92	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00756.oef	complet	non_verifiee	utf-8	1	1	1	0	16	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00757.oef	partiel		utf-8	0	0	0	6	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00758.oef	partiel		utf-8	2	0	0	16	105	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00759.oef	partiel	non_verifiee	utf-8	1	1	1	15	28	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00760.oef	partiel	non_verifiee	utf-8	1	1	1	22	174	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00761.oef	partiel		utf-8	2	0	0	30	22	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00762.oef	partiel		utf-8	3	0	0	35	25	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00763.oef	partiel		utf-8	10	0	0	43	46	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00764.oef	partiel		utf-8	1	0	0	12	48	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00765.oef	partiel		utf-8	4	0	0	22	38	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00766.oef	complet	non_verifiee	utf-8	1	1	1	0	44	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00767.oef	partiel		utf-8	1	0	0	40	23	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00768.oef	partiel		utf-8	1	0	0	18	17	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00769.oef	partiel		utf-8	1	0	0	47	21	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00770.oef	complet	non_verifiee	utf-8	2	2	2	0	25	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00771.oef	partiel		utf-8	1	0	0	15	24	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00772.oef	partiel		utf-8	3	0	0	45	50	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00773.oef	complet	non_verifiee	utf-8	1	1	1	0	21	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00774.oef	complet	non_verifiee	utf-8	3	3	3	0	49	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00775.oef	partiel		utf-8	9	0	0	36	107	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00776.oef	partiel		utf-8	0	0	0	12	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00777.oef	partiel	non_verifiee	utf-8	1	1	1	30	38	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00778.oef	partiel	non_verifiee	utf-8	1	1	1	11	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00779.oef	partiel		utf-8	1	0	0	17	32	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00780.oef	complet	non_verifiee	utf-8	1	1	1	0	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00781.oef	partiel		utf-8	1	0	0	190	70	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00782.oef	partiel		utf-8	0	0	0	248	148	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00783.oef	partiel	non_verifiee	utf-8	3	3	3	81	71	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00784.oef	complet	non_verifiee	utf-8	1	1	1	0	32	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00785.oef	complet	non_verifiee	utf-8	1	1	1	0	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00786.oef	partiel		utf-8	5	0	0	103	23	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00787.oef	partiel		utf-8	1	0	0	36	33	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00788.oef	partiel		utf-8	1	0	0	3	26	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00789.oef	partiel		utf-8	0	0	0	14	16	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00790.oef	partiel		utf-8	4	0	0	37	13	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00791.oef	partiel	non_verifiee	utf-8	5	5	5	16	49	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00792.oef	partiel		utf-8	1	0	0	3	20	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00793.oef	partiel		utf-8	1	0	0	13	29	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00794.oef	partiel		utf-8	3	0	0	48	20	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00795.oef	partiel		utf-8	1	0	0	20	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00796.oef	partiel	non_verifiee	utf-8	2	2	2	1	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00797.oef	partiel	non_verifiee	utf-8	1	1	1	6	44	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00798.oef	partiel		utf-8	6	0	0	186	47	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00799.oef	partiel		utf-8	0	0	0	68	48	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00800.oef	partiel	non_verifiee	utf-8	1	1	1	5	8	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00801.oef	complet	non_verifiee	utf-8	1	1	1	0	12	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00802.oef	partiel		utf-8	2	0	0	24	11	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00803.oef	partiel	non_verifiee	utf-8	6	6	6	6	56	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00804.oef	partiel		utf-8	1	0	0	17	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00805.oef	complet	non_verifiee	utf-8	1	1	1	0	16	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00806.oef	partiel	non_verifiee	utf-8	9	1	1	35	49	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00807.oef	partiel		utf-8	3	0	0	15	117	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00808.oef	partiel	non_verifiee	utf-8	4	4	4	5	10	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00809.oef	partiel		utf-8	5	0	0	18	19	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00810.oef	partiel		utf-8	1	0	0	38	126	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00811.oef	partiel		utf-8	0	0	0	12	13	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00812.oef	partiel		utf-8	1	0	0	10	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00813.oef	partiel	non_verifiee	utf-8	6	6	6	13	29	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00814.oef	partiel		utf-8	1	0	0	23	55	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00815.oef	partiel		utf-8	1	0	0	15	15	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00816.oef	complet	non_verifiee	utf-8	1	1	1	0	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00817.oef	partiel	non_verifiee	utf-8	1	1	1	64	64	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00818.oef	partiel		utf-8	1	0	0	7	51	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00819.oef	complet	non_verifiee	utf-8	2	2	2	0	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00820.oef	partiel		utf-8	1	0	0	132	8	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00821.oef	complet	non_verifiee	utf-8	1	1	1	0	22	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00822.oef	partiel	non_verifiee	utf-8	1	1	1	11	33	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00823.oef	partiel	non_verifiee	utf-8	1	1	1	18	13	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00824.oef	complet	non_verifiee	utf-8	1	1	1	0	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00825.oef	partiel		utf-8	1	0	0	34	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00826.oef	complet	non_verifiee	utf-8	1	1	1	0	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00827.oef	partiel		utf-8	3	0	0	15	116	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00828.oef	partiel		utf-8	0	0	0	6	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00829.oef	partiel		utf-8	0	0	0	12	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00830.oef	partiel	non_verifiee	utf-8	1	1	1	48	27	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00831.oef	partiel		utf-8	1	0	0	22	46	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00832.oef	partiel		utf-8	1	0	0	16	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00833.oef	partiel	non_verifiee	utf-8	1	1	1	35	37	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00834.oef	partiel	non_verifiee	utf-8	1	1	1	41	32	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00835.oef	partiel	non_verifiee	utf-8	1	1	1	17	18	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00836.oef	partiel	non_verifiee	utf-8	1	1	1	15	152	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00837.oef	partiel		utf-8	0	0	0	11	46	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00838.oef	partiel	non_verifiee	utf-8	5	5	5	92	56	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00839.oef	partiel		utf-8	1	0	0	15	16	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00840.oef	partiel		utf-8	1	0	0	47	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00841.oef	partiel		utf-8	1	0	0	4	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00842.oef	partiel		utf-8	0	0	0	86	57	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00843.oef	partiel	non_verifiee	utf-8	1	1	1	23	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00844.oef	partiel		utf-8	1	0	0	1	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00845.oef	partiel	non_verifiee	utf-8	1	1	1	7	38	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00846.oef	partiel		utf-8	1	0	0	19	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00847.oef	partiel		utf-8	1	0	0	23	45	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00848.oef	partiel		utf-8	2	0	0	18	21	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00849.oef	partiel		utf-8	1	0	0	15	17	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00850.oef	partiel		utf-8	1	0	0	24	39	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00851.oef	partiel		utf-8	0	0	0	23	23	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00852.oef	complet	non_verifiee	utf-8	1	1	1	0	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00853.oef	partiel	non_verifiee	utf-8	2	2	2	9	16	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00854.oef	partiel		utf-8	3	0	0	72	21	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00855.oef	partiel	non_verifiee	utf-8	1	1	1	34	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00856.oef	partiel		utf-8	1	0	0	25	23	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00857.oef	partiel		utf-8	0	0	0	45	16	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00858.oef	partiel	non_verifiee	utf-8	2	2	2	43	43	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00859.oef	partiel	non_verifiee	utf-8	3	3	3	9	11	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00860.oef	partiel		utf-8	1	0	0	2	10	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00861.oef	partiel		utf-8	1	0	0	5	8	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00862.oef	partiel		utf-8	0	0	0	5	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00863.oef	partiel		utf-8	1	0	0	36	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00864.oef	partiel		utf-8	0	0	0	12	21	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00865.oef	partiel		utf-8	1	0	0	1	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00866.oef	partiel	non_verifiee	utf-8	1	1	1	32	55	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00867.oef	complet	non_verifiee	utf-8	1	1	1	0	32	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00868.oef	partiel		utf-8	0	0	0	21	29	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00869.oef	partiel		utf-8	1	0	0	11	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00870.oef	complet	non_verifiee	utf-8	1	1	1	0	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00871.oef	partiel		utf-8	1	0	0	17	73	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00872.oef	partiel		utf-8	4	0	0	55	26	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00873.oef	partiel	non_verifiee	utf-8	18	18	18	40	375	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00874.oef	partiel		utf-8	1	0	0	7	51	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00875.oef	partiel		utf-8	1	0	0	16	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00876.oef	partiel		utf-8	1	0	0	11	15	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00877.oef	partiel		utf-8	0	0	0	5	1	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00878.oef	partiel	non_verifiee	utf-8	1	1	1	2	27	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00879.oef	partiel	non_verifiee	utf-8	1	1	1	66	80	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00880.oef	partiel	non_verifiee	utf-8	1	1	1	9	15	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00881.oef	complet	non_verifiee	utf-8	2	2	2	0	8	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00882.oef	partiel	non_verifiee	utf-8	1	1	1	11	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00883.oef	partiel		utf-8	1	0	0	30	27	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00884.oef	partiel		utf-8	0	0	0	4	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00885.oef	complet	non_verifiee	utf-8	1	1	1	0	8	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00886.oef	partiel	non_verifiee	utf-8	1	1	1	8	51	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00887.oef	partiel	non_verifiee	utf-8	4	4	4	11	42	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00888.oef	partiel		utf-8	1	0	0	49	52	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00889.oef	partiel		utf-8	1	0	0	13	29	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00890.oef	partiel	non_verifiee	utf-8	1	1	1	2	21	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00891.oef	partiel		utf-8	0	0	0	5	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00892.oef	complet	non_verifiee	utf-8	1	1	1	0	24	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00893.oef	partiel	non_verifiee	utf-8	1	1	1	7	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00894.oef	partiel		utf-8	1	0	0	19	33	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00895.oef	partiel		utf-8	1	0	0	1	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00896.oef	partiel	non_verifiee	utf-8	1	1	1	2	72	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00897.oef	partiel		utf-8	3	0	0	129	160	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00898.oef	partiel		utf-8	1	0	0	88	235	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00899.oef	complet	non_verifiee	utf-8	1	1	1	0	26	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00900.oef	complet	non_verifiee	utf-8	1	1	1	0	29	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00901.oef	partiel		utf-8	1	0	0	5	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00902.oef	partiel		utf-8	1	0	0	1	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00903.oef	partiel	non_verifiee	utf-8	1	1	1	6	104	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00904.oef	partiel	non_verifiee	utf-8	1	1	1	30	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00905.oef	partiel		utf-8	0	0	0	42	12	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00906.oef	partiel		utf-8	0	0	0	8	1	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00907.oef	partiel		utf-8	1	0	0	5	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00908.oef	partiel	non_verifiee	utf-8	1	1	1	9	12	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00909.oef	partiel		utf-8	1	0	0	5	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00910.oef	partiel	non_verifiee	utf-8	1	1	1	3	18	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00911.oef	partiel		utf-8	1	0	0	8	48	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00912.oef	complet	non_verifiee	utf-8	1	1	1	0	27	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00913.oef	partiel	non_verifiee	utf-8	2	2	2	6	20	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00914.oef	complet	non_verifiee	utf-8	1	1	1	0	21	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00915.oef	complet	non_verifiee	utf-8	1	1	1	0	10	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00916.oef	partiel		utf-8	2	0	0	8	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00917.oef	partiel		utf-8	5	0	0	18	19	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00918.oef	partiel		utf-8	1	0	0	39	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00919.oef	partiel		utf-8	1	0	0	1	11	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00920.oef	complet	non_verifiee	utf-8	1	1	1	0	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00921.oef	partiel		utf-8	1	0	0	23	55	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00922.oef	partiel		utf-8	1	0	0	16	56	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00923.oef	partiel	non_verifiee	utf-8	1	1	1	1	50	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00924.oef	partiel		utf-8	0	0	0	27	46	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00925.oef	partiel		utf-8	1	0	0	13	22	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00926.oef	partiel		utf-8	1	0	0	21	20	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00927.oef	partiel		utf-8	3	0	0	52	62	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00928.oef	partiel		utf-8	1	0	0	16	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00929.oef	partiel	non_verifiee	utf-8	1	1	1	19	18	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00930.oef	partiel		utf-8	1	0	0	6	49	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00931.oef	partiel		utf-8	0	0	0	12	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00932.oef	partiel	non_verifiee	utf-8	2	1	1	12	62	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00933.oef	complet	non_verifiee	utf-8	1	1	1	0	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00934.oef	partiel		utf-8	3	0	0	50	69	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00935.oef	complet	non_verifiee	utf-8	1	1	1	0	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00936.oef	partiel		utf-8	30	0	0	48	114	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00937.oef	partiel	non_verifiee	utf-8	1	1	1	69	52	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00938.oef	partiel		utf-8	1	0	0	17	21	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00939.oef	partiel		utf-8	0	0	0	34	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00940.oef	partiel		utf-8	1	0	0	9	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00941.oef	partiel	non_verifiee	utf-8	1	1	1	41	65	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00942.oef	partiel		utf-8	4	0	0	97	37	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00943.oef	partiel		utf-8	2	0	0	14	8	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00944.oef	partiel		utf-8	1	0	0	1	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00945.oef	partiel	non_verifiee	utf-8	1	1	1	11	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00946.oef	partiel	non_verifiee	utf-8	1	1	1	28	33	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00947.oef	partiel		utf-8	1	0	0	13	10	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00948.oef	partiel	non_verifiee	utf-8	2	2	2	10	64	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00949.oef	partiel	non_verifiee	utf-8	1	1	1	17	21	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00950.oef	partiel		utf-8	2	0	0	38	27	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00951.oef	partiel	non_verifiee	utf-8	1	1	1	3	13	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00952.oef	partiel	non_verifiee	utf-8	1	1	1	12	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00953.oef	partiel	non_verifiee	utf-8	1	1	1	7	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00954.oef	partiel		utf-8	13	0	0	183	69	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00955.oef	partiel		utf-8	1	0	0	9	17	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00956.oef	partiel	non_verifiee	utf-8	4	4	4	12	27	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00957.oef	partiel		utf-8	1	0	0	53	53	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00958.oef	partiel		utf-8	1	0	0	83	93	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00959.oef	partiel	non_verifiee	utf-8	1	1	1	2	10	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00960.oef	partiel	non_verifiee	utf-8	1	1	1	26	30	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00961.oef	partiel	non_verifiee	utf-8	7	5	5	69	29	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00962.oef	partiel		utf-8	0	0	0	248	147	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00963.oef	partiel	non_verifiee	utf-8	1	1	1	24	161	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00964.oef	partiel	non_verifiee	utf-8	2	2	2	12	12	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00965.oef	partiel		utf-8	8	0	0	84	28	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00966.oef	partiel		utf-8	0	0	0	13	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00967.oef	partiel		utf-8	0	0	0	12	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00968.oef	partiel	non_verifiee	utf-8	1	1	1	2	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00969.oef	partiel		utf-8	2	0	0	89	27	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00970.oef	partiel	non_verifiee	utf-8	1	1	1	32	55	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00971.oef	partiel	non_verifiee	utf-8	1	1	1	29	112	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00972.oef	partiel		utf-8	1	0	0	36	43	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00973.oef	partiel	non_verifiee	utf-8	1	1	1	31	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00974.oef	partiel		utf-8	2	0	0	18	24	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00975.oef	partiel	non_verifiee	utf-8	2	2	2	17	100	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00976.oef	partiel		utf-8	2	0	0	8	11	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00977.oef	partiel		utf-8	1	0	0	44	33	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00978.oef	partiel	non_verifiee	utf-8	2	1	1	17	20	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00979.oef	partiel		utf-8	1	0	0	7	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00980.oef	partiel		utf-8	1	0	0	37	22	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00981.oef	partiel		utf-8	1	0	0	20	10	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00982.oef	partiel		utf-8	0	0	0	290	180	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00983.oef	partiel		utf-8	0	0	0	9	19	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00984.oef	partiel		utf-8	1	0	0	18	33	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00985.oef	partiel		utf-8	10	0	0	43	51	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00986.oef	partiel	non_verifiee	utf-8	1	1	1	2	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00987.oef	partiel	non_verifiee	utf-8	1	1	1	6	25	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00988.oef	partiel	non_verifiee	utf-8	3	1	1	29	30	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00989.oef	partiel		utf-8	1	0	0	13	22	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00990.oef	partiel	non_verifiee	utf-8	2	1	1	6	42	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00991.oef	partiel		utf-8	1	0	0	9	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00992.oef	partiel	non_verifiee	utf-8	1	1	1	20	115	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00993.oef	partiel	non_verifiee	utf-8	1	1	1	13	24	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00994.oef	partiel	non_verifiee	utf-8	1	1	1	64	60	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00995.oef	complet	non_verifiee	utf-8	1	1	1	0	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00996.oef	partiel		utf-8	0	0	0	18	13	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00997.oef	complet	non_verifiee	utf-8	1	1	1	0	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00998.oef	partiel		utf-8	0	0	0	7	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\00999.oef	partiel		utf-8	0	0	0	9	25	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01000.oef	partiel	non_verifiee	utf-8	1	1	1	7	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01001.oef	partiel		utf-8	1	0	0	3	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01002.oef	partiel	non_verifiee	utf-8	2	2	2	14	12	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01003.oef	partiel	non_verifiee	utf-8	2	2	2	23	104	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01004.oef	complet	non_verifiee	utf-8	1	1	1	0	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01005.oef	partiel	non_verifiee	utf-8	1	1	1	1	36	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01006.oef	partiel		utf-8	3	0	0	31	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01007.oef	partiel		utf-8	1	0	0	23	12	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01008.oef	partiel	non_verifiee	utf-8	2	2	2	15	105	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01009.oef	partiel	non_verifiee	utf-8	2	2	2	8	79	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01010.oef	partiel	non_verifiee	utf-8	3	3	3	3	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01011.oef	partiel		utf-8	1	0	0	6	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01012.oef	partiel	non_verifiee	utf-8	2	2	2	63	71	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01013.oef	partiel		utf-8	0	0	0	30	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01014.oef	partiel	non_verifiee	utf-8	7	6	6	10	31	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01015.oef	partiel	non_verifiee	utf-8	1	1	1	11	12	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01016.oef	partiel		utf-8	2	0	0	49	13	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01017.oef	complet	non_verifiee	utf-8	1	1	1	0	10	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01018.oef	partiel	non_verifiee	utf-8	4	4	4	20	19	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01019.oef	partiel	non_verifiee	utf-8	5	1	1	160	44	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01020.oef	partiel	non_verifiee	utf-8	4	1	1	60	31	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01021.oef	partiel	non_verifiee	utf-8	1	1	1	11	8	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01022.oef	partiel		utf-8	2	0	0	14	11	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01023.oef	partiel	non_verifiee	utf-8	1	1	1	8	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01024.oef	partiel	non_verifiee	utf-8	1	1	1	31	59	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01025.oef	partiel		utf-8	1	0	0	13	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01026.oef	partiel		utf-8	0	0	0	6	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01027.oef	partiel	non_verifiee	utf-8	2	2	2	3	22	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01028.oef	partiel	non_verifiee	utf-8	4	4	4	11	42	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01029.oef	partiel		utf-8	1	0	0	4	25	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01030.oef	partiel	non_verifiee	utf-8	1	1	1	33	40	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01031.oef	partiel		utf-8	15	0	0	81	102	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01032.oef	complet	non_verifiee	utf-8	3	3	3	0	48	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01033.oef	partiel		utf-8	0	0	0	33	19	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01034.oef	partiel	non_verifiee	utf-8	1	1	1	23	86	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01035.oef	partiel	non_verifiee	utf-8	1	1	1	1	16	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01036.oef	partiel		utf-8	1	0	0	36	219	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01037.oef	complet	non_verifiee	utf-8	4	4	4	0	22	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01038.oef	complet	non_verifiee	utf-8	1	1	1	0	16	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01039.oef	partiel	non_verifiee	utf-8	18	18	18	43	29	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01040.oef	partiel		utf-8	9	0	0	38	110	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01041.oef	partiel		utf-8	0	0	0	17	15	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01042.oef	partiel		utf-8	0	0	0	38	8	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01043.oef	partiel	non_verifiee	utf-8	1	1	1	6	73	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01044.oef	partiel	non_verifiee	utf-8	1	1	1	15	17	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01045.oef	partiel		utf-8	1	0	0	77	75	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01046.oef	complet	non_verifiee	utf-8	2	2	2	0	12	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01047.oef	partiel		utf-8	0	0	0	18	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01048.oef	partiel		utf-8	1	0	0	13	83	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01049.oef	partiel	non_verifiee	utf-8	5	1	1	160	44	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01050.oef	partiel	non_verifiee	utf-8	2	2	2	3	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01051.oef	partiel		utf-8	1	0	0	3	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01052.oef	partiel		utf-8	1	0	0	7	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01053.oef	partiel		utf-8	0	0	0	24	11	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01054.oef	partiel		utf-8	0	0	0	35	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01055.oef	partiel		utf-8	1	0	0	10	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01056.oef	partiel		utf-8	1	0	0	11	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01057.oef	partiel		utf-8	1	0	0	23	54	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01058.oef	partiel	non_verifiee	utf-8	6	1	1	37	30	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01059.oef	partiel		utf-8	1	0	0	21	30	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01060.oef	partiel	non_verifiee	utf-8	5	4	4	17	31	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01061.oef	partiel	non_verifiee	utf-8	1	1	1	1	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01062.oef	partiel		utf-8	1	0	0	31	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01063.oef	partiel	non_verifiee	utf-8	1	1	1	11	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01064.oef	partiel	non_verifiee	utf-8	4	1	1	27	15	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01065.oef	partiel		utf-8	8	0	0	24	52	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01066.oef	partiel		utf-8	5	0	0	54	80	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01067.oef	partiel		utf-8	1	0	0	48	16	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01068.oef	partiel		utf-8	1	0	0	23	75	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01069.oef	partiel		utf-8	0	0	0	58	77	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01070.oef	partiel	non_verifiee	utf-8	1	1	1	28	33	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01071.oef	partiel	non_verifiee	utf-8	3	2	2	8	25	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01072.oef	partiel		utf-8	1	0	0	13	17	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01073.oef	partiel	non_verifiee	utf-8	1	1	1	32	10	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01074.oef	partiel	non_verifiee	utf-8	1	1	1	7	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01075.oef	complet	non_verifiee	utf-8	1	1	1	0	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01076.oef	partiel	non_verifiee	utf-8	3	3	3	81	70	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01077.oef	partiel	non_verifiee	utf-8	5	1	1	160	44	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01078.oef	partiel	non_verifiee	utf-8	1	1	1	3	16	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01079.oef	partiel		utf-8	1	0	0	1	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01080.oef	partiel		utf-8	30	0	0	48	134	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01081.oef	partiel	non_verifiee	utf-8	1	1	1	2	11	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01082.oef	partiel	non_verifiee	utf-8	2	1	1	17	26	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01083.oef	partiel	non_verifiee	utf-8	2	2	2	1	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01084.oef	partiel		utf-8	0	0	0	17	15	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01085.oef	partiel		utf-8	5	0	0	103	24	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01086.oef	partiel		utf-8	1	0	0	11	32	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01087.oef	partiel	non_verifiee	utf-8	1	1	1	5	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01088.oef	partiel	non_verifiee	utf-8	1	1	1	14	77	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01089.oef	partiel		utf-8	1	0	0	47	21	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01090.oef	partiel	non_verifiee	utf-8	1	1	1	26	28	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01091.oef	partiel	non_verifiee	utf-8	1	1	1	26	25	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01092.oef	partiel	non_verifiee	utf-8	1	1	1	9	25	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01093.oef	partiel	non_verifiee	utf-8	1	1	1	23	16	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01094.oef	partiel		utf-8	1	0	0	199	104	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01095.oef	partiel		utf-8	0	0	0	7	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01096.oef	partiel	non_verifiee	utf-8	1	1	1	17	23	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01097.oef	partiel	non_verifiee	utf-8	1	1	1	6	30	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01098.oef	partiel		utf-8	1	0	0	27	11	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01099.oef	partiel		utf-8	4	0	0	19	30	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01100.oef	partiel		utf-8	0	0	0	4	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01101.oef	partiel		utf-8	0	0	0	11	26	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01102.oef	partiel		utf-8	2	0	0	11	8	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01103.oef	partiel		utf-8	1	0	0	34	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01104.oef	partiel		utf-8	0	0	0	88	89	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01105.oef	partiel	non_verifiee	utf-8	2	1	1	3	70	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01106.oef	partiel		utf-8	1	0	0	28	35	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01107.oef	complet	non_verifiee	utf-8	1	1	1	0	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01108.oef	partiel	non_verifiee	utf-8	1	1	1	10	11	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01109.oef	partiel	non_verifiee	utf-8	5	5	5	42	42	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01110.oef	partiel		utf-8	0	0	0	6	12	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01111.oef	partiel		utf-8	1	0	0	2	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01112.oef	partiel	non_verifiee	utf-8	3	2	2	6	25	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01113.oef	partiel		utf-8	1	0	0	22	18	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01114.oef	partiel	non_verifiee	utf-8	1	1	1	8	8	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01115.oef	partiel		utf-8	1	0	0	53	53	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01116.oef	partiel		utf-8	1	0	0	31	42	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01117.oef	partiel		utf-8	1	0	0	22	43	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01118.oef	partiel		utf-8	1	0	0	39	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01119.oef	partiel		utf-8	8	0	0	95	50	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01120.oef	partiel		utf-8	1	0	0	23	54	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01121.oef	partiel		utf-8	1	0	0	15	16	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01122.oef	partiel		utf-8	1	0	0	22	51	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01123.oef	partiel		utf-8	2	0	0	55	22	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01124.oef	partiel		utf-8	1	0	0	25	12	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01125.oef	partiel		utf-8	1	0	0	32	18	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01126.oef	partiel	non_verifiee	utf-8	6	5	5	21	42	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01127.oef	complet	non_verifiee	utf-8	1	1	1	0	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01128.oef	complet	non_verifiee	utf-8	5	5	5	0	41	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01129.oef	partiel		utf-8	3	0	0	40	17	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01130.oef	partiel	non_verifiee	utf-8	7	7	7	16	49	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01131.oef	partiel		utf-8	1	0	0	17	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01132.oef	partiel		utf-8	0	0	0	5	1	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01133.oef	partiel		utf-8	1	0	0	28	180	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01134.oef	partiel		utf-8	1	0	0	11	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01135.oef	partiel		utf-8	1	0	0	22	82	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01136.oef	complet	non_verifiee	utf-8	1	1	1	0	11	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01137.oef	partiel	non_verifiee	utf-8	1	1	1	13	165	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01138.oef	partiel		utf-8	2	0	0	45	36	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01139.oef	partiel		utf-8	1	0	0	11	32	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01140.oef	complet	non_verifiee	utf-8	1	1	1	0	16	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01141.oef	partiel		utf-8	0	0	0	72	47	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01142.oef	partiel		utf-8	1	0	0	25	27	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01143.oef	complet	non_verifiee	utf-8	1	1	1	0	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01144.oef	partiel		utf-8	1	0	0	47	21	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01145.oef	partiel	non_verifiee	utf-8	18	18	18	40	375	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01146.oef	partiel	non_verifiee	utf-8	1	1	1	4	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01147.oef	partiel		utf-8	1	0	0	23	24	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01148.oef	partiel		utf-8	3	0	0	30	28	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01149.oef	partiel	non_verifiee	utf-8	3	3	3	20	26	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01150.oef	partiel		utf-8	0	0	0	7	22	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01151.oef	complet	non_verifiee	utf-8	1	1	1	0	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01152.oef	partiel		utf-8	1	0	0	36	43	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01153.oef	partiel	non_verifiee	utf-8	2	1	1	23	37	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01154.oef	partiel		utf-8	0	0	0	14	13	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01155.oef	partiel		utf-8	1	0	0	12	11	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01156.oef	complet	non_verifiee	utf-8	1	1	1	0	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01157.oef	partiel		utf-8	1	0	0	1	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01158.oef	partiel	non_verifiee	utf-8	6	6	6	158	238	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01159.oef	partiel		utf-8	1	0	0	17	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01160.oef	partiel	non_verifiee	utf-8	1	1	1	27	31	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01161.oef	partiel	non_verifiee	utf-8	1	1	1	9	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01162.oef	partiel		utf-8	1	0	0	27	24	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01163.oef	partiel		utf-8	1	0	0	13	18	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01164.oef	partiel	non_verifiee	utf-8	1	1	1	2	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01165.oef	partiel		utf-8	3	0	0	49	54	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01166.oef	partiel	non_verifiee	utf-8	1	1	1	11	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01167.oef	partiel		utf-8	1	0	0	9	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01168.oef	complet	non_verifiee	utf-8	1	1	1	0	10	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01169.oef	partiel		utf-8	1	0	0	46	67	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01170.oef	partiel		utf-8	1	0	0	19	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01171.oef	partiel		utf-8	1	0	0	6	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01172.oef	partiel	non_verifiee	utf-8	1	1	1	6	16	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01173.oef	partiel		utf-8	1	0	0	89	246	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01174.oef	partiel	non_verifiee	utf-8	1	1	1	12	18	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01175.oef	partiel		utf-8	5	0	0	18	19	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01176.oef	partiel	non_verifiee	utf-8	1	1	1	14	77	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01177.oef	partiel		utf-8	1	0	0	6	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01178.oef	partiel	non_verifiee	utf-8	1	1	1	11	22	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01179.oef	partiel		utf-8	1	0	0	37	22	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01180.oef	partiel		utf-8	0	0	0	6	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01181.oef	partiel		utf-8	54	0	0	143	271	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01182.oef	complet	non_verifiee	utf-8	1	1	1	0	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01183.oef	partiel		utf-8	5	0	0	75	43	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01184.oef	partiel		utf-8	1	0	0	7	22	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01185.oef	complet	non_verifiee	utf-8	1	1	1	0	16	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01186.oef	partiel		utf-8	1	0	0	7	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01187.oef	partiel	non_verifiee	utf-8	4	4	4	10	27	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01188.oef	partiel		utf-8	2	0	0	41	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01189.oef	partiel		utf-8	1	0	0	82	44	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01190.oef	partiel		utf-8	2	0	0	30	22	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01191.oef	partiel		utf-8	0	0	0	14	52	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01192.oef	partiel		utf-8	1	0	0	17	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01193.oef	partiel	non_verifiee	utf-8	1	1	1	2	29	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01194.oef	complet	non_verifiee	utf-8	1	1	1	0	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01195.oef	partiel		utf-8	1	0	0	31	42	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01196.oef	partiel		utf-8	1	0	0	1	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01197.oef	partiel		utf-8	1	0	0	3	17	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01198.oef	partiel		utf-8	2	0	0	8	8	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01199.oef	partiel		utf-8	1	0	0	37	43	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01200.oef	partiel	non_verifiee	utf-8	1	1	1	14	82	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01201.oef	partiel		utf-8	0	0	0	18	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01202.oef	partiel	non_verifiee	utf-8	1	1	1	2	24	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01203.oef	partiel		utf-8	0	0	0	66	48	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01204.oef	complet	non_verifiee	utf-8	1	1	1	0	10	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01205.oef	partiel		utf-8	30	0	0	81	176	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01206.oef	partiel		utf-8	4	0	0	24	27	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01207.oef	partiel	non_verifiee	utf-8	1	1	1	1	18	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01208.oef	partiel		utf-8	10	0	0	43	46	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01209.oef	complet	non_verifiee	utf-8	1	1	1	0	8	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01210.oef	partiel		utf-8	4	0	0	105	28	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01211.oef	partiel		utf-8	1	0	0	5	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01212.oef	partiel		utf-8	8	0	0	84	32	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01213.oef	complet	non_verifiee	utf-8	1	1	1	0	29	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01214.oef	partiel	non_verifiee	utf-8	3	2	2	6	25	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01215.oef	partiel	non_verifiee	utf-8	1	1	1	10	34	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01216.oef	partiel		utf-8	0	0	0	24	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01217.oef	partiel		utf-8	2	0	0	18	21	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01218.oef	partiel		utf-8	1	0	0	118	93	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01219.oef	complet	non_verifiee	utf-8	1	1	1	0	13	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01220.oef	partiel		utf-8	0	0	0	172	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01221.oef	partiel	non_verifiee	utf-8	2	1	1	25	20	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01222.oef	partiel		utf-8	1	0	0	18	16	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01223.oef	partiel		utf-8	1	0	0	15	15	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01224.oef	partiel	non_verifiee	utf-8	2	1	1	14	90	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01225.oef	complet	non_verifiee	utf-8	3	3	3	0	48	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01226.oef	complet	non_verifiee	utf-8	1	1	1	0	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01227.oef	partiel	non_verifiee	utf-8	1	1	1	7	17	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01228.oef	complet	non_verifiee	utf-8	1	1	1	0	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01229.oef	partiel	non_verifiee	utf-8	1	1	1	2	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01230.oef	partiel	non_verifiee	utf-8	1	1	1	12	165	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01231.oef	partiel		utf-8	7	0	0	73	28	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01232.oef	partiel		utf-8	0	0	0	6	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01233.oef	complet	non_verifiee	utf-8	3	3	3	0	13	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01234.oef	partiel	non_verifiee	utf-8	2	2	2	4	41	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01235.oef	complet	non_verifiee	utf-8	1	1	1	0	8	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01236.oef	partiel		utf-8	2	0	0	18	21	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01237.oef	partiel		utf-8	1	0	0	106	22	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01238.oef	partiel	non_verifiee	utf-8	3	1	1	140	93	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01239.oef	partiel		utf-8	1	0	0	36	36	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01240.oef	partiel		utf-8	2	0	0	76	27	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01241.oef	partiel		utf-8	1	0	0	16	8	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01242.oef	complet	non_verifiee	utf-8	1	1	1	0	10	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01243.oef	partiel		utf-8	0	0	0	33	24	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01244.oef	partiel	non_verifiee	utf-8	9	6	6	28	82	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01245.oef	complet	non_verifiee	utf-8	3	3	3	0	13	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01246.oef	partiel	non_verifiee	utf-8	1	1	1	62	52	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01247.oef	partiel		utf-8	1	0	0	11	15	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01248.oef	partiel	non_verifiee	utf-8	1	1	1	59	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01249.oef	partiel		utf-8	3	0	0	72	20	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01250.oef	partiel	non_verifiee	utf-8	22	22	22	68	50	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01251.oef	partiel	non_verifiee	utf-8	1	1	1	19	101	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01252.oef	partiel		utf-8	0	0	0	24	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01253.oef	partiel		utf-8	1	0	0	35	11	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01254.oef	partiel	non_verifiee	utf-8	1	1	1	19	38	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01255.oef	partiel		utf-8	1	0	0	3	51	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01256.oef	partiel		utf-8	2	0	0	16	10	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01257.oef	partiel		utf-8	4	0	0	72	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01258.oef	complet	non_verifiee	utf-8	1	1	1	0	8	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01259.oef	partiel		utf-8	3	0	0	149	185	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01260.oef	partiel		utf-8	1	0	0	28	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01261.oef	complet	non_verifiee	utf-8	2	2	2	0	36	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01262.oef	partiel	non_verifiee	utf-8	1	1	1	14	77	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01263.oef	partiel	non_verifiee	utf-8	2	2	2	25	66	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01264.oef	partiel		utf-8	1	0	0	13	20	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01265.oef	partiel		utf-8	3	0	0	815	90	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01266.oef	partiel		utf-8	0	0	0	10	2	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01267.oef	partiel		utf-8	0	0	0	8	22	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01268.oef	partiel	non_verifiee	utf-8	1	1	1	10	34	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01269.oef	partiel		utf-8	5	0	0	194	49	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01270.oef	partiel		utf-8	1	0	0	59	75	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01271.oef	partiel		utf-8	1	0	0	13	157	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01272.oef	partiel		utf-8	1	0	0	16	16	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01273.oef	complet	non_verifiee	utf-8	1	1	1	0	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01274.oef	partiel	non_verifiee	utf-8	2	1	1	24	21	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01275.oef	partiel		utf-8	1	0	0	18	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01276.oef	partiel	non_verifiee	utf-8	18	18	18	40	390	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01277.oef	partiel		utf-8	2	0	0	49	20	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01278.oef	partiel	non_verifiee	utf-8	6	5	5	21	42	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01279.oef	partiel		utf-8	1	0	0	13	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01280.oef	partiel	non_verifiee	utf-8	1	1	1	9	23	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01281.oef	partiel	non_verifiee	utf-8	1	1	1	2	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01282.oef	partiel	non_verifiee	utf-8	1	1	1	1	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01283.oef	partiel	non_verifiee	utf-8	2	2	2	15	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01284.oef	partiel		utf-8	5	0	0	101	21	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01285.oef	partiel		utf-8	4	0	0	64	183	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01286.oef	partiel		utf-8	1	0	0	27	31	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01287.oef	partiel		utf-8	1	0	0	86	234	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01288.oef	partiel	non_verifiee	utf-8	1	1	1	1	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01289.oef	partiel		utf-8	1	0	0	54	53	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01290.oef	partiel		utf-8	1	0	0	51	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01291.oef	partiel		utf-8	1	0	0	6	15	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01292.oef	partiel		utf-8	1	0	0	3	10	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01293.oef	partiel		utf-8	1	0	0	18	8	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01294.oef	partiel		utf-8	1	0	0	111	92	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01295.oef	partiel		utf-8	4	0	0	82	86	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01296.oef	partiel	non_verifiee	utf-8	2	2	2	23	17	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01297.oef	partiel	non_verifiee	utf-8	3	1	1	11	10	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01298.oef	partiel	non_verifiee	utf-8	1	1	1	2	27	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01299.oef	complet	non_verifiee	utf-8	2	2	2	0	59	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01300.oef	partiel	non_verifiee	utf-8	2	2	2	3	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01301.oef	partiel		utf-8	2	0	0	41	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01302.oef	partiel		utf-8	1	0	0	9	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01303.oef	partiel	non_verifiee	utf-8	1	1	1	7	12	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01304.oef	partiel		utf-8	1	0	0	23	17	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01305.oef	partiel	non_verifiee	utf-8	1	1	1	106	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01306.oef	partiel	non_verifiee	utf-8	4	4	4	11	33	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01307.oef	partiel		utf-8	1	0	0	16	10	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01308.oef	partiel		utf-8	1	0	0	5	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01309.oef	partiel		utf-8	1	0	0	5	12	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01310.oef	partiel		utf-8	1	0	0	28	180	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01311.oef	partiel	non_verifiee	utf-8	2	2	2	43	43	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01312.oef	partiel		utf-8	1	0	0	16	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01313.oef	partiel		utf-8	0	0	0	13	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01314.oef	partiel		utf-8	1	0	0	15	10	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01315.oef	partiel		utf-8	1	0	0	45	42	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01316.oef	partiel		utf-8	5	0	0	101	21	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01317.oef	partiel	non_verifiee	utf-8	6	6	6	6	56	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01318.oef	partiel		utf-8	1	0	0	123	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01319.oef	partiel		utf-8	1	0	0	5	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01320.oef	partiel		utf-8	1	0	0	14	20	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01321.oef	partiel		utf-8	1	0	0	53	26	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01322.oef	partiel	non_verifiee	utf-8	1	1	1	11	104	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01323.oef	partiel	non_verifiee	utf-8	1	1	1	6	37	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01324.oef	partiel	non_verifiee	utf-8	2	2	2	17	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01325.oef	partiel		utf-8	0	0	0	10	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01326.oef	partiel		utf-8	1	0	0	7	46	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01327.oef	partiel		utf-8	6	0	0	48	17	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01328.oef	partiel		utf-8	1	0	0	13	23	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01329.oef	partiel	non_verifiee	utf-8	1	1	1	2	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01330.oef	partiel		utf-8	1	0	0	22	24	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01331.oef	partiel		utf-8	1	0	0	20	72	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01332.oef	partiel		utf-8	30	0	0	48	114	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01333.oef	partiel		utf-8	2	0	0	45	60	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01334.oef	partiel		utf-8	1	0	0	10	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01335.oef	partiel		utf-8	1	0	0	1	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01336.oef	partiel		utf-8	1	0	0	16	32	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01337.oef	partiel		utf-8	2	0	0	38	10	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01338.oef	partiel	non_verifiee	utf-8	3	2	2	9	30	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01339.oef	partiel		utf-8	2	0	0	101	76	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01340.oef	partiel		utf-8	1	0	0	24	18	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01341.oef	partiel		utf-8	2	0	0	8	41	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01342.oef	partiel	non_verifiee	utf-8	4	4	4	12	27	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01343.oef	complet	non_verifiee	utf-8	1	1	1	0	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01344.oef	complet	non_verifiee	utf-8	1	1	1	0	8	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01345.oef	partiel	non_verifiee	utf-8	1	1	1	11	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01346.oef	partiel		utf-8	1	0	0	11	28	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01347.oef	partiel	non_verifiee	utf-8	2	1	1	12	20	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01348.oef	partiel		utf-8	1	0	0	24	12	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01349.oef	partiel		utf-8	7	0	0	30	20	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01350.oef	partiel	non_verifiee	utf-8	9	9	9	47	39	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01351.oef	partiel		utf-8	1	0	0	14	15	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01352.oef	partiel	non_verifiee	utf-8	1	1	1	48	27	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01353.oef	complet	non_verifiee	utf-8	1	1	1	0	16	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01354.oef	complet	non_verifiee	utf-8	1	1	1	0	18	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01355.oef	partiel	non_verifiee	utf-8	1	1	1	31	59	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01356.oef	partiel		utf-8	2	0	0	8	28	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01357.oef	partiel		utf-8	1	0	0	40	23	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01358.oef	partiel		utf-8	0	0	0	11	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01359.oef	partiel		utf-8	1	0	0	37	116	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01360.oef	partiel		utf-8	1	0	0	31	45	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01361.oef	partiel		utf-8	1	0	0	11	16	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01362.oef	partiel		utf-8	1	0	0	25	27	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01363.oef	partiel		utf-8	0	0	0	12	21	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01364.oef	partiel		utf-8	1	0	0	19	21	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01365.oef	partiel		utf-8	0	0	0	7	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01366.oef	partiel		utf-8	3	0	0	106	32	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01367.oef	partiel	non_verifiee	utf-8	1	1	1	20	8	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01368.oef	partiel		utf-8	5	0	0	128	32	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01369.oef	partiel	non_verifiee	utf-8	1	1	1	5	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01370.oef	partiel		utf-8	1	0	0	1	10	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01371.oef	partiel	non_verifiee	utf-8	22	22	22	68	50	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01372.oef	complet	non_verifiee	utf-8	1	1	1	0	38	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01373.oef	partiel		utf-8	4	0	0	41	29	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01374.oef	partiel		utf-8	6	0	0	122	62	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01375.oef	complet	non_verifiee	utf-8	1	1	1	0	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01376.oef	complet	non_verifiee	utf-8	1	1	1	0	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01377.oef	partiel	non_verifiee	utf-8	2	1	1	26	12	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01378.oef	partiel		utf-8	1	0	0	35	61	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01379.oef	partiel	non_verifiee	utf-8	2	2	2	3	27	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01380.oef	partiel	non_verifiee	utf-8	1	1	1	11	8	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01381.oef	complet	non_verifiee	utf-8	1	1	1	0	21	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01382.oef	partiel		utf-8	0	0	0	248	147	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01383.oef	partiel		utf-8	1	0	0	29	21	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01384.oef	partiel		utf-8	1	0	0	7	11	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01385.oef	partiel		utf-8	0	0	0	17	15	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01386.oef	partiel		utf-8	13	0	0	183	69	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01387.oef	partiel		utf-8	1	0	0	11	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01388.oef	partiel	non_verifiee	utf-8	2	2	2	46	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01389.oef	partiel		utf-8	2	0	0	39	56	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01390.oef	partiel		utf-8	0	0	0	22	22	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01391.oef	partiel		utf-8	0	0	0	34	4	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01392.oef	partiel	non_verifiee	utf-8	9	9	9	53	12	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01393.oef	partiel	non_verifiee	utf-8	1	1	1	3	83	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01394.oef	partiel		utf-8	1	0	0	230	182	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01395.oef	complet	non_verifiee	utf-8	1	1	1	0	10	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01396.oef	partiel	non_verifiee	utf-8	1	1	1	8	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01397.oef	partiel		utf-8	1	0	0	20	13	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01398.oef	partiel		utf-8	0	0	0	49	118	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01399.oef	complet	non_verifiee	utf-8	1	1	1	0	13	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01400.oef	partiel		utf-8	1	0	0	30	47	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01401.oef	partiel	non_verifiee	utf-8	1	1	1	10	34	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01402.oef	partiel		utf-8	1	0	0	18	10	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01403.oef	partiel		utf-8	1	0	0	210	34	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01404.oef	partiel		utf-8	3	0	0	108	99	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01405.oef	partiel	non_verifiee	utf-8	1	1	1	28	33	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01406.oef	partiel	non_verifiee	utf-8	1	1	1	10	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01407.oef	partiel		utf-8	0	0	0	45	3	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01408.oef	partiel		utf-8	1	0	0	9	47	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01409.oef	partiel	non_verifiee	utf-8	1	1	1	10	25	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01410.oef	partiel	non_verifiee	utf-8	3	2	2	8	25	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01411.oef	partiel	non_verifiee	utf-8	2	2	2	17	6	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01412.oef	partiel	non_verifiee	utf-8	1	1	1	10	40	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01413.oef	partiel		utf-8	0	0	0	8	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01414.oef	complet	non_verifiee	utf-8	1	1	1	0	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01415.oef	partiel		utf-8	6	0	0	163	119	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01416.oef	partiel		utf-8	2	0	0	12	11	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01417.oef	partiel	non_verifiee	utf-8	1	1	1	57	14	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01418.oef	partiel	non_verifiee	utf-8	1	1	1	3	22	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01419.oef	partiel		utf-8	1	0	0	3	7	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01420.oef	partiel	non_verifiee	utf-8	6	3	3	33	176	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01421.oef	partiel	non_verifiee	utf-8	4	3	3	38	25	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01422.oef	partiel		utf-8	1	0	0	9	47	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01423.oef	partiel	non_verifiee	utf-8	2	2	2	1	58	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01424.oef	partiel	non_verifiee	utf-8	2	2	2	10	13	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01425.oef	partiel	non_verifiee	utf-8	1	1	1	17	9	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01426.oef	partiel		utf-8	1	0	0	123	5	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01427.oef	partiel	non_verifiee	utf-8	2	1	1	24	21	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01428.oef	partiel	non_verifiee	utf-8	2	2	2	12	25	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01429.oef	partiel		utf-8	1	0	0	1	13	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01430.oef	partiel	non_verifiee	utf-8	2	1	1	38	39	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01431.oef	partiel	non_verifiee	utf-8	2	1	1	14	30	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01432.oef	partiel		utf-8	0	0	0	29	26	0	oef2wims	ok	non_execute	ok	ok	non_execute	
+D:\ALF_ZGit\_win_run\work\in\01433.oef	partiel	non_verifiee	utf-8	1	1	1	9	54	0	oef2wims	ok	non_execute	ok	ok	non_execute	

@@ -114,11 +114,11 @@ MVP pass as written: **True**
 
 ```
 {
- "statut": "pending-windows",
+ "statut": "pass",
  "input_folder_unchanged": true,
  "outputs_outside_input_folder": true,
- "unicode_suite": "linux-only",
- "unicode_suite_platform": "linux",
+ "unicode_suite": "pass",
+ "unicode_suite_platform": "win32",
  "note": "D-19: must be `pass` on Windows 11 before P2 ends; tests/test_unicode_paths.py"
 }
 ```

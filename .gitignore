@@ -9,3 +9,7 @@ dist/
 *.exe
 *.check
 Validation_AllSchemas.csv
+
+# generated bulk output of local gate runs (keep only report-sized summaries)
+reports/all_oef_*/
+
