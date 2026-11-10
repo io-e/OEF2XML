@@ -50,8 +50,10 @@ def run_gate(exe: str, name: str, raw: bytes, keep: str | None = None, timeout: 
         m = ERR_RE.search(out)
         if m:
             return GateResult(False, "oef2wims", f"{m.group(1)}", int(m.group(2)), int(m.group(3)), p.returncode)
-        first = next((l for l in out.splitlines() if l.strip()), "compiler refused the file")
-        return GateResult(False, "oef2wims", first.strip(), 0, 0, p.returncode)
+        out = out.replace(scratch, "<scratch>")
+        lines = [l.strip() for l in out.splitlines() if l.strip() and not l.strip().endswith("..")]
+        first = re.sub(r"^ERROR ", "", lines[0]) if lines else f"compiler refused the file (exit code {p.returncode})"
+        return GateResult(False, "oef2wims", first, 0, 0, p.returncode)
     except subprocess.TimeoutExpired:
         return GateResult(False, "oef2wims", "compiler timeout", 0, 0, -1)
     finally:

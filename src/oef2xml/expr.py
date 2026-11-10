@@ -513,8 +513,9 @@ class CondParser:
 _OPSYM = {"EQ": "==", "NEQ": "!=", "LT": "<", "LTE": "<=", "GT": ">", "GTE": ">="}
 
 
-def parse_text_value(s: str):
-    """text with \\name references -> Str(parts); a function call anywhere -> Unsupported"""
+def parse_text_value(s: str, declared: set | None = None):
+    """text with \\name references -> Str(parts). Inside \\( .. \\) / \\[ .. \\] only *declared* names are references
+    (LaTeX commands such as \\nearrow stay literal), as in the statement tokenizer."""
     parts: list = []
     cur: list[str] = []
     i = 0
@@ -522,6 +523,35 @@ def parse_text_value(s: str):
     while i < n:
         ch = s[i]
         if ch == "\\":
+            if declared is not None and i + 1 < n and s[i + 1] in "([":
+                close = "\\)" if s[i + 1] == "(" else "\\]"
+                j = s.find(close, i + 2)
+                if j >= 0:
+                    cur.append(s[i:i + 2])
+                    k = i + 2
+                    while k < j:
+                        if s[k] == "\\":
+                            m = NAME_RE.match(s, k + 1)
+                            if m and m.group(0) in declared and m.end() <= j:
+                                if cur:
+                                    parts.append("".join(cur)); cur = []
+                                e = m.end()
+                                idx = None
+                                if e < j and s[e] == "[":
+                                    c = find_matching(s, e + 1, "]")
+                                    if 0 < c < j and ";" not in s[e + 1:c]:
+                                        idx = ExprParser(s[e + 1:c], declared).parse()
+                                        e = c + 1
+                                parts.append(Var(m.group(0), idx))
+                                k = e
+                                continue
+                            if m:
+                                cur.append(s[k:m.end()]); k = m.end(); continue
+                            cur.append(s[k:k + 2]); k += 2; continue
+                        cur.append(s[k]); k += 1
+                    cur.append(close)
+                    i = j + 2
+                    continue
             m = NAME_RE.match(s, i + 1)
             if m:
                 if cur:

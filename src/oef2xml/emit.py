@@ -3,6 +3,7 @@ placeholders as orphan top-level blocks (REQ-TODO-1), 2-space indentation (REQ-O
 from __future__ import annotations
 
 import hashlib
+import sys
 
 from lxml import etree
 
@@ -90,6 +91,7 @@ class Emitter:
 
     def build(self) -> bytes:
         p = self.p
+        sys.setrecursionlimit(max(sys.getrecursionlimit(), 50000))   # <next> chains recurse once per block
         root = etree.Element(_q("eleda-program"), nsmap=NSMAP)
         root.set("id", p.prog_id)
         root.set("source_format", self.sf)

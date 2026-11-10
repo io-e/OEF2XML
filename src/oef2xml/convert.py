@@ -14,6 +14,7 @@ from . import expr as E
 from . import textparse as T
 from .blocks import B, arith, chain, count_types, get, num, setvar, txt
 from .decode import DecodeError, decode_bytes, line_col
+from . import shape
 from .templates import TEMPLATES
 from .parser import Block, Directive, ParseResult, parse
 
@@ -52,6 +53,7 @@ EXPR_TYPES = {"formal", "algexp", "expalg", "numexp", "function", "equation", "l
 PLANNED_TYPES = {"menu", "select", "correspond", "corresp", "reorder", "range", "ranges"}  # phase 2
 TRUE_FALSE_PAIRS = {("Vrai", "Faux"), ("True", "False"), ("Vero", "Falso")}
 RESERVED_VARS = re.compile(r"^(reply\d*|reply_\w*|result\d*|choice\d*|step\d*|sc_reply\d*|sc_choice\d*|imagedir|confparm[1-4])$")
+X2O_TEMP = re.compile(r"\\?x2o(?:(?:rep)?\d+|version)(?![A-Za-z0-9])")
 CTRL_CHARS = re.compile("[\x00-\x08\x0b\x0c\x0e-\x1f\ufffe\uffff]")
 SHA = lambda s: hashlib.sha256(s.encode("utf-8")).hexdigest()
 
@@ -166,6 +168,7 @@ class Converter:
         self.numeric_notes: list[str] = []
         self.title_langs: list[tuple[str, str]] = []
         self.flags: list[str] = []
+        self.shape_gaps = 0
 
     # ---------------------------------------------------------------- reporting helpers
     def lc(self, pos: int):
@@ -316,6 +319,23 @@ class Converter:
                 return self.prov_int(n.args[0], ints)
         return False
 
+    def snapshot(self):
+        return (len(self.details), Counter(self.approx), len(self.extra_vars), self.q_counter, set(self.answer_vars))
+
+    def restore(self, snap):
+        del self.details[snap[0]:]
+        self.approx = Counter(snap[1])
+        del self.extra_vars[snap[2]:]
+        self.q_counter = snap[3]
+        self.answer_vars = set(snap[4])
+
+    def lint(self, b: B) -> B:
+        """REQ-SCH-2/4: a shape missing from the observed catalogue is never emitted: it becomes a gap"""
+        pb = shape.problems(b)
+        if pb:
+            raise E.Unsupported("REQ-SCH-4", "shape", pb[0] + " (no real example of this shape)")
+        return b
+
     # ---------------------------------------------------------------- definitions
     def split_def(self, d: Directive):
         """\\x{n=v} | \\x{n}{v} | \\x{n:=v} -> (name, rhs)"""
@@ -445,7 +465,7 @@ class Converter:
         for k, it in enumerate(items):
             st = it.strip()
             if st != it:
-                self.detail("info", pos, "list-item-whitespace", "M-14", "whitespace around list items trimmed")
+                self.detail("approximation", pos, "list-item-whitespace", "M-14", "whitespace around list items trimmed")
             if re.fullmatch(r"-?\d+(\.\d+)?", st):
                 item = num(st, "M-14")
             else:
@@ -478,7 +498,7 @@ class Converter:
         return j
 
     def mk_text(self, s: str, pos: int, rule: str = "M-13") -> B:
-        node = E.parse_text_value(s)
+        node = E.parse_text_value(s, self.declared)
         if re.search(r"\\\(|\\\[", s):
             self.detail("approximation", pos, "text:latex-delimiters", rule,
                         "LaTeX delimiters kept as text; rendering in the target platform unverified (Q5)")
@@ -506,7 +526,7 @@ class Converter:
         kind = d.name
         ctx_int = kind in ("integer", "int")
         pos = d.pos
-        if self.has_ternary(rhs):
+        if kind != "text" and self.has_ternary(rhs):     # a '?' inside a text value is plain text
             raise E.Unsupported("M-28", "ternary", "inline '?:' conditional in a definition (logic_ternary, phase 2)")
         if kind == "text":
             st = rhs.strip()
@@ -541,14 +561,24 @@ class Converter:
             self.gap_directive(d, "G-18", f"def:{d.name}", f"\\{name} is a reserved WIMS name")
             self.tainted[name] = "G-18"
             return None
-        n0 = len(self.details)
+        snap = self.snapshot()
         try:
-            val = self.build_def_value(d, name, rhs)
+            val = self.lint(self.build_def_value(d, name, rhs))
         except E.Unsupported as e:
+            self.restore(snap)
             self.gap_directive(d, e.rule, f"{d.name}:{e.construct}", e.reason)
             self.tainted[name] = e.rule
             return None
-        approx = any(x.niveau == "approximation" for x in self.details[n0:])
+        if (X2O_TEMP.match(name) or X2O_TEMP.search(rhs or "")):
+            self.detail("approximation", d.pos, "idiom:x2o-temporary", "REQ-IDIOM-2",
+                        "forward-converter temporary kept as an ordinary variable (inlining of \\x2oN idioms is phase 2)")
+        if name.endswith("_"):
+            self.detail("approximation", d.pos, "def:name-trailing-underscore", "REQ-OUT-7",
+                        "variable name ends with '_': kept verbatim; the target platform may strip the underscore")
+        if d.name in ("integer", "int", "real", "rational") and re.fullmatch(r"\s*\\[A-Za-z_]\w*\s*", rhs or ""):
+            self.detail("approximation", d.pos, "def:type-of-copy", "M-10",
+                        "numeric type of a plain variable copy is not carried by the target platform (inferred from the source variable)")
+        approx = any(x.niveau == "approximation" for x in self.details[snap[0]:])
         self.mark(d, "approximee" if approx else "traduite")
         return setvar(name, val, {"integer": "M-10", "int": "M-10", "real": "M-11", "rational": "M-12", "text": "M-13"}[d.name])
 
@@ -629,15 +659,23 @@ class Converter:
                     out.i("IF0", cond).i("DO0", chain(body))
                     if blk.has_else:
                         out.i("ELSE", chain(els))
+                self._x2o_cond_detail(h)
                 self.mark(h, "traduite")
                 return [out]
             if kind == "for":
-                return [self.conv_for(blk)]
+                blk_out = self.conv_for(blk)
+                self._x2o_cond_detail(h)
+                return [blk_out]
         except E.Unsupported as e:
             self.gap_block(blk, e.rule, f"{kind}:{e.construct}", e.reason)
             return []
         self.gap_block(blk, "G-11", f"{kind}:unknown", "unknown control block")
         return []
+
+    def _x2o_cond_detail(self, h):
+        if X2O_TEMP.search(h.vals[0] if h.vals else ""):
+            self.detail("approximation", h.pos, "idiom:x2o-temporary", "REQ-IDIOM-2",
+                        "forward-converter temporary used in a control condition, kept as an ordinary variable (phase 2)")
 
     def check_cond(self, node):
         for n in E.walk(node):
@@ -725,15 +763,15 @@ class Converter:
             if isinstance(it, Block):
                 if it.head.post:
                     self.mark_all([it], "info", "post-definition")
-                    self.declare_taint_in([it], "REQ-IN-POST")
-                    self.detail("info", it.head.pos, "post-definition", "7.1", "control block after \\statement (post-phase): used only by feedback (phase 3), not emitted")
+                    self.declare_taint_in([it], "REQ-OUT-4")
+                    self.detail("info", it.head.pos, "post-definition", "REQ-OUT-4", "control block after \\statement (post-phase): used only by feedback (phase 3), not emitted")
                 continue
             if it.post and it.name in ("integer", "int", "real", "rational", "text") and it.pos not in self.disp:
                 self.mark(it, "info", "post-definition")
                 n, _ = self.split_def(it)
                 if n:
-                    self.tainted.setdefault(n, "REQ-IN-POST")
-                self.detail("info", it.pos, "post-definition", "7.1",
+                    self.tainted.setdefault(n, "REQ-OUT-4")
+                self.detail("info", it.pos, "post-definition", "REQ-OUT-4",
                             "definition after \\statement (post-phase): used only by feedback (phase 3), not emitted")
 
 
@@ -809,11 +847,25 @@ class Converter:
             rt.i(f"ADD{k}", it)
         return rt
 
-    def display(self, items: list) -> B | None:
+    def display(self, items: list, span=None) -> B | None:
         rt = self.richtext(items)
         if rt is None:
             return None
-        return B("display_element", rule="M-40").i("object", rt)
+        blk = B("display_element", rule="M-40").i("object", rt)
+        pb = shape.problems(blk)
+        if pb:
+            if span is not None:
+                self.placeholder("REQ-SCH-4", "statement:shape", pb[0] + " (no real example of this shape)", span[0], span[1])
+                self.shape_gaps += 1
+            return None
+        return blk
+
+    def span_of(self, toks):
+        if not toks:
+            return None
+        last = toks[-1]
+        end = last.pos + len(last.raw if last.raw else (last.data if isinstance(last.data, str) else ""))
+        return (toks[0].pos, self.text[toks[0].pos:end])
 
     def conv_statement(self, d: Directive, questions: list) -> list:
         s = d.vals[0] if d.vals else ""
@@ -829,6 +881,7 @@ class Converter:
         out: list = []
         cur: list = []
         used: set = set()
+        sg0 = self.shape_gaps
         qkey = {(q["kind"], q["n"]): q for q in questions}
         for t in toks:
             if t.kind != "embed":
@@ -845,7 +898,7 @@ class Converter:
                 n_gaps += 1
                 continue
             used.add((kind, n))
-            disp = self.display(self.tok_items(cur))
+            disp = self.display(self.tok_items(cur), self.span_of(cur))
             cur = []
             if disp is not None:
                 out.append(disp)
@@ -856,9 +909,13 @@ class Converter:
             q["embedded"] = True
             if q["block"] is not None:
                 out.append(q["block"])
-        disp = self.display(self.tok_items(cur))
+            else:
+                self.detail("approximation", t.pos, "embed:dropped", "M-49",
+                            f"\\embed{{{kind}{n}}} dropped: that question is a gap or tainted (see the placeholder of the question)")
+        disp = self.display(self.tok_items(cur), self.span_of(cur))
         if disp is not None:
             out.append(disp)
+        n_gaps += self.shape_gaps - sg0
         for q in questions:
             if not q.get("embedded") and q["block"] is not None:
                 self.detail("info", q["d"].pos, "question:not-embedded", "M-49",
@@ -888,8 +945,10 @@ class Converter:
             self.q_counter += 1
             qn = f"{base_q}{self.q_counter + 1}"
         self.q_counter += 1
-        while a in self.declared and a not in self.answer_vars:
-            a += "_"
+        k = 0
+        while a in self.declared and a not in self.answer_vars:      # never clash with an OEF variable (REQ-OUT-7)
+            k += 1
+            a = f"{base_a}_ans{k}" if k > 1 else f"{base_a}_ans"
         self.answer_vars.add(a)
         return a, qn
 
@@ -949,9 +1008,11 @@ class Converter:
         d = q["d"]
         kind = q["kind"]
         pos_vals, opts, typ, weight = self.parse_q(d, kind)
+        snap = self.snapshot()
         try:
             return self._conv_question(q, d, kind, pos_vals, opts, typ, weight)
         except E.Unsupported as e:
+            self.restore(snap)
             if e.construct == "taint":
                 return self.qgap(q, e.rule, "answer:taint", e.reason, state="taint")
             return self.qgap(q, e.rule, f"answer:{e.construct}", e.reason)
@@ -960,9 +1021,9 @@ class Converter:
         for o in opts:
             ol = o.lower()
             if ol == "shuffle" and choice_type:
-                self.detail("info", d.pos, "option:shuffle", "8.4", "option=shuffle on a choice type: target platform shuffling unknown")
+                self.detail("info", d.pos, "option:shuffle", "G-05", "option=shuffle on a choice type: target platform shuffling unknown")
             elif ol == "noorder" and checkbox:
-                self.detail("info", d.pos, "option:noorder", "8.4", "option=noorder on a checkbox: no equivalent")
+                self.detail("info", d.pos, "option:noorder", "G-05", "option=noorder on a checkbox: no equivalent")
             else:
                 self.detail("approximation", d.pos, f"option:{ol}", "G-05", f"option={o} has no equivalent (grading or display differs)")
         if weight is not None:
@@ -1001,7 +1062,7 @@ class Converter:
                     qtype = "fraction"
                     sol = (B("fraction", rule="M-12").i("dividend", self.mk(node.a, False, d.pos), True)
                            .i("divisor", self.mk(node.b, False, d.pos), True))
-                    self.detail("approximation", d.pos, "answer:fraction", "8.2", "expected a/b written as a fraction (target comparison unverified)")
+                    self.detail("approximation", d.pos, "answer:fraction", "REQ-MAP-Q-TEMPLATE", "expected a/b written as a fraction (target comparison unverified)")
                 elif self.prov_int(node):
                     qtype, sol = "integer", self.mk(node, False, d.pos)
                 else:
@@ -1011,14 +1072,14 @@ class Converter:
                                 "\\precision/\\range of the exercise influence numeric comparison in WIMS and are not carried")
             elif tl in EXPR_TYPES:
                 qtype, sol = "expression", self.mk_text(expected, d.pos, "M-22")
-                self.detail("approximation", d.pos, f"answer:{tl}", "8.2", "symbolic equivalence is graded by the target platform (unverified)")
+                self.detail("approximation", d.pos, f"answer:{tl}", "REQ-MAP-Q-TEMPLATE", "symbolic equivalence is graded by the target platform (unverified)")
             else:
                 qtype, sol = "string", self.mk_text(expected, d.pos, "M-13")
                 if tl not in ("default", "case", "text"):
-                    self.detail("approximation", d.pos, f"answer:{tl}", "8.2",
+                    self.detail("approximation", d.pos, f"answer:{tl}", "REQ-MAP-Q-TEMPLATE",
                                 f"type {tl} (case-insensitive/any-of/raw) mapped to a plain string question")
             self.q_options(q, d, opts, weight, False, False)
-            blk = self.open_question("question_open", qtype, ptxt, sol, a_var, q_var, {})
+            blk = self.lint(self.open_question("question_open", qtype, ptxt, sol, a_var, q_var, {}))
             return self.q_done(q, d, blk, a_var, q_var)
         # \choice
         prompt = pos_vals[0] if pos_vals else ""
@@ -1034,9 +1095,9 @@ class Converter:
         prop = self.items_list(bi, d.pos) if bi else None
         a_var, q_var = self.new_qvars(q)
         self.q_options(q, d, opts, weight, True, len(gi) > 1)
-        self.detail("approximation", d.pos, "choice", "8.2", "\\choice mapped to question_multiple_choices; unique when one right item (unverified)")
-        blk = self.open_question("question_multiple_choices", "unique" if len(gi) == 1 else "multiple", ptxt, sol, a_var, q_var,
-                                 {"proposals": prop})
+        self.detail("approximation", d.pos, "choice", "REQ-MAP-Q-TEMPLATE", "\\choice mapped to question_multiple_choices; unique when one right item (unverified)")
+        blk = self.lint(self.open_question("question_multiple_choices", "unique" if len(gi) == 1 else "multiple", ptxt, sol,
+                                           a_var, q_var, {"proposals": prop}))
         return self.q_done(q, d, blk, a_var, q_var)
 
     def split_items(self, s: str) -> list:
@@ -1082,18 +1143,18 @@ class Converter:
         self.q_options(q, d, opts, weight, True, tl == "checkbox")
         if pair:
             if static:
-                sol = B("logic_boolean", rule="8.2").f("BOOL", "TRUE" if idxs[0] == 1 else "FALSE")
+                sol = B("logic_boolean", rule="REQ-MAP-Q-TEMPLATE").f("BOOL", "TRUE" if idxs[0] == 1 else "FALSE")
             else:
-                sol = (B("logic_compare", rule="8.2").f("OP", "EQ").i("A", self.mk(node, False, d.pos)).i("B", num("1", "8.2"), True))
-            self.detail("approximation", d.pos, "answer:true-false", "8.2", "radio on the language's true/false pair mapped to question_true_false")
-            blk = self.open_question("question_true_false", None, ptxt, sol, a_var, q_var, {})
+                sol = (B("logic_compare", rule="REQ-MAP-Q-TEMPLATE").f("OP", "EQ").i("A", self.mk(node, False, d.pos)).i("B", num("1", "REQ-MAP-Q-TEMPLATE"), True))
+            self.detail("approximation", d.pos, "answer:true-false", "REQ-MAP-Q-TEMPLATE", "radio on the language's true/false pair mapped to question_true_false")
+            blk = self.lint(self.open_question("question_true_false", None, ptxt, sol, a_var, q_var, {}))
             return self.q_done(q, d, blk, a_var, q_var)
         good = [items[i - 1] for i in idxs]
         bad = [it for k, it in enumerate(items, 1) if k not in idxs]
         sol = self.items_list(good, d.pos)
         prop = self.items_list(bad, d.pos) if bad else None
-        blk = self.open_question("question_multiple_choices", "unique" if tl == "radio" else "multiple", ptxt, sol, a_var, q_var,
-                                 {"proposals": prop})
+        blk = self.lint(self.open_question("question_multiple_choices", "unique" if tl == "radio" else "multiple", ptxt, sol,
+                                           a_var, q_var, {"proposals": prop}))
         return self.q_done(q, d, blk, a_var, q_var)
 
     def open_question(self, btype, qtype, ptxt, sol, a_var, q_var, extra) -> B:
@@ -1181,7 +1242,7 @@ class Converter:
                     self.detail("info", d.pos, "title:variable", "M-01", "variable reference inside the title kept verbatim")
                 self.title = xml_clean(" ".join(val.split()))
                 if len(val.encode("utf-8")) > 80:
-                    self.detail("info", d.pos, "title:length", "M-01", "title longer than 80 bytes (WIMS truncates; kept in full)")
+                    self.detail("approximation", d.pos, "title:length", "M-01", "title longer than 80 bytes (WIMS truncates; kept in full)")
                 self.mark(d, "traduite")
             elif nm == "language":
                 code = val.strip().lower()

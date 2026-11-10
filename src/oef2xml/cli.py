@@ -211,7 +211,7 @@ def main(argv=None) -> int:
         if xml is not None:
             target = out / f"{stem}{a.suffix}.xml"
             Path(fs(target)).write_bytes(xml)
-            entry["sortie"] = str(target)
+            entry["sortie"] = target.name          # relative to --out: reports stay byte-identical across output folders (AC-6)
         check = out / f"{stem}.check"
         lines = [f"statut: {entry['statut']}", f"compilateur: {entry['compilateur']}", f"rng: {entry['rng']}", f"xsd: {entry['xsd']}"]
         if entry["message"]:

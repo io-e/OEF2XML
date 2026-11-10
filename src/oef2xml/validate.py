@@ -13,6 +13,7 @@ from lxml import etree
 NS = "urn:eleda:program:v1"
 Q = "{%s}" % NS
 DATA = Path(__file__).with_name("data")
+PARSER = etree.XMLParser(huge_tree=True)       # long <next> chains nest deeper than libxml2's default 256 levels
 
 
 def default_schema_dir() -> Path:
@@ -37,9 +38,7 @@ def load_schemas(schema_dir: str):
     return rng, xsd
 
 
-@lru_cache(maxsize=1)
-def catalog() -> dict:
-    return json.loads((DATA / "xml_block_catalog.json").read_text(encoding="utf-8"))
+from .shape import catalog  # noqa: E402  (single loader for the observed catalogue)
 
 
 @lru_cache(maxsize=4)
@@ -56,7 +55,7 @@ def whitelist(schema_dir: str) -> frozenset:
 def validate_rng_xsd(xml: bytes, schema_dir: str):
     """returns (rng_ok, xsd_ok, messages)"""
     rng, xsd = load_schemas(str(schema_dir))
-    doc = etree.fromstring(xml)
+    doc = etree.fromstring(xml, PARSER)
     msgs = []
     r = rng.validate(doc)
     if not r:
@@ -72,7 +71,7 @@ def shape_lint(xml: bytes, schema_dir: str) -> list[str]:
     every variable id used by a field is declared in <variables>."""
     wl = whitelist(str(schema_dir))
     cat = catalog()["blocks"]
-    root = etree.fromstring(xml)
+    root = etree.fromstring(xml, PARSER)
     problems: list[str] = []
     declared = {v.get("id") for v in root.iter(Q + "variable")}
     order = {"extraState": 0, "icons": 1, "field": 2, "input": 3, "next": 4}
@@ -113,7 +112,7 @@ def shape_lint(xml: bytes, schema_dir: str) -> list[str]:
 
 def count_question_blocks(xml: bytes) -> int:
     """independent scan of the written XML (I3): <block type="question_*"> elements"""
-    root = etree.fromstring(xml)
+    root = etree.fromstring(xml, PARSER)
     return sum(1 for b in root.iter(Q + "block") if (b.get("type") or "").startswith("question_"))
 
 
@@ -123,7 +122,7 @@ TODO_RE = re.compile(r"^TODO\[OEF2XML ([A-Za-z0-9-]+)\] (.*) \(.*:\d+:\d+\) \| o
 def placeholder_lint(xml: bytes, n_expected: int, status: str) -> list[str]:
     """REQ-TODO-6: every TODO comment carries the verbatim fragment (hash check) and no placeholder block is
     reachable from the info chain; one placeholder per reported gap; a complete file has none."""
-    root = etree.fromstring(xml)
+    root = etree.fromstring(xml, PARSER)
     blocks = root.find(Q + "blocks")
     problems: list[str] = []
     tops = list(blocks.findall(Q + "block"))
