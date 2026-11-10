@@ -22,6 +22,8 @@ FN_OK={'randint','random','shuffle','randitem','randomitem','pickone','item','it
 FN_CAS={'pari','maxima'}                                # only forward-emitted patterns (generated corpus)
 SUBCMD_OK={'replace','lowercase','uppercase','charcnt','char','sort'}   # reverse subset of section 7.3
 ANS_OK={'numeric','number','radio','checkbox','correspond','corresp','reorder','default','case','nocase','atext','text','raw','chset','formal','algexp','expalg','numexp','function','equation','litexp','symtext','menu','select','range','ranges'}
+# v0.2.6 always-gap HTML list (spec M-48 / G-19): script form input style link meta base object embed iframe, on*= attributes, javascript:/vbscript:/data:text/html URLs
+HTML_ACTIVE=r'<\s*(?:script|form|input|style|link|meta|base|object|embed|iframe)\b|<[^<>]*\s+on[a-z]+\s*=|(?:javascript|vbscript)\s*:|data\s*:\s*text/html'
 res={}
 for f,o in origin.items():
     t,_=s.decode(open(os.path.join(a.corpus,f),'rb').read()); d,err=s.parse(t)
@@ -50,6 +52,7 @@ for f,o in origin.items():
         if n in DIR_COND and gen: continue
         bad.add('dir:'+n)
     if re.search(r'\\special\s*\{',t): bad.add('special')
+    if re.search(HTML_ACTIVE,t,re.I): bad.add('html-active')       # G-19 family (v0.2.6): always a gap, any --html mode
     if gen and 'x2o NON TRADUIT' in t: bad.add('x2o-NON-TRADUIT')   # REQ-IDIOM-1: XML block lost by the forward converter
     c=res.setdefault(g,Counter()); c['files']+=1
     if ok_q>0 and not dyn: c['partiel_eligible']+=1

@@ -8,8 +8,9 @@
   "blocker:dir": 50,
   "blocker:fn": 50,
   "blocker:special": 46,
-  "complet_eligible": 19,
-  "blocker:dyn-type": 10
+  "complet_eligible": 18,
+  "blocker:dyn-type": 10,
+  "blocker:html-active": 4
  },
  "upstream_handwritten_blockers": {
   "special": 46,
@@ -24,19 +25,19 @@
   "wims:append": 9,
   "dir:steps": 8,
   "dir:condition": 8,
-  "wims:trim": 8,
   "wims:rowcnt": 8,
+  "wims:trim": 8,
   "ans:vector": 7,
   "ans:dragfill": 7,
   "ans:jsxgraphcurve": 6,
   "wims:listintersect": 6,
-  "wims:item": 6,
   "wims:itemcnt": 6,
+  "wims:item": 6,
   "ans:matrix": 5,
   "wims:embraced": 5,
   "dir:solution": 4,
-  "ans:coord": 4,
-  "wims:declosing": 4
+  "html-active": 4,
+  "ans:coord": 4
  },
  "upstream_models": {
   "blocker:wims": 901,
@@ -47,6 +48,7 @@
   "blocker:ans": 96,
   "blocker:dyn-type": 64,
   "partiel_eligible": 57,
+  "blocker:html-active": 49,
   "blocker:special": 12,
   "complet_eligible": 4
  },
@@ -60,6 +62,7 @@
   "dyn-type": 64,
   "wims:append": 60,
   "dir:latex": 52,
+  "html-active": 49,
   "wims:singlespace": 47,
   "wims:nospace": 31,
   "wims:record": 30,
@@ -73,18 +76,19 @@
   "wims:listuniq": 18,
   "wims:select": 17,
   "dir:condition": 16,
-  "wims:lines2items": 15,
   "wims:rows2lines": 15,
-  "wims:listcomplement": 15
+  "wims:lines2items": 15
  },
  "generated": {
   "files": 1100,
   "partiel_eligible": 973,
   "blocker:x2o-NON-TRADUIT": 634,
-  "complet_eligible": 465,
-  "no_convertible_question": 127
+  "complet_eligible": 456,
+  "no_convertible_question": 127,
+  "blocker:html-active": 12
  },
  "generated_blockers": {
-  "x2o-NON-TRADUIT": 634
+  "x2o-NON-TRADUIT": 634,
+  "html-active": 12
  }
 }
