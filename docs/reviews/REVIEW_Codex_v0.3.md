@@ -61,7 +61,7 @@ Facts checked: forward converter `translate.go:495–498` gives `asin(x)*180/pi`
 |---|---|---|---|
 | REQ-REV-SEM-1 Typed provenance IR | **REJECT** (as written) | REQ-ARCH-1/2 already give a serialisable IR (`--dump-ir`) with `M-nn/G-nn` ids per detail, and §7.1 mandates `pre/post` phase tags. The extras (raw fragment, dependencies and "verification level" on **every** node; preserved short-circuit semantics; an IR schema versioned independently) would redesign the IR. The `p0-p1` IR is the *output block tree* with rule ids. Salvage: an `ir_version` field in `--dump-ir`. | **rework if adopted** |
 | REQ-REV-SEM-2 Taint across grading inputs | **ADOPT-AMENDED** | REQ-TODO-3 taints variables defined by gaps; G-05/G-15/G-08 cover options, weights, conditions, steps. What is missing is the *flag*: a per-question `risque_evaluation` (true when `\precision`, `\range`, `weight=` or a grading option was dropped, or a condition/step was approximated). Keep it orthogonal to `statut`. Do not rename it `evaluation_risk` (the report keys are French). | small |
-| REQ-REV-SEM-3 Fidelity record per mapping | **DEFER** (P2/P3) | Overlaps REQ-ARCH-2 (mapping data), REQ-REP-7 and §13.4 (golden XML per `M-nn`). "Reviewer, review status" is process overhead before the target platform exists. Note: `p0-p1` has no `mapping.yaml`; ids are hard-coded (REQ-ARCH-2 deviation to settle in P2). | none |
+| REQ-REV-SEM-3 Fidelity record per mapping | **DEFER** (P2/P3) | Overlaps REQ-ARCH-2 (mapping data), REQ-REP-7 and §13.4 (golden XML per `M-nn`). "Reviewer, review status" is process overhead before the target platform exists. Note: `p0-p1` has no `mapping.json`; ids are hard-coded (REQ-ARCH-2 deviation to settle in P2). | none |
 | REQ-REV-SEM-4 Answer-evaluation contract | **ADOPT-AMENDED** | §8.5, REQ-REP-7, R2 and Q5 already say grading semantics are `non_verifiee`. The new and valid point: dropping `\precision`/`\range`/`weight=`/options is not an "innocuous display approximation". Today REQ-REP-3 defines `complet` as "nothing was lost or isolated" yet M-07 and G-05 drop these with an "approximation" detail. That is an internal contradiction. Fix: reword REQ-REP-3, and expose the dropped items via the `risque_evaluation` flag (SEM-2). **Do not** demote such files to `partiel` without recomputing `scope_bounds.py` (66 upstream files use `\precision`), which would move every §14.2 bound. That is an owner decision. | small |
 | REQ-REV-SEM-5 Trig directionality | **ADOPT-AMENDED** | Direction correct (see §1 table). Amend: acos is a gap (no `ACOS` block value); WIMS aliases; B.2 inverse idiom; "verified by both engines before mapping" must not block the opt-in `--trig-units`, which is the owner's explicit assumption (§15 P2: "trig behind `--trig-units`"). Branch conventions (principal values) are P3. | none (code already gap) |
 | REQ-REV-SEM-6 Randomisation reproducibility | **DEFER** (P3) | §7.2 + M-10/M-11 + T2 in §13.3 already cover semantics and seeded comparison. Useful addition for Q5: is `random_number{min,max}` inclusive at both ends, as WIMS `randint(a..b)` is? M-10 is marked E while REQ-REP-7 says nothing is exact before Q5. | none |
@@ -197,7 +197,7 @@ No requirement invalidates the existing parser, ids, expression handling, mappin
 These would **rework** P1 if adopted as written: SEM-1 (per-node IR provenance), REL-1 (modes), REL-2 / AC-REV-07 (`publication`), RUN-5 in full (English keys), IN-3 as a "no regex" rule.
 Items that **change gate numbers**: a default `--html strict` (OUT-4 as Codex names it) or demoting `\precision`/`weight=` files to `partiel` (SEM-4) would move §14.2 bounds and thresholds. Neither should be done in v0.2.6.
 Items that **must not touch `validation/`**: Codex §8.6 (see §4.3).
-Side note found on `p0-p1` (not Codex's): `mapping.yaml` / `expr_spec.json` from REQ-ARCH-2 / REQ-EXPR-1 are not present (ids and tables are in code). That is a spec-vs-code gap for P2, independent of this review.
+Side note found on `p0-p1` (not Codex's): `mapping.json` / `expr_spec.json` from REQ-ARCH-2 / REQ-EXPR-1 are not present (ids and tables are in code). That is a spec-vs-code gap for P2, independent of this review.
 
 ---
 
@@ -242,7 +242,7 @@ Side note found on `p0-p1` (not Codex's): `mapping.yaml` / `expr_spec.json` from
 ### v0.3 (after P1 merges)
 
 - AC-10 rewrite with severity classes (C1–C4, C6 critical; C5 100%; new C7 presentation ≥ 90%) = Codex AC-REV-08.
-- SEM-3 mapping records / AC-REV-09 together with `mapping.yaml` (REQ-ARCH-2) in P2.
+- SEM-3 mapping records / AC-REV-09 together with `mapping.json` (REQ-ARCH-2) in P2.
 - SEM-6 and the Q5 sub-question "is `random_number` inclusive at both ends?"; REL-3 release manifest; `report.schema.json`; metamorphic tests; CI (Linux first, Windows when the PC is online).
 - Decisions for you: HTML allowlist and iframe policy (Codex D-06); redistribution/licence of compiler binaries if they are ever bundled (D-08).
 
