@@ -20,6 +20,7 @@ class GateResult:
     line: int = 0
     col: int = 0
     rc: int = 0
+    timeout: bool = False
 
 
 def find_oef2wims(explicit: str | None = None) -> str | None:
@@ -55,10 +56,19 @@ def run_gate(exe: str, name: str, raw: bytes, keep: str | None = None, timeout: 
         first = re.sub(r"^ERROR ", "", lines[0]) if lines else f"compiler refused the file (exit code {p.returncode})"
         return GateResult(False, "oef2wims", first, 0, 0, p.returncode)
     except subprocess.TimeoutExpired:
-        return GateResult(False, "oef2wims", "compiler timeout", 0, 0, -1)
+        return GateResult(False, "oef2wims", f"compiler timeout after {timeout} s", 0, 0, -1, True)
     finally:
         if keep:
             Path(keep).mkdir(parents=True, exist_ok=True)
             for f in Path(scratch).iterdir():
                 shutil.copy2(f, Path(keep) / f.name)
         shutil.rmtree(scratch, ignore_errors=True)
+
+
+def file_sha256(path: str) -> str:
+    import hashlib
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for blk in iter(lambda: f.read(1 << 20), b""):
+            h.update(blk)
+    return h.hexdigest()

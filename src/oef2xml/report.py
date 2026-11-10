@@ -7,10 +7,10 @@ from collections import Counter
 from . import __version__
 
 TSV_COLUMNS = ["fichier", "statut", "fidelite", "encodage", "questions_source", "questions_converties",
-               "blocs_question_emis", "nb_gaps", "nb_approx", "compilateur", "rng", "xsd", "schematron", "message"]
+               "blocs_question_emis", "nb_gaps", "nb_approx", "nb_risque_evaluation", "gate", "compilateur", "validateur", "rng", "xsd", "schematron", "message"]
 
 
-def summarize(entries: list[dict]) -> dict:
+def summarize(entries: list[dict], meta: dict | None = None) -> dict:
     c = Counter(e["statut"] for e in entries)
     f = Counter(e["fidelite"] for e in entries)
     nt_files: Counter = Counter()
@@ -23,7 +23,10 @@ def summarize(entries: list[dict]) -> dict:
         for k, v in e["approximations"].items():
             ap_occ[k] += v
     return {
+        "version_rapport": 1,
         "outil": f"oef2xml {__version__}",
+        "schemas": (meta or {}).get("schemas", {}),
+        "compilateur_sha256": (meta or {}).get("compilateur_sha256"),
         "resume": {"complet": c.get("complet", 0), "partiel": c.get("partiel", 0), "echec": c.get("echec", 0),
                    "fichiers": len(entries),
                    "fidelite": {"exacte": f.get("exacte", 0), "approchee": f.get("approchee", 0), "non_verifiee": f.get("non_verifiee", 0)}},
@@ -34,9 +37,9 @@ def summarize(entries: list[dict]) -> dict:
     }
 
 
-def write_json(path, entries: list[dict]) -> None:
+def write_json(path, entries: list[dict], meta: dict | None = None) -> None:
     with open(path, "w", encoding="utf-8", newline="\n") as fh:
-        json.dump(summarize(entries), fh, ensure_ascii=False, indent=1)
+        json.dump(summarize(entries, meta), fh, ensure_ascii=False, indent=1)
         fh.write("\n")
 
 
@@ -46,7 +49,7 @@ def tsv_rows(entries: list[dict]):
         nb_gaps = sum(e["non_traduits"].values())
         nb_approx = sum(e["approximations"].values())
         vals = [e["source"], e["statut"], e["fidelite"], e["encodage"], e["questions_source"], e["questions_converties"],
-                e["blocs_question_emis"], nb_gaps, nb_approx, e["compilateur"], e["rng"], e["xsd"], e["schematron"],
+                e["blocs_question_emis"], nb_gaps, nb_approx, e["nb_risque_evaluation"], e["gate"], e["compilateur"], e["validateur"], e["rng"], e["xsd"], e["schematron"],
                 (e["message"] or "").replace("\t", " ").replace("\n", " ")]
         yield "\t".join(str(v) for v in vals)
 

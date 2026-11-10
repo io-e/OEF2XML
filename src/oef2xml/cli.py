@@ -5,6 +5,8 @@ import argparse
 import json
 import os
 import sys
+import tempfile
+import unicodedata
 from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 
@@ -12,7 +14,7 @@ from . import __version__
 from . import report as R
 from .blocks import to_dict
 from .convert import Options, convert_bytes
-from .pipeline import Config, process_bytes
+from .pipeline import Config, process_bytes, report_meta
 
 EXIT_USAGE = 64
 
@@ -50,6 +52,7 @@ def build_parser() -> Parser:
     p.add_argument("--id-from", default="stem", choices=["stem", "hash"])
     p.add_argument("--gate", default="auto", choices=["auto", "oef2wims", "validator", "none"])
     p.add_argument("--oef2wims", metavar="PATH")
+    p.add_argument("--gate-timeout", type=int, default=60, metavar="SECONDS", help="per-file oef2wims timeout (default 60, REQ-ARCH-4)")
     p.add_argument("--def", dest="def_path", metavar="FILE|DIR", help="accepted; cross-check with .def files is phase 2")
     p.add_argument("--validate", default="rng,xsd", help="rng,xsd,sch|none (default rng,xsd)")
     p.add_argument("--schema-dir", metavar="DIR")
@@ -92,7 +95,46 @@ def collect(inputs, recursive: bool) -> list[Path]:
     uniq = {}
     for f in files:
         uniq[os.path.abspath(f)] = f
-    return [uniq[k] for k in sorted(uniq)]
+    # REQ-OUT-1: sorted by casefolded then raw path
+    return sorted(uniq.values(), key=lambda f: (_key(str(f)), str(f)))
+
+
+def _key(name: str) -> str:
+    """collision key of a file name: NFC-normalised, casefolded (REQ-OUT-1)"""
+    return unicodedata.normalize("NFC", name).casefold()
+
+
+def output_stems(files, suffix: str) -> list[str]:
+    """deterministic unique output stems; `_2`, `_3` ... on a casefold collision of `<stem><suffix>.xml` (REQ-OUT-1, REQ-BATCH-2)"""
+    used: set[str] = set()
+    out = []
+    for f in files:
+        stem, n = f.stem, 1
+        while True:
+            cand = stem if n == 1 else f"{stem}_{n}"
+            key = _key(f"{cand}{suffix}.xml")
+            if key not in used and _key(f"{cand}.check") not in used:
+                used.add(key)
+                used.add(_key(f"{cand}.check"))
+                break
+            n += 1
+        out.append(cand)
+    return out
+
+
+def atomic_write(path: Path, data: bytes) -> None:
+    """REQ-BATCH-4: temporary name in the same folder, then os.replace; no partial file is ever visible"""
+    fd, tmp = tempfile.mkstemp(prefix=".oef2xml-", suffix=".tmp", dir=fs(path.parent))
+    try:
+        with os.fdopen(fd, "wb") as fh:
+            fh.write(data)
+        os.replace(tmp, fs(path))
+    except BaseException:
+        try:
+            os.unlink(tmp)
+        except OSError:
+            pass
+        raise
 
 
 def options_from(a) -> Options:
@@ -174,14 +216,8 @@ def main(argv=None) -> int:
         if a.validate.strip() != "none" and not set(vparts) <= {"rng", "xsd", "sch"}:
             raise Usage("--validate expects rng,xsd,sch or none")
         cfg = Config(gate=a.gate, oef2wims=a.oef2wims, validate=(a.validate.strip() != "none"), schema_dir=a.schema_dir,
-                     strict=a.strict, keep_gate_files=a.keep_gate_files, check_placeholders=not a.no_check_placeholders)
-        # deterministic output names (collisions get _2, _3 ... in sorted order)
-        names, seen = [], {}
-        for f in files:
-            stem = f.stem
-            n = seen.get(stem, 0) + 1
-            seen[stem] = n
-            names.append(stem if n == 1 else f"{stem}_{n}")
+                     strict=a.strict, keep_gate_files=a.keep_gate_files, gate_timeout=a.gate_timeout, check_placeholders=not a.no_check_placeholders)
+        names = output_stems(files, a.suffix)
     except Usage as ex:
         print(f"oef2xml: {ex}", file=sys.stderr)
         return EXIT_USAGE
@@ -208,20 +244,23 @@ def main(argv=None) -> int:
         return EXIT_USAGE
     out.mkdir(parents=True, exist_ok=True)
     for (f, _, _, _, stem), (entry, xml) in zip(jobs, results):
+        target = out / f"{stem}{a.suffix}.xml"
         if xml is not None:
-            target = out / f"{stem}{a.suffix}.xml"
-            Path(fs(target)).write_bytes(xml)
+            atomic_write(target, xml)
             entry["sortie"] = target.name          # relative to --out: reports stay byte-identical across output folders (AC-6)
-        check = out / f"{stem}.check"
-        lines = [f"statut: {entry['statut']}", f"compilateur: {entry['compilateur']}", f"rng: {entry['rng']}", f"xsd: {entry['xsd']}"]
+        elif Path(fs(target)).exists():            # REQ-BATCH-4: no echec entry beside a stale XML
+            os.unlink(fs(target))
+            entry.setdefault("avertissements", []).append("sortie_obsolete_supprimee")
+        lines = [f"statut: {entry['statut']}", f"gate: {entry['gate']}", f"compilateur: {entry['compilateur']}",
+                 f"validateur: {entry['validateur']}", f"rng: {entry['rng']}", f"xsd: {entry['xsd']}"]
         if entry["message"]:
             lines.append("message: " + entry["message"])
-        Path(fs(check)).write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
+        atomic_write(out / f"{stem}.check", ("\n".join(lines) + "\n").encode("utf-8"))
         entries.append(entry)
         if a.verbose and not a.quiet:
             print(f"{entry['statut']:8s} {entry['source']}")
     if a.report:
-        R.write_json(fs(a.report), entries)
+        R.write_json(fs(a.report), entries, report_meta(cfg))
     if a.csv:
         R.write_tsv(fs(a.csv), entries)
     if not a.quiet:

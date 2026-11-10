@@ -21,12 +21,22 @@ def _q(tag):
     return f"{{{NS}}}{tag}"
 
 
-def placeholder_text(p, source_name: str, line_col) -> str:
+def placeholder_texts(p, source_name: str, line_col) -> list[str]:
+    """REQ-TODO-1: one comment text, or `part k/N` texts when the fragment is longer than RAW_CAP characters; every part
+    carries the SHA-256 of the full fragment so the lint can check the reassembled text."""
     raw = p.raw
     sha = hashlib.sha256(raw.encode("utf-8")).hexdigest()
-    shown = raw if len(raw) <= RAW_CAP else raw[:RAW_CAP]
     l, c = line_col
-    return f"TODO[OEF2XML {p.rule}] {p.reason} ({source_name}:{l}:{c}) | original: {shown} | sha256={sha}"
+    if len(raw) <= RAW_CAP:
+        return [f"TODO[OEF2XML {p.rule}] {p.reason} ({source_name}:{l}:{c}) | original: {raw} | sha256={sha}"]
+    chunks = [raw[i:i + RAW_CAP] for i in range(0, len(raw), RAW_CAP)]
+    n = len(chunks)
+    return [f"TODO[OEF2XML {p.rule} part {k}/{n}] {p.reason} ({source_name}:{l}:{c}) | original: {ch} | sha256={sha}"
+            for k, ch in enumerate(chunks, 1)]
+
+
+def placeholder_text(p, source_name: str, line_col) -> str:
+    return placeholder_texts(p, source_name, line_col)[0]
 
 
 class Emitter:
@@ -120,14 +130,16 @@ class Emitter:
             info.comment = (p.info_comment, True, 107, 364)
         info.next = p.chain
         self.block(info, "info", blocks, xy=(INFO_X, INFO_Y))
-        for k, ph in enumerate(p.placeholders):
-            text = placeholder_text(ph, self.src, self.lc(ph.pos))
-            if self.carrier == "display_element":
-                pb = B("display_element", rule=ph.rule)
-            else:
-                pb = B("text", rule=ph.rule).f("TEXT", "")
-            pb.comment = (text, True, 107, 364)
-            self.block(pb, f"placeholder/{k}", blocks, xy=(PLACEHOLDER_X, PLACEHOLDER_Y0 + PLACEHOLDER_DY * k))
+        k = 0
+        for ph in p.placeholders:
+            for text in placeholder_texts(ph, self.src, self.lc(ph.pos)):
+                if self.carrier == "display_element":
+                    pb = B("display_element", rule=ph.rule)
+                else:
+                    pb = B("text", rule=ph.rule).f("TEXT", "")
+                pb.comment = (text, True, 107, 364)
+                self.block(pb, f"placeholder/{k}", blocks, xy=(PLACEHOLDER_X, PLACEHOLDER_Y0 + PLACEHOLDER_DY * k))
+                k += 1
         for name, kind in self.vars.items():
             v = etree.SubElement(vars_el, _q("variable"), id=self.vid(name))
             if kind:

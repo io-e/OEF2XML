@@ -116,12 +116,13 @@ def count_question_blocks(xml: bytes) -> int:
     return sum(1 for b in root.iter(Q + "block") if (b.get("type") or "").startswith("question_"))
 
 
-TODO_RE = re.compile(r"^TODO\[OEF2XML ([A-Za-z0-9-]+)\] (.*) \(.*:\d+:\d+\) \| original: (.*) \| sha256=([0-9a-f]{64})$", re.S)
+TODO_RE = re.compile(r"^TODO\[OEF2XML ([A-Za-z0-9-]+)(?: part (\d+)/(\d+))?\] (.*?) \(.*:\d+:\d+\) \| original: (.*) \| sha256=([0-9a-f]{64})$", re.S)
 
 
 def placeholder_lint(xml: bytes, n_expected: int, status: str) -> list[str]:
-    """REQ-TODO-6: every TODO comment carries the verbatim fragment (hash check) and no placeholder block is
-    reachable from the info chain; one placeholder per reported gap; a complete file has none."""
+    """REQ-TODO-6: every TODO comment is in the REQ-TODO-1 format, the parts of a multi-part placeholder are complete and
+    consecutive, the REASSEMBLED fragment matches its SHA-256 (whatever its length), one placeholder (group) per reported gap,
+    no placeholder block is reachable from the info chain, a complete file has none."""
     root = etree.fromstring(xml, PARSER)
     blocks = root.find(Q + "blocks")
     problems: list[str] = []
@@ -129,7 +130,20 @@ def placeholder_lint(xml: bytes, n_expected: int, status: str) -> list[str]:
     infos = [b for b in tops if b.get("type") == "info"]
     if len(infos) != 1:
         problems.append(f"{len(infos)} info blocks at top level")
-    found = 0
+    groups = 0
+    cur = None          # (rule, total, next_k, sha, parts[])
+
+    def close_group():
+        nonlocal cur
+        if cur is None:
+            return
+        rule, total, nk, sha, parts = cur
+        if nk != total + 1:
+            problems.append(f"TODO[{rule}]: multi-part placeholder incomplete ({nk - 1}/{total} parts)")
+        elif hashlib.sha256("".join(parts).encode("utf-8")).hexdigest() != sha:
+            problems.append(f"TODO[{rule}]: reassembled fragment hash mismatch")
+        cur = None
+
     for b in tops:
         if b.get("type") == "info":
             for cm in b.iter(Q + "comment"):
@@ -139,20 +153,36 @@ def placeholder_lint(xml: bytes, n_expected: int, status: str) -> list[str]:
         cm = b.find(Q + "icons/" + Q + "comment")
         text = cm.get("text", "") if cm is not None else ""
         if not text.startswith("TODO[OEF2XML "):
+            close_group()
             problems.append("top-level block that is not a placeholder")
             continue
-        found += 1
         m = TODO_RE.match(text)
         if not m:
+            close_group()
+            groups += 1
             problems.append("TODO comment not in the REQ-TODO-1 format")
             continue
-        raw, sha = m.group(3), m.group(4)
-        if len(raw) < 4000 and hashlib.sha256(raw.encode("utf-8")).hexdigest() != sha:
-            problems.append(f"TODO[{m.group(1)}]: fragment hash mismatch")
-        if len(raw) >= 4000 and raw == "":
-            problems.append("empty fragment")
-    if found != n_expected:
-        problems.append(f"{found} placeholder blocks written, {n_expected} gaps reported")
-    if status == "complet" and found:
+        rule, k, n, raw, sha = m.group(1), m.group(2), m.group(3), m.group(5), m.group(6)
+        if k is None:
+            close_group()
+            groups += 1
+            if hashlib.sha256(raw.encode("utf-8")).hexdigest() != sha:
+                problems.append(f"TODO[{rule}]: fragment hash mismatch")
+            continue
+        k, n = int(k), int(n)
+        if k == 1:
+            close_group()
+            groups += 1
+            cur = (rule, n, 1, sha, [])
+        if cur is None or cur[1] != n or cur[2] != k or cur[3] != sha:
+            problems.append(f"TODO[{rule}]: part {k}/{n} out of sequence")
+            cur = None
+            continue
+        cur[4].append(raw)
+        cur = (cur[0], cur[1], k + 1, cur[3], cur[4])
+    close_group()
+    if groups != n_expected:
+        problems.append(f"{groups} placeholders written, {n_expected} gaps reported")
+    if status == "complet" and groups:
         problems.append("complet file with placeholders")
     return problems

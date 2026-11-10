@@ -103,14 +103,17 @@ def main():
     gq = sum(entries[f]["questions_converties"] >= 1 for f in m1 if group(f) == "Gn")
     h_n, g_n = mv["M1_files"]["H"], mv["M1_files"]["Gn"]
     g_with_answer = sum(1 for f in m1 if group(f) == "Gn" and entries[f]["questions_source"] >= 1)
+    h_with_answer = sum(1 for f in m1 if group(f) == "H" and entries[f]["questions_source"] >= 1)
+    # D-15: threshold = 80 % of the M1 files whose source has \answer or \choice, computed here, never hard-coded
+    h_thr, g_thr = -(-4 * h_with_answer // 5), -(-4 * g_with_answer // 5)
     gn_echec = per["Gn"]["echec"]
     crash = sum("crash" in e["flags"] for e in entries.values())
     m_files = [f for f in entries if group(f) == "M"]
     mv.update({
-        "H_Q>=1": hq, "H_M1": h_n, "H_threshold": 4,
-        "Gn_Q>=1": gq, "Gn_M1": g_n, "Gn_threshold": 260,
+        "H_Q>=1": hq, "H_M1": h_n, "H_M1_with_question": h_with_answer, "H_threshold": h_thr,
+        "Gn_Q>=1": gq, "Gn_M1": g_n, "Gn_threshold": g_thr,
         "Gn_M1_with_at_least_one_source_question": g_with_answer,
-        "Gn_threshold_reachable": g_with_answer >= 260,
+        "Gn_threshold_reachable": g_with_answer >= g_thr,
         "Gn_echec": gn_echec, "Gn_echec_pct": round(100.0 * gn_echec / max(1, per["Gn"]["N"]), 2), "Gn_echec_max_pct": 1.0,
         "crash": crash, "M_files_accounted": len(m_files), "M_files_expected": 212,
     })
@@ -201,6 +204,7 @@ def main():
             shutil.copy(outA / entries[f]["sortie"], xdir / entries[f]["sortie"])
         RT.run_forward(a.xml2oef, xdir, odir, sorted(xdir.glob("*.xml")))
         verdicts = Counter()
+        per_file_verdict = {}
         silent, marker_mismatch, no_o2, ex_silent = [], [], [], []
         for f in gen:
             e = entries[f]
@@ -211,6 +215,7 @@ def main():
                 continue
             r = RT.compare(RT.read(corpus / f), RT.read(o2p), e["details"])
             verdicts[r["verdict"]] += 1
+            per_file_verdict[f] = r["verdict"]
             if r["verdict"] == "DIFF-SILENT":
                 silent.append(f)
                 if len(ex_silent) < 12:
@@ -220,11 +225,16 @@ def main():
         rta = {"run": True, "files": len(gen), "verdicts": dict(verdicts), "diff_silent": len(silent), "files_without_o2": no_o2[:10],
                "marker_lines_not_equal_to_G22_reports": len(marker_mismatch), "examples_silent": ex_silent,
                "diff_silent_files": silent}
+        sample = [ln.strip() for ln in (ROOT / "tests/data/rta_p1_sample.txt").read_text(encoding="utf-8").splitlines()
+                  if ln.strip() and not ln.startswith("#")]
+        sv = Counter(per_file_verdict.get(f, "NOT-RUN") for f in sample)
+        rta["p1_sample"] = {"list": "tests/data/rta_p1_sample.txt", "files": len(sample), "verdicts": dict(sv),
+                            "diff_silent": sv.get("DIFF-SILENT", 0) + sv.get("NOT-RUN", 0)}
     res["RT-A"] = rta
 
     # --- verdict lines
-    mv["H_pass"] = hq >= 4
-    mv["Gn_pass_as_written"] = gq >= 260
+    mv["H_pass"] = hq >= h_thr
+    mv["Gn_pass_as_written"] = gq >= g_thr
     mv["Gn_echec_pass"] = mv["Gn_echec_pct"] <= 1.0
     mv["M_accounting_pass"] = len(m_files) == 212
     mv["diff_silent"] = rta.get("diff_silent", "RT-A not run")
@@ -247,8 +257,8 @@ def render_md(r: dict) -> str:
          f"Files: {r['corpus_files']}; CLI exit code of the run: {r['cli_exit_code']}; `--trig-units`: {r['trig_units']}", "",
          "## MVP gate numbers", "",
          "| Metric | Measured | Threshold | Result |", "|---|---:|---:|---|",
-         f"| H: M1 files with Q ≥ 1 | {mv['H_Q>=1']} of {mv['H_M1']} | ≥ {mv['H_threshold']} | {'PASS' if mv['H_pass'] else 'FAIL'} |",
-         f"| Gn: M1 files with Q ≥ 1 | {mv['Gn_Q>=1']} of {mv['Gn_M1']} | ≥ {mv['Gn_threshold']} | {'PASS' if mv['Gn_pass_as_written'] else 'FAIL'} |",
+         f"| H: M1 files with Q ≥ 1 (80 % of the {mv['H_M1_with_question']} that have a source question) | {mv['H_Q>=1']} of {mv['H_M1']} | ≥ {mv['H_threshold']} | {'PASS' if mv['H_pass'] else 'FAIL'} |",
+         f"| Gn: M1 files with Q ≥ 1 (80 % of the {mv['Gn_M1_with_question'] if 'Gn_M1_with_question' in mv else mv['Gn_M1_with_at_least_one_source_question']} that have a source question) | {mv['Gn_Q>=1']} of {mv['Gn_M1']} | ≥ {mv['Gn_threshold']} | {'PASS' if mv['Gn_pass_as_written'] else 'FAIL'} |",
          f"| Gn: M1 files that have ≥ 1 source `\\answer`/`\\choice` (upper bound of the line above) | {mv['Gn_M1_with_at_least_one_source_question']} | ≥ {mv['Gn_threshold']} needed | {'reachable' if mv['Gn_threshold_reachable'] else 'UNREACHABLE for any tool'} |",
          f"| Gn: echec | {mv['Gn_echec']} ({mv['Gn_echec_pct']} %) | ≤ 1 % | {'PASS' if mv['Gn_echec_pass'] else 'FAIL'} |",
          f"| crash | {mv['crash']} | 0 | {'PASS' if mv['crash'] == 0 else 'FAIL'} |",

@@ -61,10 +61,22 @@ validation/    read-only: XML program schemas v1 and fixtures, OEF validator
 
 ```
 pytest -q                                   # set OEF2XML_OEF2WIMS=/path/to/oef2wims to also exercise the compile gate
-python3 tools/mvp_gate.py --oef2wims PATH --xml2oef PATH --out reports      # section 14.2 numbers + AC checks + RT-A
+python3 tools/mvp_gate.py --oef2wims PATH --xml2oef PATH --out reports      # section 14.2 numbers + AC checks + full RT-A (D-16)
+OEF2XML_XML2OEF=PATH OEF2XML_CORPUS=DIR pytest tests/test_rta_sample.py   # fixed 100-file RT-A sample, tests/data/rta_p1_sample.txt
 ```
 
 `tools/mvp_gate.py` converts the 1433 corpus files twice (AC-6), runs every acceptance check it can automate and the
 RT-A round trip (OEF → XML → OEF with the reference forward converter, then comparison with the normalisations N1–N11
 documented in `tools/roundtrip.py`). It writes `reports/mvp_gate.md` and `reports/mvp_gate.json`; its exit code is 0
 only if the MVP passes as written. See `docs/P1_QUESTIONS.md` for the points where it cannot.
+
+## Spec v0.2.6 behaviours worth knowing
+
+* Gn MVP threshold is computed by the gate (80 % of the M1 files with `\answer`/`\choice`), never hard-coded (D-15).
+* Active/external HTML (`<iframe>`, `<script>`, `on*=` ...) is always a G-19 gap, in every `--html` mode (D-13).
+* `--gate-timeout SECONDS` (default 60); the report separates `gate`, `compilateur` (real oef2wims only) and `validateur`.
+* Output names are collision-safe (casefold, `_2`, `_3`), written atomically; a stale XML next to an `echec` entry is removed
+  and reported (`sortie_obsolete_supprimee`).
+* Per-question `risque_evaluation` (lost `\precision`, `weight=`, ...) with `fidelite: approchee`; `statut` is not demoted (D-14).
+* Fragments over 4000 characters become multi-part placeholders (`part k/N`), linted by SHA-256 of the reassembled text.
+* `dropped-unread` info: a definition that no emitted block reads is reported, because the forward converter drops it (D-16).

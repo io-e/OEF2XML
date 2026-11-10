@@ -12,8 +12,8 @@ from .expr import NAME_RE, find_matching
 
 TEXT_CMD_GROUPS = {"if": 3, "ifval": 3, "for": 2, "exit": 0, "img": 1, "audio": 1, "slib": 1,
                    "special": 1, "draw": 2, "drawtikz": 2, "canvasdraw": 2, "embed": 1}
-CMD_RULE = {"if": ("M-40", "statement:text-control"), "ifval": ("M-40", "statement:text-control"),
-            "for": ("M-40", "statement:text-control"), "exit": ("M-40", "statement:text-control"),
+CMD_RULE = {"if": ("G-25", "statement:text-control"), "ifval": ("G-25", "statement:text-control"),
+            "for": ("G-25", "statement:text-control"), "exit": ("G-25", "statement:text-control"),
             "img": ("M-47", "statement:img"), "audio": ("M-47", "statement:audio"),
             "slib": ("G-13", "statement:slib"), "special": ("G-07", "statement:special"),
             "draw": ("G-09", "statement:draw"), "drawtikz": ("G-09", "statement:draw"),
@@ -21,6 +21,25 @@ CMD_RULE = {"if": ("M-40", "statement:text-control"), "ifval": ("M-40", "stateme
 ANSWER_TIME = re.compile(r"^(reply\d*|reply_\w*|result\d*|choice\d*|step\d*|sc_reply\d*|sc_choice\d*)$")
 ASSET_NAMES = {"imagedir", "filedir"} | {f"confparm{i}" for i in range(1, 5)}
 TAG_RE = re.compile(r"</?([A-Za-z][A-Za-z0-9]*)\b[^>]*>")
+# G-19 (D-13): active or external HTML is a gap in every --html mode
+ACTIVE_PAIRED = ("script", "form", "style", "object", "iframe")          # gap spans the element through its closing tag
+ACTIVE_VOID = ("input", "link", "meta", "base", "embed")
+ACTIVE_TAGS = ACTIVE_PAIRED + ACTIVE_VOID
+ON_ATTR_RE = re.compile(r"\son[a-z]+\s*=", re.I)
+ACTIVE_URL_RE = re.compile(r"(?:javascript|vbscript)\s*:|data\s*:\s*text/html", re.I)
+
+
+def active_html(s: str) -> str | None:
+    """-> short reason when `s` contains active/external HTML (G-19 list), else None"""
+    for m in TAG_RE.finditer(s):
+        tag = m.group(1).lower()
+        if tag in ACTIVE_TAGS:
+            return f"<{tag}> element"
+        if ON_ATTR_RE.search(m.group(0)):
+            return "event-handler attribute (on*=)"
+        if ACTIVE_URL_RE.search(m.group(0)):
+            return "javascript:/vbscript:/data:text/html URL"
+    return None
 BR_RE = re.compile(r"<br\s*/?>", re.I)
 HR_RE = re.compile(r"<hr\s*/?>", re.I)
 EMBED_RE = re.compile(r"^\s*(reply|choice|r|c)\s*(\d+)\s*(?:,(.*))?$", re.S | re.I)
@@ -152,12 +171,15 @@ def tokenize(s: str, base: int, declared: set[str], html_strict: bool = False) -
                 tag = m.group(1).lower()
                 if tag == "img":
                     add_gap(i, m.end(), "M-47", "statement:img", "<img> becomes an image block in phase 2"); i = m.end(); continue
-                if tag in ("script", "form"):
+                if tag in ACTIVE_PAIRED and not m.group(0).startswith("</"):
                     close = re.search(r"</%s\s*>" % tag, s[i:], re.I)
                     end = i + close.end() if close else m.end()
-                    add_gap(i, end, "G-19", f"statement:{tag}", f"<{tag}> element cannot be carried"); i = end; continue
-                if tag == "input":
-                    add_gap(i, m.end(), "G-19", "statement:input", "<input> element cannot be carried"); i = m.end(); continue
+                    add_gap(i, end, "G-19", f"statement:{tag}", f"<{tag}> element cannot be carried (active or external HTML)"); i = end; continue
+                if tag in ACTIVE_TAGS:
+                    add_gap(i, m.end(), "G-19", f"statement:{tag}", f"<{tag}> element cannot be carried (active or external HTML)"); i = m.end(); continue
+                if ON_ATTR_RE.search(m.group(0)) or ACTIVE_URL_RE.search(m.group(0)):
+                    add_gap(i, m.end(), "G-19", "statement:html-active",
+                            "tag with an event-handler attribute or a javascript:/vbscript:/data:text/html URL cannot be carried"); i = m.end(); continue
                 if html_strict:
                     add_gap(i, m.end(), "G-17", f"statement:html:{tag}", "HTML carried as a placeholder (--html strict)")
                     i = m.end(); continue

@@ -113,3 +113,87 @@ def test_no_gate_leftovers_in_tmp(cli, tmp_path):
     assert r.returncode == 0, r.stderr
     leftovers = {n for n in set(os.listdir("/tmp")) - before if "oef2" in n.lower()}
     assert not leftovers
+
+
+# ---- v0.2.6: REQ-OUT-1 / REQ-BATCH-2 / REQ-BATCH-4 / REQ-REP-1/2 / REQ-ARCH-4 honesty -------------------------------
+
+def test_casefold_collision_gets_suffix(cli, tmp_path):
+    write(tmp_path / "in" / "a" / "Same.oef")
+    write(tmp_path / "in" / "b" / "same.oef")
+    r = cli(tmp_path / "in", "-r", "-o", tmp_path / "out", "--gate", "none", "--report", tmp_path / "r.json")
+    assert r.returncode == 0, r.stderr
+    rep = json.loads((tmp_path / "r.json").read_text(encoding="utf-8"))
+    sorties = [e["sortie"] for e in rep["fichiers"]]
+    assert len({s.casefold() for s in sorties}) == 2           # never overwrite on a case-insensitive file system
+    assert sorted(s.casefold() for s in sorties) == ["same.xml", "same_2.xml"]
+
+
+def test_unique_ids_on_collision(cli, tmp_path):
+    write(tmp_path / "in" / "a" / "x.oef")
+    write(tmp_path / "in" / "b" / "x.oef")
+    for mode in ("stem", "hash"):
+        out = tmp_path / ("out" + mode)
+        cli(tmp_path / "in", "-r", "-o", out, "--gate", "none", "--id-from", mode)
+        ids = [ln.split('id="')[1].split('"')[0] for f in sorted(out.glob("*.xml"))
+               for ln in f.read_text(encoding="utf-8").splitlines() if "<eleda-program" in ln]
+        assert len(ids) == 2 and len(set(ids)) == 2, (mode, ids)
+
+
+def test_stale_output_removed_on_echec(cli, tmp_path):
+    f = write(tmp_path / "in" / "a.oef")
+    out = tmp_path / "out"
+    cli(f, "-o", out, "--gate", "validator")
+    assert (out / "a.xml").exists()
+    write(f, "\\statement{abc\n")
+    r = cli(f, "-o", out, "--gate", "validator", "--report", tmp_path / "r.json")
+    assert r.returncode == 2
+    assert not (out / "a.xml").exists()
+    e = json.loads((tmp_path / "r.json").read_text(encoding="utf-8"))["fichiers"][0]
+    assert e["statut"] == "echec" and "sortie_obsolete_supprimee" in e["avertissements"]
+    assert not list(out.glob(".oef2xml-*"))                    # no temporary file is left behind
+
+
+def test_gate_honesty_fields_and_hashes(cli, tmp_path):
+    f = write(tmp_path / "in" / "a.oef")
+    cli(f, "-o", tmp_path / "out", "--gate", "validator", "--report", tmp_path / "r.json", "--csv", tmp_path / "r.tsv")
+    rep = json.loads((tmp_path / "r.json").read_text(encoding="utf-8"))
+    e = rep["fichiers"][0]
+    assert (e["gate"], e["compilateur"], e["validateur"]) == ("validator", "non_execute", "ok")
+    assert "compilateur_non_execute" in e["flags"]
+    assert e["eol"] == "LF" and len(e["source_sha256"]) == 64
+    assert rep["version_rapport"] == 1 and rep["compilateur_sha256"] is None
+    assert rep["schemas"] and all(len(v) == 64 for v in rep["schemas"].values())
+    header = (tmp_path / "r.tsv").read_text(encoding="utf-8").splitlines()[0].split("\t")
+    assert {"gate", "validateur", "nb_risque_evaluation"} <= set(header)
+
+
+def test_risque_evaluation_and_fidelity(cli, tmp_path):
+    src = SIMPLE.replace("type=numeric", "type=numeric").replace("\\answer{Somme}{\\a+\\b}{type=numeric}",
+                                                                  "\\precision{100}\n\\answer{Somme}{\\a+\\b}{type=numeric}")
+    f = write(tmp_path / "in" / "a.oef", src)
+    cli(f, "-o", tmp_path / "out", "--gate", "none", "--report", tmp_path / "r.json")
+    e = json.loads((tmp_path / "r.json").read_text(encoding="utf-8"))["fichiers"][0]
+    assert e["nb_risque_evaluation"] == 1 and e["questions"][0]["risque_evaluation"] is True
+    assert e["questions"][0]["fidelite"] == "approchee" and e["fidelite"] == "approchee"
+    assert e["statut"] != "echec"
+
+
+def test_iframe_is_a_gap_in_every_html_mode(cli, tmp_path):
+    src = SIMPLE.replace("\\statement{Calculez \\a + \\b.}", "\\statement{Calculez \\a + \\b. <iframe src=\"https://youtu.be/x\"></iframe>}")
+    f = write(tmp_path / "in" / "a.oef", src)
+    for mode in ("pass", "strict"):
+        cli(f, "-o", tmp_path / mode, "--gate", "none", "--html", mode, "--report", tmp_path / (mode + ".json"))
+        e = json.loads((tmp_path / (mode + ".json")).read_text(encoding="utf-8"))["fichiers"][0]
+        assert e["statut"] == "partiel" and e["gaps"].get("G-19", 0) >= 1, mode
+        assert "<iframe" not in (tmp_path / mode / "a.xml").read_text(encoding="utf-8").split("TODO[")[0]
+
+
+def test_multipart_placeholder_over_4000_chars(cli, tmp_path):
+    big = "x" * 9000
+    src = SIMPLE.replace("\\statement{Calculez \\a + \\b.}", "\\statement{Calculez \\a + \\b.}\n\\feedback{1}{" + big + "}")
+    f = write(tmp_path / "in" / "a.oef", src)
+    r = cli(f, "-o", tmp_path / "out", "--gate", "none", "--report", tmp_path / "r.json")
+    xml = (tmp_path / "out" / "a.xml").read_text(encoding="utf-8")
+    assert "part 1/3" in xml and "part 3/3" in xml
+    e = json.loads((tmp_path / "r.json").read_text(encoding="utf-8"))["fichiers"][0]
+    assert e["statut"] == "partiel"

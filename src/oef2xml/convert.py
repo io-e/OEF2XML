@@ -29,19 +29,19 @@ GAP_DIRECTIVE_RULE = {  # directive -> (rule, construct, reason)
     "hint": ("G-03", "hint", "\\hint has no verified mapping (Q10)"),
     "help": ("G-03", "help", "\\help has no verified mapping (Q10)"),
     "solution": ("G-03", "solution", "\\solution is a worked solution, not the expected answer (Q10)"),
-    "feedback": ("REQ-TODO-1", "feedback", "\\feedback is converted in phase 3 (8.5)"),
+    "feedback": ("G-23", "feedback", "\\feedback is converted in phase 3 (8.5)"),
     "condition": ("G-15", "condition", "\\condition (answer analysis) is converted in phase 3"),
     "conditions": ("G-15", "conditions", "\\conditions (answer analysis) is converted in phase 3"),
     "steps": ("G-08", "steps", "\\steps: multi-step exercises are converted in phase 3 (9)"),
     "nextstep": ("G-08", "nextstep", "\\nextstep: dynamic step progression is a gap (REQ-STEP-2)"),
     "plot": ("G-09", "plot", "\\plot drawing has no conversion in this phase"),
-    "wims": ("G-11", "wims-raw", "raw \\wims code has no mapping (spec silent, see docs/P1_QUESTIONS.md)"),
+    "wims": ("G-24", "wims-raw", "raw \\wims code has no mapping"),
     "mdef": ("G-14", "mdef", "\\mdef module macro has no conversion"),
     "matrix": ("G-10", "matrix", "\\matrix is mapped in phase 2 (M-21, Q13)"),
     "function": ("M-22", "function", "\\function is mapped in phase 2 (M-22)"),
-    "complex": ("G-11", "complex", "\\complex has no mapping (spec silent, see docs/P1_QUESTIONS.md)"),
-    "parameter": ("G-11", "parameter", "\\parameter has no mapping (spec silent, see docs/P1_QUESTIONS.md)"),
-    "variable": ("G-11", "variable", "\\variable has no mapping (spec silent, see docs/P1_QUESTIONS.md)"),
+    "complex": ("G-24", "complex", "\\complex has no mapping"),
+    "parameter": ("G-24", "parameter", "\\parameter has no mapping"),
+    "variable": ("G-24", "variable", "\\variable has no mapping"),
 }
 INTERACTIVE_TYPES = {"click", "mark", "clickfill", "dragfill", "multipleclick", "puzzle", "flashcard", "crossword",
                      "coord", "coordinates", "jsxgraphcurve", "chemdraw", "chemeq", "jmolclick", "vector", "matrix",
@@ -131,6 +131,7 @@ class Result:
     approximations: dict = field(default_factory=dict)
     gaps: dict = field(default_factory=dict)
     flags: list = field(default_factory=list)
+    questions: list = field(default_factory=list)
     copies: dict = field(default_factory=dict)
     dispositions: dict = field(default_factory=dict)
     n_directives: int = 0
@@ -144,10 +145,10 @@ def xml_clean(s: str) -> str:
 
 
 class Converter:
-    def __init__(self, path: str, opts: Options):
+    def __init__(self, path: str, opts: Options, stem: str | None = None):
         self.path = path
         self.opts = opts
-        self.stem = path.replace("\\", "/").rsplit("/", 1)[-1].rsplit(".", 1)[0] if path else "program"
+        self.stem = stem or path.replace("\\", "/").rsplit("/", 1)[-1].rsplit(".", 1)[0] if path else "program"
         self.details: list[Detail] = []
         self.placeholders: list[Placeholder] = []
         self.disp: dict[int, str] = {}             # directive pos -> traduite|approximee|info|non_traduite
@@ -158,6 +159,9 @@ class Converter:
         self.int_vars: set[str] = set()
         self.var_order: list[str] = []
         self.loop_vars: set[str] = set()
+        self.q_types: dict[int, str] = {}
+        self.def_nodes: list = []                    # (variables_set block, directive pos, name) of emitted definitions
+        self.extra_flags: list[str] = []
         self.q_state: dict[int, str] = {}          # question directive pos -> converted|gap|taint
         self.q_copies: dict[int, int] = {}
         self.has_dyn = False
@@ -212,6 +216,8 @@ class Converter:
             res.errors.append(str(e))
             return res
         res.encoding = enc
+        if enc in ("cp1252", "latin-1") and self.opts.encoding == "auto" and any(0x80 <= b <= 0x9F for b in raw):
+            self.extra_flags.append("encodage_ambiguite")        # REQ-IN-3: cp1252 and latin-1 differ for these bytes
         cleaned = xml_clean(text)
         self.text = cleaned
         res.text = cleaned
@@ -498,6 +504,9 @@ class Converter:
         return j
 
     def mk_text(self, s: str, pos: int, rule: str = "M-13") -> B:
+        why = T.active_html(s)
+        if why:
+            raise E.Unsupported("G-19", "html:active", f"active or external HTML in a text value ({why}) cannot be carried")
         node = E.parse_text_value(s, self.declared)
         if re.search(r"\\\(|\\\[", s):
             self.detail("approximation", pos, "text:latex-delimiters", rule,
@@ -527,7 +536,7 @@ class Converter:
         ctx_int = kind in ("integer", "int")
         pos = d.pos
         if kind != "text" and self.has_ternary(rhs):     # a '?' inside a text value is plain text
-            raise E.Unsupported("M-28", "ternary", "inline '?:' conditional in a definition (logic_ternary, phase 2)")
+            raise E.Unsupported("G-25", "ternary", "inline '?:' conditional in a definition (logic_ternary, phase 2)")
         if kind == "text":
             st = rhs.strip()
             if st == "":
@@ -580,7 +589,9 @@ class Converter:
                         "numeric type of a plain variable copy is not carried by the target platform (inferred from the source variable)")
         approx = any(x.niveau == "approximation" for x in self.details[snap[0]:])
         self.mark(d, "approximee" if approx else "traduite")
-        return setvar(name, val, {"integer": "M-10", "int": "M-10", "real": "M-11", "rational": "M-12", "text": "M-13"}[d.name])
+        blk = setvar(name, val, {"integer": "M-10", "int": "M-10", "real": "M-11", "rational": "M-12", "text": "M-13"}[d.name])
+        self.def_nodes.append((blk, d.pos, name))
+        return blk
 
 
     # ---------------------------------------------------------------- control blocks (M-28, M-29, M-30)
@@ -754,7 +765,7 @@ class Converter:
             elif nm == "exit":
                 self.gap_directive(d, "G-11", "exit", "\\exit has no conversion")
             else:
-                self.gap_directive(d, "G-11", f"directive:{nm}", f"\\{nm} has no conversion (spec silent, see docs/P1_QUESTIONS.md)")
+                self.gap_directive(d, "G-11", f"directive:{nm}", f"\\{nm} has no conversion")
         return out
 
     def finish_post(self, items, in_post=False):
@@ -1008,6 +1019,7 @@ class Converter:
         d = q["d"]
         kind = q["kind"]
         pos_vals, opts, typ, weight = self.parse_q(d, kind)
+        self.q_types[d.pos] = (typ.strip().lower() if typ and typ.strip() else ("choice" if kind == "choice" else "(none)"))
         snap = self.snapshot()
         try:
             return self._conv_question(q, d, kind, pos_vals, opts, typ, weight)
@@ -1336,6 +1348,7 @@ class Converter:
             res.errors.append("internal error: I2 violated, question without disposition")
             return
         head = chain(body)
+        self.report_unread_defs(head)
         types = count_types(head)
         q_blocks = sum(v for k, v in types.items() if k.startswith("question_"))
         copies = sum(self.q_copies.get(q["d"].pos, 0) for q in qs if self.q_state.get(q["d"].pos) == "converted")
@@ -1369,15 +1382,56 @@ class Converter:
             flags.append("aucune_question")
         if self.has_dyn:
             flags.append("type_dynamique")
+        flags.extend(self.extra_flags)
         res.flags = flags
+        res.questions = self.question_report(qs)
         res.status = "partiel" if (self.placeholders or q_blocks == 0) else "complet"
         res.title = self.title
         res.program = self.make_program(head, res)
 
+    RISK_RE = re.compile(r"^(answer:precision|weight|trig:.*)$")
+
+    def question_report(self, qs) -> list:
+        """REQ-REP-8: one entry per source question; risque_evaluation = something that influences grading was dropped or approximated"""
+        out = []
+        names = {"converted": "convertie", "gap": "gap", "taint": "taint"}
+        for q in qs:
+            d = q["d"]
+            st = self.q_state.get(d.pos, "?")
+            causes = []
+            if st == "converted":
+                causes = sorted({x.construct for x in self.details
+                                 if (x.ligne_oef, x.colonne_oef) == (d.line, d.col) and x.niveau == "approximation"
+                                 and (self.RISK_RE.match(x.construct) or (x.construct.startswith("option:") and x.regle == "G-05"))})
+            out.append({"ligne_oef": d.line, "type": self.q_types.get(d.pos, "(none)"), "disposition": names.get(st, st),
+                        "risque_evaluation": bool(causes), "risque_causes": causes})
+        return out
+
+    def report_unread_defs(self, head):
+        """AC-8 / D-16: a definition that is emitted but that no emitted block reads is reported (info `dropped-unread`);
+        the forward converter drops such definitions, so the round trip would otherwise differ silently."""
+        reads: set = set()
+        present: set = set()
+
+        def walk(b):
+            while b is not None:
+                if b.type == "variables_get":
+                    reads.update(v for _, _, v, _ in b.fields if v)
+                elif b.type == "variables_set":
+                    present.add(id(b))
+                for _, sub, _ in b.inputs:
+                    walk(sub)
+                b = b.next
+        walk(head)
+        for blk, pos, name in self.def_nodes:
+            if id(blk) in present and name not in reads:
+                self.detail("info", pos, "dropped-unread", "AC-8",
+                            f"\\{name} is emitted but no emitted block reads it (the forward converter drops such definitions)")
+
     def make_program(self, head, res) -> Program:
         stem = self.stem
         if self.opts.id_from == "hash":
-            pid = "h" + hashlib.sha1(self.text.encode("utf-8")).hexdigest()[:16]
+            pid = "h" + hashlib.sha1((self.text + "\0" + stem).encode("utf-8")).hexdigest()[:16]   # unique per output stem
         else:
             pid = stem
         lang = self.lang_in or self.opts.default_lang
@@ -1403,9 +1457,9 @@ class Converter:
                        info_comment="\n".join(notes))
 
 
-def convert_bytes(path: str, raw: bytes, opts: Options) -> Result:
+def convert_bytes(path: str, raw: bytes, opts: Options, stem: str | None = None) -> Result:
     """public entry: bytes of one OEF -> Result (never raises for OEF content; internal errors become echec)"""
-    cv = Converter(path, opts)
+    cv = Converter(path, opts, stem)
     try:
         return cv.convert(raw)
     except Exception as ex:  # REQ-BATCH-1: a crash is an echec entry, never a lost entry
