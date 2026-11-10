@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Cross-reference checker for CAHIER_DES_CHARGES_OEF2XML.md: every §n.m, Qn, SCn, AC-n, REQ-*, M-nn, G-nn, Rn and Appendix reference must resolve."""
 import re,sys,os
-F=sys.argv[1] if len(sys.argv)>1 else os.path.join(os.path.dirname(os.path.abspath(__file__)),'CAHIER_DES_CHARGES_OEF2XML.md')
+# default: <repo>/docs/CAHIER_DES_CHARGES_OEF2XML.md, whatever the working directory (tools/corpus_stats/ -> repo root is parents[2])
+F=sys.argv[1] if len(sys.argv)>1 else os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','..','docs','CAHIER_DES_CHARGES_OEF2XML.md')
 lines=open(F,encoding='utf-8').read().splitlines()
 text='\n'.join(lines)
 # definitions
@@ -41,7 +42,7 @@ for i,l in enumerate(lines,1):
         if m.group(3):
             pre=base[:base.rindex('-')+1]
             for n in range(int(m.group(2)),int(m.group(3))+1): chk('REQ',pre+str(n),pre+str(n) in req,i)
-    for m in re.finditer(r'(REQ-[A-Z]+-Q-TEMPLATE)',l): chk('REQ',m.group(1),m.group(1) in text.split('### 8.3')[1][:300] or True,i)
+    for m in re.finditer(r'(REQ-[A-Z]+-Q-TEMPLATE)',l): chk('REQ',m.group(1),m.group(1) in req,i)   # defined by a heading, e.g. '### 8.3 ... (REQ-MAP-Q-TEMPLATE)'
 print(f'sections defined: {len(sec)}; appendix ids: {sorted(app)}')
 print({k:len(v) for k,v in defs.items()},'REQ defined:',len(req))
 for need in ['Q%d'%n for n in range(1,12)]: assert int(need[1:]) in defs['Q'],need
